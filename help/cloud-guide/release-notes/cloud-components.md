@@ -3,9 +3,9 @@ title: Componenti cloud per Commerce
 description: Consulta un elenco degli ultimi miglioramenti apportati al pacchetto Componenti cloud.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: f9edcc85c14354a2eddacbc5219557e107a367cb
+source-git-commit: c02dfd2709cdc63ac1630edaa8c89cad5f737ea1
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,13 @@ Le note sulla versione includono:
 
 <!--Add release notes below-->
 
-## v1.0.13 {#latest}
+## v1.0.14 {#latest}
+
+Data di rilascio: 8 aprile 2024
+
+- ![nuova icona](../../assets/new.svg) **PHP** — Aggiunta del supporto per PHP 8.3.
+
+## v1.0.13
 
 Data di rilascio: 10 marzo 2023
 
