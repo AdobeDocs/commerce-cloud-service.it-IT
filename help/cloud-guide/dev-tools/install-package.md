@@ -3,7 +3,7 @@ title: Aggiornamento del progetto per l’utilizzo degli strumenti ECE
 description: Scopri come aggiornare il progetto di infrastruttura cloud Adobe Commerce on per utilizzare il pacchetto ECE-Tools e sfruttare le correzioni e le funzionalità più recenti.
 feature: Cloud, Install
 exl-id: 820cca84-2817-4881-829f-ebb78400d8c7
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: bcdb59f0d2a17e55e8b0479ee69fac06c710638f
 workflow-type: tm+mt
 source-wordcount: '365'
 ht-degree: 0%
@@ -44,11 +44,11 @@ Se desideri installare Adobe Commerce `2.3.5-p2`, impostato `current_version` a 
 
 Puoi sempre trovare il vincolo di metapackage più recente nel [`magento-cloud` modello](https://github.com/magento/magento-cloud/blob/master/composer.json).
 
-Nell’esempio seguente viene impostato un vincolo per il metapackage di Adobe Commerce on cloud infrastructure su qualsiasi versione maggiore o uguale alla versione corrente 2.4.5 e minore della versione successiva 2.4.6:
+Nell’esempio seguente viene impostato un vincolo per il metapackage di Adobe Commerce on cloud infrastructure su qualsiasi versione maggiore o uguale alla versione corrente 2.4.7 e minore della versione successiva 2.4.8:
 
 ```json
 "require": {
-    "magento/magento-cloud-metapackage": ">=2.4.5 <2.4.6"
+    "magento/magento-cloud-metapackage": ">=2.4.7 <2.4.8"
 },
 ```
 
@@ -61,7 +61,7 @@ Per aggiornare il progetto e utilizzare `ece-tools` del pacchetto, è necessario
 1. Aggiornare il `magento/magento-cloud-metapackage` vincolo di versione in `composer.json` file.
 
    ```bash
-   composer require "magento/magento-cloud-metapackage":">=2.4.5 <2.4.6" --no-update
+   composer require "magento/magento-cloud-metapackage":">=2.4.7 <2.4.8" --no-update
    ```
 
 1. Aggiorna il metapacchetto.

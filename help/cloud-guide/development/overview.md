@@ -6,7 +6,7 @@ feature: Cloud, Install
 topic: Development
 last-substantial-update: 2024-02-06T00:00:00Z
 exl-id: d4452d7d-d3dc-4f8d-8bd7-76f05d89f545
-source-git-commit: abe9aa36b907be8bdfdf42e6f28f1e1eac68fecf
+source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
 workflow-type: tm+mt
 source-wordcount: '548'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Prima di preparare l’area di lavoro locale, assicurati di disporre dei [creden
 
 ## Pacchetti richiesti
 
-Adobe Commerce su infrastruttura cloud utilizza Composer per gestire le dipendenze e gli aggiornamenti per i progetti. Per lo sviluppo locale, è necessario installare le versioni PHP e Composer compatibili con il progetto Cloud. Ad esempio, se utilizzi il [!DNL Commerce] 2.4.6 modello cloud, puoi notare che il [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/2.4.6/.magento.app.yaml) il file di configurazione utilizza **PHP 8.2** e **Compositore 2.2.21**.
+Adobe Commerce su infrastruttura cloud utilizza Composer per gestire le dipendenze e gli aggiornamenti per i progetti. Per lo sviluppo locale, è necessario installare le versioni PHP e Composer compatibili con il progetto Cloud. Ad esempio, se utilizzi il [!DNL Commerce] 2.4.7, si può vedere che il [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/2.4.7/.magento.app.yaml) il file di configurazione utilizza **PHP 8.3** e **Compositore 2.7.2**.
 
 Il Compositore installa le librerie e le dipendenze richieste per il progetto in `vendor` directory. I seguenti file Composer richiesti si trovano nella directory principale del progetto:
 
@@ -47,10 +47,10 @@ Adobe Commerce sull’infrastruttura cloud utilizza un metapacchetto che richied
 >=current_version <next_version
 ```
 
-Ad esempio, per utilizzare la versione più recente di Adobe Commerce 2.4.5, imposta `2.4.5` come versione &quot;corrente&quot; e `2.4.6` come versione &quot;successiva&quot; in `composer.json` file:
+Ad esempio, per utilizzare la versione più recente di Adobe Commerce 2.4.7, imposta `2.4.7` come versione &quot;corrente&quot; e `2.4.8` come versione &quot;successiva&quot; in `composer.json` file:
 
 ```text
-"magento/magento-cloud-metapackage": ">=2.4.5 <2.4.6"
+"magento/magento-cloud-metapackage": ">=2.4.7 <2.4.8"
 ```
 
 I pacchetti principali di questo metapackage sono i seguenti:
