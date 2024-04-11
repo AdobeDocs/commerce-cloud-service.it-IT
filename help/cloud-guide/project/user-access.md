@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b85a163ff62f8a63430dff7c96b5cf391cf38d79
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,11 @@ magento-cloud user:update alice@example.com -r production:a
 
 1. Clic **[!UICONTROL Add User]**.
 
-1. Dopo aver aggiunto gli utenti, ridistribuisci tutti gli ambienti per applicare le modifiche. L’aggiunta di un utente non attiva automaticamente una distribuzione. La ridistribuzione è un passaggio importante per garantire che l’utente possa accedere a un ambiente utilizzando SSH.
+   >[!IMPORTANT]
+   >
+   >L’aggiunta di un utente non attiva automaticamente una distribuzione.
+
+1. Dopo aver aggiunto gli utenti, ridistribuisci tutti gli ambienti per applicare le modifiche. L’aggiunta di un utente non attiva automaticamente una distribuzione. La ridistribuzione è un passaggio importante per garantire che l’utente possa accedere a un ambiente utilizzando SSH o eseguire attività di amministratore.
 
 Dopo aver aggiunto l’utente, Adobe invia un’e-mail all’indirizzo specificato con le istruzioni per l’accesso al progetto Adobe Commerce on Cloud Infrastructure.
 
