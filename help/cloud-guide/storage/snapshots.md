@@ -3,9 +3,9 @@ title: Gestione dei backup
 description: Scopri come creare e ripristinare manualmente un backup per il progetto di infrastruttura cloud di Adobe Commerce.
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 1d8ffabb9f903e89495d11c973a9f0a5a8dd1d43
+source-git-commit: 069cbc233492d22932e8dce5bf0426dce8459727
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Un backup o _istantanea_ è un backup completo dei dati dell&#39;ambiente che include tutti i dati persistenti dei servizi in esecuzione (database MySQL) ed eventuali file archiviati nei volumi montati (var, pub/media, app/ecc.). Lo snapshot _non_ includi il codice, in quanto è già memorizzato nell’archivio basato su Git. Impossibile scaricare una copia di uno snapshot.
 
-La funzione di backup **non** applica agli ambienti Pro. Per impostazione predefinita, gli ambienti Pro Staging e Produzione ricevono backup regolari a scopo di disaster recovery. Vedere [Backup Pro e ripristino di emergenza](../architecture/pro-architecture.md#backup-and-disaster-recovery). A differenza dei backup live automatici negli ambienti Pro Staging e Production, i backup sono **non** automatica. È _tuo_ responsabilità di creare manualmente un backup o di impostare un processo cron per creare periodicamente un backup degli ambienti di integrazione Starter o Pro.
+La funzione di backup/snapshot **non** Applicabile agli ambienti Pro Staging and Production, che ricevono backup regolari a scopo di disaster recovery per impostazione predefinita. Fai riferimento a [Backup Pro e ripristino di emergenza](../architecture/pro-architecture.md#backup-and-disaster-recovery) per ulteriori informazioni. A differenza dei backup live automatici negli ambienti Pro Staging e Production, i backup sono **non** automatica. È _tuo_ responsabilità di creare manualmente un backup o di impostare un processo cron per creare periodicamente un backup degli ambienti di integrazione Starter o Pro.
 
 ## Creare un backup manuale
 
