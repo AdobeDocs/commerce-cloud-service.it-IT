@@ -1,7 +1,7 @@
 ---
-source-git-commit: 78e19b0cb274caf3799882d1f5d8242225c936ad
+source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
 workflow-type: tm+mt
-source-wordcount: '4098'
+source-wordcount: '4030'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ obsoleto
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -115,7 +115,7 @@ ece-tools build
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -185,7 +185,7 @@ Suddividi il registro di debug di completamento
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -264,7 +264,7 @@ Usa directory alternativa per salvare l’immagine
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -321,7 +321,7 @@ ece-tools deploy
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -400,7 +400,7 @@ Per visualizzare la guida dei comandi raw
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -484,7 +484,7 @@ Per ignorare la descrizione degli argomenti dei comandi
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -541,7 +541,7 @@ ece-tools patch
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -598,7 +598,7 @@ ece-tools post-deploy
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -665,7 +665,7 @@ Scenario/i
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -722,7 +722,7 @@ ece-tools backup:list
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -792,7 +792,7 @@ Un percorso di ripristino file specifico
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -849,7 +849,7 @@ ece-tools build:generate
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -906,7 +906,7 @@ ece-tools build:transfer
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -970,7 +970,7 @@ Configurazione in formato JSON
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1034,7 +1034,7 @@ Configurazione in formato JSON
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1091,7 +1091,7 @@ ece-tools cloud:config:validate
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1153,7 +1153,7 @@ ece-tools dump
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1210,7 +1210,7 @@ ece-tools cron:disable
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1267,7 +1267,7 @@ ece-tools cron:enable
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1324,7 +1324,7 @@ ece-tools cron:kill
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1388,7 +1388,7 @@ Cron codice processo da sbloccare.
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1445,7 +1445,7 @@ ece-tools dev:generate:schema-error
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1502,7 +1502,7 @@ ece-tools dev:git:update-composer
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1568,7 +1568,7 @@ Variabili di ambiente da visualizzare, opzioni possibili: servizi, percorsi, var
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1638,7 +1638,7 @@ Utilizzato per ottenere risultati in formato JSON
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1695,7 +1695,7 @@ ece-tools module:refresh
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1752,7 +1752,7 @@ ece-tools schema:generate
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1809,7 +1809,7 @@ ece-tools wizard:ideal-state
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1866,7 +1866,7 @@ ece-tools wizard:master-slave
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1923,7 +1923,7 @@ ece-tools wizard:scd-on-build
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1980,7 +1980,7 @@ ece-tools wizard:scd-on-demand
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2037,7 +2037,7 @@ ece-tools wizard:scd-on-deploy
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2094,7 +2094,7 @@ ece-tools wizard:split-db-state
 
 ### `--help`, `-h`
 
-Visualizza la Guida per il comando specificato. Se non viene fornito alcun comando, visualizzare la Guida per il comando \&lt;info>list\&lt;/info> comando
+Visualizza la Guida per il comando specificato. Se non viene assegnato alcun comando, visualizzare la Guida per il comando list
 
 - Predefinito: `false`
 - Non accetta un valore

@@ -1,7 +1,7 @@
 ---
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
 workflow-type: tm+mt
-source-wordcount: '21442'
+source-wordcount: '21171'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -112,7 +112,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -178,7 +178,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -244,7 +244,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -321,7 +321,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -402,7 +402,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -471,7 +471,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -554,7 +554,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -609,7 +609,7 @@ Filtra per risultato (quando si seleziona un’attività predefinita): operazion
 
 ### `--incomplete`, `-i`
 
-Includi solo le attività incomplete (quando si seleziona un’attività predefinita). Questa è una scorciatoia per \&lt;info>—state=in_progress,pending\&lt;/info>
+Includi solo le attività incomplete (quando si seleziona un’attività predefinita). Stenografia per —state=in_progress,pending
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -691,7 +691,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -829,7 +829,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -892,7 +892,7 @@ Filtra per risultato (quando si seleziona un’attività predefinita): operazion
 
 ### `--incomplete`, `-i`
 
-Includi solo le attività incomplete (quando si seleziona un’attività predefinita). Questa è una scorciatoia per \&lt;info>—state=in_progress,pending\&lt;/info>
+Includi solo le attività incomplete (quando si seleziona un’attività predefinita). Stenografia per —state=in_progress,pending
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -953,7 +953,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1034,7 +1034,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1125,7 +1125,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1169,7 +1169,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1233,7 +1233,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1324,7 +1324,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1382,7 +1382,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1458,7 +1458,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1541,7 +1541,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1612,7 +1612,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1682,7 +1682,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1820,7 +1820,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1897,7 +1897,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -1994,7 +1994,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2134,7 +2134,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2243,7 +2243,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2336,7 +2336,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2438,7 +2438,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2515,7 +2515,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2611,7 +2611,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2688,7 +2688,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2784,7 +2784,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2869,7 +2869,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -2969,7 +2969,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3025,7 +3025,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3167,7 +3167,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3257,7 +3257,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3373,7 +3373,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3456,7 +3456,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3569,7 +3569,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3663,7 +3663,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3739,7 +3739,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3809,7 +3809,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -3946,7 +3946,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4016,7 +4016,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4103,7 +4103,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4173,7 +4173,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4269,7 +4269,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4372,7 +4372,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4458,7 +4458,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4534,7 +4534,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4621,7 +4621,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4722,7 +4722,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4859,7 +4859,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -4940,7 +4940,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -5289,7 +5289,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -5359,7 +5359,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -5442,7 +5442,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -5513,7 +5513,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -5868,7 +5868,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -5924,7 +5924,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6080,7 +6080,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6130,7 +6130,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6138,7 +6138,7 @@ Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizza
 
 ## `metrics:all`
 
-Mostra le metriche di CPU, disco e memoria per un ambiente
+BETA Mostra le metriche di CPU, disco e memoria per un ambiente
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6153,13 +6153,13 @@ Mostra dimensioni in byte
 
 ### `--range`, `-r`
 
-L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>5m\&lt;/comment>, massimo \&lt;comment>8h\&lt;/comment> o più (a seconda del progetto), impostazione predefinita \&lt;comment>10 m\&lt;/comment>.
+L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 5 m, massimo 8 h o più (a seconda del progetto), predefinito 10 m.
 
 - Richiede un valore
 
 ### `--interval`, `-i`
 
-Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>1m\&lt;/comment>.
+Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 1 m.
 
 - Richiede un valore
 
@@ -6260,7 +6260,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6268,7 +6268,7 @@ Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizza
 
 ## `metrics:cpu`
 
-Mostra utilizzo CPU di un ambiente
+BETA Mostra l’utilizzo della CPU di un ambiente
 
 ```bash
 magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6276,13 +6276,13 @@ magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--la
 
 ### `--range`, `-r`
 
-L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>5m\&lt;/comment>, massimo \&lt;comment>8h\&lt;/comment> o più (a seconda del progetto), impostazione predefinita \&lt;comment>10 m\&lt;/comment>.
+L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 5 m, massimo 8 h o più (a seconda del progetto), predefinito 10 m.
 
 - Richiede un valore
 
 ### `--interval`, `-i`
 
-Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>1m\&lt;/comment>.
+Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 1 m.
 
 - Richiede un valore
 
@@ -6383,7 +6383,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6406,13 +6406,13 @@ Mostra dimensioni in byte
 
 ### `--range`, `-r`
 
-L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>5m\&lt;/comment>, massimo \&lt;comment>8h\&lt;/comment> o più (a seconda del progetto), impostazione predefinita \&lt;comment>10 m\&lt;/comment>.
+L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 5 m, massimo 8 h o più (a seconda del progetto), predefinito 10 m.
 
 - Richiede un valore
 
 ### `--interval`, `-i`
 
-Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>1m\&lt;/comment>.
+Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 1 m.
 
 - Richiede un valore
 
@@ -6520,7 +6520,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6528,7 +6528,7 @@ Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizza
 
 ## `metrics:memory`
 
-Mostra l’utilizzo della memoria di un ambiente
+BETA Mostra l’utilizzo della memoria di un ambiente
 
 ```bash
 magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6543,13 +6543,13 @@ Mostra dimensioni in byte
 
 ### `--range`, `-r`
 
-L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>5m\&lt;/comment>, massimo \&lt;comment>8h\&lt;/comment> o più (a seconda del progetto), impostazione predefinita \&lt;comment>10 m\&lt;/comment>.
+L’intervallo di tempo. Le metriche vengono caricate per questa durata fino all’ora di fine (—to). È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 5 m, massimo 8 h o più (a seconda del progetto), predefinito 10 m.
 
 - Richiede un valore
 
 ### `--interval`, `-i`
 
-Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo \&lt;comment>1m\&lt;/comment>.
+Intervallo di tempo. Impostazione predefinita: una divisione dell&#39;intervallo. È possibile specificare le unità di misura: ore (h), minuti (m) o secondi (s). Minimo 1 m.
 
 - Richiede un valore
 
@@ -6650,7 +6650,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6784,7 +6784,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -6893,7 +6893,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7008,7 +7008,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7128,7 +7128,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7136,7 +7136,7 @@ Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizza
 
 ## `operation:list`
 
-Elencare le operazioni di runtime in un ambiente
+Operazioni di runtime dell’elenco BETA in un ambiente
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7224,7 +7224,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7232,7 +7232,7 @@ Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizza
 
 ## `operation:run`
 
-Eseguire un’operazione nell’ambiente
+BETA Eseguire un’operazione nell’ambiente
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -7312,7 +7312,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7362,7 +7362,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7448,7 +7448,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7558,7 +7558,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7689,7 +7689,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7739,7 +7739,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7808,7 +7808,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7897,7 +7897,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -7965,7 +7965,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8072,7 +8072,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8162,7 +8162,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8212,7 +8212,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8289,7 +8289,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8380,7 +8380,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8474,7 +8474,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8574,7 +8574,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8654,7 +8654,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8734,7 +8734,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8814,7 +8814,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8897,7 +8897,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -8973,7 +8973,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9048,7 +9048,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9132,7 +9132,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9220,7 +9220,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9304,7 +9304,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9326,7 +9326,7 @@ Nome dell’operazione
 
 ### `--variable`
 
-Variabile da impostare durante l&#39;operazione nel formato \&lt;info>type:name=value\&lt;/info>
+Variabile da impostare durante l&#39;operazione nel formato tipo:nome=valore
 
 - Predefinito: `[]`
 - Richiede un valore
@@ -9387,7 +9387,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9452,7 +9452,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9508,7 +9508,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9558,7 +9558,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9623,7 +9623,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9718,7 +9718,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9787,7 +9787,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9862,7 +9862,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -9952,7 +9952,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10027,7 +10027,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10114,7 +10114,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10198,7 +10198,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10269,7 +10269,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10364,7 +10364,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10435,7 +10435,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10512,7 +10512,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10661,7 +10661,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10744,7 +10744,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10846,7 +10846,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10929,7 +10929,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -11066,7 +11066,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -11157,7 +11157,7 @@ Rispondi &quot;sì&quot; alle domande di conferma; accetta il valore predefinito
 
 ### `--no-interaction`
 
-Non fare domande interattive; accetta valori predefiniti. Equivalente a utilizzare la variabile di ambiente: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Non fare domande interattive; accetta valori predefiniti. Equivalente all’utilizzo della variabile di ambiente: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Predefinito: `false`
 - Non accetta un valore
