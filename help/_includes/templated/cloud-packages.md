@@ -1,7 +1,7 @@
 ---
-source-git-commit: ab9e2c8ca8c9a9c527aaa8b4cd5e2c2bc35bb718
+source-git-commit: 74ce2b69c1d4f9412f9eac98dfea93cc08f737b6
 workflow-type: tm+mt
-source-wordcount: '2184'
+source-wordcount: '2180'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Adobe Commerce sull’infrastruttura cloud utilizza Composer per gestire i pacchetti PHP.
 
-Il `composer.json` file dichiara l&#39;elenco dei colli, mentre il `composer.lock` file memorizza un elenco completo dei pacchetti (una versione completa di ciascun pacchetto e delle relative dipendenze) utilizzati per creare un’installazione di Adobe Commerce o Magento Open Source.
+Il `composer.json` file dichiara l&#39;elenco dei colli, mentre il `composer.lock` Il file memorizza un elenco completo dei pacchetti (una versione completa di ciascun pacchetto e delle relative dipendenze) utilizzati per creare un’installazione di Adobe Commerce.
 
 La seguente documentazione di riferimento è generata da `composer.lock` e riguarda i pacchetti richiesti inclusi in Adobe Commerce on cloud infrastructure 2.4.7.
 
