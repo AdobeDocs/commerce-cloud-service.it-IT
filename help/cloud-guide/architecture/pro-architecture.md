@@ -4,7 +4,7 @@ description: Scopri gli ambienti supportati dall’architettura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 6807b572366d28fd54fbec89e7c119ec158b5e10
+source-git-commit: 95b033ba430cb5dc74fa654b9d519dfcd5b6d319
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -34,7 +34,7 @@ La tabella seguente riepiloga le differenze tra gli ambienti:
 
 >[!NOTE]
 >
->L’Adobe fornisce lo strumento Cloud Docker for Commerce per la distribuzione in un ambiente Cloud Docker locale, in modo da poter sviluppare e testare progetti Adobe Commerce. Consulta [Sviluppo Docker](../dev-tools/cloud-docker.md).
+>Adobe fornisce lo strumento Cloud Docker per Commerce per la distribuzione in un ambiente Cloud Docker locale, in modo da poter sviluppare e testare progetti Adobe Commerce. Consulta [Sviluppo Docker](../dev-tools/cloud-docker.md).
 
 ## Architettura dell’ambiente
 
@@ -195,8 +195,6 @@ RTO dipende dalle dimensioni dello storage. Il ripristino di volumi EBS di grand
 - Un database di grandi dimensioni (oltre 200 GB) può richiedere 5 ore
 - Un database di medie dimensioni (150 GB) può richiedere 2 ore e mezza
 - Un database di piccole dimensioni (60 GB) può richiedere 1 ora
-
-{{pro-backups}}
 
 ## Scalabilità del cluster Pro
 
