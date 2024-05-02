@@ -3,9 +3,9 @@ title: Visualizzare e gestire i registri
 description: Comprendi i tipi di file di registro disponibili nell’infrastruttura cloud e dove trovarli.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1056'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Per gli ambienti Pro, la rotazione, la compressione e la rimozione automatica del registro sono attivate per i file di registro con un nome di file fisso. Ogni tipo di file di registro ha un pattern e una durata di rotazione. Gli ambienti Starter non dispongono della rotazione del registro. Per informazioni dettagliate sulla rotazione dei registri dell’ambiente e sulla durata dei registri compressi, consulta: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`
+>Per gli ambienti di staging e produzione Pro, la rotazione, la compressione e la rimozione automatica del registro sono attivate per i file di registro con un nome di file fisso. Ogni tipo di file di registro ha un pattern e una durata di rotazione. Gli ambienti Starter non dispongono della rotazione del registro. Per informazioni dettagliate sulla rotazione dei registri dell’ambiente e sulla durata dei registri compressi, consulta: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`. La rotazione dei registri non può essere configurata negli ambienti di integrazione Pro. Per l’integrazione con Pro, devi implementare una soluzione/script personalizzato e [configurare il cron](../application/crons-property.md) per eseguire lo script in base alle esigenze.
 
 ## Creare e distribuire i registri
 
