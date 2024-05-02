@@ -3,9 +3,9 @@ title: Crons, proprietà
 description: Vedi esempi su come configurare la proprietà "crons" in [!DNL Commerce] file di configurazione dell'applicazione.
 feature: Cloud, Configuration
 exl-id: 67d592c1-2933-4cdf-b4f6-d73cd44b9f59
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 1c0e05c3d8461bea473bcf6ec35162d65ef2774f
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Il `crons` La proprietà descrive i processi attivati in base a una pianificazio
 - `shutdown_timeout`—(_Facoltativo_) Se un processo cron viene annullato, indica il numero di secondi dopo i quali viene inviato un segnale SIGKILL per arrestare il processo o il processo. Il valore predefinito è 10 secondi.
 - `timeout`—(_Facoltativo_) La quantità massima di tempo per cui un processo cron può essere eseguito prima del timeout. Il valore predefinito è 86400 secondi (24 ore).
 
-Per impostazione predefinita, a ogni progetto cloud di Commerce è associato il seguente `crons` configurazione in `.magento.app.yaml` file:
+Per impostazione predefinita, a ogni progetto cloud Commerce è associato il seguente `crons` configurazione in `.magento.app.yaml` file:
 
 ```yaml
 crons:
@@ -56,7 +56,7 @@ Anche se è possibile utilizzare `crontab` per rivedere la configurazione dei pr
 
    >[!NOTE]
    >
-   >Se il `crontab -l` restituisce un `Command not found` errore, è necessario [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per abilitare l&#39;opzione di configurazione self-service di auto-crons sul progetto Pro.
+   >Se il `crontab -l` restituisce un `Command not found` (solo negli ambienti di staging e produzione Pro), è necessario [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per abilitare l’opzione di configurazione self-service di auto-crons sul progetto.
 
 L&#39;esempio seguente mostra `crontab` output per un ambiente con solo il valore predefinito `crons` configurazione:
 
