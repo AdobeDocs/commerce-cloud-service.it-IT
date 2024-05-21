@@ -2,11 +2,11 @@
 title: Note sulla versione di ECE-Tools
 description: Consulta l’elenco degli ultimi miglioramenti apportati al pacchetto ECE-Strumenti.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-05-21T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: e21f21e34f89b62842bd22c99ff5705f984898e0
+source-git-commit: 923e2114270df22e134e0676ac97f84d770bb226
 workflow-type: tm+mt
-source-wordcount: '2905'
+source-wordcount: '2929'
 ht-degree: 0%
 
 ---
@@ -28,8 +28,14 @@ Le note sulla versione includono:
 
 <!--Add release notes below-->
 
+## v2002.1.19 {#latest}
 
-## v2002.1.18 {#latest}
+Data di rilascio: 21 maggio 2024
+
+- ![nuova icona](../../assets/new.svg) **Lua**— È stata aggiunta l&#39;opzione useLua per CACHE_CONFIGURATION.
+- ![icona correzione](../../assets/fix.svg) **Convalida**- Sono state aggiornate le convalide per le nuove versioni di Redis e RabbitMQ.
+
+## v2002.1.18
 
 Data di rilascio: 8 aprile 2024
 
@@ -63,14 +69,14 @@ Data di rilascio: 31 luglio 2023
 Data di rilascio: 10 marzo 2023
 
 - ![nuova icona](../../assets/new.svg) **PHP**- Aggiunta del supporto per PHP 8.2.
-- ![nuova icona](../../assets/new.svg) **Convalida per i servizi**- Aggiornamento delle convalide per i servizi richiesti di Commerce 2.4.6: MariaDB 10.6, Redis 7.0, PHP 8.2, OpenSearch 2.x e RabbitMQ 3.9.
+- ![nuova icona](../../assets/new.svg) **Convalida per i servizi**—Sono state aggiornate le convalide per i servizi richiesti di Commerce 2.4.6: MariaDB 10.6, Redis 7.0, PHP 8.2, OpenSearch 2.x e RabbitMQ 3.9.
 - ![icona correzione](../../assets/fix.svg) **db-dump strumenti ece**- È stato risolto un problema che causava la `db-dump` per arrestarsi prematuramente.
 
 ## v2002.1.13
 
 Data di rilascio: 27 ottobre 2022
 
-- ![nuova icona](../../assets/new.svg) **È stato aggiunto il supporto per eventi Adobe I/O per Adobe Commerce**. Gli sviluppatori di estensioni possono ora utilizzare [Eventi Adobe I/O](https://developer.adobe.com/events/docs/) framework per inviare le informazioni sugli eventi Commerce dalle istanze Cloud alle loro applicazioni scritte per [Generatore di app Adobe](https://developer.adobe.com/app-builder/docs/overview/). Adobe I/O di eventi per Adobe Commerce disponibile in Anteprima partner.<!-- CEXT-932 -->
+- ![nuova icona](../../assets/new.svg) **È stato aggiunto il supporto per eventi Adobe I/O per Adobe Commerce**. Gli sviluppatori di estensioni possono ora utilizzare [Eventi Adobe I/O](https://developer.adobe.com/events/docs/) framework per inviare le informazioni sull’evento Commerce dalle istanze Cloud alle rispettive applicazioni scritte per [Generatore di app Adobe](https://developer.adobe.com/app-builder/docs/overview/). Adobe I/O di eventi per Adobe Commerce disponibile in Anteprima partner.<!-- CEXT-932 -->
 - ![nuova icona](../../assets/new.svg) **Convalida per configurazione OPcache**- Aggiunta di una convalida per verificare la configurazione OPcache per i percorsi esclusi.<!-- MCLOUD-9485 -->
 - ![icona correzione](../../assets/fix.svg) **È stato risolto un problema relativo alla configurazione della cache di GraphQL**- Ora ECE-Tools mantiene il GraphQL `id_salt` valore in `cache` configurazione in `app/etc/env.php` file.<!-- MCLOUD-9486 -->
 
@@ -78,7 +84,7 @@ Data di rilascio: 27 ottobre 2022
 
 Data di rilascio: 13 settembre 2022
 
-- ![nuova icona](../../assets/new.svg) **Abilita`synchronous_replication`**- Insiemi utensili ECE `synchronous_replication=>true` nel `app/etc/env.php` file quando `MYSQL_USE_SLAVE_CONNECTION` è abilitato. Questa configurazione influisce solo su Commerce 2.4.6+. Consulta la `MYSQL_USE_SLAVE_CONNECTION` descrizione della variabile in [Distribuire le variabili](../environment/variables-deploy.md#mysql_use_slave_connection).<!-- MCLOUD-9142 -->
+- ![nuova icona](../../assets/new.svg) **Abilita`synchronous_replication`**- Insiemi utensili ECE `synchronous_replication=>true` nel `app/etc/env.php` file quando `MYSQL_USE_SLAVE_CONNECTION` è abilitato. Questa configurazione interessa solo Commerce 2.4.6+. Consulta la `MYSQL_USE_SLAVE_CONNECTION` descrizione della variabile in [Distribuire le variabili](../environment/variables-deploy.md#mysql_use_slave_connection).<!-- MCLOUD-9142 -->
 - ![nuova icona](../../assets/new.svg) **OpenSearch**- È stata aggiunta la funzionalità per configurare e impostare `opensearch` per la prossima versione di Adobe Commerce 2.4.6. Consulta [Configura servizio OpenSearch](../services/opensearch.md).<!-- MCLOUD-9236 -->
 
 ## v2002.1.11
@@ -217,7 +223,7 @@ Data di rilascio: 5 agosto 2020
 
 **Miglioramenti a livello di convalida e registro**—
 
-- ![nuova icona](../../assets/new.svg) È stata aggiunta la `schema.error.yaml` file che include tutte le notifiche di errore e di avviso che possono verificarsi durante il processo di generazione, distribuzione e post-distribuzione, insieme a suggerimenti per la risoluzione degli errori. Le informazioni contenute in questo file sono disponibili anche nel _Guida di Cloud per Commerce_. Consulta [Riferimento al messaggio di errore per gli strumenti ece](../dev-tools/error-reference.md).<!--MCLOUD-5878-->
+- ![nuova icona](../../assets/new.svg) È stata aggiunta la `schema.error.yaml` file che include tutte le notifiche di errore e di avviso che possono verificarsi durante il processo di generazione, distribuzione e post-distribuzione, insieme a suggerimenti per la risoluzione degli errori. Le informazioni contenute in questo file sono disponibili anche nel _Guida a Cloud per Commerce_. Consulta [Riferimento al messaggio di errore per gli strumenti ece](../dev-tools/error-reference.md).<!--MCLOUD-5878-->
 
 - ![nuova icona](../../assets/new.svg) Registro degli errori cloud modificato (`/var/log/cloud.error.log`) in formato JSON per agevolare l&#39;analisi del registro a livello di programmazione.<!--MCLOUD-5879-->
 

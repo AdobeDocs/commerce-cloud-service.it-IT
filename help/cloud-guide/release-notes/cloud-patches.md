@@ -2,11 +2,11 @@
 title: Patch cloud per Commerce
 description: Consulta un elenco degli ultimi miglioramenti al pacchetto Patch cloud.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-05-21T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: d5ab7c4f1d2edbd85eab5a4ca098b3d156e562e5
+source-git-commit: 61c42a1bd1d5a28f90b8756032ee6f45be4565b2
 workflow-type: tm+mt
-source-wordcount: '2187'
+source-wordcount: '2208'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,13 @@ Il `magento/magento-cloud-patches` Il pacchetto utilizza la seguente sequenza di
 
 <!--Add release notes below-->
 
-## v1.0.26 {#latest}
+## v1.0.27 {#latest}
+
+Data di rilascio: 21 maggio 2024
+
+- **Supporto per PHP 8.3**- Questa patch risolve gli errori di compatibilità tra php 8.3 e la versione del pacchetto del compositore.
+
+## v1.0.26
 
 Data di rilascio: 8 aprile 2024
 
@@ -69,13 +75,13 @@ Data di rilascio: 19 giugno 2023
 
 Data di rilascio: 10 marzo 2023
 
-- **Supporto avanzato per PHP 8.2**—Sono stati risolti dei problemi di compatibilità con alcune versioni di PHP 8.2.x per supportare Commerce 2.4.6.
+- **Supporto avanzato per PHP 8.2**—Sono stati risolti dei problemi di compatibilità con alcune versioni di PHP 8.2.x che supportavano Commerce 2.4.6.
 
 ## v1.0.20
 
 Data di rilascio: 27 ottobre 2022
 
-- **Aggiunta patch per miglioramenti della cache L2**- Questa patch risolve un problema con lo svuotamento della cache L2 locale per le versioni Commerce 2.4.0 e 2.4.1.<!-- MCLOUD-7845 -->
+- **Aggiunta patch per miglioramenti della cache L2**- Questa patch risolve un problema relativo allo svuotamento della cache L2 locale per Commerce versione 2.4.0 e 2.4.1.<!-- MCLOUD-7845 -->
 
 ## v1.0.19
 
@@ -210,7 +216,7 @@ Data di rilascio: 26 giugno 2020
 
 - **Miglioramenti delle prestazioni Redis**- Aggiunge funzioni di ottimizzazione Redis alle versioni 2.3.3 e 2.3.4 di Adobe Commerce. Queste correzioni sono state incluse nella versione 2.3.5 di Adobe Commerce. Consulta [Miglioramenti delle prestazioni](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) nel _Note sulla versione di Adobe Commerce 2.3.5_.<!--MCLOUD-5771-->
 
-- **Arricchimento del registro di New Relic**- Aggiunge l&#39;interfaccia del processore Monolog necessaria per supportare i miglioramenti alle funzionalità di registrazione di New Relic introdotti in Cloud Components of Commerce versione 1.0.4. Questa patch è necessaria per distribuire Adobe Commerce 2.1.x. Se la patch non viene applicata, la build non riesce durante il `di:compile` processo.<!--MCLOUD-6029-->
+- **Arricchimento del registro di New Relic**— Aggiunge l&#39;interfaccia del processore Monolog necessaria per supportare i miglioramenti alle funzionalità di registrazione di New Relic introdotti in Cloud Components di Commerce versione 1.0.4. Questa patch è necessaria per distribuire Adobe Commerce 2.1.x. Se la patch non viene applicata, la build non riesce durante il `di:compile` processo.<!--MCLOUD-6029-->
 
 ## v1.0.4
 
@@ -272,7 +278,7 @@ Questa versione include le patch e le correzioni critiche seguenti:
 
 - **correzione paginazione catalogo di Elasticsearch** - La patch di paginazione del catalogo Elasticsearch distribuita in magento/magento-cloud-patches v1.0 è stata sostituita con una correzione più efficace.<!--MAGECLOUD-4847-->
 
-- **Patch di Page Builder**—In Cloud Patches for Commerce 1.0.0, sono state unite in bundle le patch di Page Builder per risolvere una vulnerabilità nota di Page Builder con esecuzione di codice remoto (RCE), con la correzione iniziale basata su Adobe Commerce 2.3.3. Abbiamo aggiornato queste patch con un’implementazione più stabile basata su Adobe Commerce 2.3.4., che include più ottimizzazioni per la risoluzione del problema.<!--MAGECLOUD-4884-->
+- **Patch di Page Builder**—In Cloud Patches per Commerce 1.0.0, sono state incluse nel bundle le le patch di Page Builder per risolvere una vulnerabilità nota di Page Builder Remote Code Execution (RCE), con la correzione iniziale basata su Adobe Commerce 2.3.3. Abbiamo aggiornato queste patch con un’implementazione più stabile basata su Adobe Commerce 2.3.4., che include più ottimizzazioni per la risoluzione del problema.<!--MAGECLOUD-4884-->
 
   Se disponi del pacchetto magento/magento-cloud-patches 1.0.0, sei ancora protetto dai problemi di vulnerabilità RCE di Page Builder. Se esegui l’aggiornamento alla versione 1.0.1 o successiva, l’implementazione della stessa correzione risulterà migliore.
 
