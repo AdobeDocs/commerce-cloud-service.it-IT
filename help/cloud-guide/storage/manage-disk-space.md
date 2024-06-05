@@ -3,9 +3,9 @@ title: Gestione dello spazio su disco
 description: Scopri come gestire lo spazio su disco utilizzando l’interfaccia della riga di comando.
 feature: Cloud, Storage
 exl-id: 480cb33b-ac83-441d-946e-5b4de09ad84e
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 8b40397796ee865aefbf8a7948cc9a3aceb1d35c
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '714'
 ht-degree: 0%
 
 ---
@@ -132,7 +132,7 @@ Due [file di configurazione](../environment/overview.md) controllare l’allocaz
 
 >[!IMPORTANT]
 >
->Per gli ambienti di produzione e staging professionali, è necessario [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per modificare l&#39;allocazione dello spazio su disco. Poiché è possibile aumentare le dimensioni degli ambienti di produzione e staging di Pro solo a determinati intervalli, a seconda dell&#39;utilizzo attuale dello spazio su disco, il supporto potrebbe consigliare di aumentare l&#39;allocazione dello spazio su disco di almeno 10 GB. Una volta allocato, non è possibile ripristinare l&#39;aumento dello storage per lo staging e la produzione Pro.
+>Per gli ambienti di produzione e staging professionali, è necessario [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per modificare l&#39;allocazione dello spazio su disco. Poiché è possibile aumentare le dimensioni degli ambienti di produzione e staging di Pro solo a determinati intervalli, a seconda dell&#39;utilizzo attuale dello spazio su disco, il supporto potrebbe consigliare di aumentare l&#39;allocazione dello spazio su disco di almeno 10 GB. Una volta allocato, non è possibile ripristinare l&#39;aumento dello storage per lo staging e la produzione Pro. Impossibile riallocare o ridistribuire lo storage tra le risorse. Per aggiungere più spazio di archiviazione file, ridurre lo spazio su disco allocato per MySQL.
 
 ### Spazio su disco dell&#39;applicazione
 
