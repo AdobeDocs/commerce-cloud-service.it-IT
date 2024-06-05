@@ -3,9 +3,9 @@ title: Configura servizio RabbitMQ
 description: Scopri come abilitare il servizio RabbitMQ per gestire le code di messaggi per Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: d4c36b084094846cfad69adc2bffd567a58fab26
+source-git-commit: adcfbb7217c70122a4003a66d1bec1a623fbf11a
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -114,7 +114,7 @@ A scopo di debug, è utile connettersi direttamente a un’istanza del servizio 
    }
    ```
 
-1. Abilita l’inoltro della porta locale a RabbitMQ.
+1. Abilita l’inoltro porta locale a RabbitMQ (se il progetto si trova in un’area diversa, ad esempio Stati Uniti-3, UE-5 o area AP-3, sostituisci ``us-3``/``eu-5``/``ap-3`` per ``us``)
 
    ```bash
    ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
