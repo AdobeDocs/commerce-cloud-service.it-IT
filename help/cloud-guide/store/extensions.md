@@ -3,9 +3,9 @@ title: Gestione estensioni
 description: Scopri come installare e gestire le estensioni in Adobe Commerce su un’infrastruttura cloud.
 feature: Cloud, Extensions, Upgrade
 exl-id: 9c6e98ca-85da-4342-8402-d576eb382ba2
-source-git-commit: bb7a866b1896a8a43d01ad3f83dc655bcf383374
+source-git-commit: f8fb9d4d43c85f91ff87686160bcddb7cd417635
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 0%
 # Gestione estensioni
 
 Puoi estendere le funzionalità dell’applicazione Adobe Commerce aggiungendo un’estensione dal file [Commerce Marketplace](https://marketplace.magento.com). Ad esempio, puoi aggiungere un tema per cambiare l’aspetto della vetrina, oppure un pacchetto per la lingua per localizzare la vetrina e l’amministratore.
+
+>[!NOTE]
+>
+>Per evitare problemi di installazione, tutti gli acquisti Marketplace devono essere completati utilizzando lo stesso account (MAGEID) proprietario del progetto cloud.
 
 ## Nome del compositore di un’estensione
 
