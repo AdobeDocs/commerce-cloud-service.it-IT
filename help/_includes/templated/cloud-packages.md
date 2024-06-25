@@ -1,7 +1,7 @@
 ---
-source-git-commit: 74ce2b69c1d4f9412f9eac98dfea93cc08f737b6
+source-git-commit: 866b958249bdeef19ffb0e284da9fac32f90baea
 workflow-type: tm+mt
-source-wordcount: '2180'
+source-wordcount: '2191'
 ht-degree: 0%
 
 ---
@@ -716,7 +716,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/justinrainbow/json-schema.git">justinrainbow/json-schema</a>
+      <a href="https://github.com/jsonrainbow/json-schema.git">justinrainbow/json-schema</a>
     </td>
     <td>libreria</td>
     <td>Libreria per convalidare uno schema JSON.</td>
@@ -821,6 +821,13 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/php-fig/cache.git">psr/cache</a>
+    </td>
+    <td>libreria</td>
+    <td>Interfaccia comune per il caching delle librerie</td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/php-fig/clock.git">psr/clock</a>
     </td>
     <td>libreria</td>
@@ -852,7 +859,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
       <a href="https://github.com/php-fig/http-factory.git">psr/http-factory</a>
     </td>
     <td>libreria</td>
-    <td>Interfacce comuni per i Message Factory HTTP PSR-7</td>
+    <td>PSR-17: interfacce comuni per i message factory HTTP PSR-7</td>
   </tr>
   <tr>
     <td>
