@@ -45,11 +45,11 @@ ht-degree: 7%
    + [Indirizzi IP regionali](project/regional-ip-addresses.md)
 + Strumenti per sviluppatori {#dev-tools}
    + [Panoramica](dev-tools/overview.md)
-   + Cloud CLI {#cloud-cli}
+   + CLI cloud {#cloud-cli}
       + [Panoramica di CLI](dev-tools/cloud-cli-overview.md)
       + [Riferimento CLI](dev-tools/cloud-cli-reference.md)
    + [Docker cloud](dev-tools/cloud-docker.md)
-   + Utensili ECE {#ece-tools}
+   + Strumenti ECE {#ece-tools}
       + [Panoramica del pacchetto](dev-tools/package-overview.md)
       + [Aggiornamento una tantum per utilizzare gli strumenti ECE](dev-tools/install-package.md)
       + [Aggiorna pacchetto ECE-Tools](dev-tools/update-package.md)
@@ -76,7 +76,7 @@ ht-degree: 7%
       + [Procedure guidate intelligenti](deploy/smart-wizards.md)
       + [Distribuzione a staging e produzione](deploy/staging-production.md)
       + [Ripristino da guasto componente](deploy/recover-failed-deployment.md)
-   + Test {#test}
+   + Prova {#test}
       + [Linee guida per i test](test/guidance.md)
       + [Registri](test/log-locations.md)
       + [Xdebug](test/debug.md)
@@ -85,7 +85,7 @@ ht-degree: 7%
    + [Servizio PrivateLink](development/privatelink-service.md)
    + [Blocco protettivo](development/protective-block.md)
    + [Ripristina ambiente](development/restore-environment.md)
-   + Storage {#storage}
+   + Archiviazione {#storage}
       + [Gestione dello spazio su disco](storage/manage-disk-space.md)
       + [Query del database del profilo](storage/profile-database-queries.md)
       + [Eseguire il backup del database](storage/database-dump.md)
@@ -111,18 +111,18 @@ ht-degree: 7%
    + Ambiente {#env}
       + [Configurare l’implementazione dell’ambiente](environment/configure-env-yaml.md)
       + [Livelli e opzioni delle variabili](environment/variable-levels.md)
-      + Sostituisci variabili {#stage}
+      + Ignora variabili {#stage}
          + [Variabili di ambiente](environment/variables-intro.md)
          + [ADMIN](environment/variables-admin.md)
          + [Variabili cloud](environment/variables-cloud.md)
          + [Globale](environment/variables-global.md)
          + [Genera](environment/variables-build.md)
          + [Distribuisci](environment/variables-deploy.md)
-         + [Post-distribuzione](environment/variables-post-deploy.md)
-      + Configurare le notifiche {#log}
+         + [Distribuzione Post](environment/variables-post-deploy.md)
+      + Configura notifiche {#log}
          + [Notifiche](environment/set-up-notifications.md)
          + [Gestori di registro](environment/log-handlers.md)
-   + Percorsi {#routes}
+   + Route {#routes}
       + [Configurare le route](routes/routes-yaml.md)
       + [Memorizzazione in cache](routes/caching.md)
       + [Reindirizzamenti](routes/redirects.md)
@@ -150,7 +150,7 @@ ht-degree: 7%
       + [INSERIRE NELL&#39;ELENCO BLOCCATI IP](cdn/fastly-vcl-blocking.md)
       + [Ignora Fastly Cache](cdn/fastly-vcl-bypass-to-origin.md)
    + [Risoluzione rapida dei problemi](cdn/fastly-troubleshooting.md)
-+ Impostazioni store {#configure-store}
++ Impostazioni archivio {#configure-store}
    + [Panoramica](store/overview.md)
    + [Best practice](store/best-practices.md)
    + [Tema personalizzato](store/custom-theme.md)
@@ -164,7 +164,7 @@ ht-degree: 7%
    + [Panoramica](launch/overview.md)
    + [Elenco di controllo di Launch](launch/checklist.md)
    + [Passaggi di avvio](launch/steps.md)
-+ Monitorare il sito {#monitor}
++ Monitora sito {#monitor}
    + [Prestazioni](monitor/performance.md)
    + servizio New Relic {#new-relic}
       + [Panoramica di New Relic](monitor/new-relic-service.md)

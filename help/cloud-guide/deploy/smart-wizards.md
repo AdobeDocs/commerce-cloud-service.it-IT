@@ -22,11 +22,11 @@ Ciascuno dei comandi della procedura guidata avanzata fornisce una risposta di v
 
 | Comando | Descrizione |
 | ------- | ------------|
-| `wizard:ideal-state` | Verificare che SCD sia sul _build_ fase, la `SKIP_HTML_MINIFICATION` la variabile è `true`e l’hook post_deploy configurato nell’ambiente Cloud. Da non utilizzare nell’ambiente di sviluppo locale. |
-| `wizard:master-slave` | Verifica che la `REDIS_USE_SLAVE_CONNECTION` variabile e `MYSQL_USE_SLAVE_CONNECTION` la variabile è `true`. |
-| `wizard:scd-on-demand` | Verifica che la `SCD_ON_DEMAND` la variabile di ambiente globale è `true`. |
-| `wizard:scd-on-build` | Verifica che la `SCD_ON_DEMAND` la variabile di ambiente globale è `false` e `SKIP_SCD` la variabile di ambiente è `false` per _build_ fase. Verifica che `config.php` Il file contiene informazioni per archivi, gruppi di archivi e siti Web. |
-| `wizard:scd-on-deploy` | Verifica che la `SCD_ON_DEMAND` la variabile di ambiente globale è `false` e `SKIP_SCD` la variabile di ambiente è `false` per _distribuire_ fase. Verifica che `config.php` il file _NOT_ contiene l&#39;elenco dei negozi, dei gruppi di negozi e dei siti Web con le relative informazioni. |
+| `wizard:ideal-state` | Verificare che SCD si trovi nella fase _build_, che la variabile `SKIP_HTML_MINIFICATION` sia `true` e che l&#39;hook post_deploy sia configurato nell&#39;ambiente cloud. Da non utilizzare nell’ambiente di sviluppo locale. |
+| `wizard:master-slave` | Verificare che la variabile `REDIS_USE_SLAVE_CONNECTION` e la variabile `MYSQL_USE_SLAVE_CONNECTION` siano `true`. |
+| `wizard:scd-on-demand` | Verificare che la variabile di ambiente globale `SCD_ON_DEMAND` sia `true`. |
+| `wizard:scd-on-build` | Verificare che la variabile di ambiente globale `SCD_ON_DEMAND` sia `false` e la variabile di ambiente `SKIP_SCD` sia `false` per la fase _build_. Verifica che il file `config.php` contenga informazioni per archivi, gruppi di archivi e siti Web. |
+| `wizard:scd-on-deploy` | Verificare che la variabile di ambiente globale `SCD_ON_DEMAND` sia `false` e la variabile di ambiente `SKIP_SCD` sia `false` per la fase _deploy_. Verifica che il file `config.php` non contenga _NOT_ l&#39;elenco di store, gruppi di store e siti Web con le relative informazioni. |
 
 Ad esempio, puoi verificare che la configurazione attivi correttamente la funzione SCD on-demand:
 
@@ -48,7 +48,7 @@ SCD on-demand is disabled
 
 ## Verifica di una configurazione ideale
 
-Il _ideale_ La configurazione per il progetto Cloud aiuta a ridurre al minimo i tempi di inattività dell’implementazione riscaldando la cache e generando contenuto statico quando richiesto dall’utente. Questa procedura guidata viene eseguita automaticamente durante il processo di distribuzione. Se il cloud non è configurato per questo _stato ideale_, quindi ricevi un messaggio simile al seguente:
+La configurazione _ideale_ per il progetto Cloud consente di ridurre al minimo i tempi di inattività della distribuzione riscaldando la cache e generando contenuto statico quando richiesto dall&#39;utente. Questa procedura guidata viene eseguita automaticamente durante il processo di distribuzione. Se il cloud non è configurato per questo _stato ideale_, riceverai un messaggio simile al seguente:
 
 ```terminal
 - SCD on build is not configured

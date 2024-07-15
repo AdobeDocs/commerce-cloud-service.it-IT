@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Esistono diversi modi per personalizzare lo store, ad esempio aggiungere un tema personalizzato, installare un’estensione o applicare una configurazione specifica negli ambienti dell’infrastruttura cloud. Puoi configurare le impostazioni per servizi specifici direttamente negli ambienti di staging e produzione. È possibile impostare più siti Web e store. La configurazione Store consente di configurare queste opzioni nella workstation locale e di implementare impostazioni specifiche in ambienti diversi.
 
-Per accedere alla vetrina, utilizza `magento-cloud url` e rispondi ai prompt. Oppure puoi trovare l’URL nel file [!DNL Cloud Console] in **Accedi al sito**.
+Per accedere alla vetrina, utilizzare il comando `magento-cloud url` e rispondere alle richieste. Oppure puoi trovare l&#39;URL in [!DNL Cloud Console] in **Sito di accesso**.
 
 ## Configurare le opzioni store
 
@@ -28,7 +28,7 @@ Le opzioni del Negozio includono:
 
 ## Configurare servizi e integrazioni
 
-Esistono [file di configurazione](../environment/overview.md) che gestiscono determinati comportamenti di distribuzione in ambienti remoti. È possibile esaminare questi argomenti separatamente:
+Sono presenti [file di configurazione](../environment/overview.md) specifici che gestiscono determinati comportamenti di distribuzione in ambienti remoti. È possibile esaminare questi argomenti separatamente:
 
 * [Distribuzione dell’applicazione](../application/configure-app-yaml.md)
 * [Azioni di build e implementazione dell’ambiente](../environment/configure-env-yaml.md)

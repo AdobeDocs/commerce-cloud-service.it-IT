@@ -12,20 +12,20 @@ ht-degree: 0%
 
 # Distribuzione basata su scenari
 
-Con `ece-tools` 2002.1.0 e versioni successive, è possibile utilizzare la funzionalità di distribuzione basata su scenari per personalizzare il comportamento di distribuzione predefinito.
-Questa funzione utilizza **scenari** e **passaggi** nella configurazione:
+Con `ece-tools` 2002.1.0 e versioni successive è possibile utilizzare la funzionalità di distribuzione basata su scenari per personalizzare il comportamento di distribuzione predefinito.
+Questa funzionalità utilizza **scenari** e **passaggi** nella configurazione:
 
-- **Configurazione scenario**-Ogni hook di distribuzione è un *scenario*, file di configurazione XML che descrive la sequenza e i parametri di configurazione necessari per completare le attività di distribuzione. Puoi configurare gli scenari in `hooks` sezione del `.magento.app.yaml` file.
+- **Configurazione scenario**-Ogni hook di distribuzione è uno *scenario*, ovvero un file di configurazione XML che descrive la sequenza e i parametri di configurazione per completare le attività di distribuzione. Configurare gli scenari nella sezione `hooks` del file `.magento.app.yaml`.
 
-- **Configurazione del passaggio**-Ogni scenario utilizza una sequenza di *passaggi* che descrivono a livello di programmazione le operazioni necessarie per completare le attività di distribuzione. È possibile configurare i passaggi in un file di configurazione dello scenario basato su XML.
+- **Configurazione del passaggio**-Ogni scenario utilizza una sequenza di *passaggi* che descrivono in modo programmatico le operazioni necessarie per completare le attività di distribuzione. È possibile configurare i passaggi in un file di configurazione dello scenario basato su XML.
 
-Adobe Commerce su infrastruttura cloud fornisce una serie di [scenari predefiniti](https://github.com/magento/ece-tools/tree/2002.1/scenario) e [passaggi predefiniti](https://github.com/magento/ece-tools/tree/2002.1/src/Step) nel `ece-tools` pacchetto. È possibile personalizzare il comportamento di distribuzione creando file di configurazione XML personalizzati per sostituire o personalizzare la configurazione predefinita. Puoi anche utilizzare scenari e passaggi per eseguire il codice dai moduli personalizzati.
+Adobe Commerce su infrastruttura cloud fornisce un set di [scenari predefiniti](https://github.com/magento/ece-tools/tree/2002.1/scenario) e [passaggi predefiniti](https://github.com/magento/ece-tools/tree/2002.1/src/Step) nel pacchetto `ece-tools`. È possibile personalizzare il comportamento di distribuzione creando file di configurazione XML personalizzati per sostituire o personalizzare la configurazione predefinita. Puoi anche utilizzare scenari e passaggi per eseguire il codice dai moduli personalizzati.
 
 ## Aggiungere scenari utilizzando gli hook di compilazione e distribuzione
 
-Puoi aggiungere gli scenari per la creazione e la distribuzione di Adobe Commerce al `hooks` sezione del `.magento.app.yaml` file. Ogni hook specifica gli scenari da eseguire durante ogni fase. L’esempio seguente mostra la configurazione dello scenario predefinita.
+Aggiungere gli scenari per la creazione e la distribuzione di Adobe Commerce alla sezione `hooks` del file `.magento.app.yaml`. Ogni hook specifica gli scenari da eseguire durante ogni fase. L’esempio seguente mostra la configurazione dello scenario predefinita.
 
-> `magento.app.yaml` ganci
+> `magento.app.yaml` hook
 
 ```yaml
 hooks:
@@ -41,11 +41,11 @@ hooks:
 
 >[!NOTE]
 >
->Con il rilascio di `ece-tools` 2002.1.x, è disponibile una nuova [configurazione hook](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html) formato. Il formato legacy da `ece-tools` Le versioni 2002.0.x sono ancora supportate. Tuttavia, è necessario eseguire l’aggiornamento al nuovo formato per utilizzare la funzione di distribuzione basata su scenari.
+>Con la versione di `ece-tools` 2002.1.x, è disponibile un nuovo formato di [configurazione hook](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html). Il formato legacy delle versioni `ece-tools` 2002.0.x è ancora supportato. Tuttavia, è necessario eseguire l’aggiornamento al nuovo formato per utilizzare la funzione di distribuzione basata su scenari.
 
 ## Passaggi dello scenario di revisione
 
-Nella configurazione hook, ogni scenario è un file XML che contiene i passaggi per eseguire attività di compilazione, distribuzione o post-distribuzione. Ad esempio, il `scenario/transfer` Il file include tre passaggi: `compress-static-content`, `clear-init-directory`, e `backup-data`
+Nella configurazione hook, ogni scenario è un file XML che contiene i passaggi per eseguire attività di compilazione, distribuzione o post-distribuzione. Ad esempio, il file `scenario/transfer` include tre passaggi: `compress-static-content`, `clear-init-directory` e `backup-data`
 
 > `scenario/transfer.xml`
 
@@ -90,9 +90,9 @@ Durante la distribuzione, gli scenari personalizzati si fondono con lo scenario 
 
 ### Rimuovi passaggi predefiniti
 
-È possibile rimuovere i passaggi dagli scenari predefiniti utilizzando `skip` parametro.
+Rimuovere i passaggi dagli scenari predefiniti utilizzando il parametro `skip`.
 
-Ad esempio, per saltare il `enable-maintenance-mode` e `set-production-mode` passaggi dello scenario di distribuzione predefinito, crea un file di configurazione che include la configurazione seguente.
+Ad esempio, per saltare i passaggi `enable-maintenance-mode` e `set-production-mode` nello scenario di distribuzione predefinito, crea un file di configurazione che include la configurazione seguente.
 
 > `vendor/vendor-name/module-name/deploy-custom-mode-config.xml`
 
@@ -104,7 +104,7 @@ Ad esempio, per saltare il `enable-maintenance-mode` e `set-production-mode` pas
 </scenario>
 ```
 
-Per utilizzare il file di configurazione personalizzato, aggiorna il valore predefinito `.magento.app.yaml` file.
+Per utilizzare il file di configurazione personalizzato, aggiornare il file `.magento.app.yaml` predefinito.
 
 > `.magento.app.yaml` con scenario di distribuzione personalizzato
 
@@ -124,13 +124,13 @@ hooks:
 
 Gli scenari personalizzati possono sostituire i passaggi predefiniti per fornire un’implementazione personalizzata. A tale scopo, utilizzate il nome di default del passo come nome del passo personalizzato.
 
-Ad esempio, nel [scenario di distribuzione predefinito] il `enable-maintenance-mode` il passaggio esegue il valore predefinito [Script PHP EnableMaintenanceMode].
+Ad esempio, nello [scenario di distribuzione predefinito] il passaggio `enable-maintenance-mode` esegue lo script PHP predefinito [EnableMaintenanceMode].
 
 ```xml
 <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="300"/>
 ```
 
-Per ignorare questo passaggio, crea un file di configurazione dello scenario personalizzato per eseguire uno script diverso quando `enable-maintenance-mode` esecuzione di un passaggio.
+Per ignorare questo passaggio, creare un file di configurazione dello scenario personalizzato per eseguire uno script diverso durante l&#39;esecuzione del passaggio `enable-maintenance-mode`.
 
 ```xml
 <?xml version="1.0"?>
@@ -142,7 +142,7 @@ Per ignorare questo passaggio, crea un file di configurazione dello scenario per
 
 ### Modificare la priorità del passaggio
 
-Gli scenari personalizzati possono modificare la priorità dei passaggi predefiniti. Il passaggio seguente cambia la priorità del `enable-maintenance-mode` passaggio da `300` a `10` in modo che il passaggio venga eseguito prima nello scenario di distribuzione.
+Gli scenari personalizzati possono modificare la priorità dei passaggi predefiniti. Il passaggio seguente cambia la priorità del passaggio `enable-maintenance-mode` da `300` a `10` in modo che venga eseguito prima nello scenario di distribuzione.
 
 ```xml
 <?xml version="1.0"?>
@@ -152,16 +152,16 @@ Gli scenari personalizzati possono modificare la priorità dei passaggi predefin
 </scenario>
 ```
 
-In questo esempio, la proprietà `enable-maintenance-mode` step si sposta all’inizio dello scenario perché ha una priorità inferiore rispetto a tutti gli altri passaggi dello scenario di distribuzione predefinito.
+In questo esempio, il passaggio `enable-maintenance-mode` si sposta all&#39;inizio dello scenario perché ha una priorità inferiore rispetto a tutti gli altri passaggi dello scenario di distribuzione predefinito.
 
 ### Esempio: estendere lo scenario di distribuzione
 
-L&#39;esempio seguente personalizza [scenario di distribuzione predefinito] con le seguenti modifiche:
+L&#39;esempio seguente personalizza lo [scenario di distribuzione predefinito] con le seguenti modifiche:
 
-- Sostituisce il `remove-deploy-failed-flag` passaggio con un passaggio personalizzato
-- Ignora il `clean-redis-cache` substep nel passaggio di pre-distribuzione
-- Ignora il `unlock-cron-jobs` passaggio
-- Ignora il `validate-config` passaggio per disabilitare le convalide critiche
+- Sostituisce il passaggio `remove-deploy-failed-flag` con un passaggio personalizzato
+- Ignora il passaggio `clean-redis-cache` nella fase di pre-distribuzione
+- Ignora il passaggio `unlock-cron-jobs`
+- Ignora il passaggio `validate-config` per disabilitare le convalide critiche
 - Aggiunge un nuovo passaggio di predistribuzione
 
 > `vendor/vendor-name/module-name/deploy-extended.xml`
@@ -203,7 +203,7 @@ L&#39;esempio seguente personalizza [scenario di distribuzione predefinito] con 
 </scenario>
 ```
 
-Per utilizzare questo script nel progetto, aggiungi la seguente configurazione alla `.magento.app.yaml` file per il progetto Adobe Commerce on cloud infrastructure:
+Per utilizzare questo script nel progetto, aggiungi la seguente configurazione al file `.magento.app.yaml` per il progetto di infrastruttura cloud di Adobe Commerce:
 
 ```yaml
 hooks:
@@ -219,23 +219,23 @@ hooks:
 
 >[!TIP]
 >
->È possibile esaminare [scenari predefiniti](https://github.com/magento/ece-tools/tree/2002.1/scenario) e [configurazione passaggio predefinita](https://github.com/magento/ece-tools/tree/2002.1/src/Step) nel `ece-tools` Archivio GitHub per determinare quali scenari e passaggi personalizzare per le attività di build, distribuzione e post-distribuzione del progetto.
+>È possibile esaminare gli [scenari predefiniti](https://github.com/magento/ece-tools/tree/2002.1/scenario) e la [configurazione dei passaggi predefiniti](https://github.com/magento/ece-tools/tree/2002.1/src/Step) nell&#39;archivio GitHub `ece-tools` per determinare gli scenari e i passaggi da personalizzare per le attività di generazione, distribuzione e post-distribuzione del progetto.
 
-## Aggiungere un modulo personalizzato da estendere `ece-tools`
+## Aggiungi un modulo personalizzato per estendere `ece-tools`
 
-Il `ece-tools` fornisce interfacce API predefinite che seguono gli standard della versione semantica. Tutte le interfacce API sono contrassegnate con **@api** annotazione. Puoi sostituire l’implementazione API predefinita con la tua creando un modulo personalizzato e modificando il codice predefinito in base alle esigenze.
+Il pacchetto `ece-tools` fornisce interfacce API predefinite che seguono gli standard della versione semantica. Tutte le interfacce API sono contrassegnate con annotazione **@api**. Puoi sostituire l’implementazione API predefinita con la tua creando un modulo personalizzato e modificando il codice predefinito in base alle esigenze.
 
-Per utilizzare il modulo personalizzato con Adobe Commerce sull’infrastruttura cloud, è necessario registrare il modulo nell’elenco delle estensioni per `ece-tools` pacchetto. Il processo di registrazione è simile a quello utilizzato per registrare i moduli in Adobe Commerce.
+Per utilizzare il modulo personalizzato con Adobe Commerce sull&#39;infrastruttura cloud, è necessario registrare il modulo nell&#39;elenco delle estensioni per il pacchetto `ece-tools`. Il processo di registrazione è simile a quello utilizzato per registrare i moduli in Adobe Commerce.
 
-**Per registrare un modulo con `ece-tools` pacchetto**:
+**Per registrare un modulo con il pacchetto `ece-tools`**:
 
-1. Creare o estendere `registration.php` nella directory principale del modulo.
+1. Crea o estendi il file `registration.php` nella radice del modulo.
 
    ```php?start_inline=1
    \Magento\MagentoCloud\ExtensionRegistrar::register('module-name', __DIR__);
    ```
 
-1. Aggiornare il `autoload` sezione del file di configurazione del modulo da includere `registration.php` file per caricare automaticamente i file del modulo in `composer.json`.
+1. Aggiornare la sezione `autoload` del file di configurazione del modulo per includere il file `registration.php` nei file del modulo di caricamento automatico in `composer.json`.
 
    ```json
    {
@@ -253,7 +253,7 @@ Per utilizzare il modulo personalizzato con Adobe Commerce sull’infrastruttura
    }
    ```
 
-1. Aggiungi il `config/services.xml` nel modulo. Questa configurazione viene unita `config/services.xml` da `ece-tools` pacchetto.
+1. Aggiungi il file `config/services.xml` al modulo. Questa configurazione è unita in `config/services.xml` dal pacchetto `ece-tools`.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8" ?>
@@ -271,7 +271,7 @@ Per utilizzare il modulo personalizzato con Adobe Commerce sull’infrastruttura
    </container>
    ```
 
-Per ulteriori informazioni sull’iniezione di dipendenza, consulta [Iniezione di dipendenza di Symfony](https://symfony.com/doc/current/components/dependency_injection.html).
+Per ulteriori informazioni sull&#39;iniezione di dipendenza, vedere [Iniezione di dipendenza Symfony](https://symfony.com/doc/current/components/dependency_injection.html).
 
 <!-- link definitions -->
 

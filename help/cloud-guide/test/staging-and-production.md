@@ -15,11 +15,11 @@ Dopo una migrazione corretta di codice, file e dati a Staging o Produzione, util
 
 ## File di registro
 
-Se rilevi errori di distribuzione o altri problemi durante il test, controlla i file di registro. I file di registro si trovano sotto `var/log` directory.
+Se rilevi errori di distribuzione o altri problemi durante il test, controlla i file di registro. I file di registro si trovano nella directory `var/log`.
 
-Il registro di distribuzione è in `/var/log/platform/<prodject-ID>/deploy.log`. Il valore di `<project-ID>` dipende dall’ID del progetto e dal fatto che l’ambiente sia di staging o produzione. Ad esempio, con un ID progetto di `yw1unoukjcawe`, l&#39;utente di staging è `yw1unoukjcawe_stg` e l’utente Production è `yw1unoukjcawe`.
+Il registro di distribuzione è in `/var/log/platform/<prodject-ID>/deploy.log`. Il valore di `<project-ID>` dipende dall&#39;ID del progetto e dal fatto che l&#39;ambiente sia di staging o produzione. Ad esempio, con un ID progetto di `yw1unoukjcawe`, l&#39;utente di staging è `yw1unoukjcawe_stg` e l&#39;utente di produzione è `yw1unoukjcawe`.
 
-Quando si accede ai registri in ambienti di produzione o di staging, utilizza SSH per accedere a ciascuno dei tre nodi e individuare i registri. In alternativa, puoi utilizzare [Gestione registro New Relic](../monitor/log-management.md) per visualizzare ed eseguire query sui dati di registro aggregati da tutti i nodi. Consulta [Visualizza registri](log-locations.md#application-logs).
+Quando si accede ai registri in ambienti di produzione o di staging, utilizza SSH per accedere a ciascuno dei tre nodi e individuare i registri. In alternativa, è possibile utilizzare [Gestione log di New Relic](../monitor/log-management.md) per visualizzare ed eseguire query sui dati di log aggregati da tutti i nodi. Consulta [Visualizza registri](log-locations.md#application-logs).
 
 ## Verifica la base di codice
 
@@ -27,52 +27,52 @@ Verifica che la base di codice sia correttamente distribuita negli ambienti di s
 
 ## Verificare le impostazioni di configurazione
 
-Controlla le impostazioni di configurazione tramite il pannello Amministratore, inclusi l’URL di base, l’URL amministratore di base, le impostazioni multisito e altro ancora. Se devi apportare ulteriori modifiche, completa le modifiche nel ramo Git locale e invia al `master` filiale in Integrazione, staging e produzione.
+Controlla le impostazioni di configurazione tramite il pannello Amministratore, inclusi l’URL di base, l’URL amministratore di base, le impostazioni multisito e altro ancora. Se devi apportare ulteriori modifiche, completa le modifiche nel ramo Git locale e inviale al ramo `master` in Integrazione, Staging e Produzione.
 
 ## Controlla Fastly caching
 
-[Configurazione di Fastly](../cdn/fastly-configuration.md) richiede un’attenzione particolare per i dettagli: utilizzo delle credenziali corrette del token Fastly Service ID e Fastly API, caricamento del codice Fastly VCL, aggiornamento della configurazione DNS e applicazione dei certificati SSL/TLS agli ambienti. Dopo aver completato queste attività di configurazione, puoi verificare la memorizzazione nella cache rapida negli ambienti di staging e produzione.
+[Per configurare Fastly](../cdn/fastly-configuration.md) è necessario prestare particolare attenzione ai dettagli: è necessario utilizzare le credenziali token Fastly Service ID e Fastly API corrette, caricare il codice Fastly VCL, aggiornare la configurazione DNS e applicare i certificati SSL/TLS agli ambienti. Dopo aver completato queste attività di configurazione, puoi verificare la memorizzazione nella cache rapida negli ambienti di staging e produzione.
 
-**Verificare la configurazione del servizio Fastly**:
+**Per verificare la configurazione del servizio Fastly**:
 
-1. Accedi all’amministratore per staging e produzione utilizzando l’URL con `/admin`o [URL amministratore aggiornato](../environment/variables-admin.md#admin-url).
+1. Accedi all&#39;amministratore per staging e produzione utilizzando l&#39;URL con `/admin` o l&#39;[URL amministratore aggiornato](../environment/variables-admin.md#admin-url).
 
-1. Accedi a **Negozi** > **Impostazioni** > **Configurazione** > **Avanzate** > **Sistema**. Scorri e fai clic su **Cache a pagina intera**.
+1. Passa a **Archivi** > **Impostazioni** > **Configurazione** > **Avanzate** > **Sistema**. Scorrere e fare clic su **Cache a pagina intera**.
 
-1. Assicurati che **Applicazione di caching** valore impostato su _Fastly CDN_ .
+1. Verificare che il valore dell&#39;**applicazione di memorizzazione in cache** sia impostato su _Fastly CDN_.
 
 1. Verifica le credenziali Fastly.
 
-   - Clic **Configurazione rapida**.
+   - Fare clic su **Configurazione rapida**.
 
-   - Verifica che i valori per le credenziali del token Fastly Service ID e Fastly API siano corretti. Consulta [Ottieni credenziali rapide](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
+   - Verifica che i valori per le credenziali del token Fastly Service ID e Fastly API siano corretti. Vedi [Ottieni credenziali rapide](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
 
-   - Clic **Credenziali di prova**.
+   - Fare clic su **Verifica credenziali**.
 
    >[!WARNING]
    >
    >Assicurati di aver immesso l’ID servizio Fastly e il token API corretti negli ambienti di staging e produzione. Le credenziali rapide vengono create e mappate per ogni ambiente di servizio. Se immetti le credenziali di staging nell&#39;ambiente di produzione, non puoi caricare i snippet VCL, la memorizzazione nella cache non funziona correttamente e la configurazione di memorizzazione nella cache punta al server e agli archivi errati.
 
-**Per verificare il comportamento di Fastly caching**:
+**Per controllare il comportamento di Fastly caching**:
 
-1. Controllare le intestazioni utilizzando `dig` utilità della riga di comando per ottenere informazioni sulla configurazione del sito.
+1. Controllare le intestazioni utilizzando l&#39;utilità della riga di comando `dig` per ottenere informazioni sulla configurazione del sito.
 
-   Puoi utilizzare qualsiasi URL con `dig` comando. Negli esempi seguenti vengono utilizzati gli URL Pro:
+   È possibile utilizzare qualsiasi URL con il comando `dig`. Negli esempi seguenti vengono utilizzati gli URL Pro:
 
-   - Staging: `dig https://mcstaging.<your-domain>.com`
+   - Gestione temporanea: `dig https://mcstaging.<your-domain>.com`
    - Produzione: `dig https://mcprod.<your-domain>.com`
 
-   Per ulteriori `dig` test, vedi Fastly [Test prima della modifica del DNS](https://docs.fastly.com/en/guides/working-with-domains).
+   Per ulteriori `dig` test, vedere [Test di Fastly prima di modificare il DNS](https://docs.fastly.com/en/guides/working-with-domains).
 
-1. Utilizzare `cURL` per verificare le informazioni dell’intestazione di risposta.
+1. Utilizzare `cURL` per verificare le informazioni dell&#39;intestazione di risposta.
 
    ```bash
    curl https://mcstaging.<your-domain>.com -H "host: mcstaging.<your-domain.com>" -k -vo /dev/null -H Fastly-Debug:1
    ```
 
-   Consulta [Controllare le intestazioni di risposta](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) per informazioni dettagliate sulla verifica delle intestazioni.
+   Per informazioni dettagliate sulla verifica delle intestazioni, consulta [Controllare le intestazioni di risposta](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers).
 
-1. Dopo essere stato in diretta, utilizzi `cURL` per controllare il sito live.
+1. Una volta che sei attivo, usa `cURL` per controllare il tuo sito attivo.
 
    ```bash
    curl https://<your-domain> -k -vo /dev/null -H Fastly-Debug:1
@@ -127,7 +127,7 @@ In caso di problemi, salva i passaggi di riproduzione, i messaggi di errore, le 
 </td>
 </tr>
 <tr>
-<td>Gestione ordini</td>
+<td>Order Management</td>
 <td>
 <ul>
 <li>Creare un ordine per un cliente</li>
@@ -198,20 +198,20 @@ Prima dell’avvio, è consigliabile eseguire test approfonditi del traffico e d
 
 Prima di iniziare il test, inserisci un ticket con il supporto relativo agli ambienti in fase di test, agli strumenti utilizzati e all’intervallo di tempo. Aggiorna il ticket con risultati e informazioni per tenere traccia delle prestazioni. Una volta completato il test, aggiungi i risultati aggiornati e osserva che il test del ticket è stato completato con un timestamp e una data.
 
-Rivedi [Performance Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) come parte del processo di preparazione pre-lancio.
+Rivedi le opzioni [Performance Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) come parte del processo di preparazione pre-avvio.
 
 Per ottenere risultati ottimali, utilizzare i seguenti strumenti:
 
-- [Test delle prestazioni delle applicazioni](../environment/variables-post-deploy.md#ttfb_tested_pages)- Verificare le prestazioni dell&#39;applicazione configurando `TTFB_TESTED_PAGES` variabile di ambiente per il tempo di risposta del sito di test.
-- [Assedio](https://www.joedog.org/siege-home/)- Software di modellazione e test del traffico per spingere il punto vendita al limite. Visita il tuo sito con un numero configurabile di client simulati. Siege supporta l’autenticazione di base, i cookie, i protocolli HTTP, HTTPS e FTP.
-- [Jmeter](https://jmeter.apache.org): test di carico eccellenti per misurare le prestazioni in caso di traffico con picchi di traffico, come nel caso delle vendite flash. Crea test personalizzati da eseguire sul sito.
-- [New Relic](../monitor/new-relic-service.md) (fornito) - Consente di individuare i processi e le aree del sito causando prestazioni lente con tempo di tracciamento impiegato per azione come la trasmissione di dati, query, Redis e altro ancora.
-- [WebPageTest](https://www.webpagetest.org) e [Vernice](https://www.pingdom.com): l’analisi in tempo reale delle pagine del sito carica il tempo con posizioni di origine diverse. Il regno può richiedere una tassa. WebPageTest è uno strumento gratuito.
+- [Test delle prestazioni dell&#39;applicazione](../environment/variables-post-deploy.md#ttfb_tested_pages): verifica delle prestazioni dell&#39;applicazione configurando la variabile di ambiente `TTFB_TESTED_PAGES` per verificare il tempo di risposta del sito.
+- [Assedio](https://www.joedog.org/siege-home/): il software di modellazione e test del traffico consente di spingere l&#39;archivio al limite. Visita il tuo sito con un numero configurabile di client simulati. Siege supporta l’autenticazione di base, i cookie, i protocolli HTTP, HTTPS e FTP.
+- [Jmeter](https://jmeter.apache.org): test di carico eccellenti per valutare le prestazioni per il traffico picco, come nel caso delle vendite flash. Crea test personalizzati da eseguire sul sito.
+- [New Relic](../monitor/new-relic-service.md) (fornito): consente di individuare i processi e le aree del sito causando un rallentamento delle prestazioni con tempo di rilevamento impiegato per azione, ad esempio per la trasmissione di dati, query, Redis e altro ancora.
+- [WebPageTest](https://www.webpagetest.org) e [PKingdom](https://www.pingdom.com): l&#39;analisi in tempo reale delle pagine del sito viene caricata con percorsi di origine diversi. Il regno può richiedere una tassa. WebPageTest è uno strumento gratuito.
 
 ## Test funzionali
 
-Puoi utilizzare il framework di test funzionali di Magento (MFTF) per completare i test funzionali per Adobe Commerce dall’ambiente Cloud Docker. Consulta [Test delle applicazioni](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) nel _Guida a Cloud Docker per Commerce_.
+Puoi utilizzare il framework di test funzionali di Magento (MFTF) per completare i test funzionali per Adobe Commerce dall’ambiente Cloud Docker. Consulta [Test dell&#39;applicazione](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) nella _Guida di Cloud Docker per Commerce_.
 
 ## Configurare lo strumento Security Scan
 
-È disponibile uno strumento di analisi della sicurezza gratuito per i siti. Per aggiungere i siti ed eseguire lo strumento, vedi [Strumento Security Scan](../launch/overview.md#set-up-the-security-scan-tool).
+È disponibile uno strumento di analisi della sicurezza gratuito per i siti. Per aggiungere i tuoi siti ed eseguire lo strumento, consulta [Strumento di analisi della sicurezza](../launch/overview.md#set-up-the-security-scan-tool).

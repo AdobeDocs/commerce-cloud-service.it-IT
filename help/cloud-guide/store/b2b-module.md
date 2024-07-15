@@ -12,5 +12,5 @@ ht-degree: 0%
 
 # Abilitare il modulo B2B
 
-Se i tuoi clienti sono aziende, puoi installare il modulo B2B di Adobe Commerce per estendere il progetto Adobe Commerce on Cloud Infrastructure Pro in modo da adattarlo a un modello business-to-business. Per informazioni su come installare e configurare il modulo B2B per Adobe Commerce sull’infrastruttura cloud, consulta [Guida utente di Adobe Commerce B2B](https://experienceleague.adobe.com/docs/commerce-admin/b2b/guide-overview.html).
+Se i tuoi clienti sono aziende, puoi installare il modulo B2B di Adobe Commerce per estendere il progetto Adobe Commerce on Cloud Infrastructure Pro in modo da adattarlo a un modello business-to-business. Per informazioni sull&#39;installazione e la configurazione del modulo B2B per Adobe Commerce sull&#39;infrastruttura cloud, consulta la [Guida utente di Adobe Commerce B2B](https://experienceleague.adobe.com/docs/commerce-admin/b2b/guide-overview.html).
 

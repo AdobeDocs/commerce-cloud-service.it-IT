@@ -12,56 +12,56 @@ ht-degree: 0%
 
 # Aggiungi mappa del sito e robot per motori di ricerca
 
-Tentativo di generare e scrivere il `sitemap.xml` file nella directory principale genera il seguente errore:
+Un tentativo di generare e scrivere il file `sitemap.xml` nella directory radice genera il seguente errore:
 
 ```terminal
 Please make sure that "/" is writable by the web-server.
 ```
 
-Con Adobe Commerce sull’infrastruttura cloud, puoi scrivere solo in directory specifiche, ad esempio `var`, `pub/media`, `pub/static`, o `app/etc`. Quando si genera `sitemap.xml` mediante il pannello di amministrazione, è necessario specificare `/media/` percorso.
+Con Adobe Commerce sull&#39;infrastruttura cloud, è possibile scrivere solo in directory specifiche, ad esempio `var`, `pub/media`, `pub/static` o `app/etc`. Quando si genera il file `sitemap.xml` tramite il pannello di amministrazione, è necessario specificare il percorso `/media/`.
 
-Non è necessario generare un `robots.txt` perché genera il file `robots.txt` contenuto on-demand e lo memorizza nel database. Puoi visualizzare il contenuto nel browser con `<domain.your.project>/robots.txt` o `<domain.your.project>/robots` collegamento.
+Non è necessario generare un file `robots.txt` perché genera il contenuto di `robots.txt` su richiesta e lo memorizza nel database. Puoi visualizzare il contenuto nel browser con il collegamento `<domain.your.project>/robots.txt` o `<domain.your.project>/robots`.
 
-Questo richiede la versione ECE-Tools 2002.0.12 e successive con un aggiornamento `.magento.app.yaml` file. Vedi un esempio di queste regole nel [archivio cloud magento](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
+A tal fine è necessario ECE-Tools versione 2002.0.12 e successive con un file `.magento.app.yaml` aggiornato. Vedi un esempio di queste regole nell&#39;archivio [magento-cloud](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
 
-**Per generare un `sitemap.xml` file nella versione 2.2 e successive**:
+**Per generare un file `sitemap.xml` nelle versioni 2.2 e successive**:
 
 1. Accedi all’Admin.
-1. Il giorno _Marketing_ menu, fai clic su **Mappa del sito** nel _SEO e ricerca_ sezione.
-1. In _Mappa del sito_ visualizza, fai clic su **Aggiungi mappa del sito**.
-1. In _Nuova mappa del sito_ , immettere i seguenti valori:
+1. Nel menu _Marketing_, fai clic su **Mappa sito** nella sezione _SEO &amp; Search_.
+1. Nella visualizzazione _Mappa sito_, fare clic su **Aggiungi mappa sito**.
+1. Nella visualizzazione _Nuova mappa del sito_, immettere i valori seguenti:
 
    - **Nome file**:`sitemap.xml`
    - **Percorso**:`/media/`
 
-1. Clic **Salva e genera**. La nuova mappa del sito diventa disponibile nel _Mappa del sito_ griglia.
-1. Fai clic sul percorso in _Collegamento per Google_ colonna.
+1. Fai clic su **Salva e genera**. La nuova mappa del sito diventa disponibile nella griglia _Mappa sito_.
+1. Fare clic sul percorso nella colonna _Collegamento per Google_.
 
-**Per aggiungere contenuti al `robots.txt` file**:
+**Per aggiungere contenuto al file `robots.txt`**:
 
 1. Accedi all’Admin.
-1. Il giorno _Contenuto_ menu, fai clic su **Configurazione** nel _Progettazione_ sezione.
-1. In _Configurazione progettazione_ visualizza, fai clic su **Modifica** per il sito web in _Azione_ colonna.
-1. In _Sito Web principale_ visualizza, fai clic su **Robot motore di ricerca**.
-1. Aggiornare il **Modifica istruzione personalizzata di robots.txt** campo.
-1. Clic **Salva configurazione**.
-1. Verificare la `<domain.your.project>/robots.txt` file o `<domain.your.project>/robots` URL nel browser.
+1. Nel menu _Contenuto_, fai clic su **Configurazione** nella sezione _Progettazione_.
+1. Nella visualizzazione _Configurazione progettazione_, fare clic su **Modifica** per il sito Web nella colonna _Azione_.
+1. Nella visualizzazione _Sito Web principale_, fare clic su **Robot motore di ricerca**.
+1. Aggiorna il campo **Modifica istruzione personalizzata di robots.txt**.
+1. Fare clic su **Salva configurazione**.
+1. Verificare il file `<domain.your.project>/robots.txt` o l&#39;URL `<domain.your.project>/robots` nel browser.
 
 >[!NOTE]
 >
->Se il `<domain.your.project>/robots.txt` genera un `404 error`, [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per rimuovere il reindirizzamento da `/robots.txt` a `/media/robots.txt`.
+>Se il file `<domain.your.project>/robots.txt` genera un `404 error`, [Invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per rimuovere il reindirizzamento da `/robots.txt` a `/media/robots.txt`.
 
 ## Riscrivi utilizzando lo snippet VCL Fastly
 
-Se disponi di domini diversi e hai bisogno di mappe del sito separate, puoi creare un VCL per indirizzarlo alla mappa del sito corretta. Genera il `sitemap.xml` nel pannello di amministrazione come descritto in precedenza, quindi crea uno snippet VCL Fastly personalizzato per gestire il reindirizzamento. Consulta [Snippet VCL Fastly personalizzati](../cdn/fastly-vcl-custom-snippets.md).
+Se disponi di domini diversi e hai bisogno di mappe del sito separate, puoi creare un VCL per indirizzarlo alla mappa del sito corretta. Genera il file `sitemap.xml` nel pannello di amministrazione come descritto in precedenza, quindi crea uno snippet Fastly VCL personalizzato per gestire il reindirizzamento. Vedi [Frammenti personalizzati VCL Fastly](../cdn/fastly-vcl-custom-snippets.md).
 
 >[!NOTE]
 >
-> Puoi caricare snippet VCL personalizzati dall’interfaccia utente di amministrazione o utilizzando l’API Fastly. Consulta [Esempi e tutorial di snippet VCL personalizzati](../cdn/fastly-vcl-custom-snippets.md#example-vcl-snippet-code).
+> Puoi caricare snippet VCL personalizzati dall’interfaccia utente di amministrazione o utilizzando l’API Fastly. Consulta [Esempi e tutorial di snippet VCL personalizzato](../cdn/fastly-vcl-custom-snippets.md#example-vcl-snippet-code).
 
 ### Utilizzare uno snippet VCL Fastly per il reindirizzamento
 
-Creare uno snippet VCL personalizzato per riscrivere il percorso `sitemap.xml` a `/media/sitemap.xml` utilizzando `type` e `content` coppie chiave-valore.
+Creare uno snippet VCL personalizzato per riscrivere il percorso da `sitemap.xml` a `/media/sitemap.xml` utilizzando le coppie chiave-valore `type` e `content`.
 
 ```json
 {
@@ -73,7 +73,7 @@ Creare uno snippet VCL personalizzato per riscrivere il percorso `sitemap.xml` a
 }
 ```
 
-Nell&#39;esempio seguente viene illustrato come riscrivere il percorso per `robots.txt` e `sitemap.xml` a `/media/robots.txt` e `/media/sitemap.xml`
+Nell&#39;esempio seguente viene illustrato come riscrivere il percorso per `robots.txt` e `sitemap.xml` in `/media/robots.txt` e `/media/sitemap.xml`
 
 ```json
 {
@@ -85,9 +85,9 @@ Nell&#39;esempio seguente viene illustrato come riscrivere il percorso per `robo
 }
 ```
 
-**Per utilizzare uno snippet VCL Fastly per un reindirizzamento di dominio specifico**:
+**Per utilizzare uno snippet VCL Fastly per un reindirizzamento di dominio particolare**:
 
-Creare un `pub/media/domain_robots.txt` file, dove il dominio è `domain.com`e utilizzare il successivo snippet VCL:
+Creare un file `pub/media/domain_robots.txt`, dove il dominio è `domain.com`, e utilizzare il successivo snippet VCL:
 
 ```json
 {
@@ -99,9 +99,9 @@ Creare un `pub/media/domain_robots.txt` file, dove il dominio è `domain.com`e u
 }
 ```
 
-Percorsi snippet VCL `http://domain.com/robots.txt` e presenta la `pub/media/domain_robots.txt` file.
+Il frammento VCL instrada `http://domain.com/robots.txt` e presenta il file `pub/media/domain_robots.txt`.
 
-Per configurare un reindirizzamento per `robots.txt` e `sitemap.xml` in un singolo frammento, crea `pub/media/domain_robots.txt` e `pub/media/domain_sitemap.xml` file, in cui il dominio è `domain.com` e utilizzare il successivo snippet VCL:
+Per configurare un reindirizzamento per `robots.txt` e `sitemap.xml` in un singolo snippet, creare `pub/media/domain_robots.txt` e `pub/media/domain_sitemap.xml` file, dove il dominio è `domain.com` e utilizzare il successivo snippet VCL:
 
 ```json
 {
@@ -113,14 +113,14 @@ Per configurare un reindirizzamento per `robots.txt` e `sitemap.xml` in un singo
 }
 ```
 
-In `sitemap` admin config, è necessario specificare il percorso del file utilizzando `pub/media/` anziché `/`.
+Nella configurazione dell&#39;amministratore `sitemap`, è necessario specificare il percorso del file utilizzando `pub/media/` anziché `/`.
 
 ### Configurare l’indicizzazione per motore di ricerca
 
-Per attivare `robots.txt` personalizzazioni, è necessario abilitare **L’indicizzazione per motori di ricerca è attivata per`<environment-name>`** nelle impostazioni del progetto.
+Per attivare le personalizzazioni di `robots.txt`, è necessario abilitare l&#39;opzione **Indicizzazione da parte dei motori di ricerca attivata per`<environment-name>`** nelle impostazioni del progetto.
 
-![Utilizza il [!DNL Cloud Console] per gestire gli ambienti](../../assets/robots-indexing-by-search-engine.png)
+![Utilizza [!DNL Cloud Console] per gestire gli ambienti](../../assets/robots-indexing-by-search-engine.png)
 
 >[!NOTE]
 >
->Se utilizzi PWA Studi e non riesci ad accedere al file configurato `robots.txt` file, aggiungi `robots.txt` al [Inserire nell&#39;elenco Consentiti Nome anteriore](https://github.com/magento/magento2-upward-connector#front-name-allowlist) a **Negozi** > Configurazione > **Generale** > **Web** > Configurazione UPWARD PWA.
+>Se utilizzi PWA Studio e non riesci ad accedere al file `robots.txt` configurato, aggiungi `robots.txt` al [Inserisco nell&#39;elenco Consentiti di dei nomi anteriori](https://github.com/magento/magento2-upward-connector#front-name-allowlist) in **Archivi** > Configurazione > **Generale** > **Web** > Configurazione PWA superiori.

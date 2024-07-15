@@ -50,12 +50,12 @@ ht-degree: 0%
             </td>
             <td>
                 ctype<br>
-                ricciolo<br>
+                curl<br>
                 data<br>
                 dba<br>
                 dom<br>
                 fileinfo<br>
-                filter<br>
+                filtro<br>
                 ftp<br>
                 hash<br>
                 iconv<br>
@@ -71,7 +71,7 @@ ht-degree: 0%
                 readline<br>
                 sessione<br>
                 sqlite3<br>
-                tokenizzatore<br>
+                tokenizer<br>
                 xml<br>
                 xmlreader<br>
                 xmlwriter<br>
@@ -79,8 +79,8 @@ ht-degree: 0%
             <td>
                 geoip<br>
                 gmp<br>
-                igbinario<br>
-                immaginare<br>
+                igbinary<br>
+                imagick<br>
                 imap<br>
                 ldap<br>
                 mailparse<br>
@@ -92,7 +92,7 @@ ht-degree: 0%
                 propro<br>
                 pspell<br>
                 raphf<br>
-                ricodificare<br>
+                recode<br>
                 redis<br>
                 socket shmop<br>
                 sodio<br>

@@ -20,7 +20,7 @@ Prima di impostare un’area di lavoro, raccogli le chiavi e l’accesso all’a
 
 - **Chiavi di autenticazione (chiavi compositore)**
 
-  Le chiavi di autenticazione sono token di autenticazione di 32 caratteri che forniscono un accesso sicuro all’archivio del Compositore Adobe Commerce (`repo.magento.com`) e qualsiasi altro servizio Git necessario per lo sviluppo di applicazioni come GitHub. Il tuo account può avere più chiavi di autenticazione. Per la configurazione dell’area di lavoro, inizia con una chiave specifica per l’archivio del codice. Se non disponi di chiavi, contatta il proprietario del progetto o crea [chiavi di autenticazione](../cloud-guide/development/authentication-keys.md) te stesso.
+  Le chiavi di autenticazione sono token di autenticazione di 32 caratteri che forniscono accesso sicuro all&#39;archivio del Compositore Adobe Commerce (`repo.magento.com`) e a qualsiasi altro servizio Git necessario per lo sviluppo di applicazioni come GitHub. Il tuo account può avere più chiavi di autenticazione. Per la configurazione dell’area di lavoro, inizia con una chiave specifica per l’archivio del codice. Se non disponi di chiavi, contatta il proprietario del progetto o crea tu stesso le [chiavi di autenticazione](../cloud-guide/development/authentication-keys.md).
 
 - **Account progetto cloud**
 
@@ -28,17 +28,17 @@ Prima di impostare un’area di lavoro, raccogli le chiavi e l’accesso all’a
 
 - **Chiave di crittografia Adobe Commerce**
 
-  Quando si importa solo un sistema esistente, acquisire la chiave di crittografia utilizzata per proteggere l&#39;accesso e i dati per il database. Per informazioni dettagliate su questa chiave, consulta [Risolvi i problemi relativi alla chiave di crittografia](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/resolve-issues-with-encryption-key.html)
+  Quando si importa solo un sistema esistente, acquisire la chiave di crittografia utilizzata per proteggere l&#39;accesso e i dati per il database. Per informazioni dettagliate su questa chiave, vedere [Risoluzione dei problemi relativi alla chiave di crittografia](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/resolve-issues-with-encryption-key.html)
 
 ## Strumenti per sviluppatori
 
 - **Installare Cloud CLI**
 
-  Installare `magento-cloud` CLI per gestire gli ambienti Cloud ed eseguire attività di automazione. Consulta [Cloud CLI](../cloud-guide/dev-tools/cloud-cli-overview.md) per le istruzioni di installazione.
+  Installare l&#39;interfaccia della riga di comando `magento-cloud` per gestire gli ambienti cloud ed eseguire attività di automazione. Per istruzioni sull&#39;installazione, vedere [Cloud CLI](../cloud-guide/dev-tools/cloud-cli-overview.md).
 
-- **Installare Docker per sviluppo e test locali**
+- **Installa Docker per sviluppo e test locali**
 
-  Facoltativamente, utilizza l’ambiente Docker per emulare l’infrastruttura cloud di Commerce `integration` ambiente per lo sviluppo locale. Esistono tre componenti essenziali: un modello di Adobe Commerce v2, Docker Compose e `ece-tools` pacchetto.
+  È possibile utilizzare l&#39;ambiente Docker per emulare l&#39;ambiente Commerce sull&#39;infrastruttura cloud `integration` per lo sviluppo locale. Sono disponibili tre componenti essenziali: un modello di Adobe Commerce v2, Docker Compose e il pacchetto `ece-tools`.
 
    - [Architettura Docker e comandi comuni](../cloud-guide/dev-tools/cloud-docker.md)
    - [Avvia ambiente di sviluppo Docker](https://developer.adobe.com/commerce/cloud-tools/docker/setup/)
@@ -50,20 +50,20 @@ Prima di impostare un’area di lavoro, raccogli le chiavi e l’accesso all’a
 
 ## Codice progetto
 
-Una connessione sicura è essenziale per interagire con gli ambienti remoti. Per un nuovo progetto: [accedi a [!DNL Cloud Console]](https://console.adobecommerce.com) e fai clic su **[!UICONTROL No SSH key]**. Questa icona si trova a destra del campo del comando ed è visibile quando il progetto non contiene una chiave SSH. Consulta [Connessioni sicure](../cloud-guide/development/secure-connections.md#add-an-ssh-public-key-to-your-account).
+Una connessione sicura è essenziale per interagire con gli ambienti remoti. Per un nuovo progetto, [accedi a  [!DNL Cloud Console]](https://console.adobecommerce.com) e fai clic su **[!UICONTROL No SSH key]**. Questa icona si trova a destra del campo del comando ed è visibile quando il progetto non contiene una chiave SSH. Vedi [Connessioni sicure](../cloud-guide/development/secure-connections.md#add-an-ssh-public-key-to-your-account).
 
-**Per clonare la base di codice sulla workstation locale**:
+**Per clonare la base di codice nella workstation locale**:
 
-1. In [[!DNL Cloud Console]](https://console.adobecommerce.com), fai clic su **[!UICONTROL code]** e seleziona la **[!UICONTROL Git]** scheda.
+1. In [[!DNL Cloud Console]](https://console.adobecommerce.com), fare clic su **[!UICONTROL code]** e selezionare la scheda **[!UICONTROL Git]**.
 
    ![Clona il codice](../assets/ui-git-code.png){width="450"}
 
-1. Copia il `git clone ...` comando fornito.
+1. Copia il comando `git clone ...` fornito.
 
 1. In un terminale, crea e modifica la directory di lavoro.
 
-1. Incolla ed esegui il comando `git clone ...` comando.
+1. Incollare ed eseguire il comando `git clone ...`.
 
 >[!TIP]
 >
->Adobe esegue il provisioning dell’ambiente di progetto iniziale utilizzando un archivio di modelli che include istruzioni sui pacchetti per una versione specifica di Adobe Commerce. Rivedi [struttura del file di progetto](../cloud-guide/project/file-structure.md) e ulteriori informazioni su file di progetto e modelli cloud importanti.
+>Adobe esegue il provisioning dell’ambiente di progetto iniziale utilizzando un archivio di modelli che include istruzioni sui pacchetti per una versione specifica di Adobe Commerce. Rivedi l&#39;argomento [struttura file di progetto](../cloud-guide/project/file-structure.md) e scopri di più sui file di progetto e i modelli cloud importanti.

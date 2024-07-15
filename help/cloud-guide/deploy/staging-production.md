@@ -18,51 +18,51 @@ Quando sei pronto per distribuire l’archivio, devi completare la distribuzione
 
 >[!TIP]
 >
->L’Adobe consiglia di creare un [backup](../storage/snapshots.md) dell’ambiente prima delle implementazioni.
+>L&#39;Adobe consiglia di creare un [backup](../storage/snapshots.md) dell&#39;ambiente prima delle distribuzioni.
 
-Inoltre, puoi abilitare [Tracciare le implementazioni con New Relic](../monitor/track-deployments.md) per monitorare gli eventi di distribuzione e analizzare le prestazioni tra le distribuzioni.
+È inoltre possibile abilitare [Tracciare le distribuzioni con New Relic](../monitor/track-deployments.md) per monitorare gli eventi di distribuzione e analizzare le prestazioni tra le distribuzioni.
 
 ## Flusso di distribuzione iniziale
 
-L’Adobe consiglia di creare un `staging` ramo da `master` per supportare al meglio lo sviluppo e la distribuzione del piano Starter. Sono quindi pronti due dei quattro ambienti attivi: `master` per la produzione e `staging` per staging.
+L&#39;Adobe consiglia di creare un ramo `staging` dal ramo `master` per supportare al meglio lo sviluppo e la distribuzione del piano Starter. Sono quindi pronti due dei quattro ambienti attivi: `master` per la produzione e `staging` per la gestione temporanea.
 
-Per informazioni dettagliate sul processo, consulta [Avvia sviluppo e implementazione del flusso di lavoro](../architecture/starter-develop-deploy-workflow.md).
+Per informazioni dettagliate sul processo, vedere [Avvia sviluppo e distribuzione del flusso di lavoro](../architecture/starter-develop-deploy-workflow.md).
 
 ## Flusso di distribuzione Pro
 
-Pro viene fornito con un ampio ambiente di integrazione con due rami attivi, un `master` rami di branca, staging e produzione. Quando crei il progetto, il codice è pronto per diramarsi, sviluppare e inviare messaggi push per la creazione e la distribuzione del sito. Anche se l’ambiente di integrazione può avere molti rami, Staging e Produzione hanno un solo ramo per ogni ambiente.
+Pro viene fornito con un ampio ambiente di integrazione con due rami attivi, un ramo `master` globale, staging e rami di produzione. Quando crei il progetto, il codice è pronto per diramarsi, sviluppare e inviare messaggi push per la creazione e la distribuzione del sito. Anche se l’ambiente di integrazione può avere molti rami, Staging e Produzione hanno un solo ramo per ogni ambiente.
 
-Per informazioni dettagliate sul processo, consulta [Flusso di lavoro Pro Develop and Deploy](../architecture/pro-develop-deploy-workflow.md).
+Per informazioni dettagliate sul processo, vedere [Pro Develop and Deploy Workflow](../architecture/pro-develop-deploy-workflow.md).
 
 ## Distribuire il codice nello staging
 
-L’ambiente di staging fornisce un ambiente di produzione simile a quello di, che include un database, un server web e tutti i servizi, compresi Fastly e New Relic. Puoi eseguire operazioni push, merge e implementa complete tramite [[!DNL Cloud Console]](../project/overview.md) o [Comandi Cloud CLI](../dev-tools/cloud-cli-overview.md) tramite un&#39;applicazione terminale.
+L’ambiente di staging fornisce un ambiente di produzione simile a quello di, che include un database, un server web e tutti i servizi, compresi Fastly e New Relic. È possibile eseguire il push, l&#39;unione e la distribuzione completi tramite i comandi CLI [[!DNL Cloud Console]](../project/overview.md) o [Cloud](../dev-tools/cloud-cli-overview.md) tramite un&#39;applicazione terminal.
 
-### Distribuire il codice con [!DNL Cloud Console]
+### Distribuisci il codice con [!DNL Cloud Console]
 
-Il [!DNL Cloud Console] fornisce funzioni per creare, gestire e implementare il codice negli ambienti di integrazione, staging e produzione per i piani Starter e Pro.
+[!DNL Cloud Console] fornisce funzionalità per creare, gestire e distribuire il codice negli ambienti di integrazione, gestione temporanea e produzione per i piani Starter e Pro.
 
-**Per i progetti Pro, implementa il ramo di integrazione nell’ambiente di staging**:
+**Per i progetti Pro, distribuire il ramo di integrazione nell&#39;area di gestione temporanea**:
 
 1. [Accedi](https://accounts.magento.cloud) al progetto.
-1. Seleziona la `integration` filiale.
-1. Seleziona la **Unisci** opzione da distribuire nell&#39;area di gestione temporanea.
+1. Selezionare il ramo `integration`.
+1. Selezionare l&#39;opzione **Unisci** per eseguire la distribuzione nell&#39;area di gestione temporanea.
 
    ![Unisci](../../assets/button-merge.png){width="150"}
 
-1. Completa tutto [test](../test/staging-and-production.md) nell&#39;ambiente di staging.
-1. Quando Staging è pronto, seleziona la **Unisci** opzione da implementare nell’ambiente di produzione.
+1. Completa tutti i [test](../test/staging-and-production.md) nell&#39;ambiente di staging.
+1. Quando la gestione temporanea è pronta, seleziona l&#39;opzione **Unisci** per distribuirla alla produzione.
 
-**Per iniziare, distribuisci il ramo di sviluppo nell’ambiente di staging**:
+**Per iniziare, distribuire il ramo di sviluppo nell&#39;area di gestione temporanea**:
 
 1. [Accedi](https://accounts.magento.cloud) al progetto.
 1. Seleziona il ramo del codice preparato.
-1. Seleziona la **Unisci** opzione da distribuire nell&#39;area di gestione temporanea.
+1. Selezionare l&#39;opzione **Unisci** per eseguire la distribuzione nell&#39;area di gestione temporanea.
 
    ![Unisci](../../assets/button-merge.png){width="150"}
 
-1. Completa tutto [test](../test/staging-and-production.md) nell&#39;ambiente di staging.
-1. Quando Staging è pronto, seleziona la **Unisci** opzione da implementare nell’ambiente di produzione (`master`).
+1. Completa tutti i [test](../test/staging-and-production.md) nell&#39;ambiente di staging.
+1. Quando la gestione temporanea è pronta, selezionare l&#39;opzione **Unisci** da distribuire alla produzione (`master`).
 
 ### Distribuire il codice con la riga di comando
 
@@ -140,11 +140,11 @@ Cloud CLI fornisce i comandi per distribuire il codice. Hai bisogno dell’acces
 
 ## Migrazione di file statici
 
-[File statici](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) sono archiviati in `mounts`. Esistono due metodi per migrare i file da una posizione di montaggio di origine, ad esempio l&#39;ambiente locale, a una posizione di montaggio di destinazione. Entrambi i metodi utilizzano `rsync` , ma l&#39;Adobe consiglia di utilizzare il `magento-cloud` CLI per lo spostamento di file tra l&#39;ambiente locale e remoto. E l’Adobe consiglia di utilizzare `rsync` metodo per spostare file da un&#39;origine remota a un&#39;altra posizione remota.
+[I file statici](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) sono archiviati in `mounts`. Esistono due metodi per migrare i file da una posizione di montaggio di origine, ad esempio l&#39;ambiente locale, a una posizione di montaggio di destinazione. Entrambi i metodi utilizzano l&#39;utilità `rsync`, ma Adobe consiglia di utilizzare l&#39;interfaccia della riga di comando `magento-cloud` per spostare i file tra l&#39;ambiente locale e remoto. Adobe consiglia inoltre di utilizzare il metodo `rsync` per spostare i file da un&#39;origine remota a un&#39;altra posizione remota.
 
 ### Eseguire la migrazione dei file tramite CLI
 
-È possibile utilizzare `mount:upload` e `mount:download` Comandi CLI per eseguire la migrazione dei file tra l&#39;ambiente locale e remoto. Entrambi i comandi utilizzano `rsync` ma i comandi CLI forniscono opzioni e prompt personalizzati per l&#39;ambiente Adobe Commerce on cloud infrastructure. Ad esempio, se si utilizza il comando semplice senza opzioni, la CLI richiede di selezionare il mount o i mount da caricare o scaricare.
+È possibile utilizzare i comandi CLI `mount:upload` e `mount:download` per eseguire la migrazione dei file tra l&#39;ambiente locale e remoto. Entrambi i comandi utilizzano l&#39;utilità `rsync`, ma i comandi CLI forniscono opzioni e prompt personalizzati per l&#39;ambiente Adobe Commerce sull&#39;infrastruttura cloud. Ad esempio, se si utilizza il comando semplice senza opzioni, la CLI richiede di selezionare il mount o i mount da caricare o scaricare.
 
 ```bash
 magento-cloud mount:download
@@ -168,7 +168,7 @@ Downloading files from the remote mount pub/media to pub/media
 Are you sure you want to continue? [Y/n] Y
 ```
 
-**Per caricare i file da un `pub/media/` cartella al telecomando `pub/media/` cartella per l&#39;ambiente corrente**:
+**Per caricare i file da una cartella `pub/media/` locale nella cartella `pub/media/` remota per l&#39;ambiente corrente**:
 
 ```bash
 magento-cloud mount:upload --source /path/to/project/pub/media/ --mount pub/media/
@@ -189,11 +189,11 @@ Are you sure you want to continue? [Y/n] Y
   total size is 154.57K  speedup is 18.23
 ```
 
-Utilizza il `--help` opzione per `mount:upload` e `mount:download` per visualizzare altre opzioni. Ad esempio, è presente un `--delete` per rimuovere i file estranei durante la migrazione.
+Utilizzare l&#39;opzione `--help` per i comandi `mount:upload` e `mount:download` per visualizzare altre opzioni. Ad esempio, è disponibile un&#39;opzione `--delete` per rimuovere i file estranei durante la migrazione.
 
 ### Eseguire la migrazione dei file tramite rsync
 
-In alternativa, è possibile utilizzare `rsync` per migrare i file.
+In alternativa, è possibile utilizzare l&#39;utilità `rsync` per eseguire la migrazione dei file.
 
 ```bash
 rsync -azvP <source> <destination>
@@ -201,30 +201,30 @@ rsync -azvP <source> <destination>
 
 Questo comando utilizza le opzioni seguenti:
 
-- `a`-archivio
-- `z`-comprimere i file durante la migrazione
-- `v`-verboso
-- `P`-avanzamento parziale
+- Archivio `a`
+- `z`-compressione dei file durante la migrazione
+- `v`-dettagliato
+- Avanzamento parziale di `P`
 
-Consulta [rsync](https://linux.die.net/man/1/rsync) aiuto.
+Consulta la Guida di [rsync](https://linux.die.net/man/1/rsync).
 
 >[!NOTE]
 >
->Per trasferire i file multimediali direttamente dagli ambienti remoti a remoti, è necessario abilitare l’inoltro dell’agente SSH, vedi [Guida di GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
+>Per trasferire i file multimediali direttamente dagli ambienti remoti a remoti, è necessario abilitare l&#39;inoltro dell&#39;agente SSH. Vedere [Guida GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
 
 **Migrazione diretta di file statici da ambienti remoti a remoti (approccio rapido)**:
 
-1. Utilizza SSH per accedere all’ambiente di origine. Non utilizzare il `magento-cloud` CLI Utilizzo di `-A` è importante perché consente l’inoltro della connessione dell’agente di autenticazione.
+1. Utilizza SSH per accedere all’ambiente di origine. Non utilizzare l&#39;interfaccia della riga di comando `magento-cloud`. L&#39;utilizzo dell&#39;opzione `-A` è importante perché consente l&#39;inoltro della connessione dell&#39;agente di autenticazione.
 
    >[!TIP]
    >
-   >Per trovare **Accesso SSH** collegamento nel tuo [!DNL Cloud Console], seleziona l’ambiente e fai clic su **Accedi al sito**.
+   >Per trovare il collegamento **Accesso SSH** in [!DNL Cloud Console], selezionare l&#39;ambiente e fare clic su **Accesso al sito**.
 
    ```bash
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. Utilizza il `rsync` comando per copiare `pub/media` dall&#39;ambiente di origine a un ambiente remoto diverso.
+1. Utilizzare il comando `rsync` per copiare la directory `pub/media` dall&#39;ambiente di origine in un ambiente remoto diverso.
 
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
@@ -240,29 +240,29 @@ Consulta [rsync](https://linux.die.net/man/1/rsync) aiuto.
 
 >[!BEGINSHADEBOX]
 
-**Prerequisito:** Un’immagine del database (vedi Passaggio 3) deve includere i trigger del database. Per scaricarli, conferma di disporre della [Privilegio TRIGGER](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
+**Prerequisito:** Un dump del database (vedere il passaggio 3) deve includere i trigger del database. Per scaricarli, confermare di disporre del privilegio [TRIGGER](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
 
 >[!IMPORTANT]
 >
 >Il database dell’ambiente di integrazione è destinato esclusivamente ai test di sviluppo e può includere dati di cui non desideri eseguire la migrazione nell’ambiente di staging e produzione.
 
-Per distribuzioni di integrazione continue, Adobe **non consiglia** migrazione dei dati da Integration a Staging e Produzione. Puoi trasmettere dati di test o sovrascrivere dati importanti. Tutte le configurazioni vitali vengono passate utilizzando [file di configurazione](../store/store-settings.md) e `setup:upgrade` durante la generazione e la distribuzione.
+Per le distribuzioni di integrazione continue, l&#39;Adobe **sconsiglia** la migrazione dei dati dall&#39;integrazione all&#39;ambiente di staging e produzione. Puoi trasmettere dati di test o sovrascrivere dati importanti. Tutte le configurazioni vitali vengono passate utilizzando il [file di configurazione](../store/store-settings.md) e il comando `setup:upgrade` durante la compilazione e la distribuzione.
 
 >[!ENDSHADEBOX]
 
-Adobe **consiglia** migrazione dei dati da Produzione a Staging per testare completamente il sito e archiviarlo in un ambiente di produzione vicino con tutti i servizi e le impostazioni.
+L&#39;Adobe **consiglia** di migrare i dati dalla produzione alla gestione temporanea per testare completamente il sito e archiviarlo in un ambiente vicino alla produzione con tutti i servizi e le impostazioni.
 
 >[!NOTE]
 >
->Per trasferire i file multimediali direttamente dagli ambienti remoti a remoti, è necessario abilitare l’inoltro degli agenti ssh, consulta [Guida di GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
+>Per trasferire i file multimediali direttamente dagli ambienti remoti a quelli remoti, è necessario abilitare l&#39;inoltro degli agenti SSH. Vedere le [linee guida GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
 
 ### Eseguire il backup del database
 
-È consigliabile creare un backup del database. Nella procedura seguente vengono utilizzate le istruzioni [Eseguire il backup del database](../storage/database-dump.md).
+È consigliabile creare un backup del database. Nella procedura seguente vengono utilizzate le istruzioni di [Backup del database](../storage/database-dump.md).
 
 **Per scaricare il database**:
 
-1. [Utilizzare SSH per accedere all’ambiente remoto](../development/secure-connections.md#use-an-ssh-command) che contiene il database da copiare.
+1. [Utilizzare SSH per accedere all&#39;ambiente remoto](../development/secure-connections.md#use-an-ssh-command) che contiene il database da copiare.
 
 1. Elencare le relazioni dell’ambiente e prendere nota delle informazioni di accesso al database.
 
@@ -270,9 +270,9 @@ Adobe **consiglia** migrazione dei dati da Produzione a Staging per testare comp
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-   Per Pro Staging e Produzione, il nome del database si trova nel `MAGENTO_CLOUD_RELATIONSHIPS` (in genere corrisponde al nome dell’applicazione e al nome utente).
+   Per Pro Staging and Production, il nome del database è nella variabile `MAGENTO_CLOUD_RELATIONSHIPS` (in genere lo stesso nome dell&#39;applicazione e nome utente).
 
-1. Crea un backup del database. Per scegliere una directory di destinazione per il dump del database, utilizzare `--dump-directory` opzione.
+1. Crea un backup del database. Per scegliere una directory di destinazione per il dump del database, utilizzare l&#39;opzione `--dump-directory`.
 
    Per gli ambienti Starter e gli ambienti di integrazione Pro, utilizzare `main` come nome del database:
 
@@ -281,8 +281,8 @@ Adobe **consiglia** migrazione dei dati da Produzione a Staging per testare comp
    ```
 
    Opzioni di dump:
-   - `--dump-directory=<dir>`- Scegliere una directory di destinazione per il dump del database
-   - `--remove-definers`- Rimuovi istruzioni DEFINER dal dump del database
+   - `--dump-directory=<dir>` - Scegliere una directory di destinazione per il dump del database
+   - `--remove-definers` - Rimuovi istruzioni DEFINER dal dump del database
 
 1. Sebbene sia preferibile utilizzare il metodo ECE-Tools, un altro metodo consiste nel creare un file di dump del database utilizzando MySQL nativo in formato GZIP.
 
@@ -296,7 +296,7 @@ Adobe **consiglia** migrazione dei dati da Produzione a Staging per testare comp
    mysqldump -h <database-host> --user=<database-username> --password=<password> --single-transaction --triggers --ignore-table=<database-name>.tfa_user_config --ignore-table=<database-name>.tfa_country_codes <database-name> | gzip - > /tmp/database.sql.gz
    ```
 
-1. Tipo `logout` per terminare la connessione SSH.
+1. Digitare `logout` per terminare la connessione SSH.
 
 ### Eliminare e ricreare il database
 
@@ -304,7 +304,7 @@ Durante l&#39;importazione dei dati è necessario eliminare e creare un database
 
 **Per eliminare e ricreare il database**:
 
-1. Stabilire un [Tunnel SSH](../development/secure-connections.md#ssh-tunneling) all&#39;ambiente remoto.
+1. Stabilisci un [tunnel SSH](../development/secure-connections.md#ssh-tunneling) per l&#39;ambiente remoto.
 
 1. Connettersi al servizio del database.
 
@@ -312,7 +312,7 @@ Durante l&#39;importazione dei dati è necessario eliminare e creare un database
    mysql --host=127.0.0.1 --user='<database-username>' --pass='<user-password>' --database='<name>' --port='<port>'
    ```
 
-1. Alla `MariaDB [main]>` , eliminare il database.
+1. Al prompt `MariaDB [main]>`, eliminare il database.
 
    Per l&#39;integrazione con Starter e Pro:
 

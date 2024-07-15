@@ -12,21 +12,21 @@ ht-degree: 0%
 
 # Gestione dei backup
 
-È possibile eseguire un backup manuale degli ambienti Starter attivi in qualsiasi momento utilizzando **[!UICONTROL Backup]** pulsante in [!DNL Cloud Console] o utilizzando `magento-cloud snapshot:create` comando.
+È possibile eseguire un backup manuale degli ambienti Starter attivi in qualsiasi momento utilizzando il pulsante **[!UICONTROL Backup]** in [!DNL Cloud Console] o il comando `magento-cloud snapshot:create`.
 
-Un backup o _istantanea_ è un backup completo dei dati dell&#39;ambiente che include tutti i dati persistenti dei servizi in esecuzione (database MySQL) ed eventuali file archiviati nei volumi montati (var, pub/media, app/ecc.). Lo snapshot _non_ includi il codice, in quanto è già memorizzato nell’archivio basato su Git. Impossibile scaricare una copia di uno snapshot.
+Un backup o _snapshot_ è un backup completo dei dati dell&#39;ambiente che include tutti i dati persistenti dei servizi in esecuzione (database MySQL) e di tutti i file archiviati nei volumi montati (var, pub/media, app/ecc.). Lo snapshot _non_ include codice, poiché il codice è già archiviato nell&#39;archivio basato su Git. Impossibile scaricare una copia di uno snapshot.
 
-La funzione di backup/snapshot **non** Applicabile agli ambienti Pro Staging and Production, che ricevono backup regolari a scopo di disaster recovery per impostazione predefinita. Fai riferimento a [Backup Pro e ripristino di emergenza](../architecture/pro-architecture.md#backup-and-disaster-recovery) per ulteriori informazioni. A differenza dei backup live automatici negli ambienti Pro Staging e Production, i backup sono **non** automatica. È _tuo_ responsabilità di creare manualmente un backup o di impostare un processo cron per creare periodicamente un backup degli ambienti di integrazione Starter o Pro.
+La funzionalità di backup/snapshot non è applicabile **not** agli ambienti di staging e produzione Pro, che ricevono backup regolari a scopo di disaster recovery per impostazione predefinita. Per ulteriori informazioni, consultare [Backup Pro e Disaster Recovery](../architecture/pro-architecture.md#backup-and-disaster-recovery). A differenza dei backup live automatici negli ambienti Pro Staging e Production, i backup sono **non** automatici. È _tua_ responsabilità creare manualmente un backup o impostare un processo cron per creare periodicamente un backup degli ambienti di integrazione Starter o Pro.
 
 ## Creare un backup manuale
 
-È possibile creare un backup manuale di qualsiasi ambiente Starter attivo e dell&#39;ambiente di integrazione Pro dall&#39; [!DNL Cloud Console] oppure crea un’istantanea da Cloud CLI. Devi avere un [Ruolo amministratore](../project/user-access.md) per l&#39;ambiente.
+È possibile creare un backup manuale di qualsiasi ambiente Starter attivo e dell&#39;ambiente di integrazione Pro da [!DNL Cloud Console] o creare un&#39;istantanea da Cloud CLI. Devi avere un [Ruolo amministratore](../project/user-access.md) per l&#39;ambiente.
 
 **Per creare un backup di qualsiasi ambiente Starter utilizzando[!DNL Cloud Console]**:
 
 1. Accedi a [[!DNL Cloud Console]](https://console.adobecommerce.com).
 1. Seleziona un ambiente dalla barra di navigazione del progetto. L’ambiente deve essere attivo.
-1. In _Backup_ visualizza, fai clic su **[!UICONTROL Backup]**. Questa opzione non è disponibile per un ambiente Pro.
+1. Nella visualizzazione _Backup_, fare clic su **[!UICONTROL Backup]**. Questa opzione non è disponibile per un ambiente Pro.
 
    ![Backup](../../assets/button-backup.png){width="150"}
 
@@ -34,10 +34,10 @@ La funzione di backup/snapshot **non** Applicabile agli ambienti Pro Staging and
 
 1. Accedi a [[!DNL Cloud Console]](https://console.adobecommerce.com).
 1. Seleziona un ambiente di integrazione/sviluppo dalla barra di navigazione del progetto. L’ambiente deve essere attivo.
-1. Seleziona la **[!UICONTROL Backup]** nel menu in alto a destra. Questa opzione è disponibile per gli ambienti Starter e Pro.
-1. Fai clic su **[!UICONTROL Yes]** pulsante.
+1. Selezionare l&#39;opzione **[!UICONTROL Backup]** nel menu in alto a destra. Questa opzione è disponibile per gli ambienti Starter e Pro.
+1. Fare clic sul pulsante **[!UICONTROL Yes]**.
 
-**Per creare un&#39;istantanea utilizzando `magento-cloud` CLI**:
+**Per creare uno snapshot utilizzando `magento-cloud` CLI**:
 
 1. Sulla workstation locale, passa alla directory del progetto.
 1. Estrai il ramo dell’ambiente per creare un’istantanea.
@@ -47,7 +47,7 @@ La funzione di backup/snapshot **non** Applicabile agli ambienti Pro Staging and
    magento-cloud snapshot:create --live
    ```
 
-   In alternativa, è possibile utilizzare `magento-cloud backup` comando breve. Il `--live` lascia l’ambiente in esecuzione per evitare tempi di inattività. Per un elenco completo delle opzioni, immetti `magento-cloud snapshot:create --help`.
+   In alternativa, è possibile utilizzare il comando breve `magento-cloud backup`. L&#39;opzione `--live` lascia l&#39;ambiente in esecuzione per evitare tempi di inattività. Per un elenco completo delle opzioni, immettere `magento-cloud snapshot:create --help`.
 
    Risposta di esempio:
 
@@ -81,7 +81,7 @@ La funzione di backup/snapshot **non** Applicabile agli ambienti Pro Staging and
 
 ## Ripristinare un backup manuale
 
-Devi avere [Accesso amministratore](../project/user-access.md) all&#39;ambiente. Hai fino a **sette giorni** a _ripristinare_ un backup manuale. Il ripristino di un backup non modifica il codice del ramo Git corrente. Il ripristino di un backup in questo modo non si applica agli ambienti di staging e produzione Pro; vedere [Backup Pro e ripristino di emergenza](../architecture/pro-architecture.md#backup-and-disaster-recovery).
+Devi avere [accesso amministratore](../project/user-access.md) all&#39;ambiente. Hai fino a **sette giorni** per _ripristinare_ un backup manuale. Il ripristino di un backup non modifica il codice del ramo Git corrente. Il ripristino di un backup in questo modo non è applicabile agli ambienti di staging e produzione Pro; vedere [Backup Pro e ripristino di emergenza](../architecture/pro-architecture.md#backup-and-disaster-recovery).
 
 I tempi di ripristino variano a seconda delle dimensioni del database:
 
@@ -93,16 +93,16 @@ I tempi di ripristino variano a seconda delle dimensioni del database:
 >
 >Ripristino senza backup:
 >
->- Per ripristinare il codice precedente o rimuovere le estensioni aggiunte in un ambiente, vedi [Codice di rollback](#roll-back-code).
->- Per ripristinare un ambiente instabile che _non_ avere un backup, vedi [Ripristinare un ambiente](../development/restore-environment.md).
+>- Per ripristinare il codice precedente o rimuovere le estensioni aggiunte in un ambiente, vedere [Codice di rollback](#roll-back-code).
+>- Per ripristinare un ambiente instabile che non dispone di un backup di _not_, vedere [Ripristinare un ambiente](../development/restore-environment.md).
 
 **Per ripristinare un backup utilizzando[!DNL Cloud Console]**:
 
 1. Accedi a [[!DNL Cloud Console]](https://console.adobecommerce.com).
 1. Seleziona un ambiente dalla barra di navigazione del progetto.
-1. In _Backup_ , scegliere un backup dalla _Archiviato_ elenco. La funzione di backup **non** applica agli ambienti Pro.
-1. In ![Altro](../../assets/icon-more.png){width="32"} (_altro_), fare clic su **Ripristina**.
-1. Rivedi le informazioni di ripristino dal backup e fai clic su **Sì, ripristina**.
+1. Nella visualizzazione _Backup_, scegliere un backup dall&#39;elenco _Archiviato_. La funzionalità di backup **non** è applicabile agli ambienti Pro.
+1. Nel menu ![Altro](../../assets/icon-more.png){width="32"} (_Altro_), fare clic su **Ripristina**.
+1. Rivedere le informazioni di ripristino dal backup e fare clic su **Sì, ripristino**.
 
 **Per ripristinare uno snapshot utilizzando Cloud CLI**:
 
@@ -133,10 +133,10 @@ I tempi di ripristino variano a seconda delle dimensioni del database:
 
 ## Ripristino di un&#39;istantanea di disaster recovery
 
-Per ripristinare lo snapshot del ripristino di emergenza negli ambienti di staging e produzione Pro, [Importa il dump del database direttamente dal server](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3).
+Per ripristinare lo snapshot del ripristino di emergenza negli ambienti di staging e produzione Pro, [Importare l&#39;immagine del database direttamente dal server](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3).
 
 ## Codice di rollback
 
-Backup e snapshot eseguiti _non_ includi una copia del codice. Il codice è già archiviato nell’archivio basato su Git, pertanto puoi utilizzare i comandi basati su Git per eseguire il rollback (o il ripristino) del codice. Ad esempio, utilizza `git log --oneline` per scorrere le conferme precedenti, quindi utilizzare [`git revert`](https://git-scm.com/docs/git-revert) per ripristinare il codice da un commit specifico.
+I backup e gli snapshot non includono _not_ una copia del codice. Il codice è già archiviato nell’archivio basato su Git, pertanto puoi utilizzare i comandi basati su Git per eseguire il rollback (o il ripristino) del codice. Utilizzare ad esempio `git log --oneline` per scorrere i commit precedenti, quindi utilizzare [`git revert`](https://git-scm.com/docs/git-revert) per ripristinare il codice da un commit specifico.
 
-Inoltre, puoi scegliere di memorizzare il codice in un _inattivo_ filiale. Utilizza i comandi Git per creare un ramo invece di utilizzare `magento-cloud` comandi. Vedi informazioni su [Comandi Git](../dev-tools/cloud-cli-overview.md#git-commands) nell’argomento Cloud CLI.
+Inoltre, puoi scegliere di archiviare il codice in un ramo _inattivo_. Utilizza i comandi Git per creare un ramo anziché i comandi `magento-cloud`. Per informazioni sui [comandi Git](../dev-tools/cloud-cli-overview.md#git-commands), vedere l&#39;argomento CLI di Cloud.

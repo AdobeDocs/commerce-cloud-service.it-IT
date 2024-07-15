@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Blocca spam di riferimento
 
-L’esempio seguente mostra come configurare [Dizionario Fastly Edge](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) con uno snippet VCL personalizzato per bloccare lo spam di riferimento dal sito Adobe Commerce sull’infrastruttura cloud.
+Nell&#39;esempio seguente viene illustrato come configurare il [dizionario Fastly Edge](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) con uno snippet VCL personalizzato per bloccare lo spam di riferimento dal sito Adobe Commerce sul sito dell&#39;infrastruttura cloud.
 
 >[!NOTE]
 >
@@ -30,39 +30,39 @@ I dizionari Edge creano coppie chiave-valore accessibili alle funzioni VCL duran
 
 {{admin-login-step}}
 
-1. Clic **Negozi** > **Impostazioni** > **Configurazione** > **Avanzate** > **Sistema**.
+1. Fai clic su **Archivi** > **Impostazioni** > **Configurazione** > **Avanzate** > **Sistema**.
 
-1. Espandi **Cache a pagina intera** > **Configurazione rapida** > **Dizionari Edge**.
+1. Espandere **Cache a pagina intera** > **Configurazione rapida** > **Dizionari Edge**.
 
 1. Crea il contenitore Dizionario:
 
-   - Clic **Aggiungi contenitore**.
+   - Fai clic su **Aggiungi contenitore**.
 
-   - Il giorno *Contenitore* , immettere un valore **Nome dizionario**—`referrer_blocklist`.
+   - Nella pagina *Contenitore* immettere un **Nome dizionario**—`referrer_blocklist`.
 
-   - Seleziona **Attiva dopo la modifica** per distribuire le modifiche alla versione della configurazione del servizio Fastly che si sta modificando.
+   - Seleziona **Attiva dopo la modifica** per distribuire le modifiche alla versione della configurazione del servizio Fastly che stai modificando.
 
-   - Clic **Carica** per collegare il dizionario alla configurazione del servizio Fastly.
+   - Fai clic su **Carica** per allegare il dizionario alla configurazione del servizio Fastly.
 
-1. Aggiungi l’elenco dei nomi di dominio da bloccare a `referrer_blocklist` dizionario:
+1. Aggiungere l&#39;elenco dei nomi di dominio da bloccare al dizionario `referrer_blocklist`:
 
-   - Fai clic sull’icona Impostazioni per `referrer_blocklist` dizionario.
+   - Fare clic sull&#39;icona Impostazioni per il dizionario `referrer_blocklist`.
 
    - Aggiungi e salva coppie chiave-valore nel nuovo dizionario. Per questo esempio, ogni **Chiave** è il nome di dominio di un URL referente da bloccare e **Valore** è `true`.
 
-     ![Aggiungi elementi dizionario referente non validi](../../assets/cdn/fastly-referrer-blocklist-dictionary.png)
+     ![Aggiungi elementi dizionario referrer non validi](../../assets/cdn/fastly-referrer-blocklist-dictionary.png)
 
-   - Clic **Annulla** per tornare alla pagina di configurazione del sistema.
+   - Fai clic su **Annulla** per tornare alla pagina di configurazione del sistema.
 
-1. Clic **Salva configurazione**.
+1. Fai clic su **Salva configurazione**.
 
 1. Aggiorna la cache in base alla notifica nella parte superiore della pagina.
 
-Per ulteriori informazioni sui dizionari Edge, vedere [Creazione e utilizzo di dizionari di spigoli](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) e [snippet VCL personalizzati](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) nella documentazione di Fastly.
+Per ulteriori informazioni sui dizionari di Edge, vedere [Creazione e utilizzo di dizionari di Edge](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) e [snippet VCL personalizzati](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) nella documentazione Fastly.
 
 ## Creare un frammento VCL personalizzato per bloccare lo spam del referente
 
-Il seguente codice snippet VCL personalizzato (formato JSON) mostra la logica per controllare e bloccare le richieste. Lo snippet VCL acquisisce l’host di un sito web di riferimento in un’intestazione, quindi confronta il nome host con l’elenco di URL presenti nel `referrer_blocklist` dizionario. Se il nome host corrisponde, la richiesta viene bloccata con un `403 Forbidden` errore.
+Il seguente codice snippet VCL personalizzato (formato JSON) mostra la logica per controllare e bloccare le richieste. Lo snippet VCL acquisisce l&#39;host di un sito Web di provenienza in un&#39;intestazione, quindi confronta il nome host con l&#39;elenco di URL nel dizionario `referrer_blocklist`. Se il nome host corrisponde, la richiesta viene bloccata con un errore `403 Forbidden`.
 
 ```json
 {
@@ -76,39 +76,39 @@ Il seguente codice snippet VCL personalizzato (formato JSON) mostra la logica pe
 
 Prima di creare uno snippet basato su questo esempio, esaminare i valori per determinare se è necessario apportare modifiche:
 
-- `name` — Nome dello snippet VCL. Per questo esempio, abbiamo utilizzato `block_bad_referrer`.
+- `name` — Nome dello snippet VCL. In questo esempio è stato utilizzato `block_bad_referrer`.
 
-- `dynamic` — Il valore 0 indica un [frammento normale](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) per caricare nel file VCL con versione per la configurazione Fastly.
+- `dynamic` — Il valore 0 indica un [frammento normale](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) da caricare nella VCL con versione per la configurazione Fastly.
 
-- `priority` — Determina quando viene eseguito lo snippet VCL. La priorità è `5` per eseguire questo codice snippet prima di uno qualsiasi dei snippet VCL di Magento predefiniti (`magentomodule_*`) ha assegnato una priorità di 50. Impostare la priorità per ogni frammento personalizzato su un valore maggiore o minore di 50 a seconda di quando si desidera eseguire il frammento. I frammenti con numeri di priorità inferiore vengono eseguiti per primi.
+- `priority` — Determina quando viene eseguito lo snippet VCL. La priorità è `5` per eseguire questo codice snippet prima che a uno qualsiasi dei snippet VCL di Magento predefiniti (`magentomodule_*`) sia assegnata una priorità di 50. Impostare la priorità per ogni frammento personalizzato su un valore maggiore o minore di 50 a seconda di quando si desidera eseguire il frammento. I frammenti con numeri di priorità inferiore vengono eseguiti per primi.
 
-- `type` — Specifica una posizione in cui inserire lo snippet nella versione VCL. In questo esempio, lo snippet VCL è un `recv` frammento. Quando lo snippet viene inserito nella versione VCL, viene aggiunto al `vcl_recv` subroutine, sotto il codice VCL Fastly predefinito e sopra qualsiasi oggetto.
+- `type` — specifica un percorso in cui inserire lo snippet nella versione VCL. In questo esempio, lo snippet VCL è uno snippet `recv`. Quando il frammento viene inserito nella versione VCL, viene aggiunto alla subroutine `vcl_recv`, sotto il codice VCL Fastly predefinito e sopra qualsiasi oggetto.
 
 - `content` — Frammento di codice VCL da eseguire in una riga, senza interruzioni di riga.
 
 Dopo aver esaminato e aggiornato il codice per l’ambiente, utilizza uno dei metodi seguenti per aggiungere lo snippet VCL personalizzato alla configurazione del servizio Fastly:
 
-- [Aggiungi lo snippet VCL personalizzato dall’amministratore](#add-the-custom-vcl-snippet). Questo metodo è consigliato se puoi accedere all’Admin. (Richiede [Versione definitiva 1.2.58](fastly-configuration.md#upgrade) o versione successiva).
+- [Aggiungi lo snippet VCL personalizzato dall&#39;amministratore](#add-the-custom-vcl-snippet). Questo metodo è consigliato se puoi accedere all’Admin. (Richiede [Fastly versione 1.2.58](fastly-configuration.md#upgrade) o successiva.)
 
-- Salva l’esempio di codice JSON in un file (ad esempio, `allowlist.json`) e [caricala utilizzando l’API Fastly](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). Utilizza questo metodo se non riesci ad accedere all’Admin.
+- Salva l&#39;esempio di codice JSON in un file (ad esempio, `allowlist.json`) e [caricalo utilizzando l&#39;API Fastly](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). Utilizza questo metodo se non riesci ad accedere all’Admin.
 
 ## Aggiungere lo snippet VCL personalizzato
 
 {{admin-login-step}}
 
-1. Clic **Negozi** > Impostazioni > **Configurazione** > **Avanzate** > **Sistema**.
+1. Fai clic su **Archivi** > Impostazioni > **Configurazione** > **Avanzate** > **Sistema**.
 
 1. Espandi **Cache a pagina intera** > **Configurazione rapida** > **Snippet VCL personalizzati**.
 
-1. Clic **Crea snippet personalizzato**.
+1. Fare clic su **Crea snippet personalizzato**.
 
 1. Aggiungi i valori dello snippet VCL:
 
-   - **Nome** — `block_bad_referrer`
+   - **Nome** - `block_bad_referrer`
 
-   - **Tipo** — `recv`
+   - **Tipo** - `recv`
 
-   - **Priorità** — `5`
+   - **Priorità** - `5`
 
    - **VCL** contenuto frammento —
 
@@ -120,11 +120,11 @@ Dopo aver esaminato e aggiornato il codice per l’ambiente, utilizza uno dei me
      }
      ```
 
-1. Clic **Crea**.
+1. Fai clic su **Crea**.
 
-   ![Crea snippet VCL blocco referrer personalizzato](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
+   ![Crea snippet VCL blocco referente personalizzato](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
 
-1. Dopo il ricaricamento della pagina, fai clic su **Carica VCL in Fastly** nel *Configurazione rapida* sezione.
+1. Dopo il ricaricamento della pagina, fai clic su **Carica VCL in Fastly** nella sezione *Fastly Configuration*.
 
 1. Al termine del caricamento, aggiorna la cache in base alla notifica nella parte superiore della pagina.
 

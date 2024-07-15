@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Benvenuto in Adobe Commerce.
 
-La sezione Introduzione illustra le procedure per inizializzare l’account Adobe Commerce e accedere a [!DNL Cloud Console]. Il _Passaggio successivo_ nella parte inferiore di ogni argomento vengono visualizzati il concetto e la procedura successivi. Ogni argomento si basa sugli argomenti precedenti con nuove attività e collegamenti di apprendimento.
+La sezione Introduzione illustra le procedure per inizializzare l&#39;account Adobe Commerce e accedere a [!DNL Cloud Console]. Il collegamento _Passaggio successivo_ nella parte inferiore di ogni argomento consente di aprire il concetto e la procedura successivi. Ogni argomento si basa sugli argomenti precedenti con nuove attività e collegamenti di apprendimento.
 
-Questa guida presuppone che tu abbia una certa conoscenza operativa del [!DNL Commerce] applicazione. Fai riferimento alle guide utente più recenti per sviluppatori e addetti al commerce:
+In questa guida si presuppone che si disponga di alcune conoscenze di lavoro e di comprensione dell&#39;applicazione [!DNL Commerce]. Puoi consultare le guide utente più recenti per Commerce Developer e Commerce:
 
 - [Documentazione per gli sviluppatori di Adobe Commerce](https://developer.adobe.com/commerce/docs/) (sito Adobe Developer): sviluppo, personalizzazione, integrazione, estensione e utilizzo di funzionalità avanzate
 
@@ -26,4 +26,4 @@ Questa guida presuppone che tu abbia una certa conoscenza operativa del [!DNL Co
 >
 >Preparati alla chiamata di benvenuto per inizializzare il progetto Adobe Commerce su infrastruttura cloud.
 >
->**Passaggio successivo**: [Provisioning di Commerce su Cloud](new-project.md)
+>**Passaggio successivo**: [Esegui il provisioning di Commerce nel cloud](new-project.md)

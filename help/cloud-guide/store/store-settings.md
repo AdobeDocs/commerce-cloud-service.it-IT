@@ -12,71 +12,71 @@ ht-degree: 0%
 
 # Gestione configurazione archivio
 
-Le configurazioni predefinite per lo store sono memorizzate in un `config.xml` per il modulo appropriato. Quando si modificano le impostazioni in Commerce Admin o CLI `bin/magento config:set` , le modifiche si riflettono nel database di base, in particolare nel `core_config_data` tabella. Queste impostazioni sovrascrivono le configurazioni predefinite memorizzate in `config.xml` file.
+Le configurazioni predefinite per l&#39;archivio sono archiviate in `config.xml` per il modulo appropriato. Quando si modificano le impostazioni nel comando Commerce Admin o CLI `bin/magento config:set`, le modifiche vengono applicate al database di base, in particolare alla tabella `core_config_data`. Queste impostazioni sovrascrivono le configurazioni predefinite memorizzate nel file `config.xml`.
 
-Impostazioni archivio, che si riferiscono alle configurazioni nell’Admin **Negozi** > **Impostazioni** > **Configurazione** , sono archiviate nei file di configurazione della distribuzione in base al tipo di configurazione:
+Le impostazioni dell&#39;archivio, che fanno riferimento alle configurazioni nella sezione **Archivi** > **Impostazioni** > **Configurazione** dell&#39;amministratore, vengono memorizzate nei file di configurazione della distribuzione in base al tipo di configurazione:
 
-- `app/etc/config.php`: impostazioni di configurazione per store, siti Web, moduli o estensioni, ottimizzazione di file statici e valori di sistema correlati alla distribuzione di contenuti statici. Consulta la [riferimento config.php](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-configphp.html) nel _Guida alla configurazione_.
-- `app/etc/env.php`- valori per le sostituzioni specifiche del sistema e le impostazioni sensibili che devono _NOT_ essere memorizzato nel controllo del codice sorgente. Consulta la [riferimento env.php](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-envphp.html) nel _Guida alla configurazione_.
+- `app/etc/config.php`: impostazioni di configurazione per archivi, siti Web, moduli o estensioni, ottimizzazione di file statici e valori di sistema correlati alla distribuzione di contenuti statici. Vedere il riferimento a [config.php](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-configphp.html) nella _Guida alla configurazione_.
+- `app/etc/env.php`—valori per le sostituzioni specifiche del sistema e le impostazioni sensibili che devono essere _NOT_ archiviate nel controllo del codice sorgente. Vedere il riferimento a [env.php](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-envphp.html) nella _Guida alla configurazione_.
 
 >[!NOTE]
 >
->Poiché Adobe Commerce su infrastruttura cloud supporta solo le modalità di produzione e manutenzione, il **Avanzate** > **Sviluppatore** non è accessibile in Admin. Devi avere [Privilegi di amministratore ambiente](../project/user-access.md) per completare le attività di gestione della configurazione. Puoi configurare altre impostazioni utilizzando [variabili di ambiente](../environment/configure-env-yaml.md).
+>Poiché l&#39;infrastruttura cloud di Adobe Commerce supporta solo le modalità di produzione e manutenzione, la sezione **Avanzate** > **Sviluppatori** non è accessibile in Amministrazione. Per completare le attività di gestione della configurazione è necessario disporre di [privilegi di amministratore dell&#39;ambiente](../project/user-access.md). È possibile configurare impostazioni aggiuntive utilizzando [variabili di ambiente](../environment/configure-env-yaml.md).
 
-La gestione della configurazione consente di implementare impostazioni di archiviazione coerenti negli ambienti con tempi di inattività minimi tramite l’implementazione della pipeline. Il progetto Adobe Commerce su infrastruttura cloud include il server di build, gli script di build e distribuzione e gli ambienti di distribuzione progettati con [strategia di implementazione della pipeline](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/technical-details.html) in mente.
+La gestione della configurazione consente di implementare impostazioni di archiviazione coerenti negli ambienti con tempi di inattività minimi tramite l’implementazione della pipeline. Il progetto Adobe Commerce on cloud infrastructure include il server di compilazione, gli script di compilazione e distribuzione e gli ambienti di distribuzione progettati tenendo presente la [strategia di distribuzione della pipeline](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/technical-details.html).
 
 ## Schema di sostituzione configurazione
 
 Tutte le configurazioni di sistema vengono impostate durante le fasi di generazione e distribuzione in base al seguente schema di sostituzione:
 
 1. Se esiste una variabile di ambiente, utilizza la configurazione personalizzata e ignora quella predefinita.
-1. Se non esiste una variabile di ambiente, utilizza la configurazione di da un `MAGENTO_CLOUD_RELATIONSHIPS` coppia nome-valore nella [`.magento.app.yaml` file](../application/configure-app-yaml.md). Ignora la configurazione predefinita.
-1. Se non esiste una variabile di ambiente e `MAGENTO_CLOUD_RELATIONSHIPS` non contiene una coppia nome-valore, rimuovi tutte le configurazioni personalizzate e utilizza i valori della configurazione predefinita.
+1. Se non esiste una variabile di ambiente, utilizzare la configurazione di una coppia nome-valore `MAGENTO_CLOUD_RELATIONSHIPS` nel file [`.magento.app.yaml`](../application/configure-app-yaml.md). Ignora la configurazione predefinita.
+1. Se una variabile di ambiente non esiste e `MAGENTO_CLOUD_RELATIONSHIPS` non contiene una coppia nome-valore, rimuovere tutte le configurazioni personalizzate e utilizzare i valori dalla configurazione predefinita.
 
 Per riepilogare, le variabili di ambiente sovrascrivono tutti gli altri valori.
 
 >[!TIP]
 >
->Consulta [Gestione della configurazione](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/technical-details.html) nel _Guida alla configurazione_ per ulteriori informazioni sullo schema di sostituzione per la distribuzione della pipeline.
+>Per ulteriori informazioni sullo schema di sostituzione per la distribuzione della pipeline, vedere [Gestione della configurazione](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/technical-details.html) nella _Guida alla configurazione_.
 
 Se la stessa impostazione è configurata in più posizioni, l’applicazione si basa sulla seguente gerarchia di configurazione per determinare quale valore applicare all’ambiente:
 
-| Priorità | Configurazione<br>Metodo | Descrizione |
+| Priorità | Configuration<br>Method | Descrizione |
 | -------- | ------------------------ | ----------- |
-| 1 | [!DNL Cloud Console]<br>variabili di ambiente | Valori aggiunti da _Variabili_ della configurazione dell’ambiente in [!DNL Cloud Console]. Specifica qui i valori per le configurazioni sensibili o specifiche per l’ambiente. Le impostazioni qui specificate non possono essere modificate dall&#39;amministratore. Consulta [Variabili di configurazione dell’ambiente](../project/overview.md#configure-environment). |
-| 2 | `.magento.app.yaml` | Valori aggiunti nel `variables` sezione del `.magento.app.yaml` file. Specifica qui i valori per garantire una configurazione coerente in tutti gli ambienti. **Non specificare valori sensibili nella `.magento.app.yaml` file.** Consulta [Impostazioni applicazione](../application/configure-app-yaml.md). |
-| 3 | `app/etc/env.php` | I valori di configurazione specifici dell’ambiente memorizzati qui vengono aggiunti utilizzando `app:config:dump` comando. Imposta i valori sensibili e specifici del sistema utilizzando le variabili di ambiente o la CLI. Consulta [Dati sensibili](#sensitive-data). Il `env.php` il file è **non** incluso nel controllo del codice sorgente. |
-| 4 | `app/etc/config.php` | I valori memorizzati qui vengono aggiunti utilizzando `app:config:dump` comando. I valori di configurazione condivisi vengono aggiunti a `config.php`. Imposta la configurazione condivisa dall’amministratore o utilizzando CLI. Il `config.php` file incluso nel controllo del codice sorgente. |
+| 1 | [!DNL Cloud Console]<br>variabili di ambiente | Valori aggiunti dalla scheda _Variabili_ della configurazione dell&#39;ambiente in [!DNL Cloud Console]. Specifica qui i valori per le configurazioni sensibili o specifiche per l’ambiente. Le impostazioni qui specificate non possono essere modificate dall&#39;amministratore. Vedi [Variabili di configurazione dell&#39;ambiente](../project/overview.md#configure-environment). |
+| 2 | `.magento.app.yaml` | Valori aggiunti nella sezione `variables` del file `.magento.app.yaml`. Specifica qui i valori per garantire una configurazione coerente in tutti gli ambienti. **Non specificare valori sensibili nel file `.magento.app.yaml`.** Vedere [Impostazioni applicazione](../application/configure-app-yaml.md). |
+| 3 | `app/etc/env.php` | I valori di configurazione specifici dell&#39;ambiente memorizzati qui vengono aggiunti utilizzando il comando `app:config:dump`. Imposta i valori sensibili e specifici del sistema utilizzando le variabili di ambiente o la CLI. Vedi [Dati sensibili](#sensitive-data). Il file `env.php` è **not** incluso nel controllo del codice sorgente. |
+| 4 | `app/etc/config.php` | I valori memorizzati qui vengono aggiunti utilizzando il comando `app:config:dump`. I valori della configurazione condivisa sono stati aggiunti a `config.php`. Imposta la configurazione condivisa dall’amministratore o utilizzando CLI. File `config.php` incluso nel controllo del codice sorgente. |
 | 5 | Database | I valori memorizzati qui vengono aggiunti impostando le configurazioni in Admin. Le configurazioni impostate utilizzando uno dei metodi precedenti sono bloccate (disattivate) e non possono essere modificate dall’amministratore. |
-| 6 | `config.xml` | In molte configurazioni i valori predefiniti sono impostati in `config.xml` per un modulo. Se Adobe Commerce non è in grado di trovare alcun valore impostato con uno dei metodi precedenti, viene utilizzato il valore predefinito, se impostato. |
+| 6 | `config.xml` | Molte configurazioni hanno valori predefiniti impostati nel file `config.xml` per un modulo. Se Adobe Commerce non è in grado di trovare alcun valore impostato con uno dei metodi precedenti, viene utilizzato il valore predefinito, se impostato. |
 
 {style="table-layout:auto"}
 
 ## Immagine configurazione
 
-Puoi utilizzare quanto segue `ece-tools` per generare un `config.php` file contenente tutte le configurazioni di archivio correnti:
+È possibile utilizzare il comando `ece-tools` seguente per generare un file `config.php` contenente tutte le configurazioni dell&#39;archivio correnti:
 
 ```bash
 ./vendor/bin/ece-tools config:dump
 ```
 
-I dati &quot;scaricati&quot; in `app/etc/config.php` il file diventa _bloccato_, il che significa che il campo corrispondente nell’amministrazione di Commerce diventa **sola lettura**. Il `config.php` Il file include solo le impostazioni configurate. Non blocca i valori predefiniti. Il blocco solo dei valori aggiornati assicura inoltre che tutte le estensioni utilizzate negli ambienti di staging e produzione non si interrompano a causa di configurazioni di sola lettura, in particolare Fastly.
+I dati &quot;scaricati&quot; nel file `app/etc/config.php` diventano _bloccati_, il che significa che il campo corrispondente nell&#39;amministratore di Commerce diventa **di sola lettura**. Il file `config.php` include solo le impostazioni configurate. Non blocca i valori predefiniti. Il blocco solo dei valori aggiornati assicura inoltre che tutte le estensioni utilizzate negli ambienti di staging e produzione non si interrompano a causa di configurazioni di sola lettura, in particolare Fastly.
 
 >[!WARNING]
 >
->Il `ece-tools config:dump` Il comando non recupera le configurazioni dettagliate per i moduli, ad esempio B2B. Se hai bisogno di un dump di configurazione completo, utilizza `app:config:dump` ma questo comando blocca i valori di configurazione in uno stato di sola lettura.
+>Il comando `ece-tools config:dump` non recupera le configurazioni dettagliate per i moduli, ad esempio B2B. Se è necessario un dump di configurazione completo, utilizzare il comando `app:config:dump`, ma questo comando blocca i valori di configurazione in uno stato di sola lettura.
 
 ### Dati sensibili
 
-Tutte le configurazioni sensibili vengono esportate in `app/etc/env.php` quando si utilizza `bin/magento app:config:dump` comando. È possibile impostare valori sensibili utilizzando il comando CLI: `bin/magento config:sensitive:set`. Consulta  [Impostazioni sensibili e specifiche per l’ambiente](https://developer.adobe.com/commerce/php/development/configuration/sensitive-environment-settings/) nel _Estensioni Commerce PHP_ guida per scoprire come designare le impostazioni di configurazione come sensibili o specifiche per il sistema.
+Tutte le configurazioni sensibili vengono esportate nel file `app/etc/env.php` quando si utilizza il comando `bin/magento app:config:dump`. È possibile impostare valori sensibili utilizzando il comando CLI: `bin/magento config:sensitive:set`. Consulta [Impostazioni sensibili e specifiche dell&#39;ambiente](https://developer.adobe.com/commerce/php/development/configuration/sensitive-environment-settings/) nella _Guida delle estensioni Commerce PHP_ per scoprire come definire le impostazioni di configurazione sensibili o specifiche del sistema.
 
-Visualizza un elenco di [Impostazioni sensibili o specifiche del sistema](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/config-reference-sens.html) nel _Guida alla configurazione_.
+Vedere un elenco di [impostazioni sensibili o specifiche del sistema](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/config-reference-sens.html) nella _Guida alla configurazione_.
 
 ### Prestazioni SCD
 
-A seconda delle dimensioni dell’archivio, è possibile che sia presente un numero elevato di file di contenuto statico da distribuire. Normalmente, il contenuto statico viene distribuito durante la fase di distribuzione quando l’applicazione è in modalità Manutenzione. La configurazione ottimale consiste nel generare contenuto statico durante la fase di build. Consulta [Scelta di una strategia di distribuzione](../deploy/static-content.md).
+A seconda delle dimensioni dell’archivio, è possibile che sia presente un numero elevato di file di contenuto statico da distribuire. Normalmente, il contenuto statico viene distribuito durante la fase di distribuzione quando l’applicazione è in modalità Manutenzione. La configurazione ottimale consiste nel generare contenuto statico durante la fase di build. Vedere [Scelta di una strategia di distribuzione](../deploy/static-content.md).
 
-Se dopo aver scaricato le configurazioni hai abilitato la gestione della configurazione, devi spostare le variabili SCD_* dalla fase di distribuzione alla fase di build per abilitare correttamente la generazione di contenuto statico durante la fase di build. Consulta [Variabili di ambiente](../environment/configure-env-yaml.md#environment-variables).
+Se dopo aver scaricato le configurazioni hai abilitato la gestione della configurazione, devi spostare le variabili SCD_* dalla fase di distribuzione alla fase di build per abilitare correttamente la generazione di contenuto statico durante la fase di build. Vedi [Variabili di ambiente](../environment/configure-env-yaml.md#environment-variables).
 
 **Prima della gestione della configurazione**:
 
@@ -91,7 +91,7 @@ Se dopo aver scaricato le configurazioni hai abilitato la gestione della configu
     REDIS_USE_SLAVE_CONNECTION: 1
 ```
 
-**Dopo aver abilitato la gestione della configurazione**:
+**Dopo aver abilitato Gestione configurazione**:
 
 Sposta le variabili SCD_* nella fase di build:
 
@@ -109,15 +109,15 @@ Sposta le variabili SCD_* nella fase di build:
 
 >[!NOTE]
 >
->Prima di distribuire i file statici, le fasi di build e distribuzione comprimono il contenuto statico utilizzando GZIP. La compressione dei file statici riduce i carichi del server e aumenta le prestazioni del sito. Consulta [opzioni di build](../environment/variables-build.md) informazioni sulla personalizzazione o la disattivazione della compressione dei file.
+>Prima di distribuire i file statici, le fasi di build e distribuzione comprimono il contenuto statico utilizzando GZIP. La compressione dei file statici riduce i carichi del server e aumenta le prestazioni del sito. Consulta [opzioni di compilazione](../environment/variables-build.md) per informazioni sulla personalizzazione o la disattivazione della compressione dei file.
 
 ## Procedura per gestire le impostazioni
 
 Di seguito viene illustrata una panoramica di alto livello di questo processo:
 
-![Panoramica della gestione della configurazione Starter](../../assets/starter/configuration-management-flow.png)
+![Panoramica sulla gestione della configurazione Starter](../../assets/starter/configuration-management-flow.png)
 
-**Per configurare l’archivio e generare un file di configurazione**:
+**Per configurare l&#39;archivio e generare un file di configurazione**:
 
 1. Completa tutte le configurazioni per i negozi nell’Admin per uno degli ambienti:
 
@@ -152,15 +152,15 @@ Al termine della distribuzione, accedi all’amministratore dell’ambiente aggi
 
 ### Aggiorna configurazioni
 
-Quando modifichi l’ambiente tramite l’amministratore ed esegui nuovamente il comando, al codice vengono aggiunte nuove configurazioni nel `config.php` file.
+Quando modifichi l&#39;ambiente tramite l&#39;amministratore ed esegui nuovamente il comando, le nuove configurazioni vengono aggiunte al codice nel file `config.php`.
 
 >[!WARNING]
 >
->Mentre è possibile modificare manualmente il `config.php` negli ambienti di staging e produzione, è **non** consigliato. Il file consente di mantenere tutte le configurazioni coerenti in tutti gli ambienti. Non eliminare mai `config.php` per ricrearlo. L’eliminazione del file può rimuovere configurazioni e impostazioni specifiche necessarie per i processi di build e distribuzione.
+>Anche se è possibile modificare manualmente il file `config.php` negli ambienti di staging e produzione, è **non** consigliato. Il file consente di mantenere tutte le configurazioni coerenti in tutti gli ambienti. Non eliminare mai il file `config.php` per ricrearlo. L’eliminazione del file può rimuovere configurazioni e impostazioni specifiche necessarie per i processi di build e distribuzione.
 
 ### Ripristina file di configurazione
 
-Copie dell’originale `app/etc/env.php` e `app/etc/config.php` I file sono stati creati durante il processo di distribuzione e archiviati nella stessa cartella. Di seguito sono riportati i file BAK (backup file) e PHP (file originali) nello stesso `app/etc` cartella:
+Copie dei file `app/etc/env.php` e `app/etc/config.php` originali sono state create durante il processo di distribuzione e archiviate nella stessa cartella. Di seguito sono riportati i file BAK (backup file) e PHP (file originali) nella stessa cartella `app/etc`:
 
 ```terminal
 ...
@@ -174,7 +174,7 @@ env.php
 ...
 ```
 
-Le configurazioni meno recenti utilizzavano `app/etc/config.local.php` file. Consulta [Migra configurazioni meno recenti](#migrate-older-configurations).
+Le configurazioni meno recenti utilizzavano il file `app/etc/config.local.php`. Consulta [Eseguire la migrazione di configurazioni precedenti](#migrate-older-configurations).
 
 **Per ripristinare i file di configurazione**:
 
@@ -206,37 +206,37 @@ Le configurazioni meno recenti utilizzavano `app/etc/config.local.php` file. Con
 
 ### Migra configurazioni meno recenti
 
-Se esegui l’aggiornamento ad Adobe Commerce su infrastruttura cloud 2.2 o versione successiva, potrebbe essere utile migrare le impostazioni da `config.local.php` file nel nuovo `config.php` file. Se le impostazioni di configurazione nell’amministratore corrispondono al contenuto del file, segui le istruzioni per generare e aggiungere `config.php` file.
+Se si esegue l&#39;aggiornamento ad Adobe Commerce su infrastruttura cloud 2.2 o versione successiva, è possibile migrare le impostazioni dal file `config.local.php` al nuovo file `config.php`. Se le impostazioni di configurazione dell&#39;amministratore corrispondono al contenuto del file, seguire le istruzioni per generare e aggiungere il file `config.php`.
 
-Se sono diverse, puoi aggiungere contenuto dalla sezione `config.local.php` file nel nuovo `config.php` file:
+In caso di differenze, è possibile aggiungere il contenuto del file `config.local.php` al nuovo file `config.php`:
 
-1. Segui le istruzioni per generare il `config.php` file.
+1. Seguire le istruzioni per generare il file `config.php`.
 
-1. Apri `config.php` ed eliminare l&#39;ultima riga.
+1. Aprire il file `config.php` ed eliminare l&#39;ultima riga.
 
-1. Apri `config.local.php` e copiarne il contenuto.
+1. Aprire il file `config.local.php` e copiare il contenuto.
 
-1. Incolla il contenuto nel `config.php` file, salva e completa l’aggiunta a Git.
+1. Incollare il contenuto nel file `config.php`, salvarlo e completare l&#39;aggiunta a Git.
 
 1. Distribuisci nei tuoi ambienti.
 
-Puoi completare questa migrazione solo una volta. Dopo la migrazione, utilizza `config.php` file.
+Puoi completare questa migrazione solo una volta. Dopo la migrazione, utilizzare il file `config.php`.
 
 ### Cambia impostazioni internazionali
 
-È possibile modificare le impostazioni internazionali dello store senza seguire un complesso processo di importazione ed esportazione della configurazione. _se_ tu hai [SCD_ON_DEMAND](../environment/variables-global.md#scd_on_demand) abilitato. Puoi aggiornare le impostazioni internazionali utilizzando l’amministratore.
+È possibile modificare le impostazioni internazionali dell&#39;archivio senza seguire un processo di importazione ed esportazione di configurazione complesso, _se_ hai abilitato [SCD_ON_DEMAND](../environment/variables-global.md#scd_on_demand). Puoi aggiornare le impostazioni internazionali utilizzando l’amministratore.
 
-È possibile aggiungere un’altra lingua all’ambiente di staging o produzione abilitando `SCD_ON_DEMAND` in un ramo di integrazione, genera un `config.php` file con le nuove informazioni sulle impostazioni internazionali e copia il file di configurazione nell&#39;ambiente di destinazione.
+È possibile aggiungere un&#39;altra lingua all&#39;ambiente di staging o produzione abilitando `SCD_ON_DEMAND` in un ramo di integrazione, generare un file `config.php` aggiornato con le nuove informazioni sulle impostazioni internazionali e copiare il file di configurazione nell&#39;ambiente di destinazione.
 
 >[!WARNING]
 >
->Questo processo **sovrascrive** la configurazione dell’archivio; effettua le seguenti operazioni solo se gli ambienti contengono gli stessi archivi.
+>Questo processo **sovrascrive** la configurazione dell&#39;archivio; eseguire le operazioni seguenti solo se gli ambienti contengono gli stessi archivi.
 
-1. Nell’ambiente di integrazione, abilita `SCD_ON_DEMAND` variabile utilizzando [`.magento.env.yaml` file](../environment/configure-env-yaml.md).
+1. Nell&#39;ambiente di integrazione, abilitare la variabile `SCD_ON_DEMAND` utilizzando il file [`.magento.env.yaml`](../environment/configure-env-yaml.md).
 
 1. Aggiungi le lingue necessarie utilizzando il tuo amministratore.
 
-1. Utilizzare SSH per accedere all’ambiente remoto e generare `/app/etc/config.php` file contenente tutte le impostazioni internazionali.
+1. Utilizzare SSH per accedere all&#39;ambiente remoto e generare il file `/app/etc/config.php` contenente tutte le impostazioni internazionali.
 
    ```bash
    ssh <SSH-URL> "./vendor/bin/ece-tools config:dump"

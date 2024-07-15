@@ -28,19 +28,19 @@ Puoi configurare il frammento di codice in modo da evitare il caching Fastly per
 
 {{admin-login-step}}
 
-1. Clic **Negozi** > Impostazioni > **Configurazione** > **Avanzate** > **Sistema**.
+1. Fai clic su **Archivi** > Impostazioni > **Configurazione** > **Avanzate** > **Sistema**.
 
 1. Espandi **Cache a pagina intera** > **Configurazione rapida** > **Snippet VCL personalizzati**.
 
-1. Clic **Crea snippet personalizzato**.
+1. Fare clic su **Crea snippet personalizzato**.
 
 1. Aggiungi i valori dello snippet VCL:
 
-   - **Nome** — `bypass_fastly`
+   - **Nome** - `bypass_fastly`
 
-   - **Tipo** — `recv`
+   - **Tipo** - `recv`
 
-   - **Priorità** — `5`
+   - **Priorità** - `5`
 
    - **VCL** contenuto frammento —
 
@@ -58,13 +58,13 @@ Puoi configurare il frammento di codice in modo da evitare il caching Fastly per
      if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
      ```
 
-     Per una corrispondenza URL esatta, utilizza `==` anziché `~` operatore. Consulta la [Riferimento VCL Fastly] per i dettagli.
+     Per ottenere una corrispondenza URL esatta, utilizzare l&#39;operatore `==` anziché l&#39;operatore `~`. Per informazioni dettagliate, vedere [Fastly VCL reference].
 
-1. Clic **Crea**.
+1. Fai clic su **Crea**.
 
    ![Crea snippet VCL con bypass veloce](/help/assets/cdn/fastly-create-bypass-snippet.png)
 
-1. Dopo il ricaricamento della pagina, fai clic su **Carica VCL in Fastly** nel *Configurazione rapida* sezione.
+1. Dopo il ricaricamento della pagina, fai clic su **Carica VCL in Fastly** nella sezione *Fastly Configuration*.
 
 1. Al termine del caricamento, aggiorna la cache in base alla notifica nella parte superiore della pagina.
 

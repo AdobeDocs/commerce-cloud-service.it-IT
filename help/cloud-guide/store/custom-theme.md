@@ -36,7 +36,7 @@ Per installare manualmente un tema, è necessario che il codice del tema sia in 
 
 **Per installare manualmente un tema**:
 
-1. Copia il codice del tema in `<Project root dir>/app/design/frontend` per un tema vetrina o `<Project root dir>/app/design/adminhtml` per un tema amministratore. Verifica che la directory di primo livello sia `<VendorName>`; in caso contrario, il tema non viene installato correttamente.
+1. Copiare il codice del tema in `<Project root dir>/app/design/frontend` per un tema vetrina o `<Project root dir>/app/design/adminhtml` per un tema amministratore. Verificare che la directory di primo livello sia `<VendorName>`. In caso contrario, il tema non viene installato correttamente.
 
    ```bash
    cp -r ExampleTheme <project-root>/app/design/frontend
@@ -65,17 +65,17 @@ Per installare manualmente un tema, è necessario che il codice del tema sia in 
 
 1. Attendere il completamento della distribuzione.
 1. Accedi all’amministratore.
-1. Clic **Contenuto** > Design **Temi**.
+1. Fai clic su **Contenuto** > Progettazione > **Temi**.
 
    Il tema viene visualizzato nel riquadro di destra.
 
 ## Installare un tema tramite Compositore
 
-L’installazione di un tema con Composer è identica all’installazione di qualsiasi altra estensione con Composer. Consulta [Installare, gestire e aggiornare i moduli](extensions.md) per i dettagli.
+L’installazione di un tema con Composer è identica all’installazione di qualsiasi altra estensione con Composer. Per informazioni dettagliate, vedere [Installare, gestire e aggiornare i moduli](extensions.md).
 
 Per installare un tema utilizzando Compositore:
 
-1. Acquista il tema da Commerci Marketplace.
+1. Acquista il tema da Commerce Marketplace.
 1. Ottieni il nome del Compositore del tema.
 1. Passa alla directory principale di Adobe Commerce e immetti il comando:
 
@@ -101,10 +101,10 @@ Per installare un tema utilizzando Compositore:
    ```
 
 1. Accedi all’amministratore.
-1. Clic **Contenuto** > Design **Temi**.
+1. Fai clic su **Contenuto** > Progettazione > **Temi**.
 
    Il tema viene visualizzato nel riquadro di destra.
 
 ## Più temi
 
-Quando si utilizzano più temi, ad esempio temi diversi per lingua, esaminare `SCD_MATRIX` variabile di ambiente per personalizzare la distribuzione del tema. Consulta la [build](../environment/variables-build.md#scd_matrix) o [distribuire](../environment/variables-deploy.md#scd_matrix) fasi del processo [configurazione dell’ambiente](../environment/configure-env-yaml.md).
+Quando si utilizzano più temi, ad esempio temi diversi per lingua, esaminare la variabile di ambiente `SCD_MATRIX` per personalizzare la distribuzione dei temi. Vedere le fasi [build](../environment/variables-build.md#scd_matrix) o [deploy](../environment/variables-deploy.md#scd_matrix) nella [configurazione ambiente](../environment/configure-env-yaml.md).

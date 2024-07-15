@@ -21,7 +21,7 @@ Contatta il supporto Adobe Commerce e aggiorna tutti i ticket di lancio del sito
 
 ## Passa DNS al nuovo sito
 
-Il valore Time-to-Live modificato è importante per controllare il dominio modificato. Quando modifichi i record A e CNAME, l’aggiornamento richiede il tempo configurato TTL per essere aggiornato correttamente. Per ulteriori informazioni sulle impostazioni DNS, vedere [Configurazioni DNS](checklist.md#update-dns-configuration-with-production-settings).
+Il valore Time-to-Live modificato è importante per controllare il dominio modificato. Quando modifichi i record A e CNAME, l’aggiornamento richiede il tempo configurato TTL per essere aggiornato correttamente. Per informazioni dettagliate sulle impostazioni DNS, vedere [Configurazioni DNS](checklist.md#update-dns-configuration-with-production-settings).
 
 ### Per passare al nuovo sito:
 
@@ -35,9 +35,9 @@ Il valore Time-to-Live modificato è importante per controllare il dominio modif
 
 ## Test dello store live
 
-Completa alcuni test UAT nel tuo archivio live per verificare che tutto sia in fase di caricamento e che le azioni vengano completate correttamente. Per un elenco dei test, consulta [Distribuzione dei test](../test/staging-and-production.md#complete-uat-testing).
+Completa alcuni test UAT nel tuo archivio live per verificare che tutto sia in fase di caricamento e che le azioni vengano completate correttamente. Per un elenco dei test, vedere [Distribuzione dei test](../test/staging-and-production.md#complete-uat-testing).
 
-## Post-lancio
+## Post-Launch
 
 L’Adobe controlla il sito e lo monitora per garantire che tutti i servizi e gli accessi siano visualizzati in verde. Rimaniamo a disposizione quando necessario per esaminare e verificare che tutti i registri di sistema, i servizi, la memorizzazione in cache e le funzioni funzionino come necessario per te e per i tuoi clienti.
 

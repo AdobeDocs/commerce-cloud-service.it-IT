@@ -11,17 +11,17 @@ ht-degree: 0%
 
 # Elenco di controllo di Launch
 
-Prima di implementare nell’ambiente di produzione, scarica la [Elenco di controllo di Launch](../../assets/adobe-commerce-cloud-prelaunch-checklist.pdf), e utilizzarlo con queste istruzioni per verificare di aver completato tutte le configurazioni e i test richiesti. Per una panoramica del processo di distribuzione completo per Starter e Pro, visitare il sito [Distribuire lo store](../deploy/staging-production.md).
+Prima di eseguire la distribuzione nell&#39;ambiente di produzione, scaricare l&#39;[elenco di controllo di Launch](../../assets/adobe-commerce-cloud-prelaunch-checklist.pdf) e utilizzarlo con queste istruzioni per verificare di aver completato tutte le operazioni di configurazione e test richieste. Vedi una panoramica del processo di distribuzione completo per Starter e Pro all&#39;indirizzo [Distribuisci il tuo archivio](../deploy/staging-production.md).
 
 ## Test completo in produzione
 
-Consulta [Distribuzione dei test](../test/staging-and-production.md) per testare tutti gli aspetti di siti, store e ambienti. Questi test includono la verifica Fastly, i test di accettazione utente (UAT, User Acceptance Test) e i test delle prestazioni.
+Consulta [Distribuzione dei test](../test/staging-and-production.md) per testare tutti gli aspetti dei siti, degli archivi e degli ambienti. Questi test includono la verifica Fastly, i test di accettazione utente (UAT, User Acceptance Test) e i test delle prestazioni.
 
 ## TLS e Fastly
 
 In questo Adobe viene fornito un certificato crittografato SSL/TLS per ogni ambiente. Questo certificato è necessario affinché Fastly possa gestire il traffico protetto tramite HTTPS.
 
-Per utilizzare questo certificato, devi aggiornare la configurazione DNS in modo che Adobe possa completare la convalida del dominio e applicare il certificato all’ambiente. Ogni ambiente dispone di un certificato univoco che copre i domini di Adobe Commerce sui siti dell’infrastruttura cloud implementati in tale ambiente. È consigliabile completare e aggiornare la configurazione durante la [Processo di configurazione rapido](../cdn/fastly-configuration.md).
+Per utilizzare questo certificato, devi aggiornare la configurazione DNS in modo che Adobe possa completare la convalida del dominio e applicare il certificato all’ambiente. Ogni ambiente dispone di un certificato univoco che copre i domini di Adobe Commerce sui siti dell’infrastruttura cloud implementati in tale ambiente. È consigliabile completare e aggiornare la configurazione durante il [processo di configurazione rapido](../cdn/fastly-configuration.md).
 
 ## Aggiornamento della configurazione DNS con le impostazioni di produzione
 
@@ -33,9 +33,9 @@ Quando sei pronto per avviare il sito, devi aggiornare la configurazione DNS per
 
 - La configurazione dell’ambiente di produzione è stata aggiornata con tutti i domini richiesti
 
-  In genere, si lavora con il proprio consulente tecnico clienti per aggiungere tutti i domini e i sottodomini di livello superiore necessari per gli store. Per aggiungere o modificare i domini per l’ambiente di produzione: [Inviare un ticket di supporto Adobe Commerce](https://support.magento.com/hc/en-us/articles/360019088251). Attendi la conferma che la configurazione del progetto è stata aggiornata.
+  In genere, si lavora con il proprio consulente tecnico clienti per aggiungere tutti i domini e i sottodomini di livello superiore necessari per gli store. Per aggiungere o modificare i domini per l&#39;ambiente di produzione, [Invia un ticket di supporto Adobe Commerce](https://support.magento.com/hc/en-us/articles/360019088251). Attendi la conferma che la configurazione del progetto è stata aggiornata.
 
-  Nei progetti iniziali, devi aggiungere i domini al progetto. Consulta [Gestione domini](../cdn/fastly-custom-cache-configuration.md#manage-domains).
+  Nei progetti iniziali, devi aggiungere i domini al progetto. Vedi [Gestione domini](../cdn/fastly-custom-cache-configuration.md#manage-domains).
 
 - È stato eseguito il provisioning del certificato SSL/TLS per gli ambienti di produzione.
 
@@ -54,14 +54,14 @@ Quando sei pronto per avviare il sito, devi aggiornare la configurazione DNS per
      È consigliabile impostare un valore TTL significativamente inferiore quando si cambia il record DNS. Questo valore indica al DNS per quanto tempo memorizzare in cache il record DNS. In caso di riduzione, il DNS viene aggiornato più rapidamente. Ad esempio, puoi modificare il valore TTL da tre giorni a 10 minuti durante l’aggiornamento del sito. Tieni presente che la riduzione del valore TTL aggiunge un carico all’infrastruttura DNS. Ripristina il valore precedente più alto dopo l’avvio del sito.
 
 
-1. Aggiungi record CNAME per far sì che i sottodomini dell’ambiente di produzione puntino al servizio Fastly `prod.magentocloud.map.fastly.net`, ad esempio:
+1. Aggiungere record CNAME per far puntare i sottodomini dell&#39;ambiente di produzione al servizio Fastly `prod.magentocloud.map.fastly.net`, ad esempio:
 
    | Dominio o sottodominio | CNAME |
    | ----------------------- | -------------------------------- |
    | `www.<domain-name>.com` | prod.magentocloud.map.fastly.net |
    | `mystore.<domain-name>.com` | prod.magentocloud.map.fastly.net |
 
-1. Se necessario, aggiungi i record A per mappare il dominio apex (`<domain-name>.com`) ai seguenti indirizzi IP Fastly:
+1. Se necessario, aggiungere i record A per mappare il dominio apex (`<domain-name>.com`) ai seguenti indirizzi IP Fastly:
 
    | Dominio apex | NOME |
    | --------------- | ----------------- |
@@ -72,10 +72,10 @@ Quando sei pronto per avviare il sito, devi aggiornare la configurazione DNS per
 
 >[!IMPORTANT]
 >
->Istruzioni DNS in [RFC1034](https://www.rfc-editor.org/rfc/rfc1912) (**sezione 2.4**) dichiarano che:
->_Un record CNAME non può coesistere con altri dati. In altre parole, se suzy.podunk.xx è un alias per sue.podunk.xx, non è possibile avere anche un record MX per suzy.podunk.edu, un record A o persino un record TXT._
+>Le istruzioni DNS in [RFC1034](https://www.rfc-editor.org/rfc/rfc1912) (**sezione 2.4**) indicano che:
+>_Un record CNAME non può coesistere con altri dati. In altre parole, se suzy.podunk.xx è un alias per sue.podunk.xx, non è possibile avere un record MX per suzy.podunk.edu, un record A o persino un record TXT._
 >
->Per questo motivo, i record DNS devono essere di tipo `CNAME` per sottodomini e tipo `A` per i domini apex (domini root). L’eliminazione di questa regola può causare interruzioni del servizio di posta o della propagazione DNS, perché non è più possibile aggiungere altri record, ad esempio MX o NS. Alcuni provider DNS possono aggirare questo problema utilizzando personalizzazioni interne, ma il rispetto dello standard garantisce stabilità e flessibilità (ad esempio la modifica del provider DNS).
+>Per questo motivo, i record DNS devono essere di tipo `CNAME` per i sottodomini e di tipo `A` per i domini APEX (domini radice). L’eliminazione di questa regola può causare interruzioni del servizio di posta o della propagazione DNS, perché non è più possibile aggiungere altri record, ad esempio MX o NS. Alcuni provider DNS possono aggirare questo problema utilizzando personalizzazioni interne, ma il rispetto dello standard garantisce stabilità e flessibilità (ad esempio la modifica del provider DNS).
 
 1. Aggiornare l’URL di base.
 
@@ -91,7 +91,7 @@ Quando sei pronto per avviare il sito, devi aggiornare la configurazione DNS per
      php bin/magento setup:store-config:set --base-url="https://www.<domain-name>.com/"
      ```
 
-   **NOTA**: puoi anche aggiornare l’URL di base dall’amministratore. Consulta [URL store](https://experienceleague.adobe.com/docs/commerce-admin/stores-sales/site-store/store-urls.html) nel _Guida agli acquisti e ai negozi Adobe Commerce_.
+   **NOTA**: puoi anche aggiornare l&#39;URL di base dall&#39;amministratore. Consulta [URL store](https://experienceleague.adobe.com/docs/commerce-admin/stores-sales/site-store/store-urls.html) nella _Guida agli store e all&#39;esperienza di acquisto di Adobe Commerce_.
 
 1. Attendi alcuni minuti per l’aggiornamento del sito.
 
@@ -113,41 +113,41 @@ Di seguito sono riportate le modifiche e i controlli consigliati:
 
 ## Verificare il caching rapido
 
-- Verifica e controlla che il caching Fastly funzioni correttamente sul sito di produzione. Per i test e i controlli dettagliati, vedi [Test rapido](../test/staging-and-production.md#check-fastly-caching).
+- Verifica e controlla che il caching Fastly funzioni correttamente sul sito di produzione. Per ulteriori verifiche e test, vedere [Test rapidi](../test/staging-and-production.md#check-fastly-caching).
 
-- [Verifica che nell’ambiente di produzione sia installata la versione più recente del modulo CDN Fastly per Commerce](../cdn/fastly-configuration.md#upgrade-the-fastly-module)
+- [Verifica che nell’ambiente di produzione sia installata la versione più recente del modulo Fastly CDN per Commerce](../cdn/fastly-configuration.md#upgrade-the-fastly-module)
 
 - [Verifica che sia stata caricata la versione più recente del codice VCL Fastly](../cdn/fastly-configuration.md#upload-vcl-to-fastly)
 
 ## Test delle prestazioni
 
-È consigliabile rivedere [Performance Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) come parte del processo di preparazione pre-lancio.
+È consigliabile esaminare le opzioni di [Performance Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) nell&#39;ambito del processo di preparazione precedente all&#39;avvio.
 
 Puoi eseguire il test anche utilizzando le seguenti opzioni di terze parti:
 
-- [Assedio](https://www.joedog.org/siege-home/): software per la formazione e il test del traffico per spingere il punto vendita al limite. Visita il tuo sito con un numero configurabile di client simulati. Siege supporta l’autenticazione di base, i cookie, i protocolli HTTP, HTTPS e FTP.
+- [Assedio](https://www.joedog.org/siege-home/): verifica e definizione del traffico del software per spingere l&#39;archivio al limite. Visita il tuo sito con un numero configurabile di client simulati. Siege supporta l’autenticazione di base, i cookie, i protocolli HTTP, HTTPS e FTP.
 
-- [Jmeter](https://jmeter.apache.org/): test di carico eccellenti per misurare le prestazioni per il traffico con picchi di traffico, come per le vendite flash. Crea test personalizzati da eseguire sul sito.
+- [Jmeter](https://jmeter.apache.org/): test di carico eccellenti per valutare le prestazioni per il traffico picco, come nel caso delle vendite flash. Crea test personalizzati da eseguire sul sito.
 
-- [New Relic](https://support.newrelic.com/s/) (fornito): consente di individuare processi e aree del sito che causano prestazioni lente con tempo di tracciamento impiegato per azione come trasmissione di dati, query, Redis e altro ancora.
+- [New Relic](https://support.newrelic.com/s/) (fornito): consente di individuare i processi e le aree del sito causando un rallentamento delle prestazioni con tempo di rilevamento trascorso per azione, ad esempio la trasmissione di dati, query, Redis e altro ancora.
 
-- [WebPageTest](https://www.webpagetest.org/) e [Vernice](https://www.pingdom.com/): l’analisi in tempo reale delle pagine del sito carica il tempo con posizioni di origine diverse. Il pnl può costare una tassa. WebPageTest è uno strumento gratuito.
+- [WebPageTest](https://www.webpagetest.org/) e [PKingdom](https://www.pingdom.com/): l&#39;analisi in tempo reale delle pagine del sito viene caricata con percorsi di origine diversi. Il pnl può costare una tassa. WebPageTest è uno strumento gratuito.
 
 ## Configurazione della sicurezza
 
 - [Configurare l&#39;analisi della protezione](overview.md#set-up-the-security-scan-tool)
 
-- [Configurazione sicura per l’utente amministratore](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Configurazione sicura per l&#39;utente amministratore](https://docs.magento.com/user-guide/stores/security-admin.html)
 
-- [Configurazione sicura per l’URL amministratore](https://docs.magento.com/user-guide/stores/store-urls-custom-admin.html)
+- [Configurazione sicura per URL amministratore](https://docs.magento.com/user-guide/stores/store-urls-custom-admin.html)
 
 - [Rimuovere gli utenti che non fanno più parte del progetto di infrastruttura cloud di Adobe Commerce](../project/user-access.md)
 
-- [Configurare l’autenticazione a due fattori](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+- [Configura autenticazione a due fattori](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
 
 ## Monitoraggio delle prestazioni
 
-È possibile utilizzare i servizi New Relic per il monitoraggio delle prestazioni in ambienti Pro e Starter. Negli account Pro plan, vengono forniti gli avvisi gestiti per i criteri di avviso di Adobe Commerce per monitorare le prestazioni delle applicazioni e dell&#39;infrastruttura utilizzando gli agenti New Relic APM e Infrastructure. Per maggiori informazioni sull&#39;utilizzo di questi servizi, consulta [Monitorare le prestazioni con avvisi gestiti](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts).
+È possibile utilizzare i servizi New Relic per il monitoraggio delle prestazioni in ambienti Pro e Starter. Negli account Pro plan, vengono forniti gli avvisi gestiti per i criteri di avviso di Adobe Commerce per monitorare le prestazioni delle applicazioni e dell&#39;infrastruttura utilizzando gli agenti New Relic APM e Infrastructure. Per informazioni dettagliate sull&#39;utilizzo di questi servizi, vedere [Monitorare le prestazioni con avvisi gestiti](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts).
 
 ### Passaggio successivo
 

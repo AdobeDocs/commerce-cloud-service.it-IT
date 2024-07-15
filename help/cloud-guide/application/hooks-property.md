@@ -1,6 +1,6 @@
 ---
 title: Proprietà Hooks
-description: Vedi esempi su come configurare la proprietà hook in [!DNL Commerce] file di configurazione dell'applicazione.
+description: Vedi esempi su come configurare la proprietà hook nel file di configurazione dell'applicazione  [!DNL Commerce] .
 feature: Cloud, Configuration, Build, Deploy
 exl-id: d9561f09-5129-4b72-978e-2e3873e8efae
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Proprietà Hooks
 
-Utilizza il `hooks` sezione per eseguire i comandi della shell durante le fasi di compilazione, distribuzione e post-distribuzione:
+Utilizzare la sezione `hooks` per eseguire i comandi della shell durante le fasi di compilazione, distribuzione e post-distribuzione:
 
-- **`build`**- Esecuzione di comandi _prima di_ creazione del pacchetto dell’applicazione. Servizi, come il database o Redis, non sono disponibili perché l&#39;applicazione non è ancora stata distribuita. Aggiungere comandi personalizzati _prima di_ impostazione predefinita `php ./vendor/bin/ece-tools` affinché il contenuto generato personalizzato continui alla fase di distribuzione.
+- **`build`**—Esegui i comandi _prima_ di creare il pacchetto dell&#39;applicazione. Servizi, come il database o Redis, non sono disponibili perché l&#39;applicazione non è ancora stata distribuita. Aggiungere i comandi personalizzati _prima_ del comando predefinito `php ./vendor/bin/ece-tools` in modo che il contenuto generato personalizzato continui alla fase di distribuzione.
 
-- **`deploy`**- Esecuzione di comandi _dopo_ creazione di pacchetti e distribuzione dell&#39;applicazione. A questo punto è possibile accedere ad altri servizi. Dal valore predefinito `php ./vendor/bin/ece-tools` copia il comando `app/etc` nella posizione corretta, è necessario aggiungere comandi personalizzati _dopo_ il comando deploy per evitare errori nei comandi personalizzati.
+- **`deploy`**—Esegui i comandi _dopo_ per creare il pacchetto e distribuire l&#39;applicazione. A questo punto è possibile accedere ad altri servizi. Poiché il comando predefinito `php ./vendor/bin/ece-tools` copia la directory `app/etc` nella posizione corretta, è necessario aggiungere comandi personalizzati _dopo_ al comando deploy per evitare errori nei comandi personalizzati.
 
-- **`post_deploy`**- Esecuzione di comandi _dopo_ distribuzione dell&#39;applicazione e _dopo_ il contenitore inizia ad accettare le connessioni. Il `post_deploy` hook cancella la cache e precarica (riscalda) la cache. È possibile personalizzare l’elenco delle pagine utilizzando `WARM_UP_PAGES` variabile in [Fase post-distribuzione](../environment/variables-post-deploy.md). Anche se non obbligatorio, questo funziona insieme al `SCD_ON_DEMAND` variabile di ambiente.
+- **`post_deploy`**—Esegui comandi _dopo_ la distribuzione dell&#39;applicazione e _dopo_ il contenitore inizia ad accettare connessioni. L&#39;hook `post_deploy` cancella la cache e precarica (riscalda) la cache. È possibile personalizzare l&#39;elenco delle pagine utilizzando la variabile `WARM_UP_PAGES` nella [fase di distribuzione di Post](../environment/variables-post-deploy.md). Anche se non obbligatorio, questo funziona insieme alla variabile di ambiente `SCD_ON_DEMAND`.
 
-L&#39;esempio seguente mostra la configurazione predefinita in `.magento.app.yaml` file. Aggiungere comandi CLI in `build`, `deploy`, o `post_deploy` sezioni _prima di_ il `ece-tools` comando:
+L&#39;esempio seguente mostra la configurazione predefinita nel file `.magento.app.yaml`. Aggiungere comandi CLI nelle sezioni `build`, `deploy` o `post_deploy` _prima_ del comando `ece-tools`:
 
 ```yaml
 hooks:
@@ -38,7 +38,7 @@ hooks:
         php ./vendor/bin/ece-tools run scenario/post-deploy.xml
 ```
 
-Inoltre, puoi personalizzare ulteriormente la fase di build utilizzando `generate` e `transfer` comandi per eseguire azioni aggiuntive durante la creazione specifica di codice o lo spostamento di file.
+È inoltre possibile personalizzare ulteriormente la fase di compilazione utilizzando i comandi `generate` e `transfer` per eseguire azioni aggiuntive durante la creazione specifica del codice o lo spostamento dei file.
 
 ```yaml
 hooks:
@@ -50,13 +50,13 @@ hooks:
         php ./vendor/bin/ece-tools build:transfer
 ```
 
-- `set -e`- causa il fallimento degli hook sul primo comando non riuscito, anziché sul comando non riuscito finale.
-- `build:generate`: applica patch, convalida la configurazione, genera ID e genera contenuto statico se SCD è abilitato per la fase di generazione.
-- `build:transfer`- trasferisce il codice generato e il contenuto statico alla destinazione finale.
+- `set -e` - causa un errore degli hook sul primo comando non riuscito, anziché sul comando finale non riuscito.
+- `build:generate`: applica patch, convalida la configurazione, genera ID e genera contenuto statico se SCD è abilitato per la fase di compilazione.
+- `build:transfer` - trasferisce il codice generato e il contenuto statico alla destinazione finale.
 
-Comandi eseguiti dall&#39;applicazione (`/app`). È possibile utilizzare `cd` per cambiare la directory. Gli hook hanno esito negativo se il comando finale in essi contenuto ha esito negativo. Per impedire il completamento del primo comando non riuscito, aggiungere `set -e` all&#39;inizio dell&#39;amo.
+Comandi eseguiti dalla directory dell&#39;applicazione (`/app`). È possibile utilizzare il comando `cd` per cambiare la directory. Gli hook hanno esito negativo se il comando finale in essi contenuto ha esito negativo. Per impedirne l&#39;esecuzione al primo comando non riuscito, aggiungere `set -e` all&#39;inizio dell&#39;hook.
 
-**Per compilare i file Sass mediante grunt**:
+**Per compilare i file Sass utilizzando grunt**:
 
 ```yaml
 dependencies:
@@ -74,6 +74,6 @@ hooks:
         php ./vendor/bin/ece-tools build
 ```
 
-Compila file Sass tramite `grunt` prima della distribuzione del contenuto statico, che avviene durante la generazione. Posiziona `grunt` comando prima di `build` comando.
+Compila i file Sass utilizzando `grunt` prima della distribuzione del contenuto statico, che avviene durante la compilazione. Inserire il comando `grunt` prima del comando `build`.
 
 {{scenarios}}

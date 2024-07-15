@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Indirizzi IP regionali
 
-Nelle tabelle seguenti sono elencati gli indirizzi IP in entrata e in uscita utilizzati da Adobe Commerce sull’infrastruttura cloud [ambienti di integrazione](../architecture/pro-architecture.md#integration-environment). Questi indirizzi IP sono stabili, ma potrebbero cambiare. Adobe avvisa i clienti prima di apportare qualsiasi modifica all’indirizzo IP.
+Nelle tabelle seguenti sono elencati gli indirizzi IP in entrata e in uscita utilizzati da Adobe Commerce negli ambienti di integrazione [dell&#39;infrastruttura cloud](../architecture/pro-architecture.md#integration-environment). Questi indirizzi IP sono stabili, ma potrebbero cambiare. Adobe avvisa i clienti prima di apportare qualsiasi modifica all’indirizzo IP.
 
 La sintassi per indirizzare gli ambienti di integrazione è la seguente:
 
@@ -20,10 +20,10 @@ La sintassi per indirizzare gli ambienti di integrazione è la seguente:
 ```
 
 - **ID univoco** = 7 caratteri alfanumerici casuali
-- **ID Progetto** = ID progetto di 13 caratteri
-- **Regione** = Nome dell’area geografica di AWS o Azure
+- **ID progetto** = ID progetto di 13 caratteri
+- **Area** = nome area AWS o Azure
 
-È possibile utilizzare `ping` comando per recuperare l&#39;indirizzo IP in ingresso:
+È possibile utilizzare il comando `ping` per recuperare l&#39;indirizzo IP in ingresso:
 
 ```bash
 ping integration-abcd123-abcd78910.us-3.magentosite.cloud
@@ -38,7 +38,7 @@ Request timeout for icmp_seq 1
 Request timeout for icmp_seq 2
 ```
 
-Se disponi di un firewall aziendale che blocca le connessioni SSH in uscita, puoi aggiungere gli indirizzi IP in entrata al inserisco nell&#39;elenco Consentiti del firewall per l’.
+Se disponi di un firewall aziendale che blocca le connessioni SSH in uscita, puoi aggiungere al inserisco nell&#39;elenco Consentiti gli indirizzi IP in entrata.
 
 ## Aree geografiche di AWS
 

@@ -16,8 +16,8 @@ Tutti i progetti di infrastruttura cloud includono [Gestione registro New Relic]
 
 I dati aggregati includono informazioni provenienti dai seguenti registri:
 
-- Tutti `ece-tools` e i registri delle applicazioni da `~/var/log` directory
-- Registri per servizi cloud da `var/log/platform/<project-ID>` directory
+- Tutti i `ece-tools` e i registri applicazioni dalla directory `~/var/log`
+- Registra i servizi cloud dalla directory `var/log/platform/<project-ID>`
 - Fastly CDN e WAF
 
 Quando il progetto è connesso a New Relic, è possibile utilizzare il servizio Registri di New Relic per completare attività come le seguenti:
@@ -33,28 +33,28 @@ Utilizza l’applicazione New Relic Logs per eseguire ricerche nei dati di regis
 
 **Per utilizzare l&#39;applicazione New Relic Logs**:
 
-1. Accedi al tuo [Account New Relic](https://login.newrelic.com/login).
+1. Accedi al tuo [account New Relic](https://login.newrelic.com/login).
 
-1. Seleziona **Registri** dal menu di navigazione di Explorer.
+1. Selezionare **Registri** dal menu di navigazione di Explorer.
 
-1. Verifica che il tuo account sia selezionato nella parte superiore della sezione _Tutti i registri_ visualizzazione.
+1. Verifica che il tuo account sia selezionato nella parte superiore della visualizzazione _Tutti i registri_.
 
 1. Selezionare un intervallo di tempo per la query Registri.
 
-1. Per esaminare i dati di registro dell’infrastruttura per i servizi cloud (registri da `~/var/log/`), inserisci la stringa di query `has: "filePath"` nel _Cerca registri_ campo. Quindi, fai clic su **[!UICONTROL Query logs]**.
+1. Per esaminare i dati del registro dell&#39;infrastruttura per i servizi cloud (registri da `~/var/log/`), immettere la stringa di query `has: "filePath"` nel campo _Cerca registri_. Quindi fare clic su **[!UICONTROL Query logs]**.
 
-   I nomi dei file di registro vengono memorizzati nel `filePath` con percorsi completi del file di registro.
+   I nomi dei file di log sono memorizzati nella colonna `filePath`, con percorsi completi del file di log.
 
    ![Dati registro servizio New Relic progetto cloud](../../assets/new-relic/var-log-query.png)
 
-1. Per esaminare i dati di registro Fastly, immettere la stringa di query `has: "client_ip"` nel _Cerca registri_ campo. Quindi, fai clic su **[!UICONTROL Query logs]**.
+1. Per esaminare i dati di log Fastly, immettere la stringa di query `has: "client_ip"` nel campo _Cerca registri_. Quindi fare clic su **[!UICONTROL Query logs]**.
 
-1. Per filtrare i risultati del registro Fastly in base al codice del paese, fare clic su **[!UICONTROL Add column]**, quindi seleziona **[!UICONTROL geo_country_code]**.
+1. Per filtrare i risultati del log Fastly in base al codice paese, fare clic su **[!UICONTROL Add column]**, quindi selezionare **[!UICONTROL geo_country_code]**.
 
-   ![Filtro attributi di registro CDN New Relic per progetto cloud](../../assets/new-relic/fastly-countrycode-filter.png)
+   ![Filtro attributo di registro CDN New Relic per progetto cloud](../../assets/new-relic/fastly-countrycode-filter.png)
 
 >[!TIP]
 >
->È possibile salvare la visualizzazione della query dal _Viste salvate_ a discesa. Clic **[!UICONTROL Create new]**, specifica un nome, seleziona le opzioni e fai clic su **[!UICONTROL Save view]**.
+>Puoi salvare la visualizzazione query dal menu a discesa _Visualizzazioni salvate_. Fare clic su **[!UICONTROL Create new]**, specificare un nome, selezionare le opzioni e fare clic su **[!UICONTROL Save view]**.
 >
->Consulta [Introduzione alla gestione dei registri](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/) e [Introduzione al linguaggio di query New Relic](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/) il _Documentazione di New Relic_ sito.
+>Consulta [Introduzione alla gestione dei registri](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/) e [Introduzione al linguaggio di query New Relic](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/) nel sito _Documentazione di New Relic_.

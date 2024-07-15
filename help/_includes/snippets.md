@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->I progetti eseguiti prima del 5 giugno 2020 disponevano di più ambienti di integrazione più piccoli. Se hai bisogno di un ambiente di integrazione più ampio per i test e lo sviluppo, richiedi un aggiornamento per gli ambienti di integrazione avanzata. Consulta la [Richiesta ambiente di integrazione](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/announcements/commerce-announcements/integration-environment-enhancement-request-pro-and-starter.html) articolo nel _Centro assistenza Adobe Commerce_ per i dettagli.
+>I progetti eseguiti prima del 5 giugno 2020 disponevano di più ambienti di integrazione più piccoli. Se hai bisogno di un ambiente di integrazione più ampio per i test e lo sviluppo, richiedi un aggiornamento per gli ambienti di integrazione avanzata. Per informazioni dettagliate, consulta l&#39;articolo [Richiesta ambiente di integrazione](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/announcements/commerce-announcements/integration-environment-enhancement-request-pro-and-starter.html) nel _Centro assistenza Adobe Commerce_.
 
 ## Opzioni di unione {#merge-options}
 
-Per impostazione predefinita, il processo di distribuzione sovrascrive tutte le impostazioni in `env.php` ; tuttavia, è possibile scegliere di unire uno o più valori per una configurazione di servizio senza sovrascrivere tutti i valori.
+Per impostazione predefinita, il processo di distribuzione sovrascrive tutte le impostazioni nel file `env.php`. Tuttavia, è possibile scegliere di unire uno o più valori per una configurazione del servizio senza sovrascrivere tutti i valori.
 
-Imposta il `_merge` a una delle seguenti opzioni:
+Impostare l&#39;opzione `_merge` su una delle opzioni seguenti:
 
-- `true`—**Unisci** i valori del servizio configurato con i valori delle variabili di ambiente.
-- `false`—**Sovrascrivere** i valori del servizio configurato con i valori delle variabili di ambiente.
+- `true`—**Unisci** i valori del servizio configurati con i valori delle variabili di ambiente.
+- `false`—**Sovrascrivi** i valori del servizio configurati con i valori delle variabili di ambiente.
 
 ## Archivio privato {#private-repository}
 
@@ -38,36 +38,36 @@ Imposta il `_merge` a una delle seguenti opzioni:
 
 >[!WARNING]
 >
->Alcuni **Progetti Pro** richiedere un ticket di supporto per aggiornare la configurazione del percorso in `routes.yaml` e la configurazione cron in `.magento.app.yaml` file. L’Adobe consiglia di aggiornare e testare i file di configurazione YAML in un ambiente di integrazione, quindi di distribuire le modifiche nell’ambiente di staging. Se le modifiche non vengono applicate ai siti di staging dopo la ridistribuzione e non sono presenti messaggi di errore correlati nel registro, **DEVE** [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) che descrive le modifiche di configurazione tentate. Includi nel ticket tutti i file di configurazione YAML aggiornati.
+>Alcuni **progetti Pro** richiedono un ticket di supporto per aggiornare la configurazione della route nel file `routes.yaml` e la configurazione cron nel file `.magento.app.yaml`. L’Adobe consiglia di aggiornare e testare i file di configurazione YAML in un ambiente di integrazione, quindi di distribuire le modifiche nell’ambiente di staging. Se le modifiche non vengono applicate ai siti di gestione temporanea dopo la ridistribuzione e non sono presenti messaggi di errore correlati nel registro, è **NECESSARIO** [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) che descriva le modifiche di configurazione tentate. Includi nel ticket tutti i file di configurazione YAML aggiornati.
 
 ## Supporto dei servizi Pro {#pro-update-service}
 
 >[!TIP]
->Per i progetti Pro, è necessario [invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per installare o aggiornare [servizi](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) in `Staging` e `Production` solo ambienti.
+>Per i progetti Pro, è necessario [inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per installare o aggiornare [servizi](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) solo negli ambienti `Staging` e `Production`.
 >
->Indica le modifiche del servizio necessarie, includi le `.magento.app.yaml` e `services.yaml` e indicare la versione PHP nel ticket. Per le modifiche self-service alle impostazioni di versione PHP, estensioni o ambiente, vedi [Impostazioni PHP](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _Configurazione dell’applicazione_.
+>Indicare le modifiche necessarie al servizio, includere i file `.magento.app.yaml` e `services.yaml` aggiornati e indicare la versione PHP nel ticket. Per le modifiche self-service alle impostazioni di versione PHP, estensioni o ambiente, vedere [Impostazioni PHP](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _Configurazione applicazione_.
 >
->Per le modifiche apportate a _live_ Ambiente di produzione (**Solo pro**), devi fornire un preavviso minimo di 48 ore per consentire al team dell’infrastruttura Cloud di eseguire il marshalling delle risorse e eseguire un aggiornamento sicuro.
+>Per le modifiche a un ambiente di produzione _live_ (**Solo Pro**), devi fornire un preavviso minimo di 48 ore per consentire al team di infrastruttura cloud di disporre del tempo sufficiente per eseguire il marshalling delle risorse e eseguire un aggiornamento sicuro.
 
 ## Backup Pro {#pro-backups}
 
 >[!TIP]
 >
->Negli ambienti di staging e produzione Pro, è necessario [invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per recuperare un backup specifico che rilevi la data, l’ora e il fuso orario nel ticket.
+>Negli ambienti Pro Staging e Production, è necessario [inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per recuperare un backup specifico che rilevi la data, l&#39;ora e il fuso orario nel ticket.
 >
->L’Adobe fa **non** ripristinare qualsiasi ambiente da un backup automatico. Consulta [Ripristinare uno snapshot del database da Gestione temporanea o Produzione](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production.html) per assistenza nella scelta di un metodo per ripristinare uno snapshot di staging o produzione.
+>L&#39;Adobe **not** ripristina gli ambienti da un backup automatico. Per informazioni su come scegliere un metodo per ripristinare uno snapshot di staging o produzione, vedere [Ripristinare uno snapshot del database da staging o produzione](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production.html).
 
 ## Avviso di ridistribuzione {#redeploy-warning}
 
 >[!WARNING]
 >
->Il processo di distribuzione inizia quando si esegue un&#39;unione, un push o una sincronizzazione dell&#39;ambiente oppure quando si attiva una ridistribuzione manuale, durante la quale [!DNL Commerce] l&#39;applicazione è in modalità di manutenzione. Per un ambiente di produzione, Adobe consiglia di completare questo lavoro nelle ore di minore utilizzo per evitare interruzioni del servizio.
+>Il processo di distribuzione inizia quando si esegue un&#39;unione, un push o una sincronizzazione dell&#39;ambiente oppure quando si attiva una ridistribuzione manuale, durante la quale l&#39;applicazione [!DNL Commerce] è in modalità manutenzione. Per un ambiente di produzione, Adobe consiglia di completare questo lavoro nelle ore di minore utilizzo per evitare interruzioni del servizio.
 
 ## Segnaposto percorso {#route-placeholder}
 
 >[!NOTE]
 >
->Negli esempi di configurazione di route riportati di seguito vengono utilizzati modelli di route con segnaposto. Il `{default}` placeholder rappresenta il dominio predefinito configurato per il sito. Se il progetto ha più domini, utilizza `{all}` segnaposto per configurare il routing per il dominio predefinito e per tutti gli alias. Consulta [Configurare le route](/help/cloud-guide/routes/routes-yaml.md).
+>Negli esempi di configurazione di route riportati di seguito vengono utilizzati modelli di route con segnaposto. Il segnaposto `{default}` rappresenta il dominio predefinito configurato per il sito. Se il progetto ha più domini, utilizzare il segnaposto `{all}` per configurare il routing per il dominio predefinito e per tutti gli alias. Vedere [Configurare le route](/help/cloud-guide/routes/routes-yaml.md).
 
 ## Tempistica SCD {#scd-timing-warning}
 
@@ -79,33 +79,33 @@ Imposta il `_merge` a una delle seguenti opzioni:
 
 >[!NOTE]
 >
->Con [!DNL ECE-Tools] 2002.1.0 e versioni successive, puoi utilizzare la funzione di distribuzione basata su scenari per personalizzare i processi di build, distribuzione e post-distribuzione per il progetto di infrastruttura cloud di Adobe Commerce. Consulta [Distribuzione basata su scenari](/help/cloud-guide/deploy/scenario-based.md).
+>Con [!DNL ECE-Tools] 2002.1.0 e versioni successive, è possibile utilizzare la funzionalità di distribuzione basata su scenari per personalizzare i processi di compilazione, distribuzione e post-distribuzione per il progetto Adobe Commerce su infrastruttura cloud. Vedi [Distribuzione basata su scenari](/help/cloud-guide/deploy/scenario-based.md).
 
 ## Istruzione di servizio {#service-instruction}
 
-Utilizzare le istruzioni seguenti per la configurazione del servizio negli ambienti di integrazione Pro e negli ambienti Starter, inclusi `master` filiale.
+Utilizzare le istruzioni seguenti per la configurazione del servizio negli ambienti di integrazione Pro e negli ambienti Starter, incluso il ramo `master`.
 
 >[!NOTE]
 >
->[Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per modificare la configurazione del servizio negli ambienti Pro Production e Staging.
+>[Invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per modificare la configurazione del servizio negli ambienti di produzione e staging di Pro.
 
 ## Modifica del servizio {#service-change-tip}
 
 >[!TIP]
 >
->Dopo la configurazione iniziale del servizio, è possibile modificare la versione del software per un servizio installato aggiornando `services.yaml` e `.magento.app.yaml` file di configurazione. Consulta [Modifica versione del servizio](/help/cloud-guide/services/services-yaml.md#change-service-version) per indicazioni sull&#39;aggiornamento o il downgrade di un servizio.
+>Dopo la configurazione iniziale del servizio, è possibile modificare la versione del software per un servizio installato aggiornando i file di configurazione `services.yaml` e `.magento.app.yaml`. Per informazioni sull&#39;aggiornamento o il downgrade di un servizio, vedere [Modifica versione del servizio](/help/cloud-guide/services/services-yaml.md#change-service-version).
 
 ## Suggerimento distribuzione bloccata {#stuck-deployment-tip}
 
 >[!TIP]
 >
->Per assistenza sulle distribuzioni bloccate, utilizza [Risoluzione dei problemi di distribuzione di Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html) nel _Centro assistenza Commerce_.
+>Per informazioni sulle distribuzioni bloccate, utilizzare lo strumento di risoluzione dei problemi di distribuzione di [Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html) nel _Centro assistenza di Commerce_.
 
 ## Aggiornamento a ECE-Tools {#ece-tools-package}
 
 >[!NOTE]
 >
->Se utilizzi una versione di Adobe Commerce su infrastruttura cloud che non contiene `ece-tools` , è necessario eseguire una [aggiornamento una tantum](/help/cloud-guide/dev-tools/install-package.md) nel progetto cloud per rimuovere i pacchetti obsoleti. Se al momento utilizzi il `ece-tools` e devi aggiornarlo, consulta [Aggiornare il pacchetto ECE-Strumenti](/help/cloud-guide/dev-tools/update-package.md).
+>Se utilizzi una versione di Adobe Commerce sull&#39;infrastruttura cloud che non contiene il pacchetto `ece-tools`, devi eseguire un [aggiornamento una tantum](/help/cloud-guide/dev-tools/install-package.md) al progetto cloud per rimuovere i pacchetti obsoleti. Se si utilizza il pacchetto `ece-tools` e si desidera aggiornarlo, vedere [Aggiornare il pacchetto ECE-Tools](/help/cloud-guide/dev-tools/update-package.md).
 
 ## Suggerimento per l&#39;aggiornamento {#upgrade-tip}
 
@@ -117,12 +117,12 @@ Utilizzare le istruzioni seguenti per la configurazione del servizio negli ambie
 
 ## Accesso amministratore {#admin-login-step}
 
-1. [Accedi](/help/get-started/onboarding.md#access-your-admin-panel) all’amministratore.
+1. [Accedi](/help/get-started/onboarding.md#access-your-admin-panel) all&#39;amministratore.
 
 ## Automatizzare l&#39;implementazione di snippet VCL personalizzato {#automate-vcl-snippet-deployment}
 
 >[!NOTE]
 >
->Invece di caricare manualmente snippet VCL personalizzati, puoi aggiungere snippet al file `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` nell&#39;ambiente. I frammenti in questa directory vengono caricati automaticamente quando fate clic su _carica VCL in Fastly_ in Commerce Admin. Consulta [Distribuzione automatizzata di snippet VCL personalizzati](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) nel modulo Fastly CDN per la documentazione del Magento 2.
+>Anziché caricare manualmente snippet VCL personalizzati, è possibile aggiungere snippet alla directory `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` nell&#39;ambiente. I frammenti in questa directory vengono caricati automaticamente quando si fa clic su _carica VCL in Fastly_ in Commerce Admin. Consulta [Distribuzione automatizzata di snippet VCL personalizzati](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) nel modulo Fastly CDN per la documentazione del Magento 2.
 
 <!-- Fastly-related snippets end -->

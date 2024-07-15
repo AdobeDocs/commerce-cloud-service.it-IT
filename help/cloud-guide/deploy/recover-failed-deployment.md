@@ -21,9 +21,9 @@ In questo argomento viene illustrato come ripristinare se un componente non vien
 
 ## Pulizia, rimozione e ridistribuzione
 
-Per eseguire la pulizia dalla distribuzione precedente, identifica il componente aggiunto o aggiornato e quindi rimuovilo. Innanzitutto, effettua l’accesso all’ambiente remoto e cancella manualmente il contenuto della `var` directory. Quindi rimuovi il componente dal `composer.json` e ridistribuire l&#39;ambiente.
+Per eseguire la pulizia dalla distribuzione precedente, identifica il componente aggiunto o aggiornato e quindi rimuovilo. Eseguire innanzitutto l&#39;accesso all&#39;ambiente remoto e cancellare manualmente il contenuto della directory `var`. Quindi rimuovere il componente dal file `composer.json` e ridistribuire l&#39;ambiente.
 
-**Per pulire `var` directory**:
+**Per pulire le directory `var`**:
 
 1. Sulla workstation locale, passa alla directory del progetto.
 
@@ -33,7 +33,7 @@ Per eseguire la pulizia dalla distribuzione precedente, identifica il componente
    magento-cloud ssh
    ```
 
-1. Cancella `var` directory.
+1. Cancella le directory `var`.
 
    ```shell
    rm -rf var/*
@@ -51,7 +51,7 @@ Per eseguire la pulizia dalla distribuzione precedente, identifica il componente
    composer clear-cache
    ```
 
-1. Rimuovere il componente dal `composer.json` file.
+1. Rimuovere il componente dal file `composer.json`.
 
    ```bash
    composer remove <component-name>:<version>

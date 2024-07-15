@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Gestione estensioni
 
-Puoi estendere le funzionalità dell’applicazione Adobe Commerce aggiungendo un’estensione dal file [Commerce Marketplace](https://marketplace.magento.com). Ad esempio, puoi aggiungere un tema per cambiare l’aspetto della vetrina, oppure un pacchetto per la lingua per localizzare la vetrina e l’amministratore.
+Puoi estendere le funzionalità dell&#39;applicazione Adobe Commerce aggiungendo un&#39;estensione dalla [Commerce Marketplace](https://marketplace.magento.com). Ad esempio, puoi aggiungere un tema per cambiare l’aspetto della vetrina, oppure un pacchetto per la lingua per localizzare la vetrina e l’amministratore.
 
 >[!NOTE]
 >
@@ -20,27 +20,27 @@ Puoi estendere le funzionalità dell’applicazione Adobe Commerce aggiungendo u
 
 ## Nome del compositore di un’estensione
 
-Anche se questa sezione illustra come ottenere il nome e la versione del Compositore da Commerci Marketplace, puoi trovare il nome e la versione di _qualsiasi_ nel file Composer del modulo. Apri `composer.json` in un editor di testo e annota `"name"` e `"version"` valori.
+Anche se questa sezione illustra come ottenere il nome e la versione del Compositore da Commerce Marketplace, è possibile trovare il nome e la versione del modulo _any_ nel file Compositore del modulo. Aprire il file `composer.json` in un editor di testo e prendere nota dei valori `"name"` e `"version"`.
 
-**Ottenere il nome del compositore di un modulo dalla Commerce Marketplace**:
+**Per ottenere il nome del Compositore di un modulo dalla Commerce Marketplace**:
 
 1. Accedi a [Commerce Marketplace](https://marketplace.magento.com) con il nome utente e la password utilizzati per acquistare il componente.
 
-1. Nell’angolo in alto a destra, fai clic sul tuo nome utente e seleziona **Il mio profilo**.
+1. Nell&#39;angolo in alto a destra, fai clic sul tuo nome utente e seleziona **Il mio profilo**.
 
    ![Accedi al tuo account Marketplace](../../assets/marketplace/my-profile.png)
 
-1. Il giorno _Il mio account_ pagina, fai clic su **I miei acquisti**.
+1. Nella pagina _Il mio account_, fai clic su **I miei acquisti**.
 
    ![Cronologia acquisti Marketplace](../../assets/marketplace/my-purchases.png)
 
-1. Il giorno _I miei acquisti_ , seleziona un modulo acquistato e fai clic su **Dettagli tecnici**.
+1. Nella pagina _I miei acquisti_, seleziona un modulo acquistato e fai clic su **Dettagli tecnici**.
 
-1. Clic **Copia** per copiare [!UICONTROL Component name] negli Appunti.
+1. Fai clic su **Copia** per copiare [!UICONTROL Component name] negli Appunti.
 
-1. Apri un editor di testo e incolla il nome del componente aggiungendo un carattere due punti (`:`).
+1. Aprire un editor di testo e incollare il nome del componente e aggiungere un carattere due punti (`:`).
 
-1. In entrata **Dettagli tecnici**, fai clic su **Copia** per copiare [!UICONTROL Component version] negli Appunti.
+1. In **Dettagli tecnici**, fai clic su **Copia** per copiare [!UICONTROL Component version] negli Appunti.
 
 1. Nell’editor di testo, aggiungi il numero di versione al nome del componente dopo i due punti. Ad esempio:
 
@@ -50,15 +50,15 @@ Anche se questa sezione illustra come ottenere il nome e la versione del Composi
 
 ## Installare un’estensione
 
-L’Adobe consiglia di lavorare in un ramo di sviluppo quando aggiungi un’estensione all’implementazione. Durante l’installazione di un’estensione, il nome (`<VendorName>_<ComponentName>`) viene inserito automaticamente nel [`app/etc/config.php`](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/deployment-files.html) file. Non è necessario modificare direttamente il file.
+L’Adobe consiglia di lavorare in un ramo di sviluppo quando aggiungi un’estensione all’implementazione. Durante l&#39;installazione di un&#39;estensione, il nome (`<VendorName>_<ComponentName>`) viene inserito automaticamente nel file [`app/etc/config.php`](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/deployment-files.html). Non è necessario modificare direttamente il file.
 
-**Per installare un’estensione**:
+**Per installare un&#39;estensione**:
 
 1. Sulla workstation locale, passa alla directory del progetto.
 
-1. Creare o estrarre un ramo di sviluppo. Consulta [diramazione](../development/cli-branches.md).
+1. Creare o estrarre un ramo di sviluppo. Vedi [diramazione](../development/cli-branches.md).
 
-1. Utilizzando il nome e la versione del Compositore, aggiungi l’estensione al `require` sezione del `composer.json` file.
+1. Utilizzando il nome e la versione del Compositore, aggiungere l&#39;estensione alla sezione `require` del file `composer.json`.
 
    ```bash
    composer require <extension-name>:<version> --no-update
@@ -86,7 +86,7 @@ L’Adobe consiglia di lavorare in un ramo di sviluppo quando aggiungi un’este
 
    >[!WARNING]
    >
-   >Durante l&#39;installazione di un&#39;estensione, devi includere `composer.lock` quando si inviano le modifiche al codice all&#39;ambiente remoto. Il `composer install` il comando legge `composer.lock` per abilitare le dipendenze definite nell&#39;ambiente remoto.
+   >Durante l&#39;installazione di un&#39;estensione, è necessario includere il file `composer.lock` quando si inviano le modifiche al codice nell&#39;ambiente remoto. Il comando `composer install` legge il file `composer.lock` per abilitare le dipendenze definite nell&#39;ambiente remoto.
 
 1. Al termine della build e della distribuzione, utilizza un SSH per accedere all’ambiente remoto e verificare che l’estensione sia installata.
 
@@ -94,7 +94,7 @@ L’Adobe consiglia di lavorare in un ramo di sviluppo quando aggiungi un’este
    bin/magento module:status <extension-name>
    ```
 
-   Il nome di un’estensione utilizza il formato: `<VendorName>_<ComponentName>`.
+   Un nome di estensione utilizza il formato: `<VendorName>_<ComponentName>`.
 
    Risposta di esempio:
 
@@ -102,19 +102,19 @@ L’Adobe consiglia di lavorare in un ramo di sviluppo quando aggiungi un’este
    Module is enabled
    ```
 
-   Se riscontri errori di distribuzione, consulta [distribuzione dell&#39;estensione non riuscita](../deploy/recover-failed-deployment.md).
+   Se si verificano errori di distribuzione, vedere [errore di distribuzione dell&#39;estensione](../deploy/recover-failed-deployment.md).
 
 ## Gestione estensioni
 
-Quando aggiungi un’estensione utilizzando Compositore, il processo di distribuzione la abilita automaticamente. Se l&#39;estensione è già installata, è possibile attivarla o disattivarla utilizzando CLI. Durante la gestione delle estensioni, utilizza il formato: `<VendorName>_<ComponentName>`
+Quando aggiungi un’estensione utilizzando Compositore, il processo di distribuzione la abilita automaticamente. Se l&#39;estensione è già installata, è possibile attivarla o disattivarla utilizzando CLI. Durante la gestione delle estensioni, utilizzare il formato: `<VendorName>_<ComponentName>`
 
 Non abilitare o disabilitare mai un&#39;estensione durante l&#39;accesso agli ambienti remoti.
 
-**Per abilitare o disabilitare un’estensione**:
+**Per abilitare o disabilitare un&#39;estensione**:
 
 1. Sulla workstation locale, passa alla directory del progetto.
 
-1. Attivare o disattivare un modulo. Il `module` il comando aggiorna `config.php` con lo stato richiesto del modulo.
+1. Attivare o disattivare un modulo. Il comando `module` aggiorna il file `config.php` con lo stato richiesto del modulo.
 
    >Abilita un modulo.
 
@@ -156,15 +156,15 @@ Non abilitare o disabilitare mai un&#39;estensione durante l&#39;accesso agli am
 
 ## Aggiornare un’estensione
 
-Prima di continuare, è necessario il nome e la versione del Compositore per l’estensione. Inoltre, verifica che l’estensione sia compatibile con il progetto e la versione di Adobe Commerce. In particolare: [controlla la versione PHP richiesta](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) prima di iniziare.
+Prima di continuare, è necessario il nome e la versione del Compositore per l’estensione. Inoltre, verifica che l’estensione sia compatibile con il progetto e la versione di Adobe Commerce. In particolare, [controlla la versione PHP richiesta](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) prima di iniziare.
 
-**Per aggiornare un’estensione**:
+**Per aggiornare un&#39;estensione**:
 
 1. Sulla workstation locale, passa alla directory del progetto.
 
-1. Creare o estrarre un ramo di sviluppo. Consulta [diramazione](../development/cli-branches.md).
+1. Creare o estrarre un ramo di sviluppo. Vedi [diramazione](../development/cli-branches.md).
 
-1. Apri `composer.json` in un editor di testo.
+1. Aprire il file `composer.json` in un editor di testo.
 
 1. Individua l’estensione e aggiorna la versione.
 
@@ -190,4 +190,4 @@ Prima di continuare, è necessario il nome e la versione del Compositore per l�
    git push origin <branch-names>
    ```
 
-Se riscontri degli errori, vedi [Ripristino da guasto componente](../deploy/recover-failed-deployment.md). Per ulteriori informazioni sull&#39;utilizzo delle estensioni con Adobe Commerce, consulta [Estensioni](https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html) nel _Guida per l’amministratore_.
+In caso di errori, vedere [Ripristino da errore del componente](../deploy/recover-failed-deployment.md). Per ulteriori informazioni sull&#39;utilizzo delle estensioni con Adobe Commerce, consulta [Estensioni](https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html) nella _Guida per l&#39;amministratore_.

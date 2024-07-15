@@ -12,34 +12,34 @@ ht-degree: 0%
 
 # Applicare le patch
 
-[Patch cloud per Commerce](https://github.com/magento/magento-cloud-patches) e [Strumento Patch di qualità](https://github.com/magento/quality-patches) distribuire patch all&#39;applicazione Adobe Commerce installata.
+Le [patch cloud per Commerce](https://github.com/magento/magento-cloud-patches) e lo [strumento per patch di qualità](https://github.com/magento/quality-patches) distribuiscono le patch nell&#39;applicazione Adobe Commerce installata.
 
 - Il pacchetto Patch cloud per Commerce fornisce le patch necessarie con correzioni critiche
-- Le patch di qualità forniscono correzioni di qualità opzionali a basso impatto come [patch singole](https://experienceleague.adobe.com/docs/commerce-operations/release/planning/versioning-policy.html#individual-patch) che non contengono modifiche non compatibili con le versioni precedenti
+- Le patch di qualità forniscono correzioni di qualità facoltative a basso impatto come [singole patch](https://experienceleague.adobe.com/docs/commerce-operations/release/planning/versioning-policy.html#individual-patch) che non contengono modifiche non compatibili con le versioni precedenti
 
-Consulta [Patch disponibili](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) nel _Guida agli strumenti per le operazioni di Commerce_ per rivedere un elenco completo delle patch rilasciate.
+Per un elenco completo delle patch rilasciate, vedere [Patch disponibili](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) nella _Guida agli strumenti operativi di Commerce_.
 
 Entrambi i pacchetti migliorano l’integrazione di tutte le versioni di Adobe Commerce con gli ambienti Cloud e supportano la distribuzione rapida di correzioni critiche, opzionali e personalizzate. È possibile utilizzare questi pacchetti per applicare, ripristinare e visualizzare informazioni generali su tutte le singole patch disponibili per Commerce.
 
 >[!TIP]
 >
->È possibile utilizzare [Strumento Patch di qualità](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) e Patch cloud per Commerce come pacchetti autonomi per progetti Magento Open Source e Adobe Commerce. È consigliabile utilizzare lo strumento Patch di qualità per i progetti non cloud.
+>Puoi utilizzare lo [strumento Patch di qualità](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) e Patch cloud per Commerce come pacchetti autonomi per i progetti Magento Open Source e Adobe Commerce. È consigliabile utilizzare lo strumento Patch di qualità per i progetti non cloud.
 
-Quando si implementano modifiche all&#39;ambiente remoto, il `ece-tools` utilizzi del pacchetto `magento/magento-cloud-patches` e `magento/quality-patches` per verificare la presenza di patch in sospeso e applicarle automaticamente nell&#39;ordine seguente:
+Quando si distribuiscono le modifiche all&#39;ambiente remoto, il pacchetto `ece-tools` utilizza `magento/magento-cloud-patches` e `magento/quality-patches` per verificare la presenza di patch in sospeso e le applica automaticamente nell&#39;ordine seguente:
 
 1. Applica tutte le patch Commerce richieste incluse nel pacchetto Patch cloud per Commerce.
 1. Applicare le patch Commerce opzionali selezionate incluse nello strumento Patch di qualità.
-1. Applicare patch personalizzate in `/m2-hotfixes` in ordine alfabetico in base al nome della patch.
+1. Applicare le patch personalizzate nella directory `/m2-hotfixes` in ordine alfabetico in base al nome della patch.
 
 >[!NOTE]
 >
->Quando si aggiorna `ece-tools` o del pacchetto Patch cloud per Commerce, le ultime patch richieste vengono applicate alla successiva distribuzione del progetto, oppure puoi distribuirle immediatamente utilizzando `ece-patches apply` Comando CLI e ridistribuzione dell’ambiente Cloud. Non puoi saltare [patch richieste](https://github.com/magento/magento-cloud-patches/tree/develop/patches) durante il processo di distribuzione.
+>Quando si aggiorna il pacchetto `ece-tools` o il pacchetto Patch cloud per Commerce, le ultime patch richieste vengono applicate alla successiva distribuzione del progetto oppure è possibile distribuirle immediatamente utilizzando il comando CLI `ece-patches apply` e ridistribuendo l&#39;ambiente Cloud. Impossibile ignorare [patch richieste](https://github.com/magento/magento-cloud-patches/tree/develop/patches) durante il processo di distribuzione.
 
 ## Prerequisiti
 
 {{upgrade-tip}}
 
-Lo strumento Quality Patches (Patch di qualità) è una dipendenza per le patch cloud di Commerce e `ece-tools` pacchetto. Per applicare le ultime patch, è necessario disporre di [l&#39;ultima versione di ECE-Tools](../dev-tools/update-package.md) installato. La versione minima richiesta di ECE-Tools è la 2002.1.2.
+Lo strumento Quality Patches è una dipendenza per le patch cloud per Commerce e il pacchetto `ece-tools`. Per applicare le ultime patch, è necessario che sia installata la [versione più recente di ECE-Tools](../dev-tools/update-package.md). La versione minima richiesta di ECE-Tools è la 2002.1.2.
 
 ## Visualizza patch e stato disponibili
 
@@ -92,20 +92,20 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 La tabella di stato contiene i seguenti tipi di informazioni:
 
 - **Tipo**:
-   - `Optional`- Tutte le patch dello strumento Quality Patches e del pacchetto Cloud Patches sono opzionali per le installazioni di Adobe Commerce e di Magento Open Source. Per l’infrastruttura cloud di Adobe Commerce, tutte le patch sono opzionali.
-   - `Required`- Tutte le patch del pacchetto Patch cloud per Commerce sono necessarie per i clienti Cloud.
-   - `Deprecated`- La singola patch è contrassegnata come obsoleta e consigliamo di ripristinarla se è stata applicata. Dopo aver ripristinato una patch obsoleta, questa non verrà più visualizzata nella tabella di stato.
-   - `Custom`- Tutte le patch dalla directory &#39;m2-hotfixes&#39;.
+   - `Optional` - Tutte le patch dello strumento Quality Patches e del pacchetto Cloud Patches sono opzionali per le installazioni di Adobe Commerce e di Magento Open Source. Per l’infrastruttura cloud di Adobe Commerce, tutte le patch sono opzionali.
+   - `Required` - Tutte le patch del pacchetto Patch cloud per Commerce sono necessarie per i clienti Cloud.
+   - `Deprecated` - La singola patch è contrassegnata come obsoleta. Si consiglia di ripristinarla se è stata applicata. Dopo aver ripristinato una patch obsoleta, questa non verrà più visualizzata nella tabella di stato.
+   - `Custom` - Tutte le patch dalla directory &#39;m2-hotfixes&#39;.
 
 - **Stato**:
-   - `Applied`- La patch è stata applicata.
-   - `Not applied`- La patch non è stata applicata.
-   - `N/A`- Lo stato della patch non può essere definito a causa di conflitti.
+   - `Applied` - La patch è stata applicata.
+   - `Not applied` - La patch non è stata applicata.
+   - `N/A` - Impossibile definire lo stato della patch a causa di conflitti.
 
 - **Dettagli**:
-   - `Affected components`- Elenco dei moduli interessati.
-   - `Required patches`- Elenco delle patch richieste (dipendenze).
-   - `Recommended replacement`- Il cerotto che è una sostituzione consigliata per un cerotto obsoleto.
+   - `Affected components` - Elenco dei moduli interessati.
+   - `Required patches` - Elenco delle patch richieste (dipendenze).
+   - `Recommended replacement`—La patch che si consiglia di sostituire con una patch obsoleta.
 
 ## Applicare una patch in un ambiente locale
 
@@ -113,7 +113,7 @@ La tabella di stato contiene i seguenti tipi di informazioni:
 
 **Per applicare singole patch in un ambiente di sviluppo locale**:
 
-1. Aggiungi la variabile &quot;QUALITY_PATCH&quot; al `.magento.env.yaml` ed elencare le patch richieste al di sotto.
+1. Aggiungere la variabile &#39;QUALITY_PATCH&#39; al file `.magento.env.yaml` ed elencare le patch richieste al di sotto di esso.
 
    ```yaml
    stage:
@@ -129,10 +129,10 @@ La tabella di stato contiene i seguenti tipi di informazioni:
    php ./vendor/bin/ece-patches apply
    ```
 
-   Il `ece-patches apply` Il comando applica le patch nell&#39;ordine seguente:
+   Il comando `ece-patches apply` applica le patch nell&#39;ordine seguente:
    - Patch richieste
    - Singole patch facoltative
-   - Patch personalizzate da `/m2-hotfixes` directory
+   - Patch personalizzate dalla directory `/m2-hotfixes`
 
 1. Cancella la cache.
 
@@ -150,7 +150,7 @@ La tabella di stato contiene i seguenti tipi di informazioni:
 
 **Per applicare le patch in un ambiente remoto**:
 
-1. Aggiungi il `QUALITY_PATCHES` variabile a `.magento.env.yaml` ed elencare le patch richieste al di sotto.
+1. Aggiungere la variabile `QUALITY_PATCHES` al file `.magento.env.yaml` ed elencare le patch richieste al di sotto.
 
    ```yaml
    stage:
@@ -164,7 +164,7 @@ La tabella di stato contiene i seguenti tipi di informazioni:
    >
    >Dopo l&#39;aggiornamento a una nuova versione di Adobe Commerce, è necessario riapplicare le patch se non sono incluse nella nuova versione.
 
-1. Aggiungi, esegui il commit e invia il file aggiornato `.magento.env.yaml` file.
+1. Aggiungere, eseguire il commit e inviare il file `.magento.env.yaml` aggiornato.
 
    ```bash
    git add .magento.env.yaml
@@ -180,21 +180,21 @@ La tabella di stato contiene i seguenti tipi di informazioni:
 
 ## Applicare una patch personalizzata
 
-Durante la distribuzione, ECE-Tools applica tutte le patch di Adobe e tutte le patch personalizzate aggiunte al `/m2-hotfixes` nella directory principale del progetto.
+Durante la distribuzione, ECE-Tools applica tutte le patch di Adobe ed eventuali patch personalizzate aggiunte alla directory `/m2-hotfixes` nella directory principale del progetto.
 
 >[!NOTE]
 >
->Tutti i nomi dei file patch devono terminare con `.patch` estensione.
+>Tutti i nomi dei file patch devono terminare con l&#39;estensione `.patch`.
 
-**Per applicare e testare una patch personalizzata in un ambiente Cloud**:
+**Per applicare e testare una patch personalizzata in un ambiente cloud**:
 
-1. Nella directory principale del progetto, crea una directory denominata `m2-hotfixes` se non esiste
+1. Nella directory principale del progetto, creare una directory denominata `m2-hotfixes` se non esiste
 
    ```bash
    mkdir m2-hotfixes
    ```
 
-1. Copiare il file di patch in `/m2-hotfixes` directory.
+1. Copiare il file patch nella directory `/m2-hotfixes`.
 
 1. Aggiungi, conferma e invia modifiche al codice.
 
@@ -212,13 +212,13 @@ Durante la distribuzione, ECE-Tools applica tutte le patch di Adobe e tutte le p
 
    >[!NOTE]
    >
-   >Assicurarsi di sottoporre a test tutte le patch in un ambiente di pre-produzione. Per l’infrastruttura cloud di Adobe Commerce, puoi creare rami con `magento-cloud environment:branch <branch-name>` CLI.
+   >Assicurarsi di sottoporre a test tutte le patch in un ambiente di pre-produzione. Per Adobe Commerce sull&#39;infrastruttura cloud, è possibile creare rami con il comando CLI `magento-cloud environment:branch <branch-name>`.
 
 ## Ripristinare una patch personalizzata
 
 Per ripristinare o disinstallare una patch personalizzata precedentemente applicata:
 
-1. Eliminare il file di patch da `/m2-hotfixes` directory.
+1. Eliminare il file patch dalla directory `/m2-hotfixes`.
 
 1. Aggiungi, conferma e invia modifiche al codice.
 
@@ -236,15 +236,15 @@ Per ripristinare o disinstallare una patch personalizzata precedentemente applic
 
    >[!NOTE]
    >
-   >Assicurati di eseguire il test in un ambiente di pre-produzione. Per l’infrastruttura cloud di Adobe Commerce, puoi creare rami con `magento-cloud environment:branch <branch-name>` CLI.
+   >Assicurati di eseguire il test in un ambiente di pre-produzione. Per Adobe Commerce sull&#39;infrastruttura cloud, è possibile creare rami con il comando CLI `magento-cloud environment:branch <branch-name>`.
 
 ## Applicare patch a un progetto non Cloud
 
-Utilizza il [Strumento Patch di qualità](https://github.com/magento/quality-patches) per progetti di Magento Open Source e Adobe Commerce.
+Utilizza lo strumento [Patch di qualità](https://github.com/magento/quality-patches) per i progetti Magento Open Source e Adobe Commerce.
 
 ## Ripristinare una patch in un ambiente locale
 
-È possibile ripristinare tutte le patch applicate in precedenza in un ambiente di sviluppo locale utilizzando `ece-patches` CLI
+È possibile ripristinare tutte le patch applicate in precedenza in un ambiente di sviluppo locale utilizzando l&#39;interfaccia CLI `ece-patches`.
 
 Per ripristinare tutte le patch applicate:
 
@@ -260,4 +260,4 @@ Questo comando ripristina tutte le patch nell&#39;ordine seguente:
 
 ## Registrazione
 
-Lo strumento Quality Patches (Patch di qualità) registra tutte le operazioni in `<Project_root>/var/log/patch.log` file.
+Lo strumento Quality Patches registra tutte le operazioni nel file `<Project_root>/var/log/patch.log`.

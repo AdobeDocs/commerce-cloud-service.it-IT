@@ -36,7 +36,7 @@ https://store.com/second/
 
 >[!TIP]
 >
->Per aggiungere una visualizzazione archivio all&#39;URL di base del sito, non è necessario creare più directory. Consulta [Aggiungi il codice store all’URL di base](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) nel _Guida alla configurazione_.
+>Per aggiungere una visualizzazione archivio all&#39;URL di base del sito, non è necessario creare più directory. Vedere [Aggiungere il codice dell&#39;archivio all&#39;URL di base](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) nella _Guida alla configurazione_.
 
 ## Aggiungi domini
 
@@ -46,30 +46,30 @@ Il processo di aggiunta di un dominio dipende dal tipo di account Cloud:
 
 - Produzione e staging Pro
 
-  Aggiungi il nuovo dominio a Fastly, vedi [Gestione domini](../cdn/fastly-custom-cache-configuration.md#manage-domains), oppure apri un ticket di supporto per richiedere assistenza. Inoltre, devi [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per richiedere l&#39;aggiunta di nuovi domini a un cluster.
+  Aggiungi il nuovo dominio a Fastly, consulta [Gestisci domini](../cdn/fastly-custom-cache-configuration.md#manage-domains) oppure apri un ticket di supporto per richiedere assistenza. È inoltre necessario [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per richiedere l&#39;aggiunta di nuovi domini a un cluster.
 
 - Solo per la produzione iniziale
 
-  Aggiungi il nuovo dominio a Fastly, vedi [Gestione domini](../cdn/fastly-custom-cache-configuration.md#manage-domains), o [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per richiedere assistenza. Inoltre, devi aggiungere il nuovo dominio al **Domini** scheda in [!DNL Cloud Console]: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
+  Aggiungi il nuovo dominio a Fastly. Consulta [Gestione domini](../cdn/fastly-custom-cache-configuration.md#manage-domains) oppure [Invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per richiedere assistenza. È inoltre necessario aggiungere il nuovo dominio alla scheda **Domini** in [!DNL Cloud Console]: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
 
 ## Configurare l’installazione locale
 
-Per configurare l&#39;installazione locale per l&#39;utilizzo di più archivi, vedere [Più siti Web o store][config-multiweb] nel _Guida alla configurazione_.
+Per configurare l&#39;installazione locale per l&#39;utilizzo di più archivi, vedere [Più siti Web o archivi][config-multiweb] nella _Guida alla configurazione_.
 
 Dopo aver creato e testato correttamente l’installazione locale per utilizzare più archivi, è necessario preparare l’ambiente di integrazione:
 
-1. **Configurare percorsi o posizioni**: specifica il modo in cui Adobe Commerce gestisce gli URL in ingresso
+1. **Configura route o percorsi**. Specificare la modalità di gestione degli URL in ingresso da parte di Adobe Commerce
 
    - [Routing per domini separati](#configure-routes-for-separate-domains)
    - [Posizioni per i domini condivisi](#configure-locations-for-shared-domains)
 
-1. **Configurare siti Web, store e visualizzazioni dello store**: configura utilizzando l’interfaccia utente di amministrazione di Adobe Commerce
-1. **Modificare le variabili**- specifica i valori della `MAGE_RUN_TYPE` e `MAGE_RUN_CODE` variabili in `magento-vars.php` file
-1. **Distribuire e testare gli ambienti**: distribuzione e test di `integration` filiale
+1. **Configura siti Web, store e visualizzazioni dello store**—configura utilizzando l&#39;interfaccia utente di amministrazione di Adobe Commerce
+1. **Modifica variabili**—specifica i valori delle variabili `MAGE_RUN_TYPE` e `MAGE_RUN_CODE` nel file `magento-vars.php`
+1. **Distribuisci e verifica ambienti**—distribuisci e verifica il ramo `integration`
 
 >[!TIP]
 >
->È possibile utilizzare un ambiente locale per configurare più siti Web o store. Consulta le istruzioni di Cloud Docker per [Configurazione di più siti Web o store](https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/).
+>È possibile utilizzare un ambiente locale per configurare più siti Web o store. Consulta le istruzioni di Cloud Docker per [configurare più siti Web o store](https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/).
 
 ### Aggiornamenti alla configurazione degli ambienti Pro
 
@@ -77,13 +77,13 @@ Dopo aver creato e testato correttamente l’installazione locale per utilizzare
 
 ### Configurare route per domini separati
 
-Le route definiscono come elaborare gli URL in ingresso. Più store con domini univoci richiedono di definire ogni dominio nel `routes.yaml` file. La modalità di configurazione delle route dipende dal funzionamento del sito.
+Le route definiscono come elaborare gli URL in ingresso. Più archivi con domini univoci richiedono di definire ogni dominio nel file `routes.yaml`. La modalità di configurazione delle route dipende dal funzionamento del sito.
 
 **Per configurare le route in un ambiente di integrazione**:
 
-1. Sulla workstation locale, aprire `.magento/routes.yaml` in un editor di testo.
+1. Nella workstation locale, apri il file `.magento/routes.yaml` in un editor di testo.
 
-1. Definisci il dominio e i sottodomini. Il `mymagento` il valore upstream è lo stesso della proprietà name nel `.magento.app.yaml` file.
+1. Definisci il dominio e i sottodomini. Il valore upstream `mymagento` è lo stesso della proprietà name nel file `.magento.app.yaml`.
 
    ```yaml
    "http://{default}/":
@@ -95,17 +95,17 @@ Le route definiscono come elaborare gli URL in ingresso. Più store con domini u
        upstream: "mymagento:http"
    ```
 
-1. Salva le modifiche in `routes.yaml` file.
+1. Salva le modifiche nel file `routes.yaml`.
 
-1. Continua con [Configurare siti Web, store e visualizzazioni dello store](#set-up-websites-stores-and-store-views).
+1. Passare a [Configurare siti Web, archivi e visualizzazioni dello store](#set-up-websites-stores-and-store-views).
 
 ### Configurare le posizioni per i domini condivisi
 
-Se la configurazione delle route definisce il modo in cui vengono elaborati gli URL, il `web` proprietà in `.magento.app.yaml` definisce il modo in cui l’applicazione viene esposta al web. Web _posizioni_ consente maggiore granularità per le richieste in ingresso. Ad esempio, se il dominio è `store.com`, è possibile utilizzare `/first` (sito predefinito) e `/second` per le richieste a due store diversi che condividono un dominio.
+Dove la configurazione dei percorsi definisce la modalità di elaborazione degli URL, la proprietà `web` nel file `.magento.app.yaml` definisce la modalità di esposizione dell&#39;applicazione al Web. Le _posizioni_ Web consentono una maggiore granularità per le richieste in ingresso. Ad esempio, se il dominio è `store.com`, è possibile utilizzare `/first` (sito predefinito) e `/second` per le richieste a due archivi diversi che condividono un dominio.
 
-**Per configurare una nuova posizione Web**:
+**Per configurare un nuovo percorso Web**:
 
-1. Crea un alias per la radice (`/`). In questo esempio, l’alias è `&app` sulla linea 3.
+1. Creare un alias per la radice (`/`). In questo esempio, l&#39;alias è `&app` nella riga 3.
 
    ```yaml
    web:
@@ -121,7 +121,7 @@ Se la configurazione delle route definisce il modo in cui vengono elaborati gli 
 
 1. Creare un pass-through per il sito Web (`/website`) e fare riferimento alla directory principale utilizzando l&#39;alias del passaggio precedente.
 
-   L’alias consente `website` per accedere ai valori dalla posizione radice. In questo esempio, il sito Web `passthru` è sulla linea 21.
+   L&#39;alias consente a `website` di accedere ai valori dalla posizione radice. In questo esempio, il sito Web `passthru` si trova alla riga 21.
 
    ```yaml
    web:
@@ -148,9 +148,9 @@ Se la configurazione delle route definisce il modo in cui vengono elaborati gli 
              ...
    ```
 
-**Per configurare una posizione con una directory diversa**:
+**Per configurare un percorso con una directory diversa**:
 
-1. Crea un alias per la radice (`/`) e per l&#39;elemento statico (`/static`).
+1. Creare un alias per la radice (`/`) e per le posizioni statiche (`/static`).
 
    ```yaml
    web:
@@ -166,9 +166,9 @@ Se la configurazione delle route definisce il modo in cui vengono elaborati gli 
                root: "pub/static"
    ```
 
-1. Crea una sottodirectory per il sito web sotto `pub` directory: `pub/<website>`
+1. Creare una sottodirectory per il sito Web nella directory `pub`: `pub/<website>`
 
-1. Copia il `pub/index.php` file in `pub/<website>` e aggiorna la `bootstrap` percorso (`/../../app/bootstrap.php`).
+1. Copiare il file `pub/index.php` nella directory `pub/<website>` e aggiornare il percorso `bootstrap` (`/../../app/bootstrap.php`).
 
    ```
    try {
@@ -176,7 +176,7 @@ Se la configurazione delle route definisce il modo in cui vengono elaborati gli 
    } catch (\Exception $e) { 
    ```
 
-1. Creare un pass-through per `index.php` file.
+1. Creare un pass-through per il file `index.php`.
 
    ```yaml
    web:
@@ -208,24 +208,24 @@ Se la configurazione delle route definisce il modo in cui vengono elaborati gli 
 
 1. Eseguire il commit e il push dei file modificati.
 
-   - `pub/<website>/index.php` (Se il file è in `.gitignore`, la pressione potrebbe richiedere l&#39;opzione di forza.)
+   - `pub/<website>/index.php` (se il file si trova in `.gitignore`, il push potrebbe richiedere l&#39;opzione force).
    - `.magento.app.yaml`
 
 ### Configurare siti Web, store e visualizzazioni dello store
 
-In _Interfaccia utente amministratore_, configura il tuo Adobe Commerce **Siti Web**, **Negozi**, e **Visualizzazioni store**. Consulta [Configurare più siti web, store e visualizzazioni dello store in Admin](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) nel _Guida alla configurazione_.
+Nell&#39;_interfaccia utente amministratore_, configura i **siti Web**, **archivi** e **visualizzazioni archivio** di Adobe Commerce. Consulta [Configurare più siti Web, store e visualizzazioni dello store in Admin](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) nella _Guida alla configurazione_.
 
-È importante usare lo stesso nome e lo stesso codice dei siti web, degli store e delle visualizzazioni dello store dall’amministratore quando configuri l’installazione locale. Questi valori sono necessari quando si aggiorna il `magento-vars.php` file.
+È importante usare lo stesso nome e lo stesso codice dei siti web, degli store e delle visualizzazioni dello store dall’amministratore quando configuri l’installazione locale. Per aggiornare il file `magento-vars.php` sono necessari questi valori.
 
 ### Modificare le variabili
 
-Invece di configurare un host virtuale NGINX, trasmettere `MAGE_RUN_CODE` e `MAGE_RUN_TYPE` variabili che utilizzano `magento-vars.php` nella directory principale del progetto.
+Anziché configurare un host virtuale NGINX, passare le variabili `MAGE_RUN_CODE` e `MAGE_RUN_TYPE` utilizzando il file `magento-vars.php` nella directory principale del progetto.
 
-**Per trasmettere le variabili utilizzando `magento-vars.php` file**:
+**Per passare le variabili utilizzando il file `magento-vars.php`**:
 
-1. Apri `magento-vars.php` in un editor di testo.
+1. Aprire il file `magento-vars.php` in un editor di testo.
 
-   Il [predefinito `magento-vars.php` file](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) deve avere un aspetto simile al seguente:
+   Il file [predefinito `magento-vars.php`](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) deve essere simile al seguente:
 
    ```php
    <?php
@@ -244,7 +244,7 @@ Invece di configurare un host virtuale NGINX, trasmettere `MAGE_RUN_CODE` e `MAG
    }
    ```
 
-1. Sposta il commento `if` blocco in modo che sia _dopo_ il `function` e non ha più commentato.
+1. Spostare il blocco `if` commentato in modo che sia _dopo_ il blocco `function` e non abbia più commentato.
 
    ```php
    <?php
@@ -265,12 +265,12 @@ Invece di configurare un host virtuale NGINX, trasmettere `MAGE_RUN_CODE` e `MAG
    }
    ```
 
-1. Sostituisci i seguenti valori in `if (isHttpHost("example.com"))` blocco:
-   - `example.com`: con l’URL di base del tuo _sito web_
-   - `default`- con il CODICE univoco per il _sito web_ o _visualizzazione store_
-   - `store`- con uno dei seguenti valori:
-      - `website`- Carica il _sito web_ nella vetrina
-      - `store`- Carica un _visualizzazione store_ nella vetrina
+1. Sostituire i seguenti valori nel blocco `if (isHttpHost("example.com"))`:
+   - `example.com`—con l&#39;URL di base del tuo _sito Web_
+   - `default`—con il CODICE univoco per il _sito Web_ o la _visualizzazione archivio_
+   - `store`—con uno dei seguenti valori:
+      - `website`—carica il _sito Web_ nella vetrina
+      - `store`—caricare una _visualizzazione archivio_ nella vetrina
 
    Per più siti che utilizzano domini univoci:
 
@@ -293,7 +293,7 @@ Invece di configurare un host virtuale NGINX, trasmettere `MAGE_RUN_CODE` e `MAG
    }
    ```
 
-   Per più siti con lo stesso dominio, devi controllare il _host_ e _URI_:
+   Per più siti con lo stesso dominio, è necessario controllare _host_ e _URI_:
 
    ```php
    <?php
@@ -319,7 +319,7 @@ Invece di configurare un host virtuale NGINX, trasmettere `MAGE_RUN_CODE` e `MAG
    }
    ```
 
-1. Salva le modifiche in `magento-vars.php` file.
+1. Salva le modifiche nel file `magento-vars.php`.
 
 ### Distribuire e testare nel server di integrazione
 
@@ -335,19 +335,19 @@ Invia le modifiche all’ambiente di integrazione dell’infrastruttura cloud di
 
 1. Dopo la distribuzione, apri l’URL dello store in un browser web.
 
-   Con un dominio univoco, utilizza il formato: `http://<magento-run-code>.<site-URL>`
+   Con un dominio univoco, utilizzare il formato: `http://<magento-run-code>.<site-URL>`
 
    Ad esempio: `http://french.master-name-projectID.us.magentosite.cloud/`
 
-   Con un dominio condiviso, utilizza il formato: `http://<site-URL>/<magento-run-code>`
+   Con un dominio condiviso, utilizzare il formato: `http://<site-URL>/<magento-run-code>`
 
    Ad esempio: `http://master-name-projectID.us.magentosite.cloud/french/`
 
-1. Verifica a fondo il tuo sito e unisci il codice in `integration` per un&#39;ulteriore distribuzione.
+1. Eseguire il test completo del sito e unire il codice nel ramo `integration` per un&#39;ulteriore distribuzione.
 
 ## Distribuzione a staging e produzione
 
-Segui il processo di distribuzione per [distribuzione in staging e produzione](../deploy/staging-production.md). Per gli ambienti Starter e Pro, si utilizza [!DNL Cloud Console] per inviare il codice tra ambienti diversi.
+Segui il processo di distribuzione per [distribuzione in staging e produzione](../deploy/staging-production.md). Per gli ambienti Starter e Pro, si utilizza [!DNL Cloud Console] per inviare il codice tra gli ambienti.
 
 L’Adobe consiglia di eseguire test completi nell’ambiente di staging prima di eseguire il push all’ambiente di produzione. Apporta modifiche al codice nell’ambiente di integrazione e avvia di nuovo il processo di distribuzione tra gli ambienti.
 

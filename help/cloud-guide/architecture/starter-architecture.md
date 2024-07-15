@@ -12,39 +12,39 @@ ht-degree: 0%
 
 # Architettura iniziale
 
-L’architettura Starter di Adobe Commerce su infrastruttura cloud supporta fino a **quattro** ambienti, tra cui `master` ambiente che contiene il codice del progetto iniziale, l’ambiente di staging e fino a due ambienti di integrazione.
+L&#39;architettura Starter dell&#39;infrastruttura cloud di Adobe Commerce supporta fino a **quattro** ambienti, incluso un ambiente `master` che contiene il codice del progetto iniziale, l&#39;ambiente di staging e fino a due ambienti di integrazione.
 
 Tutti gli ambienti sono contenuti in contenitori PaaS (Platform as a service). Questi contenitori vengono distribuiti all&#39;interno di contenitori con restrizioni elevate su una griglia di server. Questi ambienti sono di sola lettura e accettano le modifiche del codice distribuito dai rami inviati dall’area di lavoro locale. Ogni ambiente fornisce un database e un server web.
 
-Puoi utilizzare qualsiasi metodologia di sviluppo e ramificazione che ti piace. Quando ottieni l’accesso iniziale al progetto, crea un’ `staging` ambiente da `master` ambiente. Quindi, crea il `integration` ambiente diramando da `staging`.
+Puoi utilizzare qualsiasi metodologia di sviluppo e ramificazione che ti piace. Quando si ottiene l&#39;accesso iniziale al progetto, creare un ambiente `staging` dall&#39;ambiente `master`. Quindi, creare l&#39;ambiente `integration` ramificando da `staging`.
 
 ## Architettura dell’ambiente di partenza
 
 Il diagramma seguente mostra le relazioni gerarchiche degli ambienti Starter.
 
-![Visualizzazione di alto livello del progetto Starter](../../assets/starter/architecture.png)
+![Visualizzazione di alto livello del progetto iniziale](../../assets/starter/architecture.png)
 
 ## Ambiente di produzione
 
-L’ambiente di produzione fornisce il codice sorgente per implementare Adobe Commerce nell’infrastruttura Cloud che esegue le vetrine di singoli e più siti pubbliche. L’ambiente di produzione utilizza il codice del `master` per configurare e abilitare il server web, il database, i servizi configurati e il codice dell&#39;applicazione.
+L’ambiente di produzione fornisce il codice sorgente per implementare Adobe Commerce nell’infrastruttura Cloud che esegue le vetrine di singoli e più siti pubbliche. L&#39;ambiente di produzione utilizza il codice del ramo `master` per configurare e abilitare il server Web, il database, i servizi configurati e il codice dell&#39;applicazione.
 
-Perché il `production` è di sola lettura, utilizza `integration` per apportare modifiche al codice, implementare nell’architettura da `integration` a `staging`, e infine al `production` ambiente. Consulta [Distribuire lo store](../deploy/staging-production.md) e [Lancio del sito](../launch/overview.md).
+Poiché l&#39;ambiente `production` è di sola lettura, utilizzare l&#39;ambiente `integration` per apportare modifiche al codice, distribuire nell&#39;architettura da `integration` a `staging` e infine nell&#39;ambiente `production`. Consulta [Distribuire l&#39;archivio](../deploy/staging-production.md) e [Lancio sito](../launch/overview.md).
 
-L’Adobe consiglia di eseguire test completi nel `staging` diramazione prima di eseguire il push al `master` ramo, che distribuisce in `production` ambiente.
+L&#39;Adobe consiglia di eseguire test completi nel ramo `staging` prima di eseguire il push al ramo `master`, che viene distribuito nell&#39;ambiente `production`.
 
 ## Ambiente di staging
 
-L’Adobe consiglia di creare un ramo denominato `staging` da `master`. Il `staging` branch distribuisce il codice nell’ambiente di staging per fornire un ambiente di pre-produzione per testare codice, moduli ed estensioni, gateway di pagamento, spedizione, dati di prodotto e molto altro. Questo ambiente fornisce la configurazione per tutti i servizi in modo che corrispondano all’ambiente di produzione, inclusi Fastly, New Relic APM e search.
+Adobe consiglia di creare un ramo denominato `staging` da `master`. Il ramo `staging` distribuisce il codice nell&#39;ambiente di staging per fornire un ambiente di pre-produzione per testare codice, moduli ed estensioni, gateway di pagamento, spedizione, dati di prodotto e molto altro. Questo ambiente fornisce la configurazione per tutti i servizi in modo che corrispondano all’ambiente di produzione, inclusi Fastly, New Relic APM e search.
 
 Altre sezioni in questa guida forniscono istruzioni per le distribuzioni finali del codice e il test delle interazioni a livello di produzione in un ambiente di staging sicuro. Per ottenere prestazioni ottimali e test delle funzionalità, replicare il database nell&#39;ambiente di staging.
 
 >[!WARNING]
 >
->L’Adobe consiglia di testare ogni interazione di esercenti e clienti nell’ambiente di staging prima di implementarla nell’ambiente di produzione. Consulta [Distribuire lo store](../deploy/staging-production.md) e [Distribuzione dei test](../test/staging-and-production.md).
+>L’Adobe consiglia di testare ogni interazione di esercenti e clienti nell’ambiente di staging prima di implementarla nell’ambiente di produzione. Consulta [Distribuire l&#39;archivio](../deploy/staging-production.md) e [Testare la distribuzione](../test/staging-and-production.md).
 
 ## Ambiente di integrazione
 
-Gli sviluppatori utilizzano `integration` ambiente per sviluppare, distribuire e testare:
+Gli sviluppatori utilizzano l&#39;ambiente `integration` per sviluppare, distribuire e testare:
 
 - Codice dell’applicazione Adobe Commerce
 
@@ -54,7 +54,7 @@ Gli sviluppatori utilizzano `integration` ambiente per sviluppare, distribuire e
 
 - Servizi
 
-**Casi d’uso consigliati:**
+**Casi d&#39;uso consigliati:**
 
 Gli ambienti di integrazione sono progettati per test e sviluppo limitati. Ad esempio, puoi utilizzare l’ambiente di integrazione per completare le seguenti attività:
 
@@ -70,7 +70,7 @@ Per ottenere le migliori prestazioni nell’ambiente di integrazione, segui ques
 
 - Disabilita i processi cron ed esegui manualmente in base alle esigenze
 
-Puoi avere fino a **due** ambienti di integrazione attivi. Puoi creare un ambiente di integrazione creando un ramo dalla sezione `staging` filiale. Quando crei un ambiente di integrazione, il nome dell’ambiente corrisponde al nome del ramo. Un ambiente di integrazione include un server web e un database. Non include tutti i servizi, ad esempio Fastly CDN e New Relic non sono disponibili.
+È possibile avere fino a **due** ambienti di integrazione attivi. Creare un ambiente di integrazione creando un ramo dal ramo `staging`. Quando crei un ambiente di integrazione, il nome dell’ambiente corrisponde al nome del ramo. Un ambiente di integrazione include un server web e un database. Non include tutti i servizi, ad esempio Fastly CDN e New Relic non sono disponibili.
 
 Puoi avere un numero illimitato di rami inattivi per l’archiviazione del codice. Per accedere, visualizzare e verificare un ramo inattivo, è necessario attivarlo
 
@@ -78,7 +78,7 @@ Puoi avere un numero illimitato di rami inattivi per l’archiviazione del codic
 
 ## Stack di tecnologia di produzione e staging
 
-Gli ambienti di produzione e staging includono le seguenti tecnologie. Puoi modificare e configurare queste tecnologie tramite il [`.magento.app.yaml`](../application/configure-app-yaml.md) file.
+Gli ambienti di produzione e staging includono le seguenti tecnologie. È possibile modificare e configurare queste tecnologie tramite il file [`.magento.app.yaml`](../application/configure-app-yaml.md).
 
 - Fastly per il caching HTTP e CDN
 - Server web Nginx che parla con PHP-FPM, un&#39;istanza con più lavoratori
@@ -89,7 +89,7 @@ Gli ambienti di produzione e staging includono le seguenti tecnologie. Puoi modi
 
 ### Servizi
 
-Adobe Commerce on cloud infrastructure supporta attualmente i seguenti servizi: PHP, MySQL (MariaDB), Elasticsearch (Adobe Commerce da 2.2 a 2.4.3-p2), OpenSearch (2.3.7-p3, 2.4.3-p2, 2.4.4 e versioni successive), Redis e [!DNL RabbitMQ].
+Adobe Commerce su infrastruttura cloud supporta attualmente i seguenti servizi: PHP, MySQL (MariaDB), Elasticsearch (Adobe Commerce da 2.2 a 2.4.3-p2), OpenSearch (2.3.7-p3, 2.4.3-p2, 2.4.4 e versioni successive), Redis e [!DNL RabbitMQ].
 
 Ogni servizio viene eseguito in un contenitore protetto separato. I contenitori vengono gestiti insieme nel progetto. Alcuni servizi sono standard, come i seguenti:
 
@@ -117,7 +117,7 @@ Adobe Commerce su infrastruttura cloud utilizza il sistema operativo Debian GNU/
 
 - [OpenSearch](../services/opensearch.md)
 
-Negli ambienti di staging e produzione, utilizzi Fastly per CDN e caching. La versione più recente dell’estensione Fastly CDN viene installata durante il provisioning iniziale del progetto. Puoi aggiornare l’estensione per ottenere le correzioni di bug e i miglioramenti più recenti. Consulta [Modulo CDN Fastly per il Magento 2](https://github.com/fastly/fastly-magento2). Inoltre, puoi accedere a [New Relic](../monitor/account-management.md) monitoraggio delle prestazioni.
+Negli ambienti di staging e produzione, utilizzi Fastly per CDN e caching. La versione più recente dell’estensione Fastly CDN viene installata durante il provisioning iniziale del progetto. Puoi aggiornare l’estensione per ottenere le correzioni di bug e i miglioramenti più recenti. Consulta [Modulo CDN finale per il Magento 2](https://github.com/fastly/fastly-magento2). Inoltre, puoi accedere a [New Relic](../monitor/account-management.md) per il monitoraggio delle prestazioni.
 
 Utilizzare i seguenti file per configurare le versioni del software da utilizzare nell&#39;implementazione.
 
@@ -129,7 +129,7 @@ Utilizzare i seguenti file per configurare le versioni del software da utilizzar
 
 ### Backup e disaster recovery
 
-È possibile creare un backup del database e del file system utilizzando [!DNL Cloud Console] o CLI. Consulta [Gestione dei backup](../storage/snapshots.md).
+È possibile creare un backup del database e del file system utilizzando [!DNL Cloud Console] o CLI. Consulta [Gestione backup](../storage/snapshots.md).
 
 ## Prepararsi per lo sviluppo
 
@@ -137,9 +137,9 @@ Il flusso di lavoro seguente riepiloga il processo per diramare il codice, svilu
 
 1. Configurare l’ambiente locale
 
-1. Clona il `master` ramo all&#39;ambiente locale
+1. Clona il ramo `master` nell&#39;ambiente locale
 
-1. Creare un `staging` ramo da `master`
+1. Crea un ramo `staging` da `master`
 
 1. Crea rami per lo sviluppo da `staging`
 

@@ -14,24 +14,24 @@ ht-degree: 0%
 
 # Tracciare le distribuzioni
 
-È possibile abilitare New Relic _Rileva modifiche_ per monitorare gli eventi di distribuzione nel progetto di infrastruttura cloud Commerce.
+Puoi abilitare la funzione _Rileva modifiche_ di New Relic per monitorare gli eventi di distribuzione nel progetto di infrastruttura cloud Commerce.
 
-La raccolta dati sulle distribuzioni consente di analizzare l’impatto delle modifiche apportate alle prestazioni complessive, ad esempio CPU, memoria, tempo di risposta e altro ancora. Consulta [Tracciare le modifiche utilizzando NerdGraph](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) nel _Documentazione di New Relic_.
+La raccolta dati sulle distribuzioni consente di analizzare l’impatto delle modifiche apportate alle prestazioni complessive, ad esempio CPU, memoria, tempo di risposta e altro ancora. Vedi [Rileva modifiche utilizzando NerdGraph](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) nella _documentazione di New Relic_.
 
 >[!PREREQUISITES]
 >
 >- `NR_API_URL`: endpoint API New Relic, in questo caso URL API NerdGraph `https://api.newrelic.com/graphql`
->- `NR_API_KEY`: crea una chiave utente, vedi [Chiavi API New Relic](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) nel _New Relic_ documentazione.
->- `NR_APP_GUID`: un’entità che segnala i dati a New Relic ha un ID univoco (GUID). Ad esempio, per abilitare in un ambiente di staging, regola l&#39;ambiente di staging `NR_APP_GUID` variabile cloud con _GUID entità di gestione temporanea_ da New Relic. Consulta la [Informazioni sulle entità New Relic](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) e [Esercitazione NerdGraph: visualizzare i dati delle entità](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) nel _New Relic_ documentazione.
+>- `NR_API_KEY`: creare una chiave utente. Vedere [Chiavi API New Relic](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) nella documentazione di _New Relic_.
+>- `NR_APP_GUID`: un&#39;entità che segnala i dati a New Relic ha un ID univoco (GUID). Ad esempio, per abilitare in un ambiente di staging, regolare la variabile cloud dell&#39;ambiente di staging `NR_APP_GUID` con il GUID _dell&#39;entità di staging_ da New Relic. Consulta l&#39;[Esercitazione sulle entità New Relic](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) e [Esercitazione NerdGraph: visualizzare i dati delle entità](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) nella documentazione di _New Relic_.
 
 ## Abilita tracciamento distribuzioni
 
-Monitora gli eventi di implementazione del progetto Commerce in New Relic creando un’ _script_ integrazione.
+Tieni traccia degli eventi di distribuzione del progetto Commerce in New Relic creando un&#39;integrazione _script_.
 
 **Per abilitare le distribuzioni di tracciamento**:
 
 1. Sulla workstation locale, passa alla directory del progetto.
-1. Creare un `action-integration.js` file. Copia il seguente codice e incollalo in `action-integration.js` file e salva:
+1. Crea un file `action-integration.js`. Copiare il codice seguente e incollarlo nel file `action-integration.js` e salvarlo:
 
    ```javascript
    function trackDeployments() {
@@ -91,7 +91,7 @@ Monitora gli eventi di implementazione del progetto Commerce in New Relic creand
    trackDeployments();
    ```
 
-1. Creare un _script_ integrazione tramite `magento-cloud` Comando CLI e riferimento a `action-integration.js` file.
+1. Creare un&#39;integrazione _script_ utilizzando il comando CLI `magento-cloud` e fare riferimento al file `action-integration.js`.
 
    ```bash
    magento-cloud integration:add --type script --events='environment.restore, environment.push, environment.branch, environment.activate, environment.synchronize, environment.initialize, environment.merge, environment.redeploy, environment.variable.create, environment.variable.delete, environment.variable.update' --file ./action-integration.js --project=<YOUR_PROJECT_ID> --environments=<YOUR_ENVIRONMENT_ID>
@@ -191,7 +191,7 @@ Monitora gli eventi di implementazione del progetto Commerce in New Relic creand
    Created integration 767u4hathojjw (type: script)
    ```
 
-   Facoltativamente, puoi verificare l’integrazione e annotare l’ID integrazione utilizzando: `magento-cloud integration:list`
+   Facoltativamente, puoi verificare l&#39;integrazione e prendere nota dell&#39;ID integrazione utilizzando: `magento-cloud integration:list`
 
 1. Crea la variabile di ambiente utilizzando i prerequisiti.
 
@@ -220,10 +220,10 @@ Monitora gli eventi di implementazione del progetto Commerce in New Relic creand
    {"data":{"changeTrackingCreateDeployment":{"deploymentId":"some-deployment-id","entityGuid":"SomeGUIDhere"}}}
    ```
 
-1. Accedi al tuo [Account New Relic](https://login.newrelic.com/login).
+1. Accedi al tuo [account New Relic](https://login.newrelic.com/login).
 
-1. Nel menu di navigazione di Explorer, fai clic su **[!UICONTROL APM & Services]**. Seleziona l’ambiente [!UICONTROL Name] e [!UICONTROL Account].
+1. Nel menu di navigazione di Explorer, fare clic su **[!UICONTROL APM & Services]**. Selezionare l&#39;ambiente [!UICONTROL Name] e [!UICONTROL Account].
 
-1. Sotto _Eventi_, fai clic su **[!UICONTROL Change tracking]**.
+1. In _Eventi_, fare clic su **[!UICONTROL Change tracking]**.
 
    ![Distribuzioni](../../assets/new-relic/deployments.png)

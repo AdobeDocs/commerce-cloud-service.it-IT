@@ -14,7 +14,7 @@ ht-degree: 0%
 
 La gestione delle regole di reindirizzamento è un requisito comune per le applicazioni web, soprattutto nei casi in cui non si desidera perdere i collegamenti in entrata che sono stati modificati o rimossi nel tempo.
 
-Di seguito viene illustrato come gestire le regole di reindirizzamento nei progetti di infrastruttura cloud di Adobe Commerce tramite `routes.yaml` file di configurazione. Se i metodi di reindirizzamento descritti in questo argomento non funzionano, puoi utilizzare le intestazioni di memorizzazione in cache per eseguire la stessa operazione.
+Di seguito viene illustrato come gestire le regole di reindirizzamento nei progetti Adobe Commerce su infrastrutture cloud utilizzando il file di configurazione `routes.yaml`. Se i metodi di reindirizzamento descritti in questo argomento non funzionano, puoi utilizzare le intestazioni di memorizzazione in cache per eseguire la stessa operazione.
 
 {{route-placeholder}}
 
@@ -24,11 +24,11 @@ Di seguito viene illustrato come gestire le regole di reindirizzamento nei proge
 
 >[!WARNING]
 >
->Per i progetti Adobe Commerce su infrastrutture cloud, configurare numerosi reindirizzamenti non regex e riscritture in `routes.yaml` può causare problemi di prestazioni. Se il `routes.yaml` è pari o superiore a 32 KB, scarica i reindirizzamenti non regex e riscrive in Fastly. Consulta [Offload di reindirizzamenti non regex a Fastly anziché a Nginx (route)](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/offload-non-regex-redirects-to-fastly-instead-of-nginx-routes.html) nel _Centro assistenza Adobe Commerce_.
+>Per i progetti Adobe Commerce su infrastrutture cloud, la configurazione di numerosi reindirizzamenti non regex e riscritture nel file `routes.yaml` può causare problemi di prestazioni. Se il file `routes.yaml` è di almeno 32 KB, scarica i reindirizzamenti non regex e riscrive in Fastly. Vedi [Offload dei reindirizzamenti non regex a Fastly invece di Nginx (route)](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/offload-non-regex-redirects-to-fastly-instead-of-nginx-routes.html) nel _Centro assistenza Adobe Commerce_.
 
 ## Reindirizzamenti di intero percorso
 
-Utilizzando i reindirizzamenti di route complete, puoi definire route semplici utilizzando `routes.yaml` file. Ad esempio, puoi reindirizzare da un dominio apex a un `www` sottodominio come segue:
+Utilizzando i reindirizzamenti a route intera, è possibile definire route semplici utilizzando il file `routes.yaml`. Ad esempio, è possibile reindirizzare da un dominio apex a un sottodominio `www` come segue:
 
 ```yaml
 http://{default}/:
@@ -38,7 +38,7 @@ http://{default}/:
 
 ## Reindirizzamenti a route parziale
 
-In `.magento/routes.yaml` file, è possibile aggiungere regole di reindirizzamento parziali ai percorsi esistenti in base alla corrispondenza dei pattern:
+Nel file `.magento/routes.yaml` è possibile aggiungere regole di reindirizzamento parziali alle route esistenti in base alla corrispondenza dei criteri:
 
 ```yaml
 http://{default}/:
@@ -53,9 +53,9 @@ I reindirizzamenti parziali funzionano con qualsiasi tipo di percorso, compresi 
 
 Sono disponibili due chiavi in `redirects`:
 
-- **scade**- Facoltativo, specifica per quanto tempo memorizzare in cache il reindirizzamento nel browser. Esempi di valori validi includono `3600s`, `1d`, `2w`, `3m`.
+- **expires** - Facoltativo, specifica il tempo necessario per memorizzare nella cache il reindirizzamento nel browser. Esempi di valori validi includono `3600s`, `1d`, `2w`, `3m`.
 
-- **percorsi**- Una o più coppie chiave-valore che specificano la configurazione per le regole di reindirizzamento parziale.
+- **percorsi**: una o più coppie chiave-valore che specificano la configurazione per le regole di reindirizzamento parziale.
 
   Per ogni regola di reindirizzamento, la chiave è un’espressione per filtrare i percorsi di richiesta per il reindirizzamento. Il valore è un oggetto che specifica la destinazione di destinazione per il reindirizzamento e le opzioni per l’elaborazione del reindirizzamento.
 
@@ -64,15 +64,15 @@ Sono disponibili due chiavi in `redirects`:
   | Proprietà | Descrizione |
   | ---------- | ----------- |
   | `to` | Obbligatorio, percorso assoluto parziale, URL con protocollo e host o pattern che specifica la destinazione di destinazione per la regola di reindirizzamento. |
-  | `regexp` | Facoltativo, impostazione predefinita `false`. Specifica se la chiave del percorso deve essere interpretata come espressione regolare PCRE. |
-  | `prefix` | Specifica se il reindirizzamento si applica sia al percorso che a tutti i relativi elementi secondari o solo al percorso stesso. Impostazione predefinita `true`. Valore non supportato se `regexp` è `true`. |
-  | `append_suffix` | Determina se il suffisso viene riportato con il reindirizzamento. Impostazione predefinita `true`. Valore non supportato se `regexp` la chiave è `true` o* se `prefix` la chiave è `false`. |
-  | `code` | Specifica il codice di stato HTTP. I codici di stato validi sono [`301` (Spostato in modo permanente)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), e [`308`](https://www.rfc-editor.org/rfc/rfc7238). Impostazione predefinita `302`. |
-  | `expires` | Facoltativo, specifica per quanto tempo memorizzare in cache il reindirizzamento nel browser. Impostazione predefinita `expires` valore definito direttamente sotto `redirects` , ma a questo livello puoi regolare con precisione la scadenza della cache per i singoli reindirizzamenti parziali. |
+  | `regexp` | Facoltativo, il valore predefinito è `false`. Specifica se la chiave del percorso deve essere interpretata come espressione regolare PCRE. |
+  | `prefix` | Specifica se il reindirizzamento si applica sia al percorso che a tutti i relativi elementi secondari o solo al percorso stesso. Impostazione predefinita: `true`. Valore non supportato se `regexp` è `true`. |
+  | `append_suffix` | Determina se il suffisso viene riportato con il reindirizzamento. Impostazione predefinita: `true`. Questo valore non è supportato se la chiave `regexp` è `true` o* se la chiave `prefix` è `false`. |
+  | `code` | Specifica il codice di stato HTTP. I codici di stato validi sono [`301` (spostati definitivamente)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8) e [`308`](https://www.rfc-editor.org/rfc/rfc7238). Impostazione predefinita: `302`. |
+  | `expires` | Facoltativo, specifica per quanto tempo memorizzare in cache il reindirizzamento nel browser. Il valore predefinito è `expires`, definito direttamente nella chiave `redirects`, ma a questo livello è possibile ottimizzare la scadenza della cache per i singoli reindirizzamenti parziali. |
 
 ## Esempi di reindirizzamenti a route parziale
 
-Gli esempi seguenti mostrano come specificare i reindirizzamenti a route parziale nel `routes.yaml` file utilizzando vari `paths` opzioni di configurazione.
+Negli esempi seguenti viene illustrato come specificare reindirizzamenti a route parziale nel file `routes.yaml` utilizzando diverse opzioni di configurazione di `paths`.
 
 ### Corrispondenza pattern espressione regolare
 
@@ -86,7 +86,7 @@ http://{default}/:
         "/regexp/(.*)/match": { to: "http://example.com/$1", regexp: true }
 ```
 
-Questa configurazione filtra i percorsi delle richieste rispetto a un’espressione regolare e reindirizza le richieste corrispondenti a `https://example.com`. Ad esempio, una richiesta a `https://example.com/regexp/a/b/c/match` reindirizza a `https://example.com/a/b/c`.
+Questa configurazione filtra i percorsi delle richieste rispetto a un&#39;espressione regolare e reindirizza le richieste corrispondenti a `https://example.com`. Ad esempio, una richiesta a `https://example.com/regexp/a/b/c/match` viene reindirizzata a `https://example.com/a/b/c`.
 
 ### Corrispondenza pattern prefisso
 
@@ -102,11 +102,11 @@ http://{default}/:
 
 Questa configurazione funziona come segue:
 
-- Reindirizza le richieste che corrispondono al modello `/from` al percorso `http://{default}/to`.
+- Reindirizza le richieste che corrispondono al pattern `/from` al percorso `http://{default}/to`.
 
-- Reindirizza le richieste che corrispondono al modello `/from/another/path` a `https://{default}/to/another/path`.
+- Reindirizza le richieste che corrispondono al pattern `/from/another/path` a `https://{default}/to/another/path`.
 
-- Se si modifica il `prefix` proprietà a `false`, richieste che corrispondono a `/from` pattern attiva un reindirizzamento, ma le richieste che corrispondono a `/from/another/path` pattern non lo fanno.
+- Se si modifica la proprietà `prefix` in `false`, le richieste che corrispondono al pattern `/from` attivano un reindirizzamento, ma le richieste che corrispondono al pattern `/from/another/path` no.
 
 ### Corrispondenza pattern suffisso
 
@@ -121,9 +121,9 @@ http://{default}/:
 
 Questa configurazione funziona come segue:
 
-- Reindirizza le richieste che corrispondono al modello `/from/path/suffix` al percorso `https://{default}/to`.
+- Reindirizza le richieste che corrispondono al pattern `/from/path/suffix` al percorso `https://{default}/to`.
 
-- Se si modifica il `append_suffix` proprietà a `true`, quindi richieste corrispondenti `/from/path/suffix`  reindirizzare al percorso `https://{default}/to/path/suffix`.
+- Se si modifica la proprietà `append_suffix` in `true`, le richieste corrispondenti a `/from/path/suffix` verranno reindirizzate al percorso `https://{default}/to/path/suffix`.
 
 ### Configurazione della cache specifica per percorso
 
@@ -141,6 +141,6 @@ http://{default}/:
 
 Questa configurazione funziona come segue:
 
-- Reindirizza dal primo percorso (`/from`) vengono memorizzati nella cache per un giorno.
+- I reindirizzamenti dal primo percorso (`/from`) vengono memorizzati nella cache per un giorno.
 
-- Reindirizza dal secondo percorso (`/here`) sono memorizzati nella cache per due settimane.
+- I reindirizzamenti dal secondo percorso (`/here`) vengono memorizzati nella cache per due settimane.

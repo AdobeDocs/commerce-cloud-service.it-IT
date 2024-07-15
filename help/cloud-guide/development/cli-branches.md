@@ -13,29 +13,29 @@ ht-degree: 0%
 
 # Gestire i rami con CLI
 
-Per installare `magento-cloud` CLI, vedere [Riferimento CLI cloud](../dev-tools/cloud-cli-overview.md). Dopo aver installato `magento-cloud` e configurare le chiavi SSH per l&#39;accesso remoto all&#39;infrastruttura cloud, è possibile utilizzare `magento-cloud` Comandi CLI per gestire gli ambienti per i progetti. Per informazioni sull’architettura dell’ambiente, consulta [Architettura iniziale](../architecture/starter-architecture.md) o [Architettura Pro](../architecture/pro-architecture.md).
+Per installare l&#39;interfaccia della riga di comando `magento-cloud`, vedere il riferimento all&#39;interfaccia della riga di comando [Cloud](../dev-tools/cloud-cli-overview.md). Dopo aver installato la CLI `magento-cloud` e aver impostato le chiavi SSH per l&#39;accesso remoto all&#39;infrastruttura cloud, è possibile utilizzare i comandi CLI `magento-cloud` per gestire gli ambienti per i progetti. Per informazioni sull&#39;architettura dell&#39;ambiente, vedere [Architettura Starter](../architecture/starter-architecture.md) o [Architettura Pro](../architecture/pro-architecture.md).
 
-Per gestire rami e ambienti con [!DNL Cloud Console], vedi [Gestire i rami con [!DNL Cloud Console]](../project/console-branches.md).
+Per gestire i rami e gli ambienti con [!DNL Cloud Console], vedi [Gestire i rami con  [!DNL Cloud Console]](../project/console-branches.md).
 
 ## Utilizzare i comandi CLI
 
-Il `magento-cloud` I comandi CLI sono simili ai comandi Git. Puoi utilizzarli per connetterti al progetto e gestire gli ambienti. Sebbene sia possibile eseguire i comandi da qualsiasi directory, si consiglia di eseguirli da una directory di progetto. Quando viene eseguito da una directory di progetto, è possibile omettere `-p <project-ID>` parametro. Consulta la [Riferimento CLI cloud](../dev-tools/cloud-cli-overview.md).
+I comandi CLI `magento-cloud` sono simili ai comandi Git. Puoi utilizzarli per connetterti al progetto e gestire gli ambienti. Sebbene sia possibile eseguire i comandi da qualsiasi directory, si consiglia di eseguirli da una directory di progetto. Quando viene eseguito da una directory di progetto, è possibile omettere il parametro `-p <project-ID>`. Vedere il riferimento a [Cloud CLI](../dev-tools/cloud-cli-overview.md).
 
 ## Clona il progetto
 
-Le istruzioni seguenti utilizzano una combinazione di `magento-cloud` Comandi CLI e comandi Git per clonare il progetto sulla workstation locale. Per visualizzare un elenco completo di `magento-cloud` Comandi CLI, utilizzare `magento-cloud list` comando.
+Le istruzioni seguenti utilizzano una combinazione di comandi CLI `magento-cloud` e comandi Git per clonare il progetto nella workstation locale. Per visualizzare un elenco completo dei comandi CLI `magento-cloud`, utilizzare il comando `magento-cloud list`.
 
 >[!IMPORTANT]
 >
->Alcuni comandi Git non possono completare un’azione nel progetto di infrastruttura cloud di Adobe Commerce. Ad esempio, puoi creare un ramo utilizzando un comando Git, ma non puoi creare e attivare un nuovo ambiente. È necessario creare un ambiente utilizzando `magento-cloud environment:branch <branch-name>` affinché l’ambiente diventi _attivo_. In alternativa, è possibile utilizzare [!DNL Cloud Console] per creare ambienti attivi. Consulta [Riferimento CLI cloud](../dev-tools/cloud-cli-overview.md#git-commands).
+>Alcuni comandi Git non possono completare un’azione nel progetto di infrastruttura cloud di Adobe Commerce. Ad esempio, puoi creare un ramo utilizzando un comando Git, ma non puoi creare e attivare un nuovo ambiente. È necessario creare un ambiente utilizzando il comando `magento-cloud environment:branch <branch-name>` affinché diventi _attivo_. In alternativa, è possibile utilizzare [!DNL Cloud Console] per creare ambienti attivi. Vedi [Riferimento CLI cloud](../dev-tools/cloud-cli-overview.md#git-commands).
 
-**Per clonare un progetto `master` ambiente**:
+**Per clonare un ambiente `master` del progetto**:
 
-1. Accedere alla workstation locale con un [proprietario del file system](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) account.
+1. Accedi alla tua workstation locale con un account [proprietario del file system](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html).
 
-1. Passare al server web o all&#39;host virtuale _docroot_ directory.
+1. Passare alla directory _docroot_ del server Web o dell&#39;host virtuale.
 
-1. Accedi utilizzando `magento-cloud` CLI
+1. Accedere utilizzando l&#39;interfaccia della riga di comando `magento-cloud`.
 
    ```bash
    magento-cloud login
@@ -55,7 +55,7 @@ Le istruzioni seguenti utilizzano una combinazione di `magento-cloud` Comandi CL
 
    Quando richiesto, fornisci un nome di directory.
 
-1. Cambia in `magento2` directory.
+1. Passare alla directory `magento2`.
 
 1. Elencare gli ambienti disponibili per il progetto.
 
@@ -65,7 +65,7 @@ Le istruzioni seguenti utilizzano una combinazione di `magento-cloud` Comandi CL
 
    >[!IMPORTANT]
    >
-   >Il `magento-cloud environment:list` visualizza le gerarchie di ambiente, mentre il comando `git branch` il comando non.
+   >Il comando `magento-cloud environment:list` visualizza le gerarchie dell&#39;ambiente, mentre il comando `git branch` no.
 
 1. Recupera i rami remoti.
 
@@ -81,14 +81,14 @@ Le istruzioni seguenti utilizzano una combinazione di `magento-cloud` Comandi CL
 
 >[!TIP]
 >
->Consulta [Integrazioni](../integrations/overview.md) per informazioni sull’utilizzo dei servizi di hosting basati su Git con Adobe Commerce sull’infrastruttura cloud.
+>Consulta [Integrazioni](../integrations/overview.md) per informazioni sull&#39;utilizzo dei servizi di hosting basati su Git con Adobe Commerce sull&#39;infrastruttura cloud.
 
 ## Creare un ramo per lo sviluppo
 
-Dopo aver clonato il progetto e aver aggiornato la configurazione dell’account amministratore di Adobe Commerce, puoi creare un ramo per lo sviluppo. Come indicato in precedenza, è necessario creare un ambiente utilizzando `magento-cloud environment:branch <branch-name>` comando o [!DNL Cloud Console] affinché l&#39;ambiente diventi _attivo_.
+Dopo aver clonato il progetto e aver aggiornato la configurazione dell’account amministratore di Adobe Commerce, puoi creare un ramo per lo sviluppo. Come indicato in precedenza, è necessario creare un ambiente utilizzando il comando `magento-cloud environment:branch <branch-name>` o [!DNL Cloud Console] affinché l&#39;ambiente diventi _attivo_.
 
-- Per [Starter](../architecture/starter-develop-deploy-workflow.md#clone-and-branch), è consigliabile creare un ramo per `staging`, quindi crea un ramo di sviluppo basato su `staging` filiale.
-- Per [Pro](../architecture/pro-develop-deploy-workflow.md#development-workflow), creare rami di sviluppo in base al `Integration` filiale.
+- Per [Starter](../architecture/starter-develop-deploy-workflow.md#clone-and-branch), provare a creare un ramo per `staging`, quindi creare un ramo di sviluppo basato sul ramo `staging`.
+- Per [Pro](../architecture/pro-develop-deploy-workflow.md#development-workflow), crea rami di sviluppo in base al ramo `Integration`.
 
 **Per creare un ramo di sviluppo**:
 
@@ -106,7 +106,7 @@ Dopo aver clonato il progetto e aver aggiornato la configurazione dell’account
    composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
    ```
 
-1. [_facoltativo_] Creare un [backup](../storage/snapshots.md) dell&#39;ambiente.
+1. [_facoltativo_] Crea un [backup](../storage/snapshots.md) dell&#39;ambiente.
 
 ### Unire un ramo
 
@@ -134,11 +134,11 @@ Elimina un ambiente solo se sei sicuro di non averne più bisogno. Non è possib
 
 >[!WARNING]
 >
->Impossibile eliminare `master` di qualsiasi progetto.
+>Impossibile eliminare il ramo `master` di qualsiasi progetto.
 
-Per eseguire questa attività è necessario essere un amministratore di progetto, un amministratore dell&#39;ambiente o un proprietario account. Consulta [Gestire l’accesso degli utenti ai progetti Cloud](../project/user-access.md).
+Per eseguire questa attività è necessario essere un amministratore di progetto, un amministratore dell&#39;ambiente o un proprietario account. Consulta [Gestire l&#39;accesso degli utenti ai progetti Cloud](../project/user-access.md).
 
-Quando elimini un ambiente, questo viene impostato su _inattivo_. Il codice è ancora disponibile nel ramo Git, ma non contiene più i servizi o il database. Per eliminare completamente l’ambiente, devi eliminare anche il ramo Git remoto corrispondente.
+Quando si elimina un ambiente, questo viene impostato su _inattivo_. Il codice è ancora disponibile nel ramo Git, ma non contiene più i servizi o il database. Per eliminare completamente l’ambiente, devi eliminare anche il ramo Git remoto corrispondente.
 
 **Per eliminare un ambiente**:
 
@@ -169,7 +169,7 @@ Quando elimini un ambiente, questo viene impostato su _inattivo_. Il codice è a
    Are you sure you want to delete the environment <environment-ID>? [Y/n]
    ```
 
-   L’eliminazione dell’ambiente lo inserisce in un _inattivo_ stato.
+   Se si elimina l&#39;ambiente, questo si trova nello stato _inattivo_.
 
    ```terminal
    Delete the remote Git branch too? [Y/n]
@@ -192,8 +192,8 @@ Quando elimini un ambiente, questo viene impostato su _inattivo_. Il codice è a
 
 >[!TIP]
 >
->Per attivare un ambiente inattivo, utilizza `magento-cloud environment:activate` comando.
+>Per attivare un ambiente inattivo, utilizzare il comando `magento-cloud environment:activate`.
 
 ## Interagire con gli ambienti remoti
 
-Dopo di te [configurare le chiavi SSH](../development/secure-connections.md), è possibile [connettersi dall’area di lavoro locale a un ambiente remoto](../development/secure-connections.md#connect-to-a-remote-environment) e interagire con i servizi di progetto e modificare le impostazioni.
+Dopo aver [configurato le chiavi SSH](../development/secure-connections.md), è possibile [connettersi dall&#39;area di lavoro locale a un ambiente remoto](../development/secure-connections.md#connect-to-a-remote-environment) e interagire con i servizi del progetto e modificare le impostazioni.

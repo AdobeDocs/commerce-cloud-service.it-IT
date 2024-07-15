@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Se hai bisogno di alcuni dati di esempio durante lo sviluppo del tuo archivio, puoi installare dati di esempio. Questi dati simulano un archivio Adobe Commerce attivo con clienti, prodotti e altri dati. Questi dati di esempio funzionano al meglio con una nuova installazione di Adobe Commerce su modello di infrastruttura cloud.
 
-Come best practice, installa dati di esempio in ambienti di sviluppo e integrazione. Se utilizzi dati di esempio in Staging o Produzione, devi [rimuovere](#reset-or-uninstall-sample-data) le informazioni e i prodotti prima della pubblicazione.
+Come best practice, installa dati di esempio in ambienti di sviluppo e integrazione. Se utilizzi dati di esempio in Staging o Produzione, devi [rimuovere](#reset-or-uninstall-sample-data) le informazioni e i prodotti prima di andare &quot;live&quot;.
 
 ## Installare i dati di esempio
 
@@ -41,7 +41,7 @@ Per installare i dati di esempio:
 
 1. Attendi la distribuzione del progetto.
 
-1. Verifica che l’installazione sia stata eseguita correttamente accedendo alla pagina della vetrina nell’ambiente di integrazione. Puoi individuare il collegamento URL alla vetrina tramite [!DNL Cloud Console].
+1. Verifica che l’installazione sia stata eseguita correttamente accedendo alla pagina della vetrina nell’ambiente di integrazione. È possibile individuare il collegamento URL alla vetrina tramite [!DNL Cloud Console].
 
 1. Crea un’istantanea dell’ambiente:
 
@@ -56,4 +56,4 @@ Puoi iniziare a testare il tuo sviluppo con i dati live.
 È possibile reimpostare o rimuovere i dati di esempio seguendo la stessa procedura utilizzata per installarli:
 
 - Elimina dati di esempio: `./bin/magento sampledata:remove`
-- Ripristina dati di esempio: `./bin/magento sampledata:reset`
+- Reimposta dati di esempio: `./bin/magento sampledata:reset`

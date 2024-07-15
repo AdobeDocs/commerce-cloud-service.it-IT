@@ -13,40 +13,40 @@ ht-degree: 0%
 
 # Configurare le variabili di ambiente per la distribuzione
 
-Il `.magento.env.yaml` Il file utilizza le variabili di ambiente per centralizzare la gestione delle azioni di generazione e distribuzione in tutti gli ambienti, inclusi Pro Staging e Produzione. Per configurare azioni univoche in ogni ambiente, devi modificare questo file in ogni ambiente.
+Il file `.magento.env.yaml` utilizza le variabili di ambiente per centralizzare la gestione delle azioni di generazione e distribuzione in tutti gli ambienti, inclusi gli ambienti Pro Staging e Production. Per configurare azioni univoche in ogni ambiente, devi modificare questo file in ogni ambiente.
 
 >[!TIP]
 >
->I file YAML fanno distinzione tra maiuscole e minuscole e non consentono tabulazioni. Fare attenzione a utilizzare rientri coerenti in tutto il `.magento.env.yaml` o la configurazione potrebbe non funzionare come previsto. Gli esempi nella documentazione e nel file di esempio utilizzano _a due spazi_ rientro. Utilizza il [comando convalida strumenti ece](#validate-configuration-file) per verificare la configurazione.
+>I file YAML fanno distinzione tra maiuscole e minuscole e non consentono tabulazioni. Fare attenzione a utilizzare un rientro coerente in tutto il file `.magento.env.yaml`, altrimenti la configurazione potrebbe non funzionare come previsto. Gli esempi nella documentazione e nel file di esempio utilizzano il rientro _two-space_. Utilizza il comando [ece-tools validate](#validate-configuration-file) per controllare la configurazione.
 
 ## Struttura del file
 
-Il `.magento.env.yaml` Il file contiene due sezioni: `stage` e `log`. Il `stage` La sezione controlla le azioni che si verificano durante le fasi della [Processo di distribuzione cloud](../deploy/process.md).
+Il file `.magento.env.yaml` contiene due sezioni: `stage` e `log`. La sezione `stage` controlla le azioni che si verificano durante le fasi del [processo di distribuzione cloud](../deploy/process.md).
 
-- `stage`- Utilizzate la sezione stadio (Stage) per definire alcune azioni per le seguenti fasi della distribuzione:
-   - `global`- Controlla le azioni nelle fasi di generazione, distribuzione e post-distribuzione. Puoi ignorare queste impostazioni nelle sezioni di build, distribuzione e post-distribuzione.
-   - `build`- Controlla le azioni solo nella fase di generazione. Se non specifichi impostazioni in questa sezione, la fase di build utilizza le impostazioni della sezione globale.
-   - `deploy`- Controlla le azioni solo nella fase di distribuzione. Se non specifichi impostazioni in questa sezione, la fase di distribuzione utilizza le impostazioni della sezione globale.
-   - `post-deploy`- Controlla le azioni _dopo_ distribuzione dell&#39;applicazione e _dopo_ il contenitore inizia ad accettare le connessioni.
-- `log`- Utilizza la sezione del registro per configurare [notifiche](set-up-notifications.md), inclusi i tipi di notifica e il livello di dettaglio.
-   - `slack`- Configura un messaggio da inviare a un bot di Slack.
-   - `email`- Consente di configurare un messaggio e-mail da inviare a uno o più destinatari.
-   - [gestori di registri](log-handlers.md)- Configurazione dei messaggi dell&#39;applicazione hardware e software inviati a un server di registrazione remoto.
+- `stage` - Utilizzare la sezione relativa all&#39;area di visualizzazione per definire determinate azioni per le seguenti fasi della distribuzione:
+   - `global` - Controlla le azioni nelle fasi di compilazione, distribuzione e post-distribuzione. Puoi ignorare queste impostazioni nelle sezioni di build, distribuzione e post-distribuzione.
+   - `build` - Controlla le azioni solo nella fase di compilazione. Se non specifichi impostazioni in questa sezione, la fase di build utilizza le impostazioni della sezione globale.
+   - `deploy` - Controlla le azioni solo nella fase di distribuzione. Se non specifichi impostazioni in questa sezione, la fase di distribuzione utilizza le impostazioni della sezione globale.
+   - `post-deploy`—Controlla le azioni _dopo_ la distribuzione dell&#39;applicazione e _dopo_ il contenitore inizia ad accettare le connessioni.
+- `log` - Utilizzare la sezione del registro per configurare [notifiche](set-up-notifications.md), inclusi i tipi di notifica e il livello di dettaglio.
+   - `slack` - Configura un messaggio da inviare a un bot di Slack.
+   - `email` - Configura un messaggio e-mail da inviare a uno o più destinatari e-mail.
+   - [gestori di log](log-handlers.md): configurare i messaggi delle applicazioni hardware e software inviati a un server di registrazione remoto.
 
 ### Variabili di ambiente
 
-Il `ece-tools` il pacchetto imposta i valori in `env.php` file in base ai valori di [Variabili cloud](variables-cloud.md), le variabili impostate in [!DNL Cloud Console]e `.magento.env.yaml` file di configurazione. Le variabili di ambiente in `.magento.env.yaml` Personalizza l’ambiente Cloud ignorando la configurazione Commerce esistente. Se un valore predefinito è `Not Set`, quindi `ece-tools` pacchetti **NO** e utilizza [!DNL Commerce] predefinito o il valore della configurazione MAGENTO_CLOUD_RELATIONSHIPS. Se è impostato il valore predefinito, `ece-tools` il pacchetto agisce per impostare tale impostazione predefinita.
+Il pacchetto `ece-tools` imposta i valori nel file `env.php` in base ai valori di [variabili cloud](variables-cloud.md), variabili impostate nel file [!DNL Cloud Console] e nel file di configurazione `.magento.env.yaml`. Le variabili di ambiente nel file `.magento.env.yaml` personalizzano l&#39;ambiente Cloud sovrascrivendo la configurazione di Commerce esistente. Se un valore predefinito è `Not Set`, il pacchetto `ece-tools` esegue l&#39;azione **NO** e utilizza il valore predefinito [!DNL Commerce] o il valore della configurazione MAGENTO_CLOUD_RELATIONSHIPS. Se è impostato il valore predefinito, il pacchetto `ece-tools` agisce per impostarlo.
 
-Gli argomenti seguenti contengono definizioni dettagliate di tutte le variabili che è possibile utilizzare in, ad esempio se è impostato o meno un valore predefinito `.magento.env.yaml` file:
+Gli argomenti seguenti contengono definizioni dettagliate di tutte le variabili che è possibile utilizzare nel file `.magento.env.yaml`, ad esempio se è impostato o meno un valore predefinito:
 
-- [Globale](variables-global.md)- Le variabili controllano le azioni in ogni fase: build, deploy e post-deploy
-- [Genera](variables-build.md)- Le variabili controllano le azioni di generazione
-- [Distribuisci](variables-deploy.md)- Azioni di distribuzione del controllo variabili
-- [Post-distribuzione](variables-post-deploy.md)- le variabili controllano le azioni dopo la distribuzione
+- [Globale](variables-global.md): le variabili controllano le azioni in ogni fase: compilazione, distribuzione e post-distribuzione
+- [Build](variables-build.md): le variabili controllano le azioni di compilazione
+- [Distribuisci](variables-deploy.md): le azioni di distribuzione del controllo delle variabili
+- [Post-deploy](variables-post-deploy.md): le variabili controllano le azioni dopo la distribuzione
 
 ### Crea file di configurazione da CLI
 
-Puoi generare un `.magento.env.yaml` file di configurazione per un ambiente Cloud utilizzando quanto segue `ece-tools` comandi.
+È possibile generare un file di configurazione `.magento.env.yaml` per un ambiente Cloud utilizzando i seguenti comandi `ece-tools`.
 
 >Crea un file di configurazione
 
@@ -60,13 +60,13 @@ php ./vendor/bin/ece-tools cloud:config:create `<configuration-json>`
 php ./vendor/bin/ece-tools cloud:config:update `<configuration-json>`
 ```
 
-Entrambi i comandi richiedono un singolo argomento: una matrice in formato JSON che specifica un valore per almeno una variabile di compilazione, distribuzione o post-distribuzione. Ad esempio, il comando seguente imposta i valori per `SCD_THREADS` e `CLEAN_STATIC_FILES` Variabili:
+Entrambi i comandi richiedono un singolo argomento: una matrice in formato JSON che specifica un valore per almeno una variabile di compilazione, distribuzione o post-distribuzione. Il comando seguente, ad esempio, imposta i valori per le variabili `SCD_THREADS` e `CLEAN_STATIC_FILES`:
 
 ```bash
 php vendor/bin/ece-tools cloud:config:create '{"stage":{"build":{"SCD_THREADS":5}, "deploy":{"CLEAN_STATIC_FILES":false}}}'
 ```
 
-E crea un `.magento.env.yaml` file con le impostazioni seguenti:
+E crea un file `.magento.env.yaml` con le seguenti impostazioni:
 
 ```yaml
 stage:
@@ -76,7 +76,7 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-È possibile utilizzare `cloud:config:update` per aggiornare il nuovo file. Ad esempio, il comando seguente modifica `SCD_THREADS` e aggiunge `SCD_COMPRESSION_TIMEOUT` configurazione:
+È possibile utilizzare il comando `cloud:config:update` per aggiornare il nuovo file. Il comando seguente, ad esempio, modifica il valore `SCD_THREADS` e aggiunge la configurazione `SCD_COMPRESSION_TIMEOUT`:
 
 ```bash
 php vendor/bin/ece-tools cloud:config:update '{"stage":{"build":{"SCD_THREADS":3, "SCD_COMPRESSION_TIMEOUT":1000}}}'
@@ -95,7 +95,7 @@ stage:
 
 ### Convalida file di configurazione
 
-Utilizza quanto segue `ece-tools` comando per convalidare `.magento.env.yaml` file di configurazione prima di inviare le modifiche all’ambiente cloud remoto.
+Utilizzare il comando `ece-tools` seguente per convalidare il file di configurazione `.magento.env.yaml` prima di inviare le modifiche all&#39;ambiente cloud remoto.
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:validate
@@ -112,7 +112,7 @@ The NOT_EXIST_OPTION variable is not allowed in configuration.
 
 ## Costanti PHP
 
-È possibile utilizzare le costanti PHP in `.magento.env.yaml` le definizioni dei file invece dei valori di codifica fissa. L&#39;esempio seguente definisce `driver_options` utilizzo di una costante PHP:
+È possibile utilizzare le costanti PHP nelle definizioni dei file `.magento.env.yaml` anziché i valori di codifica fissa. L&#39;esempio seguente definisce `driver_options` utilizzando una costante PHP:
 
 ```yaml
 stage:
@@ -130,11 +130,11 @@ stage:
 
 >[!WARNING]
 >
->L’analisi costante non funziona quando si utilizza una `symfony/yaml` versione del pacchetto precedente alla 3.2.
+>L&#39;analisi costante non funziona quando si utilizza una versione del pacchetto `symfony/yaml` precedente alla 3.2.
 
 ## Gestione degli errori
 
-Quando si verifica un errore a causa di un valore imprevisto nel `.magento.env.yaml` file di configurazione, viene visualizzato un messaggio di errore. Ad esempio, il seguente messaggio di errore presenta un elenco di modifiche suggerite per ogni elemento con un valore imprevisto, fornendo a volte opzioni valide:
+Quando si verifica un errore a causa di un valore imprevisto nel file di configurazione `.magento.env.yaml`, viene visualizzato un messaggio di errore. Ad esempio, il seguente messaggio di errore presenta un elenco di modifiche suggerite per ogni elemento con un valore imprevisto, fornendo a volte opzioni valide:
 
 ```terminal
 - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
@@ -151,7 +151,7 @@ Apporta le correzioni, conferma e invia le modifiche. Se non viene visualizzato 
 
 ## Ottimizzazione della gestione della configurazione
 
-Se dopo aver scaricato le configurazioni hai abilitato Gestione configurazione, devi spostare le variabili SCD_* dalla fase di distribuzione a quella di build. Consulta [Strategie di distribuzione dei contenuti statici](../deploy/static-content.md).
+Se dopo aver scaricato le configurazioni hai abilitato Gestione configurazione, devi spostare le variabili SCD_* dalla fase di distribuzione a quella di build. Consulta [Strategie di distribuzione del contenuto statico](../deploy/static-content.md).
 
 >Prima della gestione della configurazione:
 

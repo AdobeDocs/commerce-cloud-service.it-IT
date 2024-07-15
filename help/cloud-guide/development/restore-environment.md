@@ -13,10 +13,10 @@ ht-degree: 0%
 
 # Ripristinare un ambiente
 
-Se riscontri problemi nell’ambiente di integrazione e non disponi di un [backup valido](../storage/snapshots.md), provare a ripristinare l&#39;ambiente utilizzando uno dei metodi seguenti:
+Se si verificano problemi nell&#39;ambiente di integrazione e non si dispone di un [backup valido](../storage/snapshots.md), provare a ripristinare l&#39;ambiente utilizzando uno dei metodi seguenti:
 
 - Ripristina o ripristina il codice nel ramo Git
-- Disinstalla [!DNL Commerce] applicazione
+- Disinstalla l&#39;applicazione [!DNL Commerce]
 - Forza una ridistribuzione
 - Reimpostare manualmente il database
 
@@ -26,11 +26,11 @@ Se riscontri problemi nell’ambiente di integrazione e non disponi di un [backu
 
 Se si ripristina il ramo Git, il codice torna a uno stato stabile nel passato.
 
-**Per ripristinare il ramo**:
+**Per reimpostare il ramo**:
 
 1. Sulla workstation locale, passa alla directory del progetto.
 
-1. Rivedi la cronologia del commit Git. Utilizzare `--oneline` per visualizzare le conferme abbreviate su una riga:
+1. Rivedi la cronologia del commit Git. Utilizza `--oneline` per mostrare i commit abbreviati su una riga:
 
    ```bash
    git log --oneline
@@ -65,13 +65,13 @@ Se si ripristina il ramo Git, il codice torna a uno stato stabile nel passato.
 
 ## Disinstallare Commerce
 
-Disinstallazione di [!DNL Commerce] ripristinando l&#39;ambiente originale, rimuovendo la configurazione di distribuzione e cancellando `var/` sottodirectory. Questa guida ripristina anche uno stato stabile precedente per il ramo Git. Se non disponi di un backup recente, ma puoi accedere all’ambiente remoto utilizzando SSH, segui la procedura seguente per ripristinare l’ambiente:
+La disinstallazione dell&#39;applicazione [!DNL Commerce] ripristina lo stato originale dell&#39;ambiente ripristinando il database, rimuovendo la configurazione della distribuzione e cancellando le sottodirectory `var/`. Questa guida ripristina anche uno stato stabile precedente per il ramo Git. Se non disponi di un backup recente, ma puoi accedere all’ambiente remoto utilizzando SSH, segui la procedura seguente per ripristinare l’ambiente:
 
 - Disattiva la gestione della configurazione
 - Disinstallare Adobe Commerce
 - Reimposta il ramo Git
 
-La disinstallazione del software Adobe Commerce causa la perdita e il ripristino del database, rimuove la configurazione di distribuzione e cancella `var/` sottodirectory. È importante disattivare [Gestione della configurazione](../store/store-settings.md) in modo da non applicare automaticamente le impostazioni di configurazione precedenti durante la distribuzione successiva. Assicurati che il tuo `app/etc/` la directory non contiene `config.php` file.
+La disinstallazione del software Adobe Commerce provoca l&#39;eliminazione e il ripristino del database, rimuove la configurazione di distribuzione e cancella le sottodirectory `var/`. È importante disabilitare [Gestione configurazione](../store/store-settings.md) in modo che non applichi automaticamente le impostazioni di configurazione precedenti durante la distribuzione successiva. Verificare che la directory `app/etc/` non contenga il file `config.php`.
 
 **Per disinstallare il software Adobe Commerce**:
 
@@ -110,7 +110,7 @@ La disinstallazione del software Adobe Commerce causa la perdita e il ripristino
    [SUCCESS]: Magento uninstallation complete.
    ```
 
-1. Cancella `var/` sottodirectory.
+1. Cancella le sottodirectory `var/`.
 
    ```bash
    rm -rf var/*
@@ -154,13 +154,13 @@ Se si è tentato di disinstallare Adobe Commerce e il comando non è riuscito o 
    mysql -h database.internal
    ```
 
-1. Rilascia il `main` database.
+1. Eliminare il database `main`.
 
    ```shell
    drop database main;
    ```
 
-1. Crea un elemento vuoto `main` database.
+1. Creare un database `main` vuoto.
 
    ```shell
    create database main;

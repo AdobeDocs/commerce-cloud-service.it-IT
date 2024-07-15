@@ -13,10 +13,10 @@ ht-degree: 0%
 
 # Panoramica sugli strumenti per sviluppatori
 
-Adobe fornisce una suite di strumenti cloud per Commerce, che include pacchetti progettati per distribuire e gestire installazioni e aggiornamenti di Adobe Commerce sulla piattaforma Cloud.
+Adobe fornisce una suite di strumenti cloud per Commerce, che include pacchetti progettati per distribuire e gestire installazioni e aggiornamenti Adobe Commerce sulla piattaforma Cloud.
 
-- [Cloud CLI](cloud-cli-overview.md): gestione di progetti e ambienti cloud, esecuzione di routine ed esecuzione di attività di automazione con `magento-cloud` CLI
+- [Cloud CLI](cloud-cli-overview.md): consente di gestire progetti e ambienti cloud, eseguire routine ed eseguire attività di automazione con `magento-cloud` CLI.
 - [Cloud Docker per Commerce](cloud-docker.md): distribuzione di Adobe Commerce in un ambiente Docker per attività locali di sviluppo, test e automazione.
-- [Patch cloud](../development/apply-patches.md)- Applicazione di patch per integrare le versioni di Commerce con gli ambienti Cloud e distribuzione rapida di correzioni critiche.
-- [Pacchetto ECE-Strumenti](package-overview.md): gestisci le configurazioni, genera e implementa l’applicazione Adobe Commerce negli ambienti cloud remoti.
-- [Integrazioni](../integrations/overview.md)integrazione di strumenti di sviluppo comuni, ad esempio notifiche, webhook e servizi basati su Git.
+- [Patch cloud](../development/apply-patches.md)—Applica le patch per integrare le versioni di Commerce con gli ambienti Cloud e distribuire rapidamente le correzioni critiche.
+- [Pacchetto ECE-Tools](package-overview.md): consente di gestire le configurazioni, generare e distribuire l&#39;applicazione Adobe Commerce negli ambienti cloud remoti.
+- [Integrazioni](../integrations/overview.md) - Integra strumenti di sviluppo comuni, ad esempio notifiche, webhook e servizi basati su Git.

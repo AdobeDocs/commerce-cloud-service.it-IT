@@ -1,6 +1,6 @@
 ---
-title: '[!DNL ECE-Tools] Pacchetto'
-description: Scopri di più su [!DNL ECE-Tools] e come consente di gestire e distribuire Adobe Commerce.
+title: '[!DNL ECE-Tools] pacchetto'
+description: Scopri il pacchetto  [!DNL ECE-Tools]  e come consente di gestire e distribuire Adobe Commerce.
 exl-id: 5583a685-29c5-4de5-8d2e-94cff5ff37ab
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 0%
 
 # Pacchetto utensili ECE
 
-Il [!DNL ECE-Tools] è un set di script e strumenti progettati per gestire e distribuire il [!DNL Commerce] applicazione. Il `ece-tools` il pacchetto semplifica molti processi, ad esempio la gestione dei processi cron, la verifica della configurazione del progetto e l&#39;applicazione di patch e hotfix di Adobe. Puoi visualizzare e contribuire al [open-source [!DNL ECE-Tools] archivio del codice su GitHub][ece-repo].
+Il pacchetto [!DNL ECE-Tools] è un insieme di script e strumenti progettati per gestire e distribuire l&#39;applicazione [!DNL Commerce]. Il pacchetto `ece-tools` semplifica molti processi, ad esempio la gestione dei processi cron, la verifica della configurazione del progetto e l&#39;applicazione di patch e hotfix di Adobe. Puoi visualizzare e contribuire all&#39;archivio del codice [open-source [!DNL ECE-Tools] su GitHub][ece-repo].
 
 {{ece-tools-package}}
 
-Il `ece-tools` il pacchetto è compatibile con Adobe Commerce, a partire dalla versione 2.1.4, e contiene script e comandi Adobe Commerce on cloud infrastructure progettati per facilitare la gestione del codice e generare e distribuire automaticamente i progetti.
+Il pacchetto `ece-tools` è compatibile con Adobe Commerce, a partire dalla versione 2.1.4, e contiene script e comandi Adobe Commerce su infrastruttura cloud progettati per semplificare la gestione del codice e generare e distribuire automaticamente i progetti.
 
-Di seguito sono elencati i `ece-tools` comandi:
+Nell&#39;elenco seguente sono elencati i comandi `ece-tools` disponibili:
 
 ```bash
 php ./vendor/bin/ece-tools list
@@ -25,17 +25,17 @@ php ./vendor/bin/ece-tools list
 
 ## Generare e distribuire
 
-Il `ece-tools` Il pacchetto contiene comandi per eseguire operazioni per le fasi di build, distribuzione e post-distribuzione dell’avvio dell’applicazione Adobe Commerce sull’infrastruttura cloud. Ad esempio, il `php ./vendor/bin/ece-tools build` Il comando avvia il processo di compilazione dell&#39;applicazione.
+Il pacchetto `ece-tools` contiene comandi per eseguire operazioni per le fasi di compilazione, distribuzione e post-distribuzione dell&#39;avvio dell&#39;applicazione Adobe Commerce sull&#39;infrastruttura cloud. Il comando `php ./vendor/bin/ece-tools build`, ad esempio, avvia il processo di compilazione dell&#39;applicazione.
 
-Per impostazione predefinita, questi `ece-tools` i comandi sono nel [proprietà hook](../application/hooks-property.md) del `.magento.app.yaml` file di configurazione.
+Per impostazione predefinita, questi `ece-tools` comandi si trovano nella [proprietà hooks](../application/hooks-property.md) del file di configurazione `.magento.app.yaml`.
 
 ## Generatore di configurazione Docker
 
-Il `ece-tools` il pacchetto include una dipendenza per [magento/magento-cloud-docker] che fornisce funzionalità e file di configurazione per le immagini Docker al fine di avviare un ambiente di sviluppo Docker per Adobe Commerce sull’infrastruttura cloud. Puoi anche eseguire Cloud Docker for Commerce come pacchetto autonomo. Consulta [Sviluppo Docker](../dev-tools/cloud-docker.md).
+Il pacchetto `ece-tools` include una dipendenza per il pacchetto [magento/magento-cloud-docker], che fornisce funzionalità e file di configurazione per le immagini Docker per avviare un ambiente di sviluppo Docker per Adobe Commerce sull&#39;infrastruttura cloud. Puoi anche eseguire Cloud Docker per Commerce come pacchetto autonomo. Consulta [Sviluppo Docker](../dev-tools/cloud-docker.md).
 
 ## Servizi, route e variabili
 
-È possibile utilizzare `ece-tools` per visualizzare informazioni dettagliate sulla codifica Base64 [Variabili cloud](../environment/variables-cloud.md) utilizzato in qualsiasi ambiente Cloud. Il comando seguente mostra tutti i servizi, le route e le variabili.
+È possibile utilizzare il pacchetto `ece-tools` per visualizzare informazioni dettagliate sulle [variabili cloud](../environment/variables-cloud.md) con codifica Base64 utilizzate in qualsiasi ambiente Cloud. Il comando seguente mostra tutti i servizi, le route e le variabili.
 
 ```bash
 php ./vendor/bin/ece-tools env:config:show
@@ -47,11 +47,11 @@ Per visualizzare un set specifico di informazioni, utilizzare il formato seguent
 php ./vendor/bin/ece-tools env:config:show <option>
 ```
 
-- `services`- Visualizza i dati della relazione dal `MAGENTO_CLOUD_RELATIONSHIPS` variabile di ambiente, definita nella `services.yaml` file.
-- `routes`- Visualizza le route configurate per il progetto utilizzando `MAGENTO_CLOUD_ROUTES` variabile di ambiente.
-- `variables`- Visualizza le variabili configurate per il progetto utilizzando `MAGENTO_CLOUD_VARIABLES` variabile di ambiente.
+- `services` - Visualizza i dati di relazione della variabile di ambiente `MAGENTO_CLOUD_RELATIONSHIPS`, definita nel file `services.yaml`.
+- `routes` - Visualizza le route configurate per il progetto utilizzando la variabile di ambiente `MAGENTO_CLOUD_ROUTES`.
+- `variables` - Visualizza le variabili configurate per il progetto utilizzando la variabile di ambiente `MAGENTO_CLOUD_VARIABLES`.
 
-Output di esempio per `services` opzione:
+Output di esempio per l&#39;opzione `services`:
 
 ```terminal
 Magento Cloud Services:
@@ -73,7 +73,7 @@ Magento Cloud Services:
 
 ## Verificare la configurazione dell’ambiente
 
-È disponibile una serie di comandi di verifica per valutare la configurazione del progetto. Consulta [Procedure guidate intelligenti](../deploy/smart-wizards.md) nel _Ottimizzare l’implementazione_ per una descrizione dettagliata di ogni comando della procedura guidata. Il `wizard:ideal-state` viene eseguito automaticamente durante la fase di generazione. Per verificare lo stato ideale del progetto:
+È disponibile una serie di comandi di verifica per valutare la configurazione del progetto. Per una descrizione dettagliata di ogni comando della procedura guidata, vedere [Procedure guidate avanzate](../deploy/smart-wizards.md) nella sezione _Ottimizza distribuzione_. Il comando `wizard:ideal-state` viene eseguito automaticamente durante la fase di compilazione. Per verificare lo stato ideale del progetto:
 
 ```bash
 php ./vendor/bin/ece-tools wizard:ideal-state
@@ -81,7 +81,7 @@ php ./vendor/bin/ece-tools wizard:ideal-state
 
 >[!NOTE]
 >
->È necessario eseguire `wizard:ideal-state` nell’ambiente cloud remoto. Il comando restituisce sempre `The configured state is not ideal` errore durante l’esecuzione nell’ambiente di sviluppo locale.
+>Eseguire il comando `wizard:ideal-state` nell&#39;ambiente cloud remoto. Il comando restituisce sempre l&#39;errore `The configured state is not ideal` quando viene eseguito nell&#39;ambiente di sviluppo locale.
 
 Output di esempio:
 
@@ -89,11 +89,11 @@ Output di esempio:
 Ideal state is configured
 ```
 
-Consulta [Note sulla versione per gli strumenti ece](../release-notes/cloud-tools-suite.md).
+Consulta le [note sulla versione per gli strumenti ece](../release-notes/cloud-tools-suite.md).
 
 ## patch di Adobe e patch personalizzate
 
-Il `ece-tools` il pacchetto include una dipendenza per [magento/magento-cloud-patches] che fornisce patch e hotfix di Adobe che migliorano l’integrazione di tutte le versioni di Adobe Commerce con gli ambienti Cloud e supportano la distribuzione rapida di correzioni critiche. &quot;offre anche patch personalizzate da aggiungere al progetto di infrastruttura cloud di Adobe Commerce. Consulta [Applicare le patch](../development/apply-patches.md).
+Il pacchetto `ece-tools` include una dipendenza per il pacchetto [magento/magento-cloud-patches], che fornisce patch e hotfix di Adobe che migliorano l&#39;integrazione di tutte le versioni di Adobe Commerce con gli ambienti Cloud e supportano la distribuzione rapida di correzioni critiche. &quot;offre anche patch personalizzate da aggiungere al progetto di infrastruttura cloud di Adobe Commerce. Vedi [Applicare le patch](../development/apply-patches.md).
 
 <!-- link definitions -->
 

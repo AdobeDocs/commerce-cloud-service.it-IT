@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Impostare le notifiche
 
-Per impostazione predefinita, Adobe Commerce su infrastruttura cloud scrive le azioni di build e distribuzione in `app/var/log/cloud.log` all&#39;interno della directory principale dell&#39;applicazione Adobe Commerce. In alternativa, puoi inviare i registri a un sistema di messaggistica, ad esempio Slack e e-mail, per ricevere notifiche in tempo reale.
+Per impostazione predefinita, Adobe Commerce su infrastruttura cloud scrive le azioni di compilazione e distribuzione nel file `app/var/log/cloud.log` all&#39;interno della directory dell&#39;applicazione principale Adobe Commerce. In alternativa, puoi inviare i registri a un sistema di messaggistica, ad esempio Slack e e-mail, per ricevere notifiche in tempo reale.
 
 È possibile, ad esempio, inviare un messaggio di Slack per avvisare un gruppo di persone quando una distribuzione non riesce e avviare un&#39;indagine su ciò che è andato storto.
 
@@ -35,9 +35,9 @@ Ad esempio, durante lo sviluppo iniziale è possibile preferire notifiche e-mail
 Per configurare le notifiche:
 
 1. Sulla workstation locale, passa alla directory del progetto.
-1. In `.magento.env.yaml` nella directory principale del progetto, aggiungi le impostazioni del sistema di messaggistica, inclusa la notifica preferita [Livelli di registro](log-handlers.md#log-levels).
+1. Nel file `.magento.env.yaml` della directory principale del progetto, aggiungi le impostazioni del sistema di messaggistica, inclusa la notifica preferita [Livelli di registro](log-handlers.md#log-levels).
 
-   Ad esempio, per configurare entrambi gli Slack _e_ configurazioni e-mail, utilizza quanto segue:
+   Per configurare ad esempio entrambe le configurazioni e-mail di Slack _e_, utilizzare la seguente procedura:
 
    ```yaml
    log:
@@ -80,10 +80,10 @@ log:
     min_level: "info"
 ```
 
-- `token`- SLACK [token utente](https://api.slack.com/docs/token-types#user). Il token utente autorizza Adobe Commerce su un’infrastruttura cloud a inviare messaggi.
-- `channel`- Nome del canale di Slack Adobe Commerce sull’infrastruttura cloud invia le notifiche.
-- `username`: nome utente utilizzato da Adobe Commerce sull’infrastruttura cloud per inviare messaggi di notifica in Slack.
-- `min_level`- Livello di registro minimo per i messaggi di notifica. È consigliabile utilizzare `info`.
+- `token` - Il [token utente](https://api.slack.com/docs/token-types#user) dello Slack. Il token utente autorizza Adobe Commerce su un’infrastruttura cloud a inviare messaggi.
+- `channel` - Il nome del canale di Slack Adobe Commerce sull&#39;infrastruttura cloud invia le notifiche.
+- `username` - Nome utente utilizzato da Adobe Commerce sull&#39;infrastruttura cloud per inviare messaggi di notifica in Slack.
+- `min_level` - Livello di registro minimo per i messaggi di notifica. È consigliabile utilizzare `info`.
 
 ### Esempio di configurazione e-mail
 
@@ -102,7 +102,7 @@ log:
     min_level: "notice"
 ```
 
-- `to`: l’indirizzo e-mail Adobe Commerce sull’infrastruttura cloud invia messaggi di notifica.
-- `from`- Indirizzo di posta elettronica per l&#39;invio dei messaggi di notifica ai destinatari.
-- `subject`- Descrizione dell&#39;e-mail.
-- `min_level`- Livello di registro minimo per i messaggi di notifica. È consigliabile utilizzare `notice` o `warning`.
+- `to` - L&#39;indirizzo e-mail Adobe Commerce sull&#39;infrastruttura cloud invia messaggi di notifica.
+- `from` - Indirizzo e-mail per l&#39;invio dei messaggi di notifica ai destinatari.
+- `subject` - Descrizione dell&#39;e-mail.
+- `min_level` - Livello di registro minimo per i messaggi di notifica. È consigliabile utilizzare `notice` o `warning`.

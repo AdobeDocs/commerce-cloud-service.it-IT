@@ -12,45 +12,45 @@ ht-degree: 0%
 
 # Flusso di lavoro di un progetto professionale
 
-Il progetto Pro include un singolo archivio Git con un `master` ramo e tre ambienti principali:
+Il progetto Pro include un singolo archivio Git con un ramo `master` globale e tre ambienti principali:
 
-1. **Produzione** ambiente per il lancio e la manutenzione del sito live
-1. **Staging** ambiente per il testing con tutti i servizi
-1. **Integrazione** ambiente per lo sviluppo e il testing
+1. **Ambiente di produzione** per l&#39;avvio e la manutenzione del sito live
+1. **Ambiente di gestione temporanea** per il test con tutti i servizi
+1. **Integrazione** ambiente per sviluppo e test
 
-![Elenco ambiente Pro](../../assets/pro-environments.png)
+![Elenco ambienti Pro](../../assets/pro-environments.png)
 
-Questi ambienti sono `read-only`, accettando le modifiche del codice distribuito dai rami inviati dall’area di lavoro locale. Consulta [Architettura Pro](pro-architecture.md) per una panoramica completa degli ambienti Pro. Consulta [[!DNL Cloud Console]](../project/overview.md#cloud-console) per una panoramica dell&#39;elenco degli ambienti Pro nella vista progetto.
+Questi ambienti sono `read-only` e accettano le modifiche del codice distribuito dai rami inviati dall&#39;area di lavoro locale. Per una panoramica completa degli ambienti Pro, consulta [Architettura Pro](pro-architecture.md). Per una panoramica dell&#39;elenco degli ambienti Pro nella visualizzazione del progetto, vedere [[!DNL Cloud Console]](../project/overview.md#cloud-console).
 
-L’immagine seguente illustra il flusso di lavoro di sviluppo e distribuzione di Pro, che utilizza un approccio semplice e con ramificazioni Git. Tu [sviluppare](#development-workflow) codice che utilizza un ramo attivo basato su `integration` ambiente, _push_ e _tirare_ modifiche al codice da e verso il ramo attivo remoto. Distribuisci il codice verificato tramite _unione_ il ramo remoto al ramo base, che attiva un [generare e distribuire](#deployment-workflow) per tale ambiente.
+L’immagine seguente illustra il flusso di lavoro di sviluppo e distribuzione di Pro, che utilizza un approccio semplice e con ramificazioni Git. [sviluppa](#development-workflow) codice utilizzando un ramo attivo basato sull&#39;ambiente `integration`, _invia_ e _richiama_ modifiche al codice da e verso il ramo attivo remoto. Distribuisci il codice verificato _unendo_ il ramo remoto al ramo base, che attiva un processo [build e distribuzione](#deployment-workflow) automatizzato per tale ambiente.
 
 ![Visualizzazione di alto livello del flusso di lavoro di sviluppo dell&#39;architettura Pro](../../assets/pro-dev-workflow.png)
 
 ## Flusso di lavoro di sviluppo
 
-L’ambiente di integrazione offre un’unica `integration` ramo contenente il codice dell’infrastruttura cloud di Adobe Commerce. Puoi creare un ulteriore ramo dell’ambiente attivo. Questo consente di implementare fino a due rami attivi nei contenitori Platform as a service (PaaS). Non esiste alcun limite al numero di ambienti inattivi.
+L&#39;ambiente di integrazione fornisce un singolo ramo `integration` di base contenente il codice di infrastruttura cloud di Adobe Commerce. Puoi creare un ulteriore ramo dell’ambiente attivo. Questo consente di implementare fino a due rami attivi nei contenitori Platform as a service (PaaS). Non esiste alcun limite al numero di ambienti inattivi.
 
 {{enhanced-integration-envs}}
 
-Gli ambienti di progetto supportano un processo di integrazione flessibile e continuo. Inizia clonando il file `integration` nella cartella del progetto locale. Crea un ramo o più rami, sviluppa nuove funzioni, configura modifiche, aggiungi estensioni e distribuisci aggiornamenti:
+Gli ambienti di progetto supportano un processo di integrazione flessibile e continuo. Iniziare clonando il ramo `integration` nella cartella del progetto locale. Crea un ramo o più rami, sviluppa nuove funzioni, configura modifiche, aggiungi estensioni e distribuisci aggiornamenti:
 
 - **Recupera** modifiche da `integration`
 
 - **Ramo** da `integration`
 
-- **Sviluppa** codice su una workstation locale, tra cui [!DNL Composer] aggiornamenti
+- **Sviluppa** codice in una workstation locale, inclusi [!DNL Composer] aggiornamenti
 
-- **Push** modifiche al codice in remoto e convalida
+- **Invia** modifiche al codice in remoto e convalida
 
-- **Unisci** a `integration` e test
+- **Unisci** in `integration` e verifica
 
-Con un ramo di codice sviluppato e i file di configurazione corrispondenti, le modifiche al codice sono pronte per essere unite al `integration` per test più completi. Il `integration` L’ambiente è ideale anche per:
+Con un ramo di codice sviluppato e i file di configurazione corrispondenti, le modifiche al codice sono pronte per essere unite al ramo `integration` per test più completi. L&#39;ambiente `integration` è inoltre ideale per:
 
-- **Integrazione di servizi di terze parti**—Non tutti i servizi sono disponibili nell&#39;ambiente PaaS.
+- **Integrazione di servizi di terze parti**. Non tutti i servizi sono disponibili nell&#39;ambiente PaaS.
 
-- **Generazione dei file di gestione della configurazione**- Alcune impostazioni di configurazione sono _Sola lettura_ in un ambiente distribuito.
+- **Generazione dei file di gestione della configurazione**. Alcune impostazioni di configurazione sono _Sola lettura_ in un ambiente distribuito.
 
-- **Configurazione dello store**- Dovresti configurare completamente tutte le impostazioni dello store utilizzando l’ambiente di integrazione. È possibile trovare **URL amministratore store** il _integrazione_ visualizzazione ambiente in _[!DNL Cloud Console]_.
+- **Configurazione dello store**. Configurare tutte le impostazioni dello store utilizzando l&#39;ambiente di integrazione. È possibile trovare l&#39;**URL amministratore archivio** nella visualizzazione dell&#39;ambiente _integrazione_ in _[!DNL Cloud Console]_.
 
 ## Flusso di lavoro di distribuzione
 
@@ -72,7 +72,7 @@ Azioni script di compilazione:
 
 Distribuisci azioni script:
 
-- Posiziona il sito nell’ambiente di destinazione in un _Manutenzione_ modalità
+- Posiziona il sito nell&#39;ambiente di destinazione in modalità _Manutenzione_
 
 - Distribuisci contenuto statico se non completato durante la generazione
 
@@ -80,17 +80,17 @@ Distribuisci azioni script:
 
 - Configurare il routing per il traffico
 
-Dopo il processo di build e distribuzione, il tuo store torna online con le modifiche e le configurazioni del codice più recenti. Consulta [Processo di distribuzione](../deploy/process.md).
+Dopo il processo di build e distribuzione, il tuo store torna online con le modifiche e le configurazioni del codice più recenti. Vedere [Processo di distribuzione](../deploy/process.md).
 
 ### Unisci all’integrazione
 
-Combina tutte le modifiche al codice verificate unendo il ramo di sviluppo attivo nella base `integration` filiale. Puoi verificare tutte le modifiche in `integration` prima di promuovere le modifiche all&#39;ambiente di staging.
+Combina tutte le modifiche al codice verificate unendo il ramo di sviluppo attivo nel ramo `integration` di base. È possibile verificare tutte le modifiche nel ramo `integration` prima di promuovere le modifiche nell&#39;ambiente di staging.
 
 ### Unisci a staging
 
-La gestione temporanea è un ambiente di preproduzione che fornisce tutti i servizi e le impostazioni il più vicino possibile all’ambiente di produzione. Effettua sempre il push delle modifiche apportate al codice da `integration` dell&#39;ambiente `staging` in modo da poter eseguire test approfonditi con tutti i servizi. La prima volta che utilizzi l’ambiente di staging, devi configurare i servizi, come [Fastly CDN](../cdn/fastly.md) e [New Relic](../monitor/new-relic-service.md). Configura gateway di pagamento, spedizione, notifiche e altri servizi vitali con sandbox o credenziali di test.
+La gestione temporanea è un ambiente di preproduzione che fornisce tutti i servizi e le impostazioni il più vicino possibile all’ambiente di produzione. Effettua sempre il push delle modifiche al codice dall&#39;ambiente `integration` all&#39;ambiente `staging` in modo da poter eseguire test approfonditi con tutti i servizi. La prima volta che si utilizza l&#39;ambiente di gestione temporanea, è necessario configurare servizi quali [Fastly CDN](../cdn/fastly.md) e [New Relic](../monitor/new-relic-service.md). Configura gateway di pagamento, spedizione, notifiche e altri servizi vitali con sandbox o credenziali di test.
 
-È meglio testare accuratamente ogni servizio, verificare gli strumenti di test delle prestazioni ed eseguire test UAT come amministratore e come cliente, fino a quando non si ritiene che il negozio sia pronto per l’ambiente di produzione. Consulta [Distribuire lo store](../deploy/staging-production.md).
+È meglio testare accuratamente ogni servizio, verificare gli strumenti di test delle prestazioni ed eseguire test UAT come amministratore e come cliente, fino a quando non si ritiene che il negozio sia pronto per l’ambiente di produzione. Consulta [Distribuire il tuo archivio](../deploy/staging-production.md).
 
 ### Unisci a produzione
 
@@ -101,6 +101,6 @@ Dopo aver eseguito un test approfondito nell’ambiente di staging, esegui l’u
 
 ### Unisci a master globale
 
-Invia sempre una copia del codice di produzione al Global `master` nel caso in cui si presenti una necessità emergente di eseguire il debug dell’ambiente di produzione senza interrompere i servizi.
+Invia sempre una copia del codice di produzione al `master` globale nel caso in cui si presenti una necessità emergente di eseguire il debug dell&#39;ambiente di produzione senza interrompere i servizi.
 
-Esegui **non** crea un ramo da Globale `master`. Utilizza il `integration` per creare rami nuovi e attivi da sviluppare e correggere.
+**non** crea un ramo da `master` globale. Utilizza il ramo `integration` per creare nuovi rami attivi da sviluppare e correggere.

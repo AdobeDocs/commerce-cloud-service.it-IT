@@ -11,42 +11,42 @@ ht-degree: 0%
 
 # Struttura del progetto
 
-Un progetto Adobe Commerce su infrastruttura cloud include file essenziali per le credenziali e la configurazione dell’applicazione. Questi file sono disponibili in come modello in base alla versione di Adobe Commerce. Consulta i modelli cloud basati sulla versione di Adobe Commerce in [`magento/magento-cloud` Archivio GitHub](https://github.com/magento/magento-cloud).
+Un progetto Adobe Commerce su infrastruttura cloud include file essenziali per le credenziali e la configurazione dell’applicazione. Questi file sono disponibili in come modello in base alla versione di Adobe Commerce. Visualizzare i modelli cloud basati sulla versione di Adobe Commerce nell&#39;archivio GitHub [`magento/magento-cloud`](https://github.com/magento/magento-cloud).
 
 Nella tabella seguente sono descritti i file inclusi in un progetto cloud:
 
 | File | Descrizione |
 | ------------------------- | ------------ |
-| `/.magento/routes.yaml` | File di configurazione con reindirizzamento `www` al dominio apex e `php` da distribuire tramite HTTP. Consulta [Configurare le route](../routes/routes-yaml.md). |
-| `/.magento/services.yaml` | File di configurazione che definisce un&#39;istanza MySQL (MariaDB), Redis e OpenSearch o un Elasticsearch. Consulta [Configurare i servizi](../services/services-yaml.md). |
-| `/app` | Il `code` cartella viene utilizzata per i moduli personalizzati. Il `design` cartella viene utilizzata per [temi personalizzati](../store/custom-theme.md). Il `etc` la cartella contiene i file di configurazione per l&#39;applicazione. |
+| `/.magento/routes.yaml` | File di configurazione che reindirizza `www` al dominio apex e applicazione `php` per il server HTTP. Vedere [Configurare le route](../routes/routes-yaml.md). |
+| `/.magento/services.yaml` | File di configurazione che definisce un&#39;istanza MySQL (MariaDB), Redis e OpenSearch o un Elasticsearch. Vedere [Configurare i servizi](../services/services-yaml.md). |
+| `/app` | La cartella `code` è utilizzata per i moduli personalizzati. La cartella `design` è utilizzata per [temi personalizzati](../store/custom-theme.md). La cartella `etc` contiene i file di configurazione per l&#39;applicazione. |
 | `/m2-hotfixes` | Utilizzato per patch personalizzate. |
 | `/update` | Cartella di servizio utilizzata dal modulo di supporto. |
-| `.gitignore` | Specificare quali file e directory ignorare. Consulta [`.gitignore` riferimento](#ignoring-files). |
-| `.magento.app.yaml` | Un file di configurazione che definisce le proprietà per generare l’applicazione. Consulta [Configura applicazione](../application/configure-app-yaml.md). |
-| `.magento.env.yaml` | File di configurazione per le fasi di build, distribuzione e post-distribuzione. Il `ece-tools` Il pacchetto include un esempio di questo file. Consulta [Configurare gli ambienti](../environment/configure-env-yaml.md). |
-| `composer.json` | Recupera Adobe Commerce e gli script di configurazione per preparare l’applicazione. Consulta [Pacchetti richiesti](../development/overview.md#required-packages). |
-| `composer.lock` | Memorizza le dipendenze di versione per ogni pacchetto. Consulta [Pacchetti richiesti](../development/overview.md#required-packages). |
-| `magento-vars.php` | Utilizzato per definire [più store](../store/multiple-sites.md) e siti che utilizzano variabili. |
+| `.gitignore` | Specificare quali file e directory ignorare. Vedi [`.gitignore` riferimento](#ignoring-files). |
+| `.magento.app.yaml` | Un file di configurazione che definisce le proprietà per generare l’applicazione. Vedere [Configurare l&#39;applicazione](../application/configure-app-yaml.md). |
+| `.magento.env.yaml` | File di configurazione per le fasi di build, distribuzione e post-distribuzione. Il pacchetto `ece-tools` include un esempio di questo file. Consulta [Configurare gli ambienti](../environment/configure-env-yaml.md). |
+| `composer.json` | Recupera Adobe Commerce e gli script di configurazione per preparare l’applicazione. Vedi [Pacchetti richiesti](../development/overview.md#required-packages). |
+| `composer.lock` | Memorizza le dipendenze di versione per ogni pacchetto. Vedi [Pacchetti richiesti](../development/overview.md#required-packages). |
+| `magento-vars.php` | Utilizzato per definire [più archivi](../store/multiple-sites.md) e siti utilizzando variabili. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Quando invii le modifiche locali al server remoto, lo script di distribuzione utilizza i valori definiti dai file di configurazione in `.magento` , quindi lo script elimina la directory e il relativo contenuto. Questo non influisce sull’ambiente di sviluppo locale.
+>Quando si inviano le modifiche locali al server remoto, lo script di distribuzione utilizza i valori definiti dai file di configurazione nella directory `.magento`, quindi lo script elimina la directory e il relativo contenuto. Questo non influisce sull’ambiente di sviluppo locale.
 
 ## Directory radice dell&#39;applicazione
 
 La posizione della directory radice dell&#39;applicazione dipende dall&#39;ambiente.
 
 - **Integrazione Starter e Pro**: `/app`
-- **Avvia produzione**: `/<project-ID>`
-- **Pro Staging**: `/<project-ID>_stg`
+- **Avvio produzione**: `/<project-ID>`
+- **Staging Pro**: `/<project-ID>_stg`
 - **Produzione Pro**: `/<project-ID>`
 
 ### Directory scrivibili
 
-Gli ambienti remoti di integrazione, staging e produzione sono di sola lettura. Le seguenti directory sono *solo* directory scrivibili per motivi di sicurezza:
+Gli ambienti remoti di integrazione, staging e produzione sono di sola lettura. Le directory seguenti sono *solo* directory scrivibili per motivi di sicurezza:
 
 - `var`
 - `pub/static`
@@ -56,11 +56,11 @@ Gli ambienti remoti di integrazione, staging e produzione sono di sola lettura. 
 
 >[!NOTE]
 >
->Negli ambienti di produzione e staging, ogni nodo nel cluster a tre nodi dispone di un `/tmp` directory non condivisa con gli altri nodi.
+>Negli ambienti di produzione e staging, ogni nodo nel cluster a tre nodi dispone di una directory `/tmp` non condivisa con gli altri nodi.
 
 ## Ignora file
 
-Esiste una base `.gitignore` file con l’archivio dei progetti Adobe Commerce on cloud infrastructure. Scopri le ultime novità [file .gitignore nell’archivio cloud magento](https://github.com/magento/magento-cloud/blob/master/.gitignore). Per aggiungere un file presente in `.gitignore` , è possibile utilizzare `-f` (forza) opzione durante la gestione temporanea di un commit:
+È presente un file `.gitignore` di base con l&#39;archivio dei progetti di Adobe Commerce su infrastruttura cloud. Vedi il file [.gitignore più recente nell&#39;archivio cloud di magento](https://github.com/magento/magento-cloud/blob/master/.gitignore). Per aggiungere un file incluso nell&#39;elenco `.gitignore`, è possibile utilizzare l&#39;opzione `-f` (forza) durante la gestione temporanea di un commit:
 
 ```bash
 git add <path/filename> -f
@@ -72,7 +72,7 @@ Puoi utilizzare i seguenti passaggi per modificare la struttura di un progetto e
 
 1. Clonare il progetto su una workstation locale.
 
-1. Aggiornare il `composer.json` file con i seguenti valori per `extra` sezione.
+1. Aggiornare il file `composer.json` con i valori seguenti per la sezione `extra`.
 
    ```json
    "extra": {
@@ -81,7 +81,7 @@ Puoi utilizzare i seguenti passaggi per modificare la struttura di un progetto e
    }
    ```
 
-1. Aggiungi il `.gitignore` file progettato per il modello di base. Ad esempio, se hai bisogno di `.gitignore` per il modello versione 2.2.6, utilizza il file [.gitignore per 2.2.6](https://github.com/magento/magento-cloud/blob/2.2.6/.gitignore) come riferimento.
+1. Aggiungi il file `.gitignore` progettato per il modello base. Ad esempio, se hai bisogno del file `.gitignore` per il modello versione 2.2.6, utilizza [.gitignore per il file 2.2.6](https://github.com/magento/magento-cloud/blob/2.2.6/.gitignore) come riferimento.
 
 1. Cancella la cache Git.
 

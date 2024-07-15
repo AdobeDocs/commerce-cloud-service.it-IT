@@ -20,9 +20,9 @@ Per un confronto, ogni piano include le seguenti caratteristiche dell&#39;infras
 
 |          | Starter | Pro |
 | -------- | --------------------| ------------------ |
-| Funzioni principali | <ul><li>[Tutte le funzioni di Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/release/features.html)</li><li>Strumento di onboarding PayPal</li><li>[Reporting Commerce](https://business.adobe.com/products/magento/business-intelligence.html?_ga=2.85288604.442698376.1665067470-1322106587.1655147209)</li></ul> | <ul><li>[Tutte le funzioni di Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/release/features.html)</li><li>Strumento di onboarding PayPal</li><li>[Reporting Commerce](https://business.adobe.com/products/magento/business-intelligence.html?_ga=2.85288604.442698376.1665067470-1322106587.1655147209)</li><li>[Modulo B2B](https://business.adobe.com/products/magento/b2b-ecommerce.html?_ga=2.105948422.442698376.1665067470-1322106587.1655147209)</li></ul> |
-| Infrastruttura e installazione | <ul><li>Strumenti di integrazione cloud continua con utenti illimitati</li><li>Fastly Content Delivery Network (CDN), Image Optimization (IO) e maggiore sicurezza con ampi margini di larghezza di banda. Il servizio Web Application Firewall (WAF) è disponibile solo negli ambienti di produzione.</li><li>[New Relic](../monitor/new-relic-service.md) APM (Monitoraggio delle prestazioni) su 3 rami: `master` e 2 a scelta<br>Ambienti PaaS (Platform as a Service) di produzione, staging e sviluppo (4 ambienti attivi totali) ottimizzati per Adobe Commerce</li><li>Filtro in uscita (firewall in uscita)</li></ul> | <ul><li>Strumenti di integrazione cloud continua con utenti illimitati</li><li>Fastly Content Delivery Network (CDN), Image Optimization (IO) e maggiore sicurezza con ampi margini di larghezza di banda. Il servizio Web Application Firewall (WAF) è disponibile solo negli ambienti di produzione.</li><li>[New Relic](../monitor/new-relic-service.md) Infrastruttura di produzione + APM (Performance Monitoring) su staging e produzione. Il [Criteri degli avvisi gestiti](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts) per Adobe Commerce policy implementa le best practice di monitoraggio per segnalare in modo proattivo i problemi relativi all’applicazione e all’infrastruttura che influiscono sulle prestazioni del sito.</li><li>Basato su Platform as a Service (PaaS) [Sviluppo dell’integrazione](pro-architecture.md#integration-environment) ambienti (2 ambienti attivi totali) ottimizzati per Adobe Commerce</li><li>Infrastructure as a Service (IaaS): infrastruttura virtuale dedicata per gli ambienti di staging e produzione</li></ul> |
-| Infrastruttura ad alta disponibilità | | [Architettura ad alta disponibilità](pro-architecture.md#redundant-hardware) con una configurazione a tre server nell&#39;infrastruttura sottostante come servizio (IaaS) per garantire affidabilità e disponibilità di livello enterprise |
+| Funzioni principali | <ul><li>[Tutte le funzionalità di Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/release/features.html)</li><li>Strumento di onboarding PayPal</li><li>[Rapporti di Commerce](https://business.adobe.com/products/magento/business-intelligence.html?_ga=2.85288604.442698376.1665067470-1322106587.1655147209)</li></ul> | <ul><li>[Tutte le funzionalità di Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/release/features.html)</li><li>Strumento di onboarding PayPal</li><li>[Rapporti di Commerce](https://business.adobe.com/products/magento/business-intelligence.html?_ga=2.85288604.442698376.1665067470-1322106587.1655147209)</li><li>[Modulo B2B](https://business.adobe.com/products/magento/b2b-ecommerce.html?_ga=2.105948422.442698376.1665067470-1322106587.1655147209)</li></ul> |
+| Infrastruttura e installazione | <ul><li>Strumenti di integrazione cloud continua con utenti illimitati</li><li>Fastly Content Delivery Network (CDN), Image Optimization (IO) e maggiore sicurezza con ampi margini di larghezza di banda. Il servizio Web Application Firewall (WAF) è disponibile solo negli ambienti di produzione.</li><li>[New Relic](../monitor/new-relic-service.md) APM (Monitoraggio delle prestazioni) in 3 rami: `master` e 2 di tua scelta<br>Platform as a Service (PaaS) ambienti di produzione, staging e sviluppo (4 ambienti attivi totali) ottimizzati per Adobe Commerce</li><li>Filtro in uscita (firewall in uscita)</li></ul> | <ul><li>Strumenti di integrazione cloud continua con utenti illimitati</li><li>Fastly Content Delivery Network (CDN), Image Optimization (IO) e maggiore sicurezza con ampi margini di larghezza di banda. Il servizio Web Application Firewall (WAF) è disponibile solo negli ambienti di produzione.</li><li>[Infrastruttura New Relic](../monitor/new-relic-service.md) in produzione + APM (Monitoraggio delle prestazioni) in staging e produzione. Il criterio [Avvisi gestiti](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts) per Adobe Commerce implementa le procedure consigliate di monitoraggio per inviare notifiche proattive sui problemi dell&#39;applicazione e dell&#39;infrastruttura che influiscono sulle prestazioni del sito.</li><li>[Ambienti di sviluppo dell&#39;integrazione](pro-architecture.md#integration-environment) basati su Platform as a Service (PaaS) (2 ambienti attivi in totale) ottimizzati per Adobe Commerce</li><li>Infrastructure as a Service (IaaS): infrastruttura virtuale dedicata per gli ambienti di staging e produzione</li></ul> |
+| Infrastruttura ad alta disponibilità | | [Architettura ad alta disponibilità](pro-architecture.md#redundant-hardware) con configurazione a tre server nel servizio IaaS (Infrastructure as a Service) sottostante per garantire affidabilità e disponibilità di livello enterprise |
 | Hardware dedicato | | Hardware isolato e dedicato nell&#39;infrastruttura sottostante come servizio (IaaS) per fornire livelli ancora più elevati di affidabilità e disponibilità |
 | Supporto e-mail 24x7 | Monitoraggio e supporto e-mail 24 ore su 24, 7 giorni su 7 per l’applicazione di base e l’infrastruttura cloud | Monitoraggio e supporto e-mail 24 ore su 24, 7 giorni su 7 per l’applicazione di base e l’infrastruttura cloud |
 | Un consulente tecnico dedicato del cliente (CTA) | | Gestione tecnica dedicata dell’account per il periodo di avvio iniziale, a partire dall’abbonamento fino all’avvio iniziale del sito |
@@ -32,27 +32,27 @@ Per un confronto, ogni piano include le seguenti caratteristiche dell&#39;infras
 
 ## Progetti iniziali
 
-Il [Architettura del piano iniziale](starter-architecture.md) dispone di quattro ambienti:
+L&#39;architettura del piano [Starter](starter-architecture.md) dispone di quattro ambienti:
 
-- **Integrazione**: l’ambiente di integrazione fornisce due ambienti testabili. Ogni ambiente include un ramo Git attivo, un database, un server web, la memorizzazione in cache, alcuni servizi, variabili di ambiente e configurazioni.
+- **Integrazione**: l&#39;ambiente di integrazione fornisce due ambienti testabili. Ogni ambiente include un ramo Git attivo, un database, un server web, la memorizzazione in cache, alcuni servizi, variabili di ambiente e configurazioni.
 
-- **Staging**- Quando il codice e le estensioni superano i test, è possibile unire `integration` si sposta nell’ambiente di staging, che diventa l’ambiente di test di pre-produzione. Include `staging` ramo attivo, database, server web, caching, servizi di terze parti, variabili di ambiente, configurazioni e servizi, come Fastly e New Relic.
+- **Staging**: quando il codice e le estensioni superano i test, è possibile unire il ramo `integration` all&#39;ambiente di staging, che diventa l&#39;ambiente di test di pre-produzione. Include il ramo attivo `staging`, il database, il server Web, la memorizzazione nella cache, i servizi di terze parti, le variabili di ambiente, le configurazioni e i servizi, come Fastly e New Relic.
 
-- **Produzione**- Quando il codice è pronto e testato, tutto il codice viene unito in `master` per la distribuzione al sito live di produzione. Questo ambiente include il `master` branch, database, server web, caching, servizi di terze parti, variabili di ambiente e configurazioni.
+- **Produzione**: quando il codice è pronto e testato, tutto il codice viene unito a `master` per la distribuzione nel sito live di produzione. Questo ambiente include il ramo `master` attivo, il database, il server Web, la memorizzazione nella cache, i servizi di terze parti, le variabili di ambiente e le configurazioni.
 
-- **Inattivo**- È presente un numero illimitato di rami inattivi.
+- **Inattivo** - Hai un numero illimitato di rami inattivi.
 
 ## Progetti Pro
 
-Il [Architettura del piano Pro](pro-architecture.md) ha una dimensione globale `master` con tre ambienti:
+L&#39;architettura del piano [Pro](pro-architecture.md) ha un `master` globale con tre ambienti:
 
-- **Integrazione**: l&#39;ambiente di integrazione fornisce un ambiente testabile che include un database, un server web, il caching, alcuni servizi, variabili di ambiente e configurazioni. Puoi sviluppare, distribuire e testare il codice prima di unirlo all’ambiente di staging.
+- **Integrazione**: l&#39;ambiente di integrazione fornisce un ambiente testabile che include un database, un server Web, il caching, alcuni servizi, variabili di ambiente e configurazioni. Puoi sviluppare, distribuire e testare il codice prima di unirlo all’ambiente di staging.
 
-   - _Inattivo_- È possibile disporre di un numero illimitato di rami inattivi in base al `integration` ma solo un ramo attivo (escluso `integration` ).
+   - _Inattivo_ - È possibile avere un numero illimitato di rami inattivi in base all&#39;ambiente `integration`, ma un solo ramo attivo (escluso `integration`).
 
-- **Staging**: l&#39;ambiente di staging è destinato ai test di pre-produzione e include un database, un server web, il caching, servizi di terze parti, variabili di ambiente, configurazioni e servizi, come Fastly.
+- **Gestione temporanea**: l&#39;ambiente di gestione temporanea è destinato a test di pre-produzione e include un database, un server Web, la memorizzazione nella cache, servizi di terze parti, variabili di ambiente, configurazioni e servizi, ad esempio Fastly.
 
-- **Produzione**: l&#39;ambiente di produzione include un&#39;architettura a tre nodi ad elevata disponibilità per i dati, i servizi, il caching e l&#39;archiviazione. La produzione è il tuo ambiente di store pubblico live con variabili di ambiente, configurazioni e servizi di terze parti.
+- **Produzione**: l&#39;ambiente di produzione include un&#39;architettura a tre nodi ad alta disponibilità per i dati, i servizi, la memorizzazione in cache e l&#39;archiviazione. La produzione è il tuo ambiente di store pubblico live con variabili di ambiente, configurazioni e servizi di terze parti.
 
 ## Software e servizi supportati
 
@@ -76,9 +76,9 @@ Puoi configurare i seguenti servizi:
 
 >[!NOTE]
 >
->Consulta [Requisiti di sistema](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) nel _Guida all’installazione_ versioni consigliate.
+>Per le versioni consigliate, vedere [Requisiti di sistema](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) nella _Guida all&#39;installazione_.
 
-Il modulo Fastly CDN viene utilizzato per i servizi CDN e di caching negli ambienti di staging e produzione. Consulta [Configurare i servizi Fastly](../cdn/fastly.md).
+Il modulo Fastly CDN viene utilizzato per i servizi CDN e di caching negli ambienti di staging e produzione. Vedere [Configurare Fastly Services](../cdn/fastly.md).
 
 Per informazioni sulla configurazione delle versioni del software da utilizzare nell’implementazione, consulta i seguenti file di configurazione di Adobe Commerce sull’infrastruttura cloud:
 

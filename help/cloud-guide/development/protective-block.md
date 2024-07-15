@@ -28,9 +28,9 @@ Se nell’applicazione viene rilevata una vulnerabilità critica, questa rifiuta
 
 Esistono due tipi di blocchi che vengono eseguiti:
 
-1. **Blocco completo**—per siti web di sviluppo. Il messaggio di errore che accompagna `git push` fornisce informazioni dettagliate sulla vulnerabilità.
+1. **Blocco completo**—per siti Web di sviluppo. Il messaggio di errore che accompagna `git push` fornisce informazioni dettagliate sulla vulnerabilità.
 
-1. **Blocco parziale**: per i siti web di produzione, che consentono al sito di rimanere per lo più online. A seconda della natura della vulnerabilità, parti di una richiesta, come una stringa di query, cookie o eventuali intestazioni aggiuntive, potrebbero essere rimosse dalle richieste di GET. Tutte le altre richieste possono essere bloccate completamente, ad esempio l’accesso, l’invio di moduli o l’estrazione di prodotti.
+1. **Blocco parziale**—per i siti Web di produzione, che consente al sito di rimanere principalmente online. A seconda della natura della vulnerabilità, parti di una richiesta, come una stringa di query, cookie o eventuali intestazioni aggiuntive, potrebbero essere rimosse dalle richieste di GET. Tutte le altre richieste possono essere bloccate completamente, ad esempio l’accesso, l’invio di moduli o l’estrazione di prodotti.
 
 Lo sblocco viene automatizzato dopo la risoluzione del rischio di sicurezza. Il blocco viene rimosso subito dopo l’applicazione di un aggiornamento della sicurezza che rimuove la vulnerabilità.
 
@@ -38,7 +38,7 @@ Lo sblocco viene automatizzato dopo la risoluzione del rischio di sicurezza. Il 
 
 Il blocco protettivo serve a proteggerti da vulnerabilità note nel software che distribuisci Adobe Commerce sull’infrastruttura cloud.
 
-Tuttavia, puoi rinunciare al blocco di protezione aggiungendo quanto segue a [`.magento.app.yaml`](../application/configure-app-yaml.md):
+Tuttavia, è possibile rinunciare al blocco di protezione aggiungendo quanto segue a [`.magento.app.yaml`](../application/configure-app-yaml.md):
 
 ```yaml
    preflight:

@@ -16,11 +16,11 @@ ht-degree: 0%
 >
 >Solo progetti iniziali
 
-Per i progetti iniziali, il `firewall` la proprietà aggiunge un _in uscita_ all&#39;applicazione. Questo firewall non ha alcun effetto sulle richieste in ingresso. Definisce quali `tcp` le richieste in uscita possono _lasciare_ un sito Adobe Commerce. Questo filtro è chiamato filtro in uscita. Il firewall in uscita filtra ciò che può uscire, uscire o uscire dal sito. Limitare l’escape aggiunge un potente strumento di sicurezza al server.
+Per i progetti Starter, la proprietà `firewall` aggiunge un firewall _in uscita_ all&#39;applicazione. Questo firewall non ha alcun effetto sulle richieste in ingresso. Definisce quali `tcp` richieste in uscita possono _lasciare_ un sito Adobe Commerce. Questo filtro è chiamato filtro in uscita. Il firewall in uscita filtra ciò che può uscire, uscire o uscire dal sito. Limitare l’escape aggiunge un potente strumento di sicurezza al server.
 
 ## Criteri di restrizione predefiniti
 
-Il firewall fornisce due criteri predefiniti per controllare il traffico in uscita: `allow` e `deny`. Il `allow` policy _consente_ tutto il traffico in uscita per impostazione predefinita. E il `deny` policy _nega_ tutto il traffico in uscita per impostazione predefinita. Tuttavia, quando aggiungi una regola, il criterio predefinito viene ignorato e il firewall viene bloccato **tutto** traffico in uscita non consentito dalla regola.
+Il firewall fornisce due criteri predefiniti per controllare il traffico in uscita: `allow` e `deny`. Il criterio `allow` _consente_ tutto il traffico in uscita per impostazione predefinita. Il criterio `deny` _nega_ tutto il traffico in uscita per impostazione predefinita. Tuttavia, quando si aggiunge una regola, il criterio predefinito viene ignorato e il firewall blocca **tutto** il traffico in uscita non consentito dalla regola.
 
 Per i piani iniziali, il criterio predefinito è impostato su `allow`. Questa impostazione assicura che tutto il traffico in uscita corrente rimanga sbloccato fino all’aggiunta delle regole di filtro in uscita. Il criterio predefinito può essere impostato su `deny` su richiesta.
 
@@ -30,7 +30,7 @@ Per i piani iniziali, il criterio predefinito è impostato su `allow`. Questa im
 magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 ```
 
-A meno che tu non abbia richiesto `deny` per il criterio, il comando deve mostrare il criterio impostato su `allow`:
+A meno che non sia stato richiesto `deny` per il criterio, il comando dovrebbe mostrare il criterio impostato su `allow`:
 
 ```terminal
 "outbound_restrictions_default_policy": "allow"
@@ -38,11 +38,11 @@ A meno che tu non abbia richiesto `deny` per il criterio, il comando deve mostra
 
 >[!NOTE]
 >
->**Acquisizione chiave**: quando aggiungi una regola in uscita, blocchi tutto il traffico in uscita ad eccezione dei domini, degli indirizzi IP o delle porte aggiunti alla regola. È quindi importante definire e testare un elenco completo delle uscite prima di aggiungerlo al sito di produzione.
+>**Rimozione chiave**: quando si aggiunge una regola in uscita, viene bloccato tutto il traffico in uscita ad eccezione dei domini, degli indirizzi IP o delle porte aggiunti alla regola. È quindi importante definire e testare un elenco completo delle uscite prima di aggiungerlo al sito di produzione.
 
 ## Opzioni firewall
 
-L’esempio di configurazione seguente in `.magento.app.yaml` Il file mostra tutte le `firewall` le opzioni che puoi utilizzare per aggiungere regole per il filtro in uscita.
+La configurazione di esempio seguente nel file `.magento.app.yaml` mostra tutte le opzioni di `firewall` che puoi utilizzare per aggiungere regole per il filtro in uscita.
 
 ```yaml
 firewall:
@@ -138,50 +138,50 @@ Le configurazioni del firewall in uscita sono costituite da regole. Puoi definir
 **Ogni regola:**
 
 - Deve iniziare con un trattino (`-`). L’aggiunta di un commento sulla stessa riga consente di documentare e separare visivamente una regola dalla successiva.
-- È necessario definire almeno una delle seguenti opzioni: `domains`, `ips`, o `ports`.
-- È necessario utilizzare il `tcp` protocollo. Poiché si tratta del protocollo predefinito per tutte le regole, puoi ometterlo dalla regola.
-- Può definire `domains` o `ips`, ma non entrambi nella stessa regola.
+- È necessario definire almeno una delle seguenti opzioni: `domains`, `ips` o `ports`.
+- Deve utilizzare il protocollo `tcp`. Poiché si tratta del protocollo predefinito per tutte le regole, puoi ometterlo dalla regola.
+- È possibile definire `domains` o `ips`, ma non entrambi nella stessa regola.
 - Può includere `yaml` commenti (`#`) e interruzioni di riga per organizzare i domini, gli indirizzi IP e le porte consentiti.
 
 Ogni regola utilizza le seguenti proprietà:
 
 ### `domains`
 
-Il `domains` consente un elenco di nomi di dominio completi (FQDN).
+L&#39;opzione `domains` consente un elenco di nomi di dominio completi (FQDN).
 
 Se una regola definisce `domains` ma non `ports`, il firewall consente le richieste di dominio su qualsiasi porta.
 
 ### `ips`
 
-Il `ips` consente un elenco di indirizzi IP nella notazione CIDR. È possibile specificare indirizzi IP singoli o intervalli di indirizzi IP.
+L&#39;opzione `ips` consente un elenco di indirizzi IP nella notazione CIDR. È possibile specificare indirizzi IP singoli o intervalli di indirizzi IP.
 
-Per specificare un singolo indirizzo IP, aggiungi `/32` Prefisso CIDR alla fine dell&#39;indirizzo IP:
+Per specificare un indirizzo IP singolo, aggiungere il prefisso CIDR `/32` alla fine dell&#39;indirizzo IP:
 
 ```terminal
 172.217.11.174/32  # google.com
 ```
 
-Per specificare un intervallo di indirizzi IP, utilizza [Intervallo IP per CIDR](https://ipaddressguide.com/cidr) calcolatrice.
+Per specificare un intervallo di indirizzi IP, utilizzare il calcolatore da [Intervallo IP a CIDR](https://ipaddressguide.com/cidr).
 
 Se una regola definisce `ips` ma non `ports`, il firewall consente le richieste IP su qualsiasi porta.
 
 ### `ports`
 
-Il `ports` consente un elenco di porte da 1 a 65535. Per la maggior parte delle regole nell&#39;esempio, porte `80` e `443` consente richieste HTTP e HTTPS. Ma per New Relic, le regole consentono l’accesso solo ai domini e agli indirizzi IP sulla porta `443`, come consigliato nella documentazione di New Relic su [Traffico di rete](https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/#agents).
+L&#39;opzione `ports` consente un elenco di porte da 1 a 65535. Per la maggior parte delle regole nell&#39;esempio, le porte `80` e `443` consentono entrambe le richieste HTTP e HTTPS. Tuttavia, per New Relic, le regole consentono l&#39;accesso solo ai domini e agli indirizzi IP sulla porta `443`, come consigliato nella documentazione di New Relic in [Traffico di rete](https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/#agents).
 
-Se una regola definisce `ports`, il firewall consente l’accesso a tutti i domini e gli indirizzi IP per le porte definite.
+Se una regola definisce solo `ports`, il firewall consente l&#39;accesso a tutti i domini e gli indirizzi IP per le porte definite.
 
 >[!NOTE]
 >
->Porta `25`, la porta SMTP per l’invio delle e-mail, è sempre bloccata, senza eccezioni.
+>La porta `25`, la porta SMTP per l&#39;invio dei messaggi di posta elettronica, è sempre bloccata, senza eccezioni.
 
 ### `protocol`
 
-Come accennato, TCP è l&#39;impostazione predefinita e l&#39;unico protocollo consentito per le regole. UDP e le relative porte non sono consentiti. Per questo motivo, è possibile omettere `protocol` da tutte le regole. Se desideri includerlo comunque, imposta il valore su `tcp`, come illustrato nella prima regola dell&#39;esempio.
+Come accennato, TCP è l&#39;impostazione predefinita e l&#39;unico protocollo consentito per le regole. UDP e le relative porte non sono consentiti. Per questo motivo è possibile omettere l&#39;opzione `protocol` da tutte le regole. Per includerlo comunque, è necessario impostare il valore su `tcp`, come illustrato nella prima regola dell&#39;esempio.
 
 ## Ricerca di nomi di dominio da consentire
 
-Per identificare i domini da includere nelle regole di filtro in uscita, utilizza il comando seguente per analizzare i `dns.log` file e mostra un elenco di tutte le richieste DNS registrate dal sito:
+Per identificare i domini da includere nelle regole di filtro in uscita, utilizzare il comando seguente per analizzare il file `dns.log` del server e visualizzare un elenco di tutte le richieste DNS registrate dal sito:
 
 ```shell
 awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
@@ -211,17 +211,17 @@ Dopo aver raccolto e configurato le regole di accesso per i domini e gli indiriz
 
 Per verificare le regole di filtro in uscita:
 
-1. Crea uno script della shell di `curl` comandi per accedere ai domini e agli indirizzi IP nelle regole. Includi comandi che verificano l’accesso ai domini e agli indirizzi IP da bloccare.
+1. Creare uno script della shell di `curl` comandi per accedere ai domini e agli indirizzi IP nelle regole. Includi comandi che verificano l’accesso ai domini e agli indirizzi IP da bloccare.
 
-1. Configurare un `post_deploy` aggancia il tuo `.magento.app.yaml` per eseguire lo script.
+1. Configurare un hook `post_deploy` nel file `.magento.app.yaml` per eseguire lo script.
 
-1. Invia il tuo `firewall` e lo script di test al tuo `integration` filiale.
+1. Invia la configurazione `firewall` e lo script di prova al ramo `integration`.
 
-1. Esamina la `post_deploy` output dal tuo `curl` comandi.
+1. Esaminare l&#39;output `post_deploy` dai comandi `curl`.
 
-1. Perfeziona il tuo `firewall` regole, aggiorna il tuo `curl` script, commit, push e ripetizione.
+1. Perfeziona le regole di `firewall`, aggiorna lo script di `curl`, esegui il commit, invia e ripeti.
 
-### `curl` esempio di script
+### Esempio di script `curl`
 
 ```shell
 # curl-tests-for-egress-filtering.sh

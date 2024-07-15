@@ -14,54 +14,54 @@ ht-degree: 0%
 
 Questo esempio mostra come utilizzare la gestione della configurazione per mantenere le impostazioni dello store coerenti in tutti gli ambienti.
 
-Nell&#39;esempio viene utilizzata la seguente procedura definita in [Impostazioni store](store-settings.md):
+Nell&#39;esempio viene utilizzata la procedura seguente definita in [Impostazioni archivio](store-settings.md):
 
 1. Immetti le configurazioni nell&#39;archivio di amministrazione dell&#39;ambiente di integrazione.
-1. Creare un `config.php` e trasferirlo sulla workstation locale.
-1. Push `config.php` all&#39;ambiente di integrazione remota.
+1. Crea un file `config.php` e trasferiscilo nella workstation locale.
+1. Invia `config.php` all&#39;ambiente di integrazione remota.
 1. Verifica che le impostazioni non siano modificabili in Admin.
 1. Apporta le modifiche necessarie:
 
    * Modifica le impostazioni di configurazione nell’ambiente di integrazione.
-   * Per aggiungere configurazioni, esegui il comando per creare `config.php` di nuovo. Le nuove configurazioni vengono aggiunte al file.
+   * Per aggiungere configurazioni, eseguire di nuovo il comando per creare `config.php`. Le nuove configurazioni vengono aggiunte al file.
    * Per rimuovere o modificare le configurazioni esistenti, modifica manualmente il file.
    * Eseguire il commit e il push.
 
 Ad esempio, è possibile impostare le seguenti impostazioni:
 
-* Disattiva [lingua](https://glossary.magento.com/locale) e le impostazioni di ottimizzazione dei file statici nell’ambiente di integrazione
+* Disabilita [impostazioni locali](https://glossary.magento.com/locale) e impostazioni di ottimizzazione dei file statici nell&#39;ambiente di integrazione
 * Abilitare l’ottimizzazione dei file statici negli ambienti di staging e produzione
 * Configurare Fastly in staging e produzione con credenziali specifiche per ciascuno
 
-_Ottimizzazione file statico_ significa unire e minimizzare JavaScript e Cascading Style Sheets e minimizzare i modelli di HTML. Consulta [Strategie di distribuzione dei contenuti statici](../deploy/static-content.md).
+_Ottimizzazione file statico_ significa unire e minimizzare i fogli di stile di JavaScript e CSS e minimizzare i modelli di HTML. Consulta [Strategie di distribuzione del contenuto statico](../deploy/static-content.md).
 
 ## Prerequisiti
 
 Per completare queste attività di gestione della configurazione, è necessario disporre dei seguenti elementi:
 
-* Ruolo lettore progetto con [ambiente &quot;admin&quot;](../project/user-access.md) privilegi
+* Ruolo di lettore del progetto con privilegi di [amministratore dell&#39;ambiente](../project/user-access.md)
 * URL amministratore e credenziali per gli ambienti di integrazione, staging e produzione
 
-## Configurare l’amministratore di Commerce
+## Configurare l’amministratore Commerce
 
-Nell’ambiente di integrazione, puoi accedere all’amministratore per modificare le impostazioni di configurazione del sistema per store, siti web, moduli o estensioni, ottimizzazione statica dei file e valori di sistema relativi alla distribuzione di contenuti statici. Consulta [Dati di configurazione](store-settings.md#scd-performance).
+Nell’ambiente di integrazione, puoi accedere all’amministratore per modificare le impostazioni di configurazione del sistema per store, siti web, moduli o estensioni, ottimizzazione statica dei file e valori di sistema relativi alla distribuzione di contenuti statici. Vedi [Dati di configurazione](store-settings.md#scd-performance).
 
-**Per modificare le impostazioni di ottimizzazione dei file locali e statici**:
+**Per modificare le impostazioni locali e di ottimizzazione dei file statici**:
 
-1. Accedi all’amministrazione dell’ambiente di integrazione. Puoi accedere a questo URL tramite [[!DNL Cloud Console]](../project/overview.md).
-1. Accedi a **Negozi** > Impostazioni > **Configurazione** > Generale > **Generale**.
-1. Nella navigazione della pagina, espandi **Opzioni internazionali**.
-1. Dalla sezione **Lingua** , modificare le impostazioni locali. Potrai cambiarlo in un secondo momento.
+1. Accedi all’amministrazione dell’ambiente di integrazione. È possibile accedere a questo URL tramite [[!DNL Cloud Console]](../project/overview.md).
+1. Passa a **Archivi** > Impostazioni > **Configurazione** > Generale > **Generale**.
+1. Nella navigazione delle pagine, espandere **Opzioni internazionali**.
+1. Nell&#39;elenco **Impostazioni locali** modificare le impostazioni locali. Potrai cambiarlo in un secondo momento.
 
-   ![Modificare le impostazioni locali](../../assets/locale-options.png)
+   ![Modifica impostazioni locali](../../assets/locale-options.png)
 
-1. Clic **Salva configurazione**.
+1. Fai clic su **Salva configurazione**.
 1. Se richiesto, [svuotare la cache](https://docs.magento.com/user-guide/system/cache-management.html).
 1. Esci dall’Admin.
 
 ## Esportare i valori e trasferire config.php nel sistema locale
 
-Questo passaggio crea e trasferisce `config.php` file di configurazione nell’ambiente di integrazione utilizzando un comando eseguito sul computer locale.
+Questo passaggio crea e trasferisce il file di configurazione `config.php` nell&#39;ambiente di integrazione utilizzando un comando eseguito nel computer locale.
 
 Questa procedura corrisponde al passaggio 2 della [procedura consigliata](store-settings.md). Dopo aver creato `config.php`, trasferiscilo nel sistema locale in modo da poterlo aggiungere a Git.
 
@@ -81,7 +81,7 @@ Questa procedura corrisponde al passaggio 2 della [procedura consigliata](store-
    magento-cloud db:dump
    ```
 
-Lo snippet seguente da `config.php` mostra un esempio di modifica delle impostazioni locali predefinite in `en_GB` e modifica delle impostazioni di ottimizzazione dei file statici:
+Il seguente frammento di codice da `config.php` mostra un esempio di modifica delle impostazioni locali predefinite in `en_GB` e delle impostazioni di ottimizzazione del file statico:
 
 ```php?start_inline=1
 'general' => [
@@ -112,30 +112,30 @@ Lo snippet seguente da `config.php` mostra un esempio di modifica delle impostaz
 
 ## Effettuare il push e distribuire config.php negli ambienti
 
-Ora che hai creato `config.php` e trasferirlo al sistema locale, eseguirne il commit su Git e inviarlo agli ambienti. Questa procedura corrisponde ai passaggi 3 e 4 della [procedura consigliata](store-settings.md).
+Dopo aver creato `config.php` e averlo trasferito al sistema locale, esegui il commit in Git e invialo agli ambienti. Questa procedura corrisponde ai passaggi 3 e 4 della [procedura consigliata](store-settings.md).
 
-Il comando seguente aggiunge, esegue il commit e il push al `master` ramo:
+Il comando seguente aggiunge, conferma e invia messaggi push al ramo `master`:
 
 ```bash
 git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
 ```
 
-Completa la distribuzione del codice in Staging e Produzione. Per iniziare, premi a `staging` e `master` rami. Per informazioni dettagliate sui comandi di distribuzione, vedere [Distribuire lo store](../deploy/staging-production.md).
+Completa la distribuzione del codice in Staging e Produzione. Per iniziare, si invia a `staging` e `master` rami. Per informazioni dettagliate sui comandi di distribuzione, vedere [Distribuire l&#39;archivio](../deploy/staging-production.md).
 
 Attendi il completamento dell’implementazione in tutti gli ambienti.
 
 ## Verificare le modifiche alla configurazione
 
-Dopo aver premuto `config.php` Negli ambienti, tutti i valori modificati devono essere di sola lettura in Admin. In questo esempio, le impostazioni internazionali predefinite modificate e le impostazioni di ottimizzazione statica dei file non devono essere modificabili in Admin. Queste impostazioni di configurazione sono impostate in `config.php`.
+Dopo aver inviato `config.php` agli ambienti, tutti i valori modificati devono essere di sola lettura nell&#39;amministratore. In questo esempio, le impostazioni internazionali predefinite modificate e le impostazioni di ottimizzazione statica dei file non devono essere modificabili in Admin. Queste impostazioni di configurazione sono impostate in `config.php`.
 
 Per verificare le modifiche alla configurazione:
 
 1. Esci dall’amministratore in uno degli ambienti.
 1. Accedi di nuovo all’amministratore.
-1. Clic **Negozi** > Impostazioni > **Configurazione** > Generale > **Generale**.
-1. Nel riquadro di destra, espandere **Opzioni internazionali**.
+1. Fai clic su **Archivi** > Impostazioni > **Configurazione** > Generale > **Generale**.
+1. Nel riquadro di destra espandere **Opzioni internazionali**.
 
-   Non è possibile modificare diversi campi, come illustrato nell’esempio seguente. Queste impostazioni di configurazione vengono gestite da `config.php`.
+   Non è possibile modificare diversi campi, come illustrato nell’esempio seguente. Queste impostazioni di configurazione sono gestite da `config.php`.
 
    ![Alcuni valori non sono più modificabili in Admin](../../assets/locale-options-disabled.png)
 
@@ -143,22 +143,22 @@ Per verificare le modifiche alla configurazione:
 
 ## Modificare e aggiornare le impostazioni di configurazione specifiche del sistema
 
-Se è necessario modificare una di queste impostazioni, modificare la `config.php` file manualmente con un editor di testo. Dopo aver completato le modifiche o le rimozioni, puoi eseguirne il commit e inviarlo all’ambiente remoto seguendo i passaggi precedenti.
+Se è necessario modificare una di queste impostazioni, modificare manualmente il file `config.php` con un editor di testo. Dopo aver completato le modifiche o le rimozioni, puoi eseguirne il commit e inviarlo all’ambiente remoto seguendo i passaggi precedenti.
 
 Per aggiungere configurazioni, modifica l’ambiente di integrazione ed esegui nuovamente il comando per generare il file. Tutte le nuove configurazioni vengono aggiunte al codice nel file. Spingilo su Git seguendo i passaggi precedenti.
 
-Per questo esempio, modifica le impostazioni di ottimizzazione dei file statici e aggiungi una nuova impostazione per JavaScript.
+In questo esempio, modificare le impostazioni di ottimizzazione dei file statici e aggiungere una nuova impostazione per JavaScript.
 
 ### Aggiungere configurazioni nell’integrazione
 
-Aggiungere i valori di configurazione nell’ambiente di integrazione Admin. Questo esempio unisce i file JavaScript.
+Aggiungere i valori di configurazione nell’ambiente di integrazione Admin. In questo esempio vengono uniti i file JavaScript.
 
 1. Esci dall’amministratore dell’integrazione.
 1. Accedi di nuovo all’amministratore dell’integrazione.
-1. Clic **Negozi** > Impostazioni > **Configurazione** > **Avanzate** > **Sviluppatore**.
-1. Nel riquadro di destra, espandere **Impostazioni JavaScript**.
-1. Dalla sezione **Unisci file JavaScript** , fare clic su **Sì**.
-1. Clic **Salva configurazione**.
+1. Fai clic su **Archivi** > Impostazioni > **Configurazione** > **Avanzate** > **Sviluppatore**.
+1. Nel riquadro di destra espandere **Impostazioni JavaScript**.
+1. Nell&#39;elenco **Unisci file JavaScript** fare clic su **Sì**.
+1. Fai clic su **Salva configurazione**.
 1. Se richiesto, [svuotare la cache](https://docs.magento.com/user-guide/system/cache-management.html).
 1. Esci dall’Admin.
 
@@ -170,7 +170,7 @@ magento-cloud db:dump
 
 ### Modifica config.php con nuove impostazioni
 
-Sul tuo computer locale, utilizza un editor di testo per modificare il `app/etc/config.php` file. Modifica queste impostazioni per abilitare la minimizzazione per i file JavaScript, HTML e CSS.
+Sul tuo computer locale, utilizza un editor di testo per modificare il file `app/etc/config.php` aggiornato. Modifica queste impostazioni per abilitare la minimizzazione per i file JavaScript, HTML e CSS.
 
 ```php?start_inline=1
  'dev' => [
@@ -192,7 +192,7 @@ Sul tuo computer locale, utilizza un editor di testo per modificare il `app/etc/
      ],
 ```
 
-Per modificare le impostazioni per consentire la minimizzazione, modificare `'0'` a `'1'` per `'minify_html'` e ciascuno `'minify_files'` opzione:
+Per modificare le impostazioni per consentire la minimizzazione, modificare `'0'` in `'1'` per `'minify_html'` e ogni opzione `'minify_files'`:
 
 ```php?start_inline=1
  'dev' => [

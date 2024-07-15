@@ -1,5 +1,5 @@
 ---
-title: Variabili post-distribuzione
+title: Variabili di distribuzione di Post
 description: Consulta l’elenco delle variabili di ambiente che controllano le azioni nella fase post-distribuzione di Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 ---
 
-# Variabili post-distribuzione
+# Variabili di distribuzione di Post
 
-I seguenti elementi _post-distribuzione_ Le variabili controllano le azioni nella fase post-distribuzione e possono ereditare e sovrascrivere i valori da [Variabili globali](variables-global.md). Inserisci queste variabili in `post-deploy` fase del `.magento.env.yaml` file:
+Le seguenti _variabili post-distribuzione_ controllano le azioni nella fase post-distribuzione e possono ereditare e sostituire i valori dalle [variabili globali](variables-global.md). Inserisci queste variabili nella fase `post-deploy` del file `.magento.env.yaml`:
 
 ```yaml
 stage:
@@ -32,7 +32,7 @@ Per ulteriori informazioni sulla personalizzazione del processo di compilazione 
 - **Predefinito**— `[]` (un array vuoto)
 - **Versione**—Adobe Commerce 2.1.4 e versioni successive
 
-Configura _Tempo al primo byte_ (TTFB) test per pagine specifiche per verificare le prestazioni del sito. Specifica un riferimento di percorso assoluto, o URL con protocollo e host, per ogni pagina che richiede il test.
+Configura _test Time To First Byte_ (TTFB) per le pagine specificate per verificare le prestazioni del sito. Specifica un riferimento di percorso assoluto, o URL con protocollo e host, per ogni pagina che richiede il test.
 
 ```yaml
 stage:
@@ -43,7 +43,7 @@ stage:
        - "https://example.com/catalog/some-category"
 ```
 
-Dopo aver specificato le pagine per il test e il commit delle modifiche, il _Tempo al primo byte_ il test viene eseguito durante la fase di post-distribuzione e pubblica i risultati per ogni percorso del registro cloud:
+Dopo aver specificato le pagine per il test e il commit delle modifiche, il test _Tempo al primo byte_ viene eseguito durante la fase di post-distribuzione e pubblica i risultati per ogni percorso nel registro cloud:
 
 ```terminal
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
@@ -57,7 +57,7 @@ Per i percorsi reindirizzati, il registro riporta il percorso della destinazione
 - **Predefinito**—_Non impostato_
 - **Versione**—Adobe Commerce 2.1.4 e versioni successive
 
-Specifica il limite di richieste simultanee da inviare durante le operazioni di riscaldamento della cache per ridurre il carico del server. Questo valore limita il numero di connessioni parallele ed è utile per le configurazioni dell&#39;ambiente in cui `WARM_UP_PAGES` variabile post-distribuzione specifica diverse pagine per il precaricamento della cache.
+Specifica il limite di richieste simultanee da inviare durante le operazioni di riscaldamento della cache per ridurre il carico del server. Questo valore limita il numero di connessioni parallele ed è utile per le configurazioni dell&#39;ambiente in cui la variabile post-distribuzione `WARM_UP_PAGES` specifica diverse pagine per il precaricamento della cache.
 
 ```yaml
 stage:
@@ -70,9 +70,9 @@ stage:
 - **Predefinito**— `index.php`
 - **Versione**—Adobe Commerce 2.1.4 e versioni successive
 
-Personalizza l’elenco delle pagine utilizzate per precaricare la cache nel `post_deploy` fase. Devi configurare l’hook post-distribuzione. Consulta la [sezione hook](../application/hooks-property.md) del `.magento.app.yaml` file.
+Personalizzare l&#39;elenco delle pagine utilizzate per precaricare la cache nella fase `post_deploy`. Devi configurare l’hook post-distribuzione. Vedere la [sezione degli hook](../application/hooks-property.md) del file `.magento.app.yaml`.
 
-- **pagine singole**- Specifica una singola pagina da aggiungere alla cache. Non è necessario indicare l’URL di base predefinito. L’esempio che segue memorizza in cache la `BASE_URL/index.php` pagina:
+- **singole pagine**—Specificare una singola pagina da aggiungere alla cache. Non è necessario indicare l’URL di base predefinito. L&#39;esempio seguente memorizza nella cache la pagina `BASE_URL/index.php`:
 
   ```yaml
   stage:
@@ -81,7 +81,7 @@ Personalizza l’elenco delle pagine utilizzate per precaricare la cache nel `po
         - "index.php"
   ```
 
-- **più domini**- Elenca più URL. L’esempio che segue memorizza in cache le pagine da due domini:
+- **più domini**—Elenca più URL. L’esempio che segue memorizza in cache le pagine da due domini:
 
   ```yaml
   stage:
@@ -91,24 +91,24 @@ Personalizza l’elenco delle pagine utilizzate per precaricare la cache nel `po
         - 'http://example2.com/test'
   ```
 
-- **più pagine**- Utilizza il seguente formato per memorizzare in cache più pagine in base a uno specifico pattern di espressioni regolari:
+- **più pagine** - Utilizza il seguente formato per memorizzare nella cache più pagine in base a uno specifico modello di espressione regolare:
 
   ```terminal
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 
    - `entity_type`: varianti possibili `category`, `cms-page`, `product`, `store-page`
-   - `pattern|url|product_sku`: utilizza una `regexp` pattern o corrispondenza esatta `url` per filtrare gli URL o utilizza un asterisco (\*) per tutte le pagine. Utilizza lo SKU del prodotto per `product` tipo di entità
-   - `store_id|store_code`: utilizza l’ID o il codice del negozio o un asterisco (\*) per tutti i negozi; puoi trasmettere diversi ID store o codici separati con `|`
+   - `pattern|url|product_sku`: utilizzare un pattern `regexp` o una corrispondenza esatta `url` per filtrare gli URL oppure un asterisco (\*) per tutte le pagine. Utilizza lo SKU del prodotto per il tipo di entità `product`
+   - `store_id|store_code`: utilizzare l&#39;ID o il codice dell&#39;archivio o un asterisco (\*) per tutti gli archivi. È possibile trasmettere più ID archivio o codici separati da `|`
 
-  L’esempio seguente memorizza in cache per `category` e `cms-page` tipi di entità basati su questi criteri:
-   - tutte le pagine categoria per store con ID `1`
+  L&#39;esempio seguente memorizza nella cache i tipi di entità `category` e `cms-page` in base a questi criteri:
+   - tutte le pagine delle categorie per il punto vendita con ID `1`
    - tutte le pagine delle categorie per i negozi con codice `store1` e `store2`
-   - pagina categoria `cars` per store con codice `store_en`
-   - pagina cms `contact` per tutti i negozi
-   - pagina cms `contact` per store con ID `1` e `2`
-   - qualsiasi pagina di categoria contenente `car_` e termina con `html` per store con ID 2
-   - qualsiasi pagina di categoria contenente `tires_` per store con codice `store_gb`
+   - pagina categoria `cars` per archivio con codice `store_en`
+   - pagina cms `contact` per tutti gli store
+   - pagina cms `contact` per gli archivi con ID `1` e `2`
+   - qualsiasi pagina di categoria che contiene `car_` e termina con `html` per l&#39;archivio con ID 2
+   - qualsiasi pagina categoria contenente `tires_` per l&#39;archivio con codice `store_gb`
 
      ```yaml
      stage:
@@ -123,12 +123,12 @@ Personalizza l’elenco delle pagine utilizzate per precaricare la cache nel `po
            - "category:|tires_.*|:store_gb"
      ```
 
-  L’esempio che segue memorizza in cache per `product` tipo di entità in base ai seguenti criteri:
+  L&#39;esempio seguente memorizza nella cache il tipo di entità `product` in base a questi criteri:
    - tutti i prodotti per tutti i punti vendita (limitato a 100 a livello di programmazione per evitare problemi di prestazioni)
-   - tutti i prodotti per il negozio `store1`
-   - prodotti con `sku1` per tutti i negozi
-   - prodotti con `sku1` per store con codice `store1` e `store2`
-   - prodotti con `sku1`, `sku2` e `sku3` per store con codice `store1` e `store2`
+   - tutti i prodotti per lo store `store1`
+   - prodotti con `sku1` per tutti gli store
+   - prodotti con `sku1` per archivi con codice `store1` e `store2`
+   - prodotti con `sku1`, `sku2` e `sku3` per archivi con codice `store1` e `store2`
 
      ```yaml
      stage:
@@ -141,10 +141,10 @@ Personalizza l’elenco delle pagine utilizzate per precaricare la cache nel `po
            - "product:sku1|sku2|sku3:store1|store2"
      ```
 
-  L’esempio che segue memorizza in cache per `store-page` tipo di entità in base ai seguenti criteri:
-   - pagina `/contact-us` per tutti i negozi
-   - pagina `/contact-us` per store con ID `1`
-   - pagina `/contact-us` per store con codice `code1` e `code2`
+  L&#39;esempio seguente memorizza nella cache il tipo di entità `store-page` in base a questi criteri:
+   - pagina `/contact-us` per tutti gli store
+   - pagina `/contact-us` per l&#39;archivio con ID `1`
+   - pagina `/contact-us` per gli store con codice `code1` e `code2`
 
   ```yaml
         stage:

@@ -10,12 +10,12 @@ ht-degree: 0%
 <!-- The template to render with above values -->
 **Versione**: 1.46.1
 
-Questo riferimento contiene 119 comandi disponibili tramite `magento-cloud` strumento da riga di comando.
-L’elenco iniziale viene generato automaticamente utilizzando `magento-cloud list` su Adobe Commerce su infrastruttura cloud.
+Questo riferimento contiene 119 comandi disponibili tramite lo strumento della riga di comando `magento-cloud`.
+L&#39;elenco iniziale viene generato automaticamente utilizzando il comando `magento-cloud list` in Adobe Commerce sull&#39;infrastruttura cloud.
 
 >[!NOTE]
 >
->Questo riferimento viene generato dalla base di codice dell&#39;applicazione. Per modificare il contenuto, puoi aggiornare il codice sorgente per l’implementazione del comando corrispondente in [codebase](https://github.com/magento/magento-cloud-cli) e inviare le modifiche per la revisione. Un altro modo consiste nel _Inviaci feedback_ (trovi il collegamento in alto a destra). Per le linee guida sui contributi, consulta [Contributi codice](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Questo riferimento viene generato dalla base di codice dell&#39;applicazione. Per modificare il contenuto, è possibile aggiornare il codice sorgente per l&#39;implementazione del comando corrispondente nell&#39;archivio [codebase](https://github.com/magento/magento-cloud-cli) e inviare le modifiche per la revisione. Un altro modo consiste nel _inviarci un feedback_ (trovare il collegamento in alto a destra). Per le linee guida sui contributi, consulta [Contributi codice](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ## `clear-cache`
 
@@ -7136,7 +7136,7 @@ Non fare domande interattive; accetta valori predefiniti. Equivalente all’util
 
 ## `operation:list`
 
-Operazioni di runtime dell’elenco BETA in un ambiente
+Operazioni runtime di elenco Beta in un ambiente
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7232,7 +7232,7 @@ Non fare domande interattive; accetta valori predefiniti. Equivalente all’util
 
 ## `operation:run`
 
-BETA Eseguire un’operazione nell’ambiente
+BETA Eseguire un&#39;operazione nell&#39;ambiente
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -9417,7 +9417,7 @@ Forza l’aggiornamento del certificato
 
 ### `--new-key`
 
-[Obsoleto] Usa - Nuovo
+[Obsoleto] Usa —nuovo
 
 - Predefinito: `false`
 - Non accetta un valore
@@ -10330,7 +10330,7 @@ Attendere il completamento dell&#39;operazione (impostazione predefinita)
 
 ### `--role`, `-r`
 
-[Obsoleto: usa utente:aggiornamento per modificare i ruoli di un utente]
+[Obsoleto: utilizzare utente:aggiornamento per modificare i ruoli di un utente]
 
 - Richiede un valore
 

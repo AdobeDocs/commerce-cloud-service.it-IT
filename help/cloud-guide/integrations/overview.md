@@ -22,7 +22,7 @@ Le integrazioni sono utili per utilizzare servizi esterni, come l’hosting Git 
 
 >[!TAB CLI]
 
-**Per aggiungere un’integrazione tramite Cloud CLI**:
+**Per aggiungere un&#39;integrazione utilizzando Cloud CLI**:
 
 Il comando seguente avvia i prompt interattivi per selezionare il tipo e le opzioni per la nuova integrazione.
 
@@ -52,11 +52,11 @@ Risposta di esempio:
 
 >[!TAB Console]
 
-**Per aggiungere un’integrazione utilizzando[!DNL Cloud Console]**:
+**Per aggiungere un&#39;integrazione utilizzando[!DNL Cloud Console]**:
 
-1. In entrata _Impostazioni progetto_, fai clic su **[!UICONTROL Integrations]**.
+1. In _Impostazioni progetto_, fare clic su **[!UICONTROL Integrations]**.
 
-1. Fai clic su un tipo di integrazione o fai clic su **[!UICONTROL Add integration]**.
+1. Fare clic su un tipo di integrazione o su **[!UICONTROL Add integration]**.
 
 1. Segui i passaggi di selezione e configurazione del tipo di integrazione.
 
@@ -64,26 +64,26 @@ Risposta di esempio:
 
 >[!ENDTABS]
 
-## Webhook Commerce
+## webhook Commerce
 
-Puoi configurare i webhook Commerce nel progetto Cloud con [Variabile globale ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks). I webhook di Commerce inviano richieste a un server esterno in risposta a eventi generati da Commerce. Il [_Guida ai webhook_](https://developer.adobe.com/commerce/extensibility/webhooks) descrive questa funzione in dettaglio.
+Puoi configurare i webhook di Commerce nel progetto Cloud con la variabile globale [ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks). I webhook Commerce inviano richieste a un server esterno in risposta a eventi generati da Commerce. La [_Guida ai webhook_](https://developer.adobe.com/commerce/extensibility/webhooks) descrive questa funzionalità in dettaglio.
 
 ## Webhook generici
 
-Puoi acquisire e generare rapporti sull’infrastruttura e sugli eventi dell’archivio Cloud utilizzando un’integrazione di webhook personalizzata per `POST` Messaggi JSON in un _webhook_ URL.
+È possibile acquisire e segnalare eventi dell&#39;infrastruttura e dell&#39;archivio cloud utilizzando un&#39;integrazione del webhook personalizzato per `POST` messaggi JSON in un URL _webhook_.
 
-**Per aggiungere un URL del webhook, utilizza la sintassi seguente**:
+**Per aggiungere un URL del webhook, utilizzare la sintassi seguente**:
 
 ```bash
 magento-cloud integration:add --type=webhook --url=https://hook-url.example.com
 ```
 
-- `type`- Specifica la `webhook` tipo di integrazione.
-- `url`- Fornisce l&#39;URL del webhook che può ricevere messaggi JSON.
+- `type` - Specificare il tipo di integrazione `webhook`.
+- `url` - Specificare l&#39;URL del webhook che può ricevere messaggi JSON.
 
 La risposta di esempio mostra una serie di prompt che offrono l’opportunità di personalizzare l’integrazione. L’utilizzo della risposta predefinita (vuota) invia messaggi su tutti gli eventi in tutti gli ambienti di un progetto.
 
-Puoi personalizzare l’integrazione in base a specifici rapporti [Eventi](#events-to-report), ad esempio per inviare il codice a un ramo. Ad esempio, puoi specificare `environment.push` evento per inviare un messaggio quando un utente invia il codice a un ramo:
+È possibile personalizzare l&#39;integrazione per segnalare [eventi](#events-to-report) specifici, ad esempio il push del codice in un ramo. Ad esempio, è possibile specificare l&#39;evento `environment.push` per inviare un messaggio quando un utente invia il codice a un ramo:
 
 ```terminal
 Events to report (--events)
@@ -93,7 +93,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-Puoi scegliere di segnalare gli eventi in un `pending`, `in_progress`, o `complete` state:
+È possibile scegliere di segnalare gli eventi con stato `pending`, `in_progress` o `complete`:
 
 ```terminal
 States to report (--states)
@@ -103,7 +103,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-E tu puoi... _include_ o _escludi_ messaggi per ambienti specifici:
+E puoi _includere_ o _escludere_ messaggi per ambienti specifici:
 
 ```terminal
 Included environments (--environments)
@@ -171,14 +171,14 @@ Integration integration-ID (webhook) updated
 | `environment.branch` | Un ramo è stato creato utilizzando la console di gestione |
 | `environment.deactivate` | Ramo &quot;disattivato&quot;. Il codice è ancora presente ma l&#39;ambiente è stato distrutto |
 | `environment.delete` | Un ramo è stato eliminato |
-| `environment.initialize` | Il `master` ramo del progetto inizializzato con un primo commit |
+| `environment.initialize` | Il ramo `master` del progetto inizializzato con un primo commit |
 | `environment.merge` | Un ramo attivo è stato unito utilizzando la console di gestione o l’API |
 | `environment.push` | Un utente ha inviato il codice a un ramo |
 | `environment.restore` | Un utente ha ripristinato uno snapshot |
 | `environment.route.create` | È stata creata una route tramite la console di gestione |
 | `environment.route.delete` | Una route è stata eliminata utilizzando la console di gestione |
 | `environment.route.update` | Una route è stata modificata utilizzando la console di gestione |
-| `environment.subscription.update` | Il `master` L’ambiente è stato ridimensionato perché l’abbonamento è stato modificato, ma non sono presenti modifiche al contenuto |
+| `environment.subscription.update` | L&#39;ambiente `master` è stato ridimensionato perché la sottoscrizione è stata modificata, ma non sono presenti modifiche al contenuto |
 | `environment.synchronize` | Nell’ambiente padre sono stati copiati dati o codice |
 | `environment.update.http_access` | Le regole di accesso HTTP per un ambiente sono state modificate |
 | `environment.update.restrict_robots` | La funzione block-all-robots è stata abilitata o disabilitata |

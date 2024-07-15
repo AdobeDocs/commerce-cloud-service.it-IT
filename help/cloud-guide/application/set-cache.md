@@ -1,6 +1,6 @@
 ---
 title: Imposta cache per file statici
-description: Scopri come impostare le opzioni di archiviazione della cache in [!DNL Commerce] file di configurazione dell'applicazione.
+description: Scopri come impostare le opzioni di archiviazione della cache nel file di configurazione dell'applicazione  [!DNL Commerce] .
 feature: Cloud, Configuration, Cache, SCD
 exl-id: ca6db004-47fc-45ea-b8db-c0ecc3c2136b
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Imposta cache per file statici
 
-Il TTL della cache (time-to-live) per i file multimediali e statici è impostato in `.magento.app.yaml` file di configurazione utilizzando `expires` chiave.
+Il valore TTL della cache (time-to-live) per i file multimediali e statici è impostato nel file di configurazione `.magento.app.yaml` utilizzando la chiave `expires`.
 
 >[!NOTE]
 >
->Prima di aggiornare l’ambiente di produzione, è importante testare le modifiche all’interno dell’ambiente di staging. [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per assistenza sull’aggiornamento della configurazione in questi ambienti.
+>Prima di aggiornare l’ambiente di produzione, è importante testare le modifiche all’interno dell’ambiente di staging. [Invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per assistenza sull&#39;aggiornamento della configurazione in questi ambienti.
 
-1. Specifica il tempo TTL (in secondi) nella [`web` proprietà](web-property.md) del `.magento.app.yaml` file. È possibile aggiungere `expires` chiave in `locations` o inferiore a `"/media"` e `"/static"`.
+1. Specificare il tempo TTL (in secondi) nella proprietà [`web`](web-property.md) del file `.magento.app.yaml`. È possibile aggiungere la chiave `expires` in `locations` o in `"/media"` e `"/static"`.
 
-   Per evitare che la cache scada, utilizza `expires: -1` coppia chiave-valore. Vedi l’esempio seguente:
+   Per evitare che la cache scada, utilizzare la coppia chiave-valore `expires: -1`. Vedi l’esempio seguente:
 
    ```yaml
    # The configuration of app when it is exposed to the web.

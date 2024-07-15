@@ -33,17 +33,17 @@ Per continuare il processo, è necessario ottenere un token GitHub e un webhook.
 
 ## Generare un token GitHub
 
-Crea un token di accesso personale classico nelle impostazioni per gli sviluppatori GitHub. Devi essere membro di un gruppo con accesso in scrittura all’archivio GitHub, in modo da poter _push_ all’archivio. Includi i seguenti ambiti durante la creazione del token:
+Crea un token di accesso personale classico nelle impostazioni per gli sviluppatori GitHub. Devi essere membro di un gruppo con accesso in scrittura all&#39;archivio GitHub, in modo da poter _inviare_ all&#39;archivio. Includi i seguenti ambiti durante la creazione del token:
 
-- `admin:repo_hook`- Creazione di hook Web
-- `repo`- Integrazione con l&#39;archivio
-- `read:org`integrazione con l&#39;archivio aziendale
+- `admin:repo_hook` - Crea hook Web
+- `repo`: integrazione con l&#39;archivio
+- `read:org`: integrazione con il repository aziendale
 
-Consulta [GitHub: Crea](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+Vedere [GitHub: Create](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 ## Preparare l’archivio
 
-Clona il progetto Adobe Commerce on cloud infrastructure da un ambiente esistente e migra i rami del progetto in un nuovo archivio GitHub vuoto, mantenendo gli stessi nomi di ramo. È **critico** per mantenere una struttura Git identica, in modo da non perdere ambienti o rami esistenti nel progetto Adobe Commerce on cloud infrastructure.
+Clona il progetto Adobe Commerce on cloud infrastructure da un ambiente esistente e migra i rami del progetto in un nuovo archivio GitHub vuoto, mantenendo gli stessi nomi di ramo. È **fondamentale** mantenere una struttura Git identica, in modo da non perdere ambienti o rami esistenti nel progetto Adobe Commerce su infrastruttura cloud.
 
 1. Dal terminale, accedi al tuo progetto di infrastruttura cloud Adobe Commerce on.
 
@@ -69,7 +69,7 @@ Clona il progetto Adobe Commerce on cloud infrastructure da un ambiente esistent
    git remote add origin git@github.com:<user-name>/<repo-name>.git
    ```
 
-   Il nome predefinito per la connessione remota può essere `origin` o `magento`. Se `origin` esiste, è possibile scegliere un nome diverso oppure rinominare o eliminare il riferimento esistente. Consulta [documentazione di git-remote](https://git-scm.com/docs/git-remote).
+   Il nome predefinito per la connessione remota può essere `origin` o `magento`. Se `origin` esiste, è possibile scegliere un nome diverso oppure rinominare o eliminare il riferimento esistente. Consulta la [documentazione Git-Remote](https://git-scm.com/docs/git-remote).
 
 1. Verifica di aver aggiunto correttamente il remoto GitHub.
 
@@ -90,30 +90,30 @@ Clona il progetto Adobe Commerce on cloud infrastructure da un ambiente esistent
    git push -u origin master
    ```
 
-   Se inizi con un nuovo archivio GitHub, potrebbe essere necessario utilizzare `-f` perché l’archivio remoto non corrisponde alla copia locale.
+   Se si sta iniziando con un nuovo archivio GitHub, potrebbe essere necessario utilizzare l&#39;opzione `-f`, perché l&#39;archivio remoto non corrisponde alla copia locale.
 
 1. Verifica che l’archivio GitHub contenga tutti i file di progetto.
 
 ## Abilitare l’integrazione con GitHub
 
-Prima di iniziare, il codice del progetto e gli ambienti devono trovarsi nell’archivio GitHub. Dopo aver abilitato l’integrazione, l’archivio GitHub diventa l’origine del codice. Se invii le modifiche al codice all’originale `magento` viene sovrascritto dall’integrazione quando si inviano le modifiche al codice all’archivio GitHub.
+Prima di iniziare, il codice del progetto e gli ambienti devono trovarsi nell’archivio GitHub. Dopo aver abilitato l’integrazione, l’archivio GitHub diventa l’origine del codice. Se si inviano modifiche al codice all&#39;archivio `magento` originale, queste vengono sovrascritte dall&#39;integrazione quando si inviano modifiche al codice nell&#39;archivio GitHub.
 
 Di seguito viene abilitata l’integrazione GitHub e viene fornito un URL di payload da utilizzare durante la creazione di un webhook.
 
 >[!WARNING]
 >
->Il comando seguente sovrascrive _tutto_ codice nel progetto di infrastruttura cloud Adobe Commerce on con il codice dell’archivio GitHub, che include tutti i rami, incluso `production` filiale. Questa azione si verifica immediatamente e non può essere annullata. Come best practice, è importante clonare tutti i rami dal progetto Adobe Commerce on cloud infrastructure e inviarli all’archivio GitHub **prima di** aggiunta dell’integrazione GitHub.
+>Il comando seguente sovrascrive il codice _all_ nel progetto di infrastruttura cloud di Adobe Commerce con il codice dell&#39;archivio GitHub, che include tutti i rami, incluso il ramo `production`. Questa azione si verifica immediatamente e non può essere annullata. Come best practice, è importante clonare tutti i rami dal progetto Adobe Commerce on cloud infrastructure e inviarli all&#39;archivio GitHub **prima** dell&#39;aggiunta dell&#39;integrazione GitHub.
 
-È possibile scegliere di visualizzare i prompt CLI utilizzando `magento-cloud integration:add` oppure puoi creare il comando di integrazione con le seguenti opzioni:
+È possibile scegliere di esaminare i prompt CLI utilizzando `magento-cloud integration:add` oppure creare il comando di integrazione con le opzioni seguenti:
 
 | Opzione | Obbligatorio | Descrizione |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | Sì | L&#39;URL di base dell&#39;installazione del server, che può essere `https://github.com/` o un personalizzato. Ometti questa opzione se l’archivio è ospitato con Github pubblico. |
+| `--base-url` | Sì | URL di base dell&#39;installazione del server, che può essere `https://github.com/` o personalizzato. Ometti questa opzione se l’archivio è ospitato con Github pubblico. |
 | `--token` | Sì | Token di accesso personale generato per GitHub |
-| `--repository` | Sì | Il nome dell’archivio: `owner-or-organisation/repository` |
-| `--build-pull-requests` | Facoltativo | Istruisce Adobe Commerce su infrastruttura cloud da implementare dopo l’unione di una richiesta di pull (`true` per impostazione predefinita) |
-| `--fetch-branches` | Facoltativo | Fa sì che Adobe Commerce sull’infrastruttura cloud tenga traccia dei rami e lo distribuisca dopo l’aggiornamento di un ramo (`true` per impostazione predefinita) |
-| `--prune-branches` | Facoltativo | Elimina i rami inesistenti nel remoto (`true` per impostazione predefinita) |
+| `--repository` | Sì | Nome repository: `owner-or-organisation/repository` |
+| `--build-pull-requests` | Facoltativo | Indica ad Adobe Commerce su infrastruttura cloud di distribuire dopo l&#39;unione di una richiesta di pull (`true` per impostazione predefinita) |
+| `--fetch-branches` | Facoltativo | Fa sì che Adobe Commerce su infrastruttura cloud tenga traccia dei rami e distribuisca dopo l&#39;aggiornamento di un ramo (`true` per impostazione predefinita) |
+| `--prune-branches` | Facoltativo | Elimina rami inesistenti nel remoto (`true` per impostazione predefinita) |
 
 Sono disponibili molte altre opzioni che possono essere visualizzate tramite l’opzione di aiuto:
 
@@ -121,7 +121,7 @@ Sono disponibili molte altre opzioni che possono essere visualizzate tramite l�
 magento-cloud integration:add --help
 ```
 
-**Per abilitare l’integrazione con GitHub**:
+**Per abilitare l&#39;integrazione GitHub**:
 
 1. Abilita l’integrazione.
 
@@ -129,13 +129,13 @@ magento-cloud integration:add --help
    magento-cloud integration:add --type=github --project=<project-ID> --token=<your-GitHub-token> {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
    ```
 
-   **Esempio 1**: abilita l’integrazione GitHub per un archivio personale e privato:
+   **Esempio 1**: abilita l&#39;integrazione GitHub per un archivio personale privato:
 
    ```bash
    magento-cloud integration:add --type=github --project=ov58dlacU2e --base-url=https://github.com --token=<token> --repository=myUserName/myrepo
    ```
 
-   **Esempio 2**: abilita l’integrazione GitHub per un archivio dell’organizzazione:
+   **Esempio 2**: abilitare l&#39;integrazione GitHub per un repository dell&#39;organizzazione:
 
    ```bash
    magento-cloud integration:add --type=github --project=ov58dlacU2e --base-url=https://github.com --token=<token> --repository=Magento/teamrepo
@@ -143,7 +143,7 @@ magento-cloud integration:add --help
 
 1. Immetti le informazioni richieste quando richiesto.
 
-1. Copia il **URL payload** visualizzato dall&#39;output di ritorno.
+1. Copia l&#39;**URL payload** visualizzato dall&#39;output restituito.
 
    ```terminal
    Created integration <integration-ID> (type: github)
@@ -157,25 +157,25 @@ magento-cloud integration:add --help
 
 Per comunicare eventi, come un push, con il server Cloud Git, devi creare un webhook per l’archivio GitHub:
 
-1. Nell’archivio GitHub, fai clic su **Impostazioni** scheda.
+1. Nell&#39;archivio GitHub, fai clic sulla scheda **Impostazioni**.
 
 1. Nella barra di navigazione a sinistra, fai clic su **Webhook**.
 
-1. In _Webhook_ , fare clic su **Aggiungi webhook**.
+1. Nel riquadro _Webhook_ fare clic su **Aggiungi webhook**.
 
-1. In _Webhook/Aggiungi webhook_ , modificare i campi seguenti:
+1. Nel modulo _Webhook/Aggiungi webhook_, modifica i campi seguenti:
 
-   - **URL payload**: inserisci l’URL restituito quando hai abilitato l’integrazione GitHub.
-   - **Tipo di contenuto**: Scegli **application/json** dall&#39;elenco.
+   - **URL payload**: immetti l&#39;URL restituito quando abiliti l&#39;integrazione GitHub.
+   - **Tipo di contenuto**: scegli **application/json** dall&#39;elenco.
    - **Segreto**: immetti un segreto di verifica.
-   - **Quali eventi si desidera attivare questo webhook?**: Seleziona **Mandami tutto**.
-   - Seleziona la **Attivo** casella di controllo.
+   - **Quali eventi attivare questo webhook?**: Seleziona **Invia tutto**.
+   - Selezionare la casella di controllo **Attivo**.
 
-1. Clic **Aggiungi webhook**.
+1. Fai clic su **Aggiungi webhook**.
 
 ## Testare l’integrazione
 
-Dopo aver configurato l’integrazione GitHub, puoi verificare che sia operativa utilizzando `magento-cloud` CLI:
+Dopo aver configurato l&#39;integrazione GitHub, è possibile verificare che l&#39;integrazione sia operativa utilizzando CLI `magento-cloud`:
 
 ```bash
 magento-cloud integration:validate
@@ -195,13 +195,13 @@ Oppure puoi testarlo inviando una semplice modifica all’archivio GitHub.
    git add . && git commit -m "Testing GitHub integration" && git push
    ```
 
-1. Accedi a [[!DNL Cloud Console]](../project/overview.md) e verifica che venga visualizzato il messaggio di conferma e che venga distribuito il progetto.
+1. Accedi a [[!DNL Cloud Console]](../project/overview.md) e verifica che il messaggio di commit sia visualizzato e che il progetto sia in fase di distribuzione.
 
 ## Rimuovere l’integrazione
 
 Puoi rimuovere in modo sicuro l’integrazione GitHub dal progetto senza influire sul codice.
 
-**Per rimuovere l’integrazione GitHub**:
+**Per rimuovere l&#39;integrazione GitHub**:
 
 1. Dal terminale, accedi al tuo progetto di infrastruttura cloud Adobe Commerce on.
 
@@ -217,4 +217,4 @@ Puoi rimuovere in modo sicuro l’integrazione GitHub dal progetto senza influir
    magento-cloud integration:delete <int-ID>
    ```
 
-Inoltre, puoi rimuovere l’integrazione GitHub accedendo al tuo account GitHub e rimuovendo l’hook web nel _Webhook_ scheda dell’archivio _Impostazioni_.
+Inoltre, puoi rimuovere l&#39;integrazione GitHub accedendo al tuo account GitHub e rimuovendo l&#39;hook Web nella scheda _Webhook_ dell&#39;archivio _Impostazioni_.

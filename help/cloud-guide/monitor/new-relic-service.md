@@ -13,13 +13,13 @@ ht-degree: 0%
 
 # Panoramica del servizio New Relic
 
-Tutti i progetti Adobe Commerce sull’infrastruttura cloud includono l’accesso al servizio New Relic per monitorare le prestazioni e analizzare gli eventi del [!DNL Commerce] infrastruttura cloud e applicativa.
+Tutti i progetti Adobe Commerce sull&#39;infrastruttura cloud includono l&#39;accesso al servizio New Relic per monitorare le prestazioni e analizzare gli eventi dell&#39;applicazione [!DNL Commerce] e dell&#39;infrastruttura cloud.
 
 Le seguenti funzioni di New Relic sono disponibili per l’utilizzo con gli ambienti di produzione e staging:
 
-- [APM NEW RELIC](#new-relic-apm) (Pro e Starter)
-- [Infrastruttura New Relic](#new-relic-infrastructure) (Solo Pro)
-- [Gestione registro New Relic](#new-relic-logs) (Solo Pro)
+- [New Relic APM](#new-relic-apm) (Pro e Starter)
+- [Infrastruttura New Relic](#new-relic-infrastructure) (solo Pro)
+- [Gestione registro New Relic](#new-relic-logs) (solo Pro)
 
 >[!INFO]
 >
@@ -27,20 +27,20 @@ Le seguenti funzioni di New Relic sono disponibili per l’utilizzo con gli ambi
 
 ## APM NEW RELIC
 
-[New Relic per APM (Application Performance Management)](https://docs.newrelic.com/introduction-apm/) è un prodotto di analisi software che consente di analizzare e migliorare le interazioni tra le applicazioni. New Relic APM è disponibile per tutti i progetti Adobe Commerce su infrastrutture cloud e fornisce le seguenti funzioni:
+[New Relic for application performance management (APM)](https://docs.newrelic.com/introduction-apm/) è un prodotto di analisi software che consente di analizzare e migliorare le interazioni tra le applicazioni. New Relic APM è disponibile per tutti i progetti Adobe Commerce su infrastrutture cloud e fornisce le seguenti funzioni:
 
-- **Concentrarsi su transazioni specifiche**: contrassegna e monitora attivamente le azioni chiave dei clienti sul sito, ad esempio l&#39;aggiunta al carrello, l&#39;estrazione o l&#39;elaborazione di un pagamento.
-- **Monitoraggio delle query del database**: individuazione e monitoraggio delle query del database che influiscono sulle prestazioni.
-- **Mappa app**: visualizza tutte le dipendenze dell&#39;applicazione all&#39;interno del sito, le estensioni e i servizi esterni.
-- **[!DNL Apdex]punteggi**— Valuta le prestazioni e crea avvisi che identificano i problemi e ti avvisano quando si verificano, ad esempio le prestazioni del sito interessate da una vendita flash o da un evento web. Consulta [Punteggio Apdex](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction/).
-- **Avvisi gestiti per Adobe Commerce**- Utilizzare questo criterio di avviso New Relic per monitorare le prestazioni dell&#39;applicazione e dell&#39;infrastruttura in base alle procedure ottimali del settore. Consulta [Monitorare le prestazioni con gli avvisi gestiti per i criteri di avviso di Adobe Commerce](investigate-performance.md/#monitor-performance-with-managed-alerts).
-- **Tracciare le distribuzioni** monitoraggio degli eventi di distribuzione e analisi dell&#39;impatto sulle prestazioni complessive. Consulta [Tracciare le distribuzioni](track-deployments.md).
+- **Concentrati su transazioni specifiche**: contrassegna e monitora attivamente le azioni chiave dei clienti nel tuo sito, ad esempio l&#39;aggiunta al carrello, l&#39;estrazione o l&#39;elaborazione di un pagamento.
+- **Monitoraggio delle query del database**: individuare e monitorare le query del database che influiscono sulle prestazioni.
+- **Mappa app**: visualizza tutte le dipendenze dell&#39;applicazione all&#39;interno del sito, delle estensioni e dei servizi esterni.
+- **[!DNL Apdex]punteggi**—Valuta le prestazioni e crea avvisi che identificano i problemi e ti avvisano quando si verificano, ad esempio le prestazioni del sito interessate da una vendita flash o da un evento web. Vedi [Punteggio Apdex](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction/).
+- **Avvisi gestiti per Adobe Commerce**-Utilizzare questo criterio di avviso di New Relic per monitorare le prestazioni dell&#39;applicazione e dell&#39;infrastruttura in base alle best practice del settore. Vedere [Monitorare le prestazioni con gli avvisi gestiti per i criteri di avviso di Adobe Commerce](investigate-performance.md/#monitor-performance-with-managed-alerts).
+- **Monitora le distribuzioni**: monitora gli eventi di distribuzione e analizza l&#39;impatto della distribuzione sulle prestazioni complessive. Vedi [Tracciare le distribuzioni](track-deployments.md).
 
 Il progetto Adobe Commerce su infrastruttura cloud include il software per il servizio New Relic APM e un codice di licenza. Non è necessario acquistare o installare software aggiuntivo.
 
 ## Infrastruttura New Relic
 
-I progetti Pro includono [Infrastruttura New Relic (NRI)](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/) che si connette automaticamente ai dati dell&#39;applicazione e alle analisi delle prestazioni per fornire un monitoraggio dinamico del server. Questo servizio è disponibile negli ambienti Pro Production e Staging.
+I progetti Pro includono il servizio [Infrastruttura New Relic (NRI)](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/), che si connette automaticamente ai dati dell&#39;applicazione e all&#39;analisi delle prestazioni per fornire il monitoraggio dinamico del server. Questo servizio è disponibile negli ambienti Pro Production e Staging.
 
 ## Gestione registro New Relic
 

@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Server-side include
 
-[Server-side include](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) sono direttive nelle pagine di HTML che vengono valutate sul server durante il rendering delle pagine. SSI consente di aggiungere contenuto generato in modo dinamico a una pagina HTML esistente senza distribuire l’intera pagina.
+[Inclusioni lato server](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) sono direttive nelle pagine HTML valutate sul server durante il rendering delle pagine. SSI consente di aggiungere contenuto generato in modo dinamico a una pagina HTML esistente senza distribuire l’intera pagina.
 
-È possibile attivare o disattivare SSI in base al percorso nel `.magento/routes.yaml`; ad esempio:
+È possibile attivare o disattivare SSI in base al percorso in `.magento/routes.yaml`, ad esempio:
 
 ```yaml
     "http://{default}/":
@@ -31,7 +31,7 @@ ht-degree: 0%
             enabled: true
 ```
 
-SSI consente di includere nelle direttive di risposta del HTML direttive che fanno in modo che il server compili parti del HTML, rispettando eventuali [configurazione del caching](caching.md).
+SSI ti consente di includere nelle direttive di risposta HTML che fanno in modo che il server compili parti del HTML, rispettando qualsiasi [configurazione di caching](caching.md) esistente.
 
 Nell&#39;esempio seguente viene illustrato come inserire un controllo data dinamico nella parte superiore di una pagina e un altro controllo data nella parte inferiore che viene aggiornato ogni 600 secondi:
 

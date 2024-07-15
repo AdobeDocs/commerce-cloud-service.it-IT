@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Configurare le route
 
-Il `routes.yaml` file in `.magento/routes.yaml` definisce le route per gli ambienti Adobe Commerce su integrazione di infrastruttura cloud, staging e produzione. Le route determinano il modo in cui l&#39;applicazione elabora le richieste HTTP e HTTPS in ingresso.
+Il file `routes.yaml` nella directory `.magento/routes.yaml` definisce le route per gli ambienti di integrazione dell&#39;infrastruttura cloud, staging e produzione Adobe Commerce. Le route determinano il modo in cui l&#39;applicazione elabora le richieste HTTP e HTTPS in ingresso.
 
-Il valore predefinito `routes.yaml` file specifica i modelli di route per l&#39;elaborazione delle richieste HTTP come HTTPS nei progetti con un singolo dominio predefinito e nei progetti configurati per più domini:
+Il file predefinito `routes.yaml` specifica i modelli di route per l&#39;elaborazione delle richieste HTTP come HTTPS nei progetti con un singolo dominio predefinito e nei progetti configurati per più domini:
 
 ```yaml
 "http://{default}/":
@@ -25,7 +25,7 @@ Il valore predefinito `routes.yaml` file specifica i modelli di route per l&#39;
     upstream: "mymagento:http"
 ```
 
-Utilizza il `magento-cloud` CLI per visualizzare un elenco delle route configurate:
+Utilizzare l&#39;interfaccia della riga di comando `magento-cloud` per visualizzare un elenco delle route configurate:
 
 ```bash
 magento-cloud environment:routes
@@ -43,11 +43,11 @@ magento-cloud environment:routes
 
 ## Modelli di percorso
 
-Il `routes.yaml` file è un elenco di route con modelli e relative configurazioni. Nei modelli di percorso è possibile utilizzare i segnaposto seguenti:
+Il file `routes.yaml` è un elenco di route con modelli e relative configurazioni. Nei modelli di percorso è possibile utilizzare i segnaposto seguenti:
 
-- Il `{default}` il segnaposto rappresenta il nome di dominio qualificato configurato come predefinito per il progetto.
+- Il segnaposto `{default}` rappresenta il nome di dominio qualificato configurato come predefinito per il progetto.
 
-  Ad esempio, un progetto con il dominio predefinito `example.com` e i seguenti modelli di percorso:
+  Ad esempio, un progetto con il dominio predefinito `example.com` e i seguenti modelli di route:
 
   ```text
   https://www.{default}/
@@ -61,9 +61,9 @@ Il `routes.yaml` file è un elenco di route con modelli e relative configurazion
   https://example.com/blog
   ```
 
-- Il `{all}` il segnaposto rappresenta tutti i nomi di dominio configurati per il progetto.
+- Il segnaposto `{all}` rappresenta tutti i nomi di dominio configurati per il progetto.
 
-  Un progetto con `example.com` e `example1.com` domini con i seguenti modelli di route:
+  Ad esempio, un progetto con domini `example.com` e `example1.com` con i seguenti modelli di route:
 
   ```text
   https://www.{all}/
@@ -83,17 +83,17 @@ Il `routes.yaml` file è un elenco di route con modelli e relative configurazion
   https://example1.com/blog
   ```
 
-  Il `{all}` il segnaposto è utile per i progetti configurati per più domini. In un ramo non di produzione, `{all}` viene sostituito con l’ID del progetto e l’ID dell’ambiente per ciascun dominio.
+  Il segnaposto `{all}` è utile per i progetti configurati per più domini. In un ramo non di produzione, `{all}` è sostituito con l&#39;ID progetto e l&#39;ID ambiente per ciascun dominio.
 
-  Se un progetto non ha configurato alcun dominio, il che è comune durante lo sviluppo, il `{all}` il segnaposto si comporta nello stesso modo del `{default}` segnaposto.
+  Se in un progetto non è configurato alcun dominio, operazione comune durante lo sviluppo, il segnaposto `{all}` si comporta come il segnaposto `{default}`.
 
-Adobe Commerce genera inoltre route per ogni ambiente di integrazione attivo. Per gli ambienti di integrazione, il `{default}` il segnaposto è sostituito dal seguente nome di dominio:
+Adobe Commerce genera inoltre route per ogni ambiente di integrazione attivo. Per gli ambienti di integrazione, il segnaposto `{default}` è sostituito dal seguente nome di dominio:
 
 ```text
 [branch]-[per-environment-random-string]-[project-id].[region].magentosite.cloud
 ```
 
-Ad esempio, il `refactorcss` ramo per `mswy7hzcuhcjw` progetto ospitato in `us` il cluster ha il seguente dominio:
+Ad esempio, il ramo `refactorcss` per il progetto `mswy7hzcuhcjw` ospitato nel cluster `us` ha il seguente dominio:
 
 ```text
 https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
@@ -101,11 +101,11 @@ https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
 
 >[!NOTE]
 >
->Se il progetto Cloud supporta più store, segui le istruzioni di configurazione del percorso per [più siti web o store](../store/multiple-sites.md).
+>Se il progetto Cloud supporta più store, segui le istruzioni di configurazione del percorso per [più siti Web o store](../store/multiple-sites.md).
 
 ### Barra finale
 
-Le definizioni di route contengono una barra finale per indicare una cartella o una directory; tuttavia, lo stesso contenuto può essere distribuito con o senza una barra finale. I seguenti URL hanno la stessa risoluzione ma possono essere interpretati come _due diversi_ URL:
+Le definizioni di route contengono una barra finale per indicare una cartella o una directory; tuttavia, lo stesso contenuto può essere distribuito con o senza una barra finale. I seguenti URL vengono risolti nello stesso modo, ma possono essere interpretati come _due URL_ diversi:
 
 ```text
 https://www.example.com/blog/
@@ -115,7 +115,7 @@ https://www.example.com/blog
 
 >[!TIP]
 >
->È consigliabile utilizzare una barra finale per le directory, ma qualunque sia il metodo scelto, è importante **rimani coerente** per evitare di generare due posizioni.
+>È consigliabile utilizzare una barra finale per le directory, ma qualunque sia il metodo scelto, è importante **mantenere la coerenza** per evitare di generare due posizioni.
 
 ## Protocolli di route
 
@@ -123,7 +123,7 @@ Tutti gli ambienti supportano sia HTTP che HTTPS automaticamente.
 
 - Se la configurazione specifica solo la route HTTP, le route HTTPS vengono create automaticamente, consentendo di gestire il sito sia da HTTP che da HTTPS senza richiedere reindirizzamenti.
 
-  Ad esempio, un progetto con il dominio predefinito `example.com` e il seguente modello di percorso:
+  Ad esempio, un progetto con il dominio predefinito `example.com` e il seguente modello di route:
 
   ```text
   http://{default}/
@@ -139,7 +139,7 @@ Tutti gli ambienti supportano sia HTTP che HTTPS automaticamente.
 
 - Se la configurazione specifica solo la route HTTPS, tutte le richieste HTTP vengono reindirizzate a HTTPS.
 
-  Ad esempio, un progetto con il dominio predefinito `example.com` con il seguente modello di percorso:
+  Ad esempio, un progetto con il dominio predefinito `example.com` con il seguente modello di route:
 
   ```text
   https://{default}/
@@ -157,7 +157,7 @@ Tutti gli ambienti supportano sia HTTP che HTTPS automaticamente.
 
 Distribuisci tutte le pagine su TLS. Per questa configurazione, devi configurare i reindirizzamenti per tutte le richieste non crittografate all’equivalente TLS utilizzando uno dei seguenti metodi:
 
-- Modificare il protocollo in HTTPS nel `routes.yaml` file.
+- Modificare il protocollo in HTTPS nel file `routes.yaml`.
 
   ```yaml
   "https://{default}/":
@@ -168,7 +168,7 @@ Distribuisci tutte le pagine su TLS. Per questa configurazione, devi configurare
       upstream: "mymagento:http"
   ```
 
-- Per gli ambienti di staging e produzione, abilita [Forza TLS su Fastly](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/redirect-http-to-https-for-all-pages-on-cloud-force-tls.html) dall’interfaccia utente di amministrazione. Quando si utilizza questa opzione, Fastly gestisce il reindirizzamento a HTTPS, quindi non è necessario aggiornare il `routes.yaml` configurazione.
+- Per gli ambienti di staging e produzione, abilita l&#39;opzione [Force TLS on Fastly](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/redirect-http-to-https-for-all-pages-on-cloud-force-tls.html) dall&#39;interfaccia utente amministratore. Quando si utilizza questa opzione, Fastly gestisce il reindirizzamento a HTTPS, pertanto non è necessario aggiornare la configurazione `routes.yaml`.
 
 ## Opzioni ciclo di lavorazione
 
@@ -176,15 +176,15 @@ Configurare ogni route separatamente utilizzando le proprietà seguenti:
 
 | Proprietà | Descrizione |
 | ---------------- | ----------- |
-| `type: upstream` | Distribuisce un&#39;applicazione. Inoltre, presenta un `upstream` che specifica il nome dell&#39;applicazione (come definito in `.magento.app.yaml`) seguito da `:http` endpoint. |
-| `type: redirect` | Reindirizza a un&#39;altra route. È seguito da `to` , che è un reindirizzamento HTTP a un altro percorso identificato dal relativo modello. |
-| `cache:` | Controlli [caching per la route](caching.md). |
-| `redirects:` | Controlli [regole di reindirizzamento](redirects.md). |
-| `ssi:` | Controlla l’abilitazione di [Server Side Include](server-side-includes.md). |
+| `type: upstream` | Distribuisce un&#39;applicazione. Inoltre, ha una proprietà `upstream` che specifica il nome dell&#39;applicazione (come definito in `.magento.app.yaml`) seguito dall&#39;endpoint `:http`. |
+| `type: redirect` | Reindirizza a un&#39;altra route. È seguito dalla proprietà `to`, che è un reindirizzamento HTTP a un&#39;altra route identificata dal relativo modello. |
+| `cache:` | Controlla [il caching per la route](caching.md). |
+| `redirects:` | Controlla [regole di reindirizzamento](redirects.md). |
+| `ssi:` | Controlla l&#39;abilitazione di [Server Side Includes](server-side-includes.md). |
 
 ## Percorsi semplici
 
-Negli esempi seguenti, la configurazione della route indirizza il dominio apex e `www` sottodominio del `mymagento` applicazione. Questa route non reindirizza le richieste HTTPS.
+Negli esempi seguenti, la configurazione della route indirizza il dominio apex e il sottodominio `www` all&#39;applicazione `mymagento`. Questa route non reindirizza le richieste HTTPS.
 
 **Esempio 1:**
 
@@ -206,7 +206,7 @@ In questo esempio, il ciclo di richieste segue le regole seguenti:
   http://example.com/path
   ```
 
-- Il server invia una _Reindirizzamento 301_ per le richieste con il seguente pattern URL:
+- Il server genera un reindirizzamento _301_ per le richieste con il seguente pattern URL:
 
   ```text
   http://www.example.com/mypath
@@ -245,11 +245,11 @@ Questo funziona come dominio onnicomprensivo in un ambiente live.
 
 ### Indirizzare un dominio non mappato
 
-Puoi indirizzare a un sistema che non è mappato a un dominio utilizzando un punto (`.`) per separare il sottodominio.
+È possibile indirizzare a un sistema non mappato a un dominio utilizzando un punto (`.`) per separare il sottodominio.
 
 **Esempio:**
 
-Un progetto con un `add-theme` il ramo viene indirizzato al seguente URL:
+Un progetto con un ramo `add-theme` viene indirizzato al seguente URL:
 
 ```text
 http://add-theme-projectID.us.magento.com/
@@ -284,7 +284,7 @@ http://foo.add-theme-projectID.us.magentosite.cloud/
 http://bar.add-theme-projectID.us.magentosite.cloud/
 ```
 
-È possibile visualizzare il pattern di instradamento per i domini non mappati stabilendo una connessione SSH all’ambiente e utilizzando `magento-cloud` CLI per elencare le route:
+È possibile visualizzare il pattern di route per i domini non mappati stabilendo una connessione SSH all&#39;ambiente e utilizzando la CLI `magento-cloud` per elencare le route:
 
 ```terminal
 web@mymagento.0:~$ vendor/bin/ece-tools env:config:show routes
@@ -315,7 +315,7 @@ Magento Cloud Routes:
 
 ## Reindirizzamenti e caching
 
-Come discusso più dettagliatamente in [Reindirizzamenti](redirects.md), puoi gestire regole di reindirizzamento complesse, ad esempio _reindirizzamenti parziali_ e specificare le regole per il ciclo di lavorazione [caching](caching.md):
+Come descritto più dettagliatamente in [Reindirizzamenti](redirects.md), puoi gestire regole di reindirizzamento complesse, ad esempio _reindirizzamenti parziali_, e specificare regole per il [caching](caching.md) basato su route:
 
 ```yaml
 https://www.{default}/:

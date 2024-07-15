@@ -37,39 +37,39 @@ PayPal supporta la connessione a PayPal Express Checkout per i paesi di tutto il
 * India e Giappone (i futuri aggiornamenti PayPal potrebbero supportare questi account)
 * Israele
 
-Per il Brasile, è necessario disporre di un account PayPal aziendale esistente per connettersi. Non puoi convertire un conto PayPal personale esistente per il Brasile durante questo processo. Se hai bisogno di un account, [creare un conto PayPal aziendale](https://www.paypal.com/us/webapps/mpp/account-selection).
+Per il Brasile, è necessario disporre di un account PayPal aziendale esistente per connettersi. Non puoi convertire un conto PayPal personale esistente per il Brasile durante questo processo. Se hai bisogno di un account, [crea un account PayPal aziendale](https://www.paypal.com/us/webapps/mpp/account-selection).
 
 ## Configura pagamento PayPal Express
 
 Per configurare PayPal Express Checkout:
 
 1. Accedi all’Admin per l’ambiente.
-1. Nel menu di navigazione a sinistra, seleziona **Negozi** > **Configurazione**, quindi seleziona **Vendite** > **Metodi di pagamento**.
+1. Nella navigazione a sinistra, seleziona **Archivi** > **Configurazione**, quindi seleziona **Vendite** > **Metodi di pagamento**.
 1. Per PayPal, seleziona **Configura**. I campi di configurazione vengono visualizzati in sezioni espandibili per le impostazioni Pagamento rapido, Advertise PayPal Credit e Basic e Advanced.
-1. Collega il tuo conto PayPal. Fino a quando l’account non è connesso, le opzioni da abilitare sono disabilitate. Per informazioni dettagliate sugli account disponibili e supportati per la connessione e le limitazioni, consulta [Conto PayPal](#paypal-account).
+1. Collega il tuo conto PayPal. Fino a quando l’account non è connesso, le opzioni da abilitare sono disabilitate. Per informazioni dettagliate sugli account disponibili e supportati per la connessione e le limitazioni, consulta [Account PayPal](#paypal-account).
 
    * Per collegare il tuo conto PayPal in diretta, fai clic su Connetti con PayPal e segui le istruzioni. Qualsiasi cliente acquista utilizzando un PayPal live completa e addebita attivamente i clienti in un negozio live.
    * Per collegare l’account sandbox per il test, fai clic su Credenziali sandbox e segui le istruzioni. Tutti gli acquisti dei clienti che utilizzano un PayPal Sandbox sono completati senza addebitare attivamente i clienti.
 
 1. Configura le impostazioni di pagamento rapido per l&#39;autenticazione e l&#39;utilizzo dell&#39;API PayPal:
 
-   * **E-mail associata al conto PayPal dell&#39;esercente** (Facoltativo) inserisci l&#39;indirizzo email associato al tuo conto PayPal dell&#39;esercente. Per questa e-mail viene fatta distinzione tra maiuscole e minuscole.
+   * **E-mail associata al conto PayPal dell&#39;esercente** (facoltativo) inserisci l&#39;indirizzo e-mail associato al tuo conto PayPal dell&#39;esercente. Per questa e-mail viene fatta distinzione tra maiuscole e minuscole.
    * **Metodi di autenticazione API** come firma API o certificato API.
    * Nome utente API, password e firma acquisiti dal tuo account PayPal.
-   * **Modalità sandbox** selezionare Sì o No per indicare se le credenziali immesse sono per sandbox. Se sono state immesse le credenziali di produzione, selezionare No.
-   * **L&#39;API utilizza il proxy** selezionare Sì o No per impostare se il sistema utilizza un server proxy per stabilire una connessione tra Adobe Commerce e il sistema di pagamento PayPal. Se Sì, immettere l&#39;host e la porta proxy.
+   * **Modalità sandbox** selezionare Sì o No per indicare se le credenziali immesse sono per la sandbox. Se sono state immesse le credenziali di produzione, selezionare No.
+   * **API Utilizza Proxy** selezionare Sì o No per impostare se il sistema utilizza un server proxy per stabilire una connessione tra Adobe Commerce e il sistema di pagamento PayPal. Se Sì, immettere l&#39;host e la porta proxy.
 
-1. Per informazioni dettagliate e passaggi per la configurazione dell’account, consulta [Pagamento PayPal Express](https://docs.magento.com/user-guide/payment/paypal-express-checkout.html) a partire dal passaggio 2, completare le impostazioni richieste.
+1. Per informazioni dettagliate e passaggi per configurare l&#39;account, consulta [Pagamento PayPal Express](https://docs.magento.com/user-guide/payment/paypal-express-checkout.html) a partire dal passaggio 2 Completa le impostazioni richieste.
 
 Con l&#39;account configurato e autenticato, puoi abilitare e disabilitare le opzioni di pagamento PayPal in Impostazioni PayPal obbligatorie:
 
 * **Abilita questa soluzione** visualizza il metodo di pagamento PayPal ai clienti tramite il sito Web.
-* **Abilita esperienza di estrazione nel contesto**
-* **Abilita credito PayPal** consente ai clienti di PayPal il finanziamento del credito senza costi aggiuntivi. PayPal paga l&#39;ordine anticipatamente, gestendo tutti i rimborsi per il credito direttamente con il cliente.
+* **Abilita Esperienza Di Check-Out Nel Contesto**
+* **Abilita credito PayPal** consente ai clienti di finanziare il credito PayPal senza costi aggiuntivi. PayPal paga l&#39;ordine anticipatamente, gestendo tutti i rimborsi per il credito direttamente con il cliente.
 
 ## Variabili PayPal
 
-Quando utilizzi lo strumento di onboarding PayPal con Adobe Commerce sull’infrastruttura cloud, aggiungi la variabile seguente al `variables:env` sezione del `magento.app.yaml` file.
+Quando utilizzi lo strumento di onboarding PayPal con Adobe Commerce sull&#39;infrastruttura cloud, aggiungi la variabile seguente alla sezione `variables:env` del file `magento.app.yaml`.
 
 ```yaml
 # Environment variables

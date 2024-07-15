@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Importa codice Commerce esistente
 
-L’Adobe consiglia di creare un progetto di infrastruttura cloud Commerce on da un modello vuoto o importando il codice esistente. È consigliabile iniziare con un modello vuoto e quindi importare il codice esistente nel nuovo progetto. In questo modo, potrai disporre di tutti i file necessari per supportare il progetto.
+L’Adobe consiglia di creare un progetto Commerce on cloud infrastructure da un modello vuoto o importando il codice esistente. È consigliabile iniziare con un modello vuoto e quindi importare il codice esistente nel nuovo progetto. In questo modo, potrai disporre di tutti i file necessari per supportare il progetto.
 
 Il flusso di lavoro completo per l’importazione del codice esistente include i seguenti passaggi:
 
