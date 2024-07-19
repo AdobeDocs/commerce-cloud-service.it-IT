@@ -4,7 +4,7 @@ description: Scopri come configurare le azioni di build e distribuzione in tutti
 feature: Cloud, Build, Configuration, Deploy, SCD
 role: Developer
 exl-id: 66e257e2-1eca-4af5-9b56-01348341400b
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '697'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Gli argomenti seguenti contengono definizioni dettagliate di tutte le variabili 
 - [Globale](variables-global.md): le variabili controllano le azioni in ogni fase: compilazione, distribuzione e post-distribuzione
 - [Build](variables-build.md): le variabili controllano le azioni di compilazione
 - [Distribuisci](variables-deploy.md): le azioni di distribuzione del controllo delle variabili
-- [Post-deploy](variables-post-deploy.md): le variabili controllano le azioni dopo la distribuzione
+- [Post-distribuzione](variables-post-deploy.md): le variabili controllano le azioni dopo la distribuzione
 
 ### Crea file di configurazione da CLI
 
@@ -103,7 +103,7 @@ php ./vendor/bin/ece-tools cloud:config:validate
 
 La seguente risposta di esempio fornisce un elenco di elementi da correggere:
 
-```terminal
+```
 Environment configuration is not valid. Correct the following items in your .magento.env.yaml file:
 The SCD_THREADS variable contains an invalid value of type string. Use the following type: integer.
 The SCD_STRATEGY variable contains an invalid value fast. Use one of the available value options: compact, quick, standard.
@@ -136,7 +136,7 @@ stage:
 
 Quando si verifica un errore a causa di un valore imprevisto nel file di configurazione `.magento.env.yaml`, viene visualizzato un messaggio di errore. Ad esempio, il seguente messaggio di errore presenta un elenco di modifiche suggerite per ogni elemento con un valore imprevisto, fornendo a volte opzioni valide:
 
-```terminal
+```
 - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
   Item CRON_CONSUMERS_RUNNER is not supposed to be in stage build. Please move it to one of possible stages: global, deploy
   Item SKIP_SCD has unexpected type string. Please use one of next types: boolean

@@ -5,7 +5,7 @@ feature: Cloud, Docker, Release Notes
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-04-08T00:00:00Z
 exl-id: 907d977f-2e9c-4553-a46b-000bc6a57b28
-source-git-commit: bc76cba0219f16fd055c20289811b51c35c9b026
+source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
 workflow-type: tm+mt
 source-wordcount: '3662'
 ht-degree: 0%
@@ -146,14 +146,14 @@ Data di rilascio: 21 dicembre 2020
 
 - ![nuova icona](../../assets/new.svg) **Opzioni comando NGINX**—Sono state aggiunte opzioni comando build per modificare il numero di NGINX `worker_processes` e NGINX `worker_connections` per TLS e servizi Web. Il parametro `worker_process` mantiene la possibilità di impostare il valore su `auto`. Esempi: <!--MCLOUD-7259-->
 
-  ```terminal
+  ```bash
   ./vendor/bin/ece-docker build:compose --nginx-worker-processes=2
   ./vendor/bin/ece-docker build:compose --nginx-worker-connections=2048
   ```
 
 - ![nuova icona](../../assets/new.svg) **Opzione comando TLS**—Aggiunta dell&#39;opzione comando build per creare una configurazione senza il servizio TLS. Esempio: <!--MCLOUD-7259-->
 
-  ```terminal
+  ```bash
   ./vendor/bin/ece-docker build:compose --no-tls
   ```
 

@@ -3,7 +3,7 @@ title: Ripristino da guasto componente
 description: Scopri come ripristinare se un componente non viene distribuito correttamente in Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Deploy
 exl-id: 4855be0c-6883-4ab1-a364-316d10e97250
-source-git-commit: b44d97f82ef09288807c648010202422c9ac04eb
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 0%
@@ -59,7 +59,7 @@ Per eseguire la pulizia dalla distribuzione precedente, identifica il componente
 
    Se viene visualizzato il seguente messaggio, non è necessario eseguire ulteriori operazioni:
 
-   ```terminal
+   ```
    Package "<name>:<version>" listed for update is not installed. Ignoring.
    ```
 

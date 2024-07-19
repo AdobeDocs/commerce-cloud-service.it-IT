@@ -3,7 +3,7 @@ title: Integrazione con GitLab
 description: Scopri come integrare il progetto di infrastruttura cloud Adobe Commerce con GitLab.
 feature: Cloud, Integration
 exl-id: 37fda8a0-7274-422f-9049-243f2e409f26
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '777'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Clona il progetto Adobe Commerce on cloud infrastructure da un ambiente esistent
 
    Risposta prevista:
 
-   ```terminal
+   ```
    origin git@gitlab.com:<user-name>/<repo-name>.git (fetch)
    origin git@gitlab.com:<user-name>/<repo-name>.git (push)
    ```
@@ -117,7 +117,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 
 1. Quando richiesto, immetti `y` per aggiungere l&#39;integrazione.
 
-   ```terminal
+   ```
    Warning: adding a 'gitlab' integration will automatically synchronize code from the external Git repository.
    This means it can overwrite all the code in your project.
    Are you sure you want to continue? [y/N] y
@@ -125,7 +125,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 
 1. Copia l&#39;**URL hook** visualizzato dall&#39;output restituito.
 
-   ```terminal
+   ```
    Hook URL: https://eu-3.magento.cloud/api/projects/3txxjf32gtryos/integrations/eolmpfizzg9lu/hook
    Created integration eolmpfizzg9lu (type: gitlab)
    +----------------------------------+---------------------------------------------------------------------------------------+

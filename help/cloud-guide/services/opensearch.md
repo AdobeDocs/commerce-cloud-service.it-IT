@@ -3,7 +3,7 @@ title: Configura servizio OpenSearch
 description: Scopri come abilitare il servizio OpenSearch per Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Search, Services
 exl-id: 10dc6367-3f90-4ab6-a84e-15e8c3b32a38
-source-git-commit: d4c36b084094846cfad69adc2bffd567a58fab26
+source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
 workflow-type: tm+mt
 source-wordcount: '651'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Il supporto per la versione del servizio e la compatibilità è determinato dall
 
    Nella risposta, trovare l&#39;indirizzo IP e la porta per l&#39;endpoint del servizio OpenSearch:
 
-   ```terminal
+   ```
    +------------------------------------------+--------------------------------------------------------+
    | opensearch:                                                                                       |
    +------------------------------------------+--------------------------------------------------------+
@@ -146,7 +146,7 @@ Il supporto per la versione del servizio e la compatibilità è determinato dall
    curl -XGET <opensearch-service-endpoint-ip-address>:9200
    ```
 
-   ```terminal
+   ```json
    {
       "name" : "opensearch.0",
       "cluster_name" : "opensearch",

@@ -3,7 +3,7 @@ title: Configurare le route
 description: Scopri come definire le route per le richieste HTTPS in arrivo per Adobe Commerce negli ambienti dell’infrastruttura cloud.
 feature: Cloud, Configuration, Routes
 exl-id: a33797e5-14cc-45eb-a048-96180b872a4a
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -286,8 +286,8 @@ http://bar.add-theme-projectID.us.magentosite.cloud/
 
 È possibile visualizzare il pattern di route per i domini non mappati stabilendo una connessione SSH all&#39;ambiente e utilizzando la CLI `magento-cloud` per elencare le route:
 
-```terminal
-web@mymagento.0:~$ vendor/bin/ece-tools env:config:show routes
+```bash
+vendor/bin/ece-tools env:config:show routes
 
 Magento Cloud Routes:
 +------------------------------------------+--------------------------------------------------------------+

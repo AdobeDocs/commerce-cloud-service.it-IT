@@ -3,7 +3,7 @@ title: Eseguire il backup del database
 description: Scopri come utilizzare gli strumenti ECE per creare un backup del database per un progetto di infrastruttura cloud di Adobe Commerce.
 feature: Cloud, Iaas, Storage
 exl-id: 8a96effe-a587-4edf-b0c7-e73ca8d3b56c
-source-git-commit: 4d790bff2ba5d02ef10de5c36a2f0d140e31a407
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '339'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Usa il comando `php vendor/bin/ece-tools db-dump --help` per altre opzioni:
 
    Risposta di esempio:
 
-   ```terminal
+   ```
    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and disables cron jobs before starting the dump process.
    Your site will not receive any traffic until the operation completes.
    Do you wish to proceed with this process? (y/N)? y

@@ -4,7 +4,7 @@ description: Scopri come accedere al tuo account New Relic e gestire l’accesso
 feature: Cloud, Observability
 role: Admin
 exl-id: ee639e2e-4074-4384-8f68-152bc3bac93b
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '833'
 ht-degree: 0%
@@ -129,7 +129,7 @@ Per gli ambienti Starter, abilita l’integrazione New Relic aggiungendo il codi
 
    Risposta di esempio:
 
-   ```terminal
+   ```
     +----------------------+-------------+----------------------+---------+
     | Name                 | Level       | Value                | Enabled |
     +----------------------+-------------+----------------------+---------+

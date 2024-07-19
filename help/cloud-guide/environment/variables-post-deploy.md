@@ -1,18 +1,18 @@
 ---
-title: Variabili di distribuzione di Post
+title: Variabili post-distribuzione
 description: Consulta l’elenco delle variabili di ambiente che controllano le azioni nella fase post-distribuzione di Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
 role: Developer
 exl-id: e460335f-cd2b-4c98-b1ff-32504599b33d
-source-git-commit: 8b02757591c4e8f607e936de4eda74d76953d9b7
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Variabili di distribuzione di Post
+# Variabili post-distribuzione
 
 Le seguenti _variabili post-distribuzione_ controllano le azioni nella fase post-distribuzione e possono ereditare e sostituire i valori dalle [variabili globali](variables-global.md). Inserisci queste variabili nella fase `post-deploy` del file `.magento.env.yaml`:
 
@@ -45,7 +45,7 @@ stage:
 
 Dopo aver specificato le pagine per il test e il commit delle modifiche, il test _Tempo al primo byte_ viene eseguito durante la fase di post-distribuzione e pubblica i risultati per ogni percorso nel registro cloud:
 
-```terminal
+```
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.408s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/checkout/cart","status":200}
 ```
@@ -93,7 +93,7 @@ Personalizzare l&#39;elenco delle pagine utilizzate per precaricare la cache nel
 
 - **più pagine** - Utilizza il seguente formato per memorizzare nella cache più pagine in base a uno specifico modello di espressione regolare:
 
-  ```terminal
+  ```
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 

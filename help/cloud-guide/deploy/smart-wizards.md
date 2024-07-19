@@ -3,7 +3,7 @@ title: Procedure guidate intelligenti
 description: Scopri come utilizzare le procedure guidate intelligenti per valutare se il progetto Adobe Commerce su infrastruttura cloud segue le best practice di distribuzione.
 feature: Cloud, Build, Deploy, SCD
 exl-id: eb79431c-8835-4ae4-b453-9c4932c5d5ac
-source-git-commit: 225fba1acfd8b3ce4d7ce989c7851e7b0b218680
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
@@ -36,13 +36,13 @@ Ad esempio, puoi verificare che la configurazione attivi correttamente la funzio
 
 Una configurazione corretta restituisce:
 
-```terminal
+```
 SCD on-demand is enabled
 ```
 
 Una configurazione non riuscita restituisce:
 
-```terminal
+```
 SCD on-demand is disabled
 ```
 
@@ -50,7 +50,7 @@ SCD on-demand is disabled
 
 La configurazione _ideale_ per il progetto Cloud consente di ridurre al minimo i tempi di inattività della distribuzione riscaldando la cache e generando contenuto statico quando richiesto dall&#39;utente. Questa procedura guidata viene eseguita automaticamente durante il processo di distribuzione. Se il cloud non è configurato per questo _stato ideale_, riceverai un messaggio simile al seguente:
 
-```terminal
+```
 - SCD on build is not configured
 - Post-deploy hook is not configured
 - Skip HTML minification is disabled
@@ -81,6 +81,6 @@ In base all’output, devi apportare le seguenti correzioni alla configurazione:
 
 1. Invia le modifiche al codice ed esegui di nuovo il test. Quando la configurazione è _ideale_, viene visualizzato il seguente messaggio.
 
-   ```terminal
+   ```
    Ideal state is configured
    ```

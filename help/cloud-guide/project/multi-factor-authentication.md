@@ -4,7 +4,7 @@ description: Scopri come gestire i requisiti di autenticazione per l’accesso S
 feature: Cloud, Security
 topic: Security
 exl-id: 754b2c22-f197-49be-a699-fb3bedf053fc
-source-git-commit: ec1e59c3aafae6452ad1590fdb9de37c68b94ed9
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1051'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Il comando `ssh-cert:load` genera il certificato SSH e lo installa nell&#39;agen
 
    >Segui la risposta:
 
-   ```terminal
+   ```
    Please open the following URL in a browser and log in:
    http://127.0.0.1:5000
    
@@ -115,7 +115,7 @@ Per i progetti abilitati con l’applicazione MFA, l’accesso SSH richiede le s
 
    > Risposta di esempio:
 
-   ```terminal
+   ```
    Generating SSH certificate...
      Expires at: 2020-07-13T15:28:13-04:00
      Multi-factor authentication: verified
@@ -132,7 +132,7 @@ Per i progetti abilitati con l’applicazione MFA, l’accesso SSH richiede le s
    ssh abcdef7uyxabce-master-7rqtwti--mymagento@ssh.us-5.magento.cloud
    ```
 
-   ```terminal
+   ```
     __  __                   _          ___ _             _
    |  \/  |__ _ __ _ ___ _ _| |_ ___   / __| |___ _  _ __| |
    | |\/| / _` / _` / -_) ' \  _/ _ \ | (__| / _ \ || / _` |
@@ -167,7 +167,7 @@ Quando gestisci il codice sorgente per i progetti di infrastruttura cloud di Ado
 
    > Risposta di esempio:
 
-   ```terminal
+   ```
    Generating SSH certificate...
      Expires at: 2020-07-13T15:28:13-04:00
      Multi-factor authentication: verified
@@ -186,7 +186,7 @@ Quando gestisci il codice sorgente per i progetti di infrastruttura cloud di Ado
 
    > Risposta di esempio:
 
-   ```terminal
+   ```
    Cloning into 'myproject'...
    Connection to git.us-3.magento.cloud port 22 [tcp/ssh] succeeded!
    remote: counting objects: 22, done.
@@ -218,7 +218,7 @@ L’autenticazione con un token API richiede ancora la generazione di un certifi
 
 1. Al prompt, immetti il valore per un token API valido.
 
-   ```terminal
+   ```
    Please enter an API token:
    >
    
@@ -273,7 +273,7 @@ Utilizzare le informazioni seguenti per risolvere gli errori delle richieste di 
 
 Se la richiesta non fornisce un certificato valido, viene visualizzato un messaggio simile al seguente:
 
-```terminal
+```
 to Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
 authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:>
 (reason: access requires MFA)
@@ -320,7 +320,7 @@ Per risolvere il problema di connessione, provare le procedure di risoluzione de
 
 Se la chiave SSH è mancante o non valida, la richiesta di connessione SSH restituisce un errore `Permission denied (publickey)`.
 
-```terminal
+```
 Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully authenticated, but could not connect to service oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento (reason: service doesn't exist or you do not have access to it)
 oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento@ssh.eu-3.magento.cloud: Permission denied (publickey).
 ```
@@ -337,7 +337,7 @@ ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud
 
 Risposta di esempio:
 
-```terminal
+```
 abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
 ```
 

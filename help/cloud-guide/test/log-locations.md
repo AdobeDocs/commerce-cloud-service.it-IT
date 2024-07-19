@@ -3,7 +3,7 @@ title: Visualizzare e gestire i registri
 description: Comprendi i tipi di file di registro disponibili nell’infrastruttura cloud e dove trovarli.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -44,7 +44,7 @@ magento-cloud ssh -p <project-ID> -e <environment-ID> --all
 
 Risposta di esempio:
 
-```terminal
+```
 1.ent-project-environment-id@ssh.region.magento.cloud
 2.ent-project-environment-id@ssh.region.magento.cloud
 3.ent-project-environment-id@ssh.region.magento.cloud
@@ -84,7 +84,7 @@ Dopo aver inviato le modifiche all&#39;ambiente, è possibile rivedere la regist
 
 Controlla i timestamp sulle voci di registro, verifica e individua i registri per una distribuzione specifica. Di seguito è riportato un esempio sintetico di output di registro che è possibile utilizzare per la risoluzione dei problemi:
 
-```terminal
+```
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
     [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
@@ -129,7 +129,7 @@ magento-cloud log -e <environment-ID> deploy
 
 Risposta di esempio:
 
-```terminal
+```
 Reading log file projectID-branchname-ID--mymagento@ssh.zone.magento.cloud:/var/log/'deploy.log'
 
 [2023-04-24 18:58:03.080678] Launching command 'b'php ./vendor/bin/ece-tools run scenario/deploy.xml\n''.
@@ -153,7 +153,7 @@ magento-cloud ssh -e <environment-ID> "./vendor/bin/ece-tools error:show"
 
 Risposta di esempio:
 
-```terminal
+```
 errorCode: 1001
 stage: build
 step: validate-config
@@ -187,19 +187,19 @@ Analogamente ai registri di distribuzione, i registri dell’applicazione sono u
 | File di registro | Integrazione Starter e Pro | Descrizione |
 | ------------------- | --------------------------- | ------------------------------------------------- |
 | **Registro distribuzione** | `/var/log/deploy.log` | Attività dall&#39;hook [deploy](../application/hooks-property.md). |
-| **Registro distribuzione Post** | `/var/log/post_deploy.log` | Attività dall&#39;[hook post-distribuzione](../application/hooks-property.md). |
+| **Registro post-distribuzione** | `/var/log/post_deploy.log` | Attività dall&#39;[hook post-distribuzione](../application/hooks-property.md). |
 | **Registro Cron** | `/var/log/cron.log` | Output da processi cron. |
 | **Registro accessi Nginx** | `/var/log/access.log` | All’avvio di Nginx, si verificano errori HTTP per le directory mancanti e i tipi di file esclusi. |
 | **Registro errori Nginx** | `/var/log/error.log` | Messaggi di avvio utili per il debug degli errori di configurazione associati a Nginx. |
 | **Registro di accesso PHP** | `/var/log/php.access.log` | Richieste al servizio PHP. |
 | **Registro FPM PHP** | `/var/log/app.log` | |
 
-Per gli ambienti di staging e produzione Pro, i registri di distribuzione, distribuzione Post e Cron sono disponibili solo sul primo nodo del cluster:
+Per gli ambienti di staging e produzione Pro, i registri di distribuzione, post-distribuzione e Cron sono disponibili solo sul primo nodo del cluster:
 
 | File di registro | Pro Staging | Produzione Pro |
 | ------------------- | --------------------------------------------------- | ----------------------------------------------- |
 | **Registro distribuzione** | Solo primo nodo:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Solo primo nodo:<br>`/var/log/platform/<project-ID>/deploy.log` |
-| **Registro distribuzione Post** | Solo primo nodo:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Solo primo nodo:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
+| **Registro post-distribuzione** | Solo primo nodo:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Solo primo nodo:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
 | **Registro Cron** | Solo primo nodo:<br>`/var/log/platform/<project-ID>_stg/cron.log` | Solo primo nodo:<br>`/var/log/platform/<project-ID>/cron.log` |
 | **Registro accessi Nginx** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
 | **Registro errori Nginx** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
@@ -210,7 +210,7 @@ Per gli ambienti di staging e produzione Pro, i registri di distribuzione, distr
 
 I registri delle applicazioni vengono compressi e archiviati una volta al giorno e conservati per un anno. I registri compressi sono denominati utilizzando un ID univoco che corrisponde a `Number of Days Ago + 1`. Ad esempio, negli ambienti di produzione Pro viene memorizzato un registro di accesso PHP per 21 giorni nel passato, denominato come segue:
 
-```terminal
+```
 /var/log/platform/<project-ID>/php.access.log.22.gz
 ```
 
@@ -218,7 +218,7 @@ I file di registro archiviati vengono sempre memorizzati nella directory in cui 
 
 >[!NOTE]
 >
->I file di registro **Distribuzione** e **Distribuzione-Post** non vengono ruotati e archiviati. L&#39;intera cronologia della distribuzione viene scritta all&#39;interno di tali file di registro.
+>I file di registro **Distribuzione** e **Post-distribuzione** non vengono ruotati e archiviati. L&#39;intera cronologia della distribuzione viene scritta all&#39;interno di tali file di registro.
 
 ## Registri del servizio
 
