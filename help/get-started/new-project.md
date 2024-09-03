@@ -4,9 +4,9 @@ description: Scopri come preparare un Adobe di consulente tecnico del cliente pe
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: 89c57a486545d6165e0407f913f4fa4cf6c95abe
+source-git-commit: 374cbe4a119b43ab446905fd6b9e51840094ce61
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '756'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,8 @@ Esempi per i domini Produzione e Staging:
 - `mcstaging.your-store.com`
 
 Per ulteriori informazioni su più domini o su domini univoci, consulta [Configurare più siti Web o store](../cloud-guide/store/multiple-sites.md) nella guida _Commerce on Cloud Infrastructure_.
+
+Se disponi di un account Fastly che collega gli stessi sottodomini e APEX utilizzati sul tuo sito Adobe Commerce, consulta [Più account Fastly e domini assegnati](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains).
 
 ## Dominio e-mail transazionale
 
