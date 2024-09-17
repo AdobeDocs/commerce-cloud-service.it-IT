@@ -4,9 +4,9 @@ description: Scopri come integrare il progetto di infrastruttura cloud Adobe Com
 feature: Cloud, Integration
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: 5305452f-4c8d-438c-ac78-e2e1ec2f8cd9
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: b162faadf114423a7da23ecf94c96eccbcaeb72b
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ Di seguito viene abilitata l’integrazione GitHub e viene fornito un URL di pay
 
 | Opzione | Obbligatorio | Descrizione |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | Sì | URL di base dell&#39;installazione del server, che può essere `https://github.com/` o personalizzato. Ometti questa opzione se l’archivio è ospitato con Github pubblico. |
+| `--base-url` | Sì | URL di base dell&#39;installazione del server, che può essere `https://github.com/` o personalizzato. Ometti questa opzione se l’archivio è ospitato con Github pubblico o se l’archivio non è ospitato su server privati. Ometti questa opzione se l&#39;URL dell&#39;archivio è simile a `https://github.com/{account}/{repository-name}`. Questo può causare errori come `Unable to connect to GitHub: repository not found`. |
 | `--token` | Sì | Token di accesso personale generato per GitHub |
 | `--repository` | Sì | Nome repository: `owner-or-organisation/repository` |
 | `--build-pull-requests` | Facoltativo | Indica ad Adobe Commerce su infrastruttura cloud di distribuire dopo l&#39;unione di una richiesta di pull (`true` per impostazione predefinita) |
