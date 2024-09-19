@@ -3,9 +3,9 @@ title: VCL personalizzato per richieste di blocco
 description: Blocca le richieste in ingresso per indirizzo IP utilizzando un elenco di controllo di accesso (ACL) di Edge con uno snippet VCL personalizzato.
 feature: Cloud, Configuration, Security
 exl-id: 1f637612-3858-49d0-91f7-9b8823933cc9
-source-git-commit: 0e9ace747cc56808108781e42b97c86756089818
+source-git-commit: 16c34b6c693c4d4d5c67b21c79e0cd5d198e047b
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,15 @@ Gli esempi seguenti mostrano come bloccare le richieste utilizzando istruzioni d
 
 >[!WARNING]
 >
->In questi esempi, il codice VCL è formattato come payload JSON che può essere salvato in un file e inviato in una richiesta API Fastly. È possibile inviare lo snippet [VCL dall&#39;amministratore](#add-the-custom-vcl-snippet) o come stringa JSON utilizzando l&#39;API Fastly. Per evitare la convalida quando utilizzi l’API Fastly con una stringa JSON, devi utilizzare una barra rovesciata per eliminare i caratteri speciali.
+>In questi esempi, il codice VCL è formattato come payload JSON che può essere salvato in un file e inviato in una richiesta API Fastly. È possibile inviare lo snippet [VCL dall&#39;amministratore](#add-the-custom-vcl-snippet) o come stringa JSON utilizzando l&#39;API Fastly. Per evitare errori di convalida quando utilizzi l’API Fastly con una stringa JSON, devi utilizzare una barra rovesciata per eliminare i caratteri speciali.
+
+>[!NOTE]
+>Se si invia lo snippet VCL dall&#39;amministratore, estrarre i singoli valori dal codice VCL di esempio e inserirli nei campi corrispondenti. Ad esempio:
+>- Nome: `<name of the VCL>`
+>- Dinamico: `<0/1>`
+>- Tipo: `<type>`
+>- Priorità: `<priority>`
+>- Contenuto: `<content>`
 
 Consulta [Utilizzo di snippet VCL dinamici](https://docs.fastly.com/vcl/vcl-snippets/) nella documentazione di Fastly VCL.
 
