@@ -3,7 +3,7 @@ title: Impostazioni PHP
 description: Scopri le impostazioni PHP ottimali per la configurazione delle applicazioni Commerce nell’infrastruttura cloud.
 feature: Cloud, Configuration, Extensions
 exl-id: b4180265-f7a1-48e4-8c23-27835253e171
-source-git-commit: 94c1e16a07567471d446478e3bd2a33977247ef3
+source-git-commit: 9d20cd11e541d343af158eb3eadcf641fb2751bd
 workflow-type: tm+mt
 source-wordcount: '536'
 ht-degree: 0%
@@ -118,6 +118,7 @@ I requisiti del modulo PHP sono legati alla versione Adobe Commerce. Consulta [R
 
 Per i progetti Pro, le seguenti estensioni richiedono supporto aggiuntivo per l’installazione:
 
+- `ioncube`
 - `sourceguardian`
 
 Ad esempio, per impostare PHP in modo che esegua solo script protetti da SourceGuardian in tutti gli ambienti, è necessario impostare nel file `php.ini` l&#39;opzione seguente:
