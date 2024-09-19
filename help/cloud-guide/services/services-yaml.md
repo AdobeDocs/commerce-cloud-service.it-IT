@@ -3,16 +3,21 @@ title: Configurare i servizi
 description: Scopri come configurare i servizi utilizzati da Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Configuration, Services
 exl-id: 48091c10-c53f-4aad-afbe-b4516653bda1
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 0262fca6e94d9815e8af0fb0c026e36fecc1f939
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1046'
 ht-degree: 0%
 
 ---
 
 # Configurare i servizi
 
-Il file `services.yaml` definisce i servizi supportati e utilizzati da Adobe Commerce nell&#39;infrastruttura cloud, ad esempio MySQL, Redis e Elasticsearch o OpenSearch. Non è necessario iscriversi a provider di servizi esterni. Il file si trova nella directory `.magento` del progetto.
+Il file `services.yaml` definisce i servizi supportati e utilizzati da Adobe Commerce nell&#39;infrastruttura cloud, ad esempio MySQL, Redis e Elasticsearch o OpenSearch. Non è necessario iscriversi a provider di servizi esterni.
+
+>[!NOTE]
+>
+>Il file `.magento/services.yaml` è gestito localmente nella directory `.magento` del progetto. La configurazione è accessibile durante il processo di build per definire le versioni del servizio richieste solo nell’ambiente di integrazione e viene rimossa al termine della distribuzione, in modo da non trovarle sul server.
+
 
 Lo script di distribuzione utilizza i file di configurazione nella directory `.magento` per eseguire il provisioning dell&#39;ambiente con i servizi configurati. Un servizio diventa disponibile per l&#39;applicazione se è incluso nella proprietà [`relationships`](../application/properties.md#relationships) del file `.magento.app.yaml`. Il file `services.yaml` contiene i valori _type_ e _disk_. Il tipo di servizio definisce il servizio _name_ e _version_.
 
