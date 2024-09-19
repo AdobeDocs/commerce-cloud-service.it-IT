@@ -3,9 +3,9 @@ title: Proprietà
 description: Utilizzare l'elenco delle proprietà come riferimento durante la configurazione dell'applicazione  [!DNL Commerce]  per la compilazione e la distribuzione nell'infrastruttura cloud.
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 1d671d7d2b9ef8742f50b23aa56020d82c701fa4
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '816'
 ht-degree: 0%
 
 ---
@@ -141,6 +141,8 @@ La dimensione minima consigliata del disco è 256 MB. Se viene visualizzato l&#3
 >[!NOTE]
 >
 >Per gli ambienti di produzione e staging Pro, è necessario [inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per aggiornare la configurazione `mounts` e `disk` per l&#39;applicazione. Quando si invia il ticket, indicare le modifiche di configurazione richieste e includere una versione aggiornata del file `.magento.app.yaml`.
+>
+>Non è possibile aumentare temporaneamente lo storage su disco in Staging o Produzione; questo processo non è reversibile.
 
 ## `relationships`
 
