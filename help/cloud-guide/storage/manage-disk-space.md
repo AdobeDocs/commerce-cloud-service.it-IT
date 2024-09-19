@@ -3,7 +3,7 @@ title: Gestione dello spazio su disco
 description: Scopri come gestire lo spazio su disco utilizzando l’interfaccia della riga di comando.
 feature: Cloud, Storage
 exl-id: 480cb33b-ac83-441d-946e-5b4de09ad84e
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 0cc0b8e49e2cccf4266ecf84ef935f24fde1c7a4
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 0%
@@ -93,7 +93,7 @@ df -h
 
 L&#39;opzione `-h` visualizza il report in un formato leggibile (KB, MB o GB).
 
-Nella seguente risposta di esempio, il mount `/mnt/shared` mostra lo spazio su disco per il supporto e il mount `/data/mysql/` mostra lo spazio su disco per il database:
+Nella seguente risposta di esempio, il mount `/data/exports` mostra lo spazio su disco per il supporto e il mount `/data/mysql/` mostra lo spazio su disco per il database:
 
 ```
 Filesystem                                    Size  Used Avail Use% Mounted on
