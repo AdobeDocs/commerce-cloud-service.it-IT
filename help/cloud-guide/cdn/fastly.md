@@ -3,9 +3,9 @@ title: Panoramica dei servizi Fastly
 description: Scopri in che modo i servizi Fastly inclusi nell’infrastruttura cloud di Adobe Commerce consentono di ottimizzare e proteggere le operazioni di distribuzione dei contenuti per i siti Adobe Commerce.
 feature: Cloud, Configuration, Iaas, Paas, Cache, Security, Services
 exl-id: dc4500bf-f037-47f0-b7ec-5cd1291f73a1
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: dc331df378074af8a8776a33784b73082a39cf10
 workflow-type: tm+mt
-source-wordcount: '1392'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Fastly fornisce i seguenti servizi per ottimizzare e proteggere le operazioni di
 
 - **Sicurezza** - Dopo aver attivato i servizi Fastly per i siti Adobe Commerce, sono disponibili ulteriori funzionalità di sicurezza per proteggere i siti e la rete:
 
-   - [Web Application Firewall](fastly-waf-service.md) (WAF): servizio firewall per applicazioni Web gestito che fornisce protezione conforme a PCI per bloccare il traffico dannoso prima che possa danneggiare l&#39;Adobe Commerce di produzione sui siti e sulla rete dell&#39;infrastruttura cloud. Il servizio WAF è disponibile solo negli ambienti Pro e Starter Production.
+   - [Firewall applicazione Web](fastly-waf-service.md) (WAF): servizio firewall applicazione Web gestito che fornisce protezione conforme a PCI per bloccare il traffico dannoso prima che possa danneggiare l&#39;Adobe Commerce di produzione sui siti e sulla rete dell&#39;infrastruttura cloud. Il servizio WAF è disponibile solo negli ambienti di produzione Pro e Starter.
 
    - [Protezione Distributed Denial of Service (DDoS)](#ddos-protection): protezione DDoS incorporata contro attacchi comuni quali Ping of Death, Smurf e altri attacchi di tipo Flood basati su ICMP.
 
@@ -42,7 +42,7 @@ Fastly fornisce i seguenti servizi per ottimizzare e proteggere le operazioni di
 
      Adobe Commerce fornisce un certificato SSL/TLS crittografato con convalida del dominio per ogni ambiente di staging e produzione. Adobe Commerce completa la convalida del dominio e il provisioning dei certificati durante il processo di configurazione Fastly.
 
-- **Mascheramento origine** - Impedisce al traffico di aggirare Fastly WAF e nasconde gli indirizzi IP dei server di origine per proteggerli dall&#39;accesso diretto e dagli attacchi DDoS.
+- **Mascheramento origine** - Impedisce al traffico di aggirare Fastly WAF e nasconde gli indirizzi IP dei server di origine per proteggerli da accessi diretti e attacchi DDoS.
 
   Il cloaking dell’origine è abilitato per impostazione predefinita nei progetti di produzione Pro dell’infrastruttura cloud in Adobe Commerce. Per abilitare il cloaking dell&#39;origine su Adobe Commerce nei progetti di Starter Production dell&#39;infrastruttura cloud, invia un [ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). Se si dispone di traffico che non richiede il caching, è possibile personalizzare la configurazione del servizio Fastly per consentire alle richieste di [ignorare la cache Fastly](fastly-vcl-bypass-to-origin.md).
 
@@ -58,7 +58,9 @@ Al momento del provisioning iniziale o dell’aggiornamento del progetto Adobe C
 
 ## Account servizio Fastly e credenziali
 
-Adobe Commerce su progetti di infrastruttura cloud non richiedono un account Fastly o un proprietario dell’account dedicato. Al contrario, ogni ambiente di staging e produzione dispone di credenziali Fastly univoche (token API e ID servizio) per configurare e gestire i servizi Fastly dall’amministratore. Sono inoltre necessarie le credenziali per inviare le richieste API Fastly.
+Adobe Commerce sui progetti di infrastruttura cloud non dispone di un account Fastly dedicato. Il servizio Fastly viene gestito in un account centralizzato registrato da Adobe e il dashboard di gestione è accessibile solo al team di supporto Cloud.
+
+Al contrario, ogni ambiente di staging e produzione dispone di credenziali Fastly univoche (token API e ID servizio) per configurare e gestire i servizi Fastly dall’amministratore di Commerce. L’API Fastly è disponibile per eseguire la gestione avanzata del servizio Fastly, che richiederà le credenziali per inviare tali richieste.
 
 Durante il provisioning del progetto, Adobe aggiunge il progetto all’account Fastly Service per Adobe Commerce sull’infrastruttura cloud e aggiunge le credenziali Fastly alla configurazione per gli ambienti di staging e produzione. Vedi [Ottieni credenziali rapide](fastly-configuration.md#get-fastly-credentials).
 
