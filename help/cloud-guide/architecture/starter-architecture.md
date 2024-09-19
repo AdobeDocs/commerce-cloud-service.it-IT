@@ -3,9 +3,9 @@ title: Architettura iniziale
 description: Scopri gli ambienti supportati dall’architettura Starter.
 feature: Cloud, Paas
 exl-id: 03365d32-4eb4-42d4-82a7-771df5e7b3da
-source-git-commit: c61d711b1041ecf76ec6468cd225a34fd77c24b1
+source-git-commit: e5cb79cab4e22d1c787859ab98e6bab6cd2dc2eb
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '942'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,9 @@ Gli ambienti di integrazione sono progettati per test e sviluppo limitati. Ad es
 
 Per ottenere le migliori prestazioni nell’ambiente di integrazione, segui queste best practice:
 
-- Limita dimensioni catalogo
+- Limita la dimensione del catalogo: per riferimento, i dati di esempio contengono circa 2.048 prodotti. Prova a ridurre la dimensione del catalogo a circa 4.000-5.000 prodotti.
+
+- Riduci il numero di gruppi di clienti: troppi gruppi di clienti possono influire sulle prestazioni di indicizzazione e sulle prestazioni complessive.
 
 - Limita l&#39;utilizzo a uno o due utenti simultanei
 
