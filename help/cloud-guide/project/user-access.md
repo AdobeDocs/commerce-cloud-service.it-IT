@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 5e4be034a392716ea55e2878d336cb9ecac1e052
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1459'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 I progetti Adobe Commerce sull’infrastruttura cloud utilizzano l’accesso basato sui ruoli. A livello di progetto sono disponibili due ruoli:
 
-- **Amministratore progetto**—Accesso in scrittura a tutti gli ambienti di progetto e può gestire utenti, inviare codice e aggiornare le impostazioni del progetto.
+- **Amministratore progetto**—Accesso in scrittura a tutti gli ambienti di progetto e può gestire utenti, inviare codice e aggiornare le impostazioni del progetto. (Precedentemente noto come **Amministratore privilegiato**)
 - **Visualizzatore progetti**—Accesso in sola visualizzazione a tutti gli ambienti di progetto.
 
 I visualizzatori dei progetti non possono eseguire attività in alcun ambiente; tuttavia, è possibile concedere ai visualizzatori dei progetti l&#39;accesso in scrittura a un tipo di ambiente specifico.
