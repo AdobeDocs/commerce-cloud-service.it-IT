@@ -4,9 +4,9 @@ description: Scopri gli ambienti supportati dall’architettura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 95b033ba430cb5dc74fa654b9d519dfcd5b6d319
+source-git-commit: eccf69d792f5f8bbd32fb24ac731fffa1eeb91ba
 workflow-type: tm+mt
-source-wordcount: '1472'
+source-wordcount: '1511'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,9 @@ Gli ambienti di integrazione sono progettati per test e sviluppo limitati prima 
 
 Per ottenere le migliori prestazioni nell’ambiente di integrazione, segui queste best practice:
 
-- Limita dimensioni catalogo
+- Limita la dimensione del catalogo: per riferimento, i dati di esempio contengono circa 2.048 prodotti. Prova a ridurre la dimensione del catalogo a circa 4.000-5.000 prodotti.
+
+- Riduci il numero di gruppi di clienti: troppi gruppi di clienti possono influire sulle prestazioni di indicizzazione e sulle prestazioni complessive.
 
 - Limita l&#39;utilizzo a uno o due utenti simultanei
 
