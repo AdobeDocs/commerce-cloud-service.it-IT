@@ -3,9 +3,9 @@ title: Configurare la distribuzione dell'applicazione
 description: Scopri come configurare le proprietà nel file di configurazione dell'applicazione che controllano il modo in cui l'applicazione  [!DNL Commerce]  genera e distribuisce nell'ambiente Cloud.
 feature: Cloud, Configuration, Build, Deploy
 exl-id: 900da20d-98d2-4c9f-97ec-578aee775b55
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: c9339137d957840a9ae33ed45950c613eea93660
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '184'
 ht-degree: 0%
 
 ---
@@ -22,3 +22,7 @@ Utilizzare il file `.magento.app.yaml` per definire i seguenti valori di configu
 - [Proprietà variabili](variables-property.md) - Esaminare le variabili di ambiente necessarie per la versione dell&#39;applicazione [!DNL Commerce].
 - [Impostazioni PHP](php-settings.md)—Configurare le opzioni PHP di runtime.
 - [Imposta cache per file statici](set-cache.md) - Imposta TTL cache per file multimediali e statici.
+
+>[!NOTE]
+>
+>Il file `.magento.app.yaml` è gestito localmente o nell&#39;archivio Git. La configurazione viene letta solo ai fini del processo di distribuzione e compilazione e viene rimossa al termine della distribuzione, pertanto non sarà possibile trovarla sul server.
