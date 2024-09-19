@@ -2,9 +2,9 @@
 title: Servizio e-mail SendGrid
 description: Scopri il servizio e-mail SendGrid per Adobe Commerce sull’infrastruttura cloud e come verificare la configurazione DNS.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 1226be333deb1b1da402b4c0d2e141f9be1eb93b
+source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
 workflow-type: tm+mt
-source-wordcount: '1128'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ DKIM è una tecnologia di autenticazione e-mail che consente ai provider di serv
 
 >[!WARNING]
 >
->Le firme DKIM di SendGrid e il supporto dell’autenticazione di dominio sono disponibili solo per i progetti Pro e non per i progetti Starter. Di conseguenza, le e-mail transazionali in uscita potrebbero essere segnalate da filtri anti-spam. L’utilizzo di DKIM migliora la velocità di consegna in quanto mittente di e-mail autenticato. Per migliorare il tasso di consegna dei messaggi, puoi effettuare l’aggiornamento da Starter a Pro oppure utilizzare il tuo server SMTP o il provider di servizi di consegna e-mail. Consulta [Configurare le connessioni e-mail](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) nella _Guida di Admin Systems_.
+>Le firme DKIM di SendGrid e il supporto dell’autenticazione del dominio sono disponibili solo negli ambienti di produzione e staging per i progetti Pro, ma non per tutti gli ambienti Starter. Di conseguenza, le e-mail transazionali in uscita potrebbero essere segnalate da filtri anti-spam. L’utilizzo di DKIM migliora la velocità di consegna in quanto mittente di e-mail autenticato. Per migliorare il tasso di consegna dei messaggi, puoi effettuare l’aggiornamento da Starter a Pro oppure utilizzare il tuo server SMTP o il provider di servizi di consegna e-mail. Consulta [Configurare le connessioni e-mail](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) nella _Guida di Admin Systems_.
 
 ### Autenticazione del mittente e del dominio
 
@@ -137,3 +137,13 @@ Non vi sono limiti rigidi al numero di e-mail che possono essere inviate nell’
 ### Reputazione dell’invio e-mail
 
 La reputazione di invio di un’e-mail è un punteggio assegnato da un provider di servizi Internet (ISP) a una società che invia messaggi e-mail. Più alto è il punteggio, più alta è la probabilità che un ISP distribuisca messaggi alla casella in entrata di un destinatario. Se il punteggio scende al di sotto di un certo livello, l’ISP può indirizzare i messaggi alla cartella di posta indesiderata dei destinatari o persino rifiutare completamente i messaggi. Il punteggio di reputazione è determinato da diversi fattori, come una media di 30 giorni degli indirizzi IP rispetto ad altri indirizzi IP e la percentuale di reclami per spam. Consulta [8 Modi per controllare la reputazione di invio delle e-mail](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation).
+
+### Elenchi di soppressione delle e-mail
+
+Un elenco di soppressione delle e-mail è un elenco di destinatari a cui le e-mail non devono essere inviate se così facendo si danneggia la reputazione del mittente e le percentuali di consegna. È richiesto dalla legge CAN-SPAM per garantire che i mittenti delle e-mail abbiano un metodo di rinuncia ai destinatari che hanno annullato l’abbonamento o contrassegnato le e-mail come spam. L’elenco di soppressione raccoglie anche e-mail non consegnate, bloccate o non valide.
+
+Per evitare che le e-mail vengano inviate alla cartella di posta indesiderata, segui l&#39;articolo sulle best practice di Sendgrid, [Why Are My Emails Going to Spam?](https://sendgrid.com/en-us/blog/10-tips-to-keep-email-out-of-the-spam-folder) (Perché le e-mail verranno inviate allo spam).
+
+Se alcuni destinatari non ricevono le e-mail, puoi [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) per richiedere una revisione degli elenchi di soppressione e rimuovere i destinatari, se necessario.
+
+Per ulteriori dettagli, fare riferimento a [Cos&#39;è un elenco di soppressione?](https://sendgrid.com/en-us/blog/what-is-a-suppression-list)
