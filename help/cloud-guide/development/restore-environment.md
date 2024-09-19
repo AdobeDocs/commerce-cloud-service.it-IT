@@ -4,16 +4,16 @@ description: Scopri come disinstallare l’applicazione Adobe Commerce da un pro
 role: Developer
 topic: Development
 exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 9e4e58d2470b73b221168c182c7d563ce6f6502f
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
 
 # Ripristinare un ambiente
 
-Se si verificano problemi nell&#39;ambiente di integrazione e non si dispone di un [backup valido](../storage/snapshots.md), provare a ripristinare l&#39;ambiente utilizzando uno dei metodi seguenti:
+Se si verificano problemi nell&#39;ambiente di integrazione e non si dispone di un [backup valido](../storage/snapshots.md) o si desidera reimpostare l&#39;ambiente su una lavagna vuota, è possibile ripristinare/reimpostare l&#39;ambiente utilizzando uno dei metodi seguenti:
 
 - Ripristina o ripristina il codice nel ramo Git
 - Disinstalla l&#39;applicazione [!DNL Commerce]
