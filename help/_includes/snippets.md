@@ -1,7 +1,7 @@
 ---
-source-git-commit: 762ce3cb6268401b0f5fae5b2280a870aa9c83a5
+source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,12 @@ Impostare l&#39;opzione `_merge` su una delle opzioni seguenti:
 ## Supporto dei servizi Pro {#pro-update-service}
 
 >[!TIP]
+>
 >Per i progetti Pro, è necessario [inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per installare o aggiornare [servizi](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) solo negli ambienti `Staging` e `Production`.
 >
 >Indicare le modifiche necessarie al servizio, includere i file `.magento.app.yaml` e `services.yaml` aggiornati e indicare la versione PHP nel ticket. Per le modifiche self-service alle impostazioni di versione PHP, estensioni o ambiente, vedere [Impostazioni PHP](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _Configurazione applicazione_.
 >
->Per le modifiche a un ambiente di produzione _live_ (**Solo Pro**), devi fornire un preavviso minimo di 48 ore per consentire al team di infrastruttura cloud di disporre del tempo sufficiente per eseguire il marshalling delle risorse e eseguire un aggiornamento sicuro. Il periodo di preavviso non include i fine settimana. Ad esempio, se si desidera che gli aggiornamenti del servizio vengano eseguiti il lunedì, è necessario inviare la richiesta entro il mercoledì precedente.
+>Per le modifiche a un ambiente di produzione live (**Solo Pro**), è necessario un preavviso minimo di 48 ore. Questo consente al team dell’infrastruttura Cloud di disporre del tempo sufficiente per eseguire il marshalling delle risorse e eseguire un aggiornamento sicuro. Il periodo di preavviso inizia quando il team dell&#39;infrastruttura riconosce la richiesta e pianifica l&#39;aggiornamento, esclusi i fine settimana. Ad esempio, per completare gli aggiornamenti del servizio il lunedì, è necessario ricevere una conferma dell&#39;aggiornamento pianificato entro mercoledì. Durante i periodi di picco della domanda, l&#39;elaborazione della richiesta potrebbe richiedere più tempo.
 
 ## Backup Pro {#pro-backups}
 
