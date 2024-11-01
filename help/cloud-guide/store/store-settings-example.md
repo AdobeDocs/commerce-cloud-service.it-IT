@@ -2,9 +2,9 @@
 title: Esempio di gestione delle impostazioni specifiche del sistema
 description: Vedi un esempio di come gestire e sincronizzare le impostazioni di configurazione dell’archivio in tutti gli ambienti Adobe Commerce sull’infrastruttura cloud.
 hidefromtoc: true
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Nell&#39;esempio viene utilizzata la procedura seguente definita in [Impostazion
 
 Ad esempio, è possibile impostare le seguenti impostazioni:
 
-* Disabilita [impostazioni locali](https://glossary.magento.com/locale) e impostazioni di ottimizzazione dei file statici nell&#39;ambiente di integrazione
+* Disattivazione delle impostazioni di ottimizzazione dei file locali e statici nell’ambiente di integrazione
 * Abilitare l’ottimizzazione dei file statici negli ambienti di staging e produzione
 * Configurare Fastly in staging e produzione con credenziali specifiche per ciascuno
 
@@ -56,7 +56,7 @@ Nell’ambiente di integrazione, puoi accedere all’amministratore per modifica
    ![Modifica impostazioni locali](../../assets/locale-options.png)
 
 1. Fai clic su **Salva configurazione**.
-1. Se richiesto, [svuotare la cache](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Se richiesto, [svuotare la cache](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
 1. Esci dall’Admin.
 
 ## Esportare i valori e trasferire config.php nel sistema locale
@@ -159,7 +159,7 @@ Aggiungere i valori di configurazione nell’ambiente di integrazione Admin. In 
 1. Nel riquadro di destra espandere **Impostazioni JavaScript**.
 1. Nell&#39;elenco **Unisci file JavaScript** fare clic su **Sì**.
 1. Fai clic su **Salva configurazione**.
-1. Se richiesto, [svuotare la cache](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Se richiesto, [svuotare la cache](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
 1. Esci dall’Admin.
 
 Eseguendo nuovamente il comando dump, la nuova configurazione viene aggiunta al file.

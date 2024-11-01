@@ -3,7 +3,7 @@ title: Best practice per la configurazione dell’archivio
 description: Scopri le best practice per configurare il tuo store su Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Best Practices
 exl-id: 01f528bd-74c2-42e7-8e77-7e6f57a40ef4
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Per creare una regola di prezzo, vedere [Guida utente di Adobe Commerce](https:/
 
 Di seguito è riportato un esempio di creazione di una regola di prezzo per uno sconto Solo primo ordine. Per questo sconto, si desidera:
 
-* Crea una regola di prezzo con un [segmento cliente](https://docs.magento.com/user-guide/marketing/customer-segment-price-rule.html) con una condizione: Numero totale di ordini inferiore a 1
+* Crea una regola di prezzo con un [segmento cliente](https://experienceleague.adobe.com/en/docs/commerce-admin/customers/segments/customer-segment-price-rule) con una condizione: Numero totale di ordini inferiore a 1
 * Aggiungi questo segmento di clienti come condizione alla regola del carrello
 * Facoltativo - Aggiungi condizioni e regole per applicare gli sconti a SKU o categorie di prodotti specifiche per acquisti mirati
 
@@ -90,4 +90,4 @@ Di seguito sono riportati alcuni esempi per spiegare meglio:
 
 >[!WARNING]
 >
->I dati del catalogo aumentano con l’aumentare del numero di siti web e store. A seconda dell’architettura del progetto, gli archivi aggiuntivi possono comportare un processo di indicizzazione più lungo e tempi di risposta più lenti per le pagine di catalogo non memorizzate nella cache. L’Adobe consiglia di monitorare attentamente le prestazioni del sito.
+>I dati del catalogo aumentano con l’aumentare del numero di siti web e store. A seconda dell’architettura del progetto, gli archivi aggiuntivi possono comportare un processo di indicizzazione più lungo e tempi di risposta più lenti per le pagine di catalogo non memorizzate nella cache. Adobe consiglia di monitorare attentamente le prestazioni del sito.

@@ -3,9 +3,9 @@ title: Configurare i servizi Fastly
 description: Scopri come impostare e configurare i servizi Fastly per il tuo progetto Adobe Commerce.
 feature: Cloud, Configuration, Iaas, Cache, Security
 exl-id: c53ff3bd-3df2-45fb-933e-d3b29f7edf4e
-source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1960'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Fastly è richiesto per Adobe Commerce sugli ambienti di staging e produzione dell’infrastruttura cloud.
 
-Fastly funziona con Varnish per fornire funzionalità di caching rapido e una [rete di distribuzione dei contenuti](https://glossary.magento.com/content-delivery-network) (CDN) per le risorse statiche. Fastly fornisce anche un web application firewall (WAF) per proteggere il sito e l’infrastruttura cloud. Per proteggere il sito e l’infrastruttura Cloud da traffico e attacchi dannosi, indirizza tutto il traffico del sito in ingresso tramite Fastly.
+Fastly funziona con Varnish per fornire funzionalità di caching veloci e una rete per la distribuzione di contenuti (CDN) per le risorse statiche. Fastly fornisce anche un firewall per applicazioni web (WAF) per proteggere il sito e l’infrastruttura cloud. Per proteggere il sito e l’infrastruttura Cloud da traffico e attacchi dannosi, indirizza tutto il traffico del sito in ingresso tramite Fastly.
 
 >[!NOTE]
 >
@@ -64,7 +64,7 @@ Il metodo di visualizzazione delle credenziali è diverso per i progetti Pro e S
 
 >[!NOTE]
 >
->Se non riesci a trovare le credenziali Fastly per gli ambienti di staging o produzione, contatta l’Adobe Customer Technical Advisor (CTA).
+>Se non riesci a trovare le credenziali Fastly per gli ambienti di staging o produzione, contatta il tuo Adobe Customer Technical Advisor (CTA).
 
 ## Abilita Fastly caching
 
@@ -104,7 +104,7 @@ Per abilitare e configurare i servizi Fastly sono necessari i seguenti component
 
    >[!NOTE]
    >
-   >Non selezionare il collegamento per creare il token API Fastly. Utilizza invece le [credenziali Fastly (ID servizio e token API) fornite dall&#39;Adobe](#get-fastly-credentials) fornito dall&#39;Adobe.
+   >Non selezionare il collegamento per creare il token API Fastly. Utilizza invece le [credenziali Fastly (ID servizio e token API) fornite da Adobe](#get-fastly-credentials) fornite da Adobe.
 
 1. Fare clic su **Verifica credenziali**.
 
@@ -136,13 +136,13 @@ Dopo aver abilitato il modulo Fastly, caricare il codice [VCL predefinito](https
 
 ## Provisioning dei certificati SSL/TLS
 
-L’Adobe fornisce un certificato SSL/TLS crittografato con convalida di dominio per distribuire traffico HTTPS sicuro da Fastly. Adobe fornisce un certificato per ogni ambiente Pro Production, Staging e Starter Production per proteggere tutti i domini in tale ambiente. Per informazioni dettagliate sul certificato fornito, vedi [Adobe di certificati SSL (TLS) per Adobe Commerce sull&#39;infrastruttura cloud](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/ssl-tls-certificates-for-magento-commerce-cloud-faq.html).
+Adobe fornisce un certificato SSL/TLS crittografato e convalidato dal dominio per gestire il traffico HTTPS protetto da Fastly. Adobe fornisce un certificato per ogni ambiente Pro Production, Staging e Starter Production per proteggere tutti i domini in tale ambiente. Per informazioni dettagliate sul certificato fornito, consulta [Certificati SSL (TLS) di Adobe per Adobe Commerce sull&#39;infrastruttura cloud](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/ssl-tls-certificates-for-magento-commerce-cloud-faq.html).
 
 >[!NOTE]
 >
->Puoi fornire un certificato TLS o SSL personalizzato invece di utilizzare il certificato Let&#39;s Encrypt fornito da Adobe. Tuttavia, questo processo richiede un lavoro aggiuntivo per l&#39;impostazione e la manutenzione. Per scegliere questa opzione, invia un ticket di supporto Adobe Commerce o utilizza l’Adobe per aggiungere certificati personalizzati in hosting al tuo Adobe Commerce negli ambienti dell’infrastruttura cloud.
+>Puoi fornire un certificato TLS o SSL personalizzato invece di utilizzare il certificato Let&#39;s Encrypt fornito da Adobe. Tuttavia, questo processo richiede un lavoro aggiuntivo per l&#39;impostazione e la manutenzione. Per scegliere questa opzione, invia un ticket di supporto Adobe Commerce o collabora con Adobe per aggiungere certificati personalizzati in hosting al tuo Adobe Commerce negli ambienti dell’infrastruttura cloud.
 
-Per abilitare i certificati SSL/TLS per gli ambienti Adobe Commerce, l’automazione degli Adobi completa i seguenti passaggi:
+Per abilitare i certificati SSL/TLS per gli ambienti Adobe Commerce, l’automazione Adobe completa i seguenti passaggi:
 
 - Convalida la proprietà del dominio
 - Esegue il provisioning di un certificato SSL/TLS crittografato che copre domini principali e sottodomini specifici per gli archivi
@@ -188,7 +188,7 @@ Per instradare il traffico dagli URL dell’archivio al servizio Fastly, aggiorn
 
 - Abilita il modulo Fastly.
 - Carica il codice VCL Fastly predefinito.
-- Fornisci un elenco di domini principali e secondari per ogni ambiente da Adobe, oppure invia un ticket di supporto Adobe Commerce.
+- Fornisci un elenco dei domini principali e secondari per ciascun ambiente da Adobe, oppure invia un ticket di supporto Adobe Commerce.
 - Attendi la conferma che i domini specificati siano stati aggiunti agli ambienti cloud.
 - Nei progetti Starter, aggiungi i domini alla configurazione del servizio Fastly. Vedi [Gestione domini](fastly-custom-cache-configuration.md#manage-domains).
 - Per informazioni sull&#39;aggiornamento della configurazione DNS, verificare con il [registrar DNS](https://lookup.icann.org/) il metodo corretto per il servizio di dominio.
@@ -220,7 +220,7 @@ Per instradare il traffico dagli URL dell’archivio al servizio Fastly, aggiorn
 
    >[!NOTE]
    >
-   >I record di verifica ACME in questo esempio sono segnaposto che non sono destinati al provisioning dei siti di staging e produzione di Adobe Commerce. Ottieni le informazioni corrette sui record di verifica ACME per il tuo progetto contattando un Adobe.
+   >I record di verifica ACME in questo esempio sono segnaposto che non sono destinati al provisioning dei siti di staging e produzione di Adobe Commerce. Ottieni le informazioni corrette sui record di verifica ACME per il tuo progetto contattando Adobe.
 
    Dopo l’aggiunta dei record CNAME, Adobe convalida i domini e esegue il provisioning del certificato SSL/TLS per l’ambiente. Quando aggiorni la configurazione DNS per instradare il traffico da questi domini al servizio Fastly, Adobe carica il certificato nell’ambiente.
 

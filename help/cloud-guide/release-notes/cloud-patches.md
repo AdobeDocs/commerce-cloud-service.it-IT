@@ -4,9 +4,9 @@ description: Consulta un elenco degli ultimi miglioramenti al pacchetto Patch cl
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2256'
 ht-degree: 0%
 
 ---
@@ -121,7 +121,7 @@ Patch critica per Adobe Commerce 2.3.3-p1 e versioni successive:
 
 Sono state aggiornate le patch per risolvere una vulnerabilità **critica** con conseguente esecuzione di codice remoto non autenticato.<!-- MCLOUD-8479 -->
 
-Vedi [Bollettino sulla sicurezza di Adobe APSB22-12](https://helpx.adobe.com/security/products/magento/apsb22-12.html).
+Vedi [Bollettino sulla sicurezza APSB22-12](https://helpx.adobe.com/security/products/magento/apsb22-12.html) di Adobe.
 
 ## v1.0.15
 
@@ -138,7 +138,7 @@ Patch critica per Adobe Commerce 2.3.3-p1 e versioni successive:
 
 È stata aggiunta una patch per risolvere una vulnerabilità **critica** con conseguente esecuzione di codice remoto non autenticato.<!-- MCLOUD-8461 -->
 
-Vedi [Bollettino sulla sicurezza di Adobe APSB22-12](https://helpx.adobe.com/security/products/magento/apsb22-12.html).
+Vedi [Bollettino sulla sicurezza APSB22-12](https://helpx.adobe.com/security/products/magento/apsb22-12.html) di Adobe.
 
 ## v1.0.13
 
@@ -154,7 +154,7 @@ Data di rilascio: 12 agosto 2021
 
 Patch critica per Adobe Commerce 2.4.3 e 2.3.7-p1:
 
-- **Problema con il limite di velocità API**. Questa patch corregge un limite di velocità predefinito che impediva alle API Web di elaborare richieste con più di 20 elementi in un array. Questa patch aumenta il valore predefinito del limite di velocità. Consulta le note sulla versione di Adobe Commerce [2.4.3](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-3.html#apply-mc-43048__set_rate_limits__243patch-to-address-issue-with-api-rate-limiting) e [2.3.7](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html#apply-mc-43048__set_rate_limits__237-p1patch-to-address-issue-with-api-rate-limiting).<!-- MC-43048 -->
+- **Problema con il limite di velocità API**. Questa patch corregge un limite di velocità predefinito che impediva alle API Web di elaborare richieste con più di 20 elementi in un array. Questa patch aumenta il valore predefinito del limite di velocità. Consulta le note sulla versione di Adobe Commerce [2.4.3](https://experienceleague.adobe.com/en/docs/commerce-operations/release/notes/adobe-commerce/2-4-3#apply-mc-43048__set_rate_limits__243patch-to-address-issue-with-api-rate-limiting).<!-- MC-43048 -->
 
 ## v1.0.11
 
@@ -222,7 +222,7 @@ Data di rilascio:
 
 Data di rilascio: 26 giugno 2020
 
-- **Miglioramenti delle prestazioni Redis** - Aggiunge le funzionalità di ottimizzazione Redis alle versioni 2.3.3 e 2.3.4 di Adobe Commerce. Queste correzioni sono state incluse nella versione 2.3.5 di Adobe Commerce. Consulta [Miglioramenti delle prestazioni](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) nelle _Note sulla versione di Adobe Commerce 2.3.5_.<!--MCLOUD-5771-->
+- **Miglioramenti delle prestazioni Redis** - Aggiunge le funzionalità di ottimizzazione Redis alle versioni 2.3.3 e 2.3.4 di Adobe Commerce. Queste correzioni sono state incluse nella versione 2.3.5 di Adobe Commerce.<!--MCLOUD-5771-->
 
 - **New Relic log enricher** - Aggiunge l&#39;interfaccia del processore Monolog necessaria per supportare i miglioramenti alle funzionalità di registrazione di New Relic introdotti in Cloud Components di Commerce versione 1.0.4. Questa patch è necessaria per distribuire Adobe Commerce 2.1.x. Se la patch non viene applicata, la compilazione non riesce durante il processo `di:compile`.<!--MCLOUD-6029-->
 

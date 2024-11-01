@@ -3,7 +3,7 @@ title: Componenti cloud per Commerce
 description: Consulta un elenco degli ultimi miglioramenti apportati al pacchetto Componenti cloud.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '590'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Data di rilascio: 10 marzo 2023
 
 Data di rilascio: 13 settembre 2022
 
-- ![icona correzione](../../assets/fix.svg) **Errori durante il riscaldamento**—È stato risolto un problema che tentava di [riscaldamento](../environment/variables-post-deploy.md#warm_up_pages) quando la visibilità della pagina era impostata su [**Non visibile singolarmente**](https://docs.magento.com/user-guide/system/data-attributes-product.html#simple-product-csv-file-structure) nell&#39;amministratore, causando `ERROR: Warming up failed: <link to page>` errori nel registro di distribuzione.<!-- MCLOUD-9134 -->
+- ![icona correzione](../../assets/fix.svg) **Errori durante il riscaldamento**—È stato risolto un problema che tentava di [riscaldamento](../environment/variables-post-deploy.md#warm_up_pages) quando la visibilità della pagina era impostata su [**Non visibile singolarmente**](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/data-transfer/data-attributes-product#simple-product-csv-file-structure) nell&#39;amministratore, causando `ERROR: Warming up failed: <link to page>` errori nel registro di distribuzione.<!-- MCLOUD-9134 -->
 
 ## v1.0.11
 

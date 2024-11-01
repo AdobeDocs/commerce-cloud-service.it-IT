@@ -2,7 +2,7 @@
 title: Lancio del sito
 description: Scopri come iniziare la preparazione per il lancio del sito.
 exl-id: a7b3f260-b76e-4220-b521-699548a9928a
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
@@ -39,11 +39,11 @@ Per preparare il lancio del sito sono necessarie le seguenti informazioni e riso
 
 - Certificato SSL/TLS
 
-Come parte dell’abbonamento a un’infrastruttura cloud di Adobe Commerce, Adobe fornisce un certificato SSL/TLS convalidato dal dominio rilasciato da Let’s Encrypt. Ogni ambiente Pro Production, Staging e Starter Production (`master`) dispone di un certificato univoco che copre tutti i domini e i sottodomini di tale ambiente. Questi certificati vengono predisposti e caricati automaticamente sul sito dopo l’aggiornamento della configurazione DNS per lo sviluppo e la produzione. Vedere [Provisioning dei certificati SSL/TLS](../cdn/fastly-configuration.md#provision-ssltls-certificates).
+Come parte della sottoscrizione di Adobe Commerce sull’infrastruttura cloud, Adobe fornisce un certificato SSL/TLS convalidato dal dominio rilasciato da Let’s Encrypt. Ogni ambiente Pro Production, Staging e Starter Production (`master`) dispone di un certificato univoco che copre tutti i domini e i sottodomini di tale ambiente. Questi certificati vengono predisposti e caricati automaticamente sul sito dopo l’aggiornamento della configurazione DNS per lo sviluppo e la produzione. Vedere [Provisioning dei certificati SSL/TLS](../cdn/fastly-configuration.md#provision-ssltls-certificates).
 
 >[!NOTE]
 >
->Se desideri distribuire il tuo certificato SSL di convalida estesa per la tua società invece di utilizzare il certificato Let&#39;s Encrypt, contatta il tuo CTA o [Invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
+>Se desideri distribuire il tuo certificato SSL di convalida estesa per la tua società invece di utilizzare il certificato Let&#39;s Encrypt, contatta il tuo CTA o [invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
 
 ## Configurare lo strumento Security Scan
 
@@ -65,7 +65,7 @@ Lo strumento di analisi della sicurezza consente di monitorare regolarmente i si
 
 - Ricevi aggiornamenti sulla sicurezza e notifiche specifiche per il sito
 
-Per informazioni sulla configurazione e l&#39;utilizzo dello strumento di analisi della sicurezza, consultare la [Guida utente](https://docs.magento.com/user-guide/magento/security-scan.html). In genere, si inizia a utilizzare questo strumento quando si inizia il test di accettazione utente (UAT).
+Per informazioni sulla configurazione e l&#39;utilizzo dello strumento di analisi della sicurezza, consultare la [Guida utente](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan). In genere, si inizia a utilizzare questo strumento quando si inizia il test di accettazione utente (UAT).
 
 Ogni sito digitalizzato deve essere registrato tramite la scheda Security Scan. Durante il processo di registrazione, è necessario accettare la liberatoria prima di poter iniziare la scansione. Puoi controllare sia la pianificazione che autorizzare l’utente a ricevere notifiche al termine di ogni scansione. È possibile pianificare scansioni per una data e un&#39;ora specifiche e ricorrenti oppure eseguire una scansione su richiesta in base alle esigenze.
 

@@ -2,7 +2,7 @@
 title: Elenco di controllo di Launch
 description: Verificare gli elementi dell'elenco di controllo per l'avvio del sito.
 exl-id: 4525742e-18c5-40d1-975d-00ba3f3a51a0
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Consulta [Distribuzione dei test](../test/staging-and-production.md) per testare
 
 ## TLS e Fastly
 
-In questo Adobe viene fornito un certificato crittografato SSL/TLS per ogni ambiente. Questo certificato è necessario affinché Fastly possa gestire il traffico protetto tramite HTTPS.
+Adobe fornisce un certificato crittografato SSL/TLS per ogni ambiente. Questo certificato è necessario affinché Fastly possa gestire il traffico protetto tramite HTTPS.
 
 Per utilizzare questo certificato, devi aggiornare la configurazione DNS in modo che Adobe possa completare la convalida del dominio e applicare il certificato all’ambiente. Ogni ambiente dispone di un certificato univoco che copre i domini di Adobe Commerce sui siti dell’infrastruttura cloud implementati in tale ambiente. È consigliabile completare e aggiornare la configurazione durante il [processo di configurazione rapido](../cdn/fastly-configuration.md).
 
@@ -39,7 +39,7 @@ Quando sei pronto per avviare il sito, devi aggiornare la configurazione DNS per
 
 - È stato eseguito il provisioning del certificato SSL/TLS per gli ambienti di produzione.
 
-  Se hai aggiunto i record di verifica ACME per i domini di produzione durante la procedura di configurazione Fastly, Adobe carica automaticamente il certificato SSL/TLS nell’ambiente di produzione quando aggiorni la configurazione DNS per indirizzare il traffico al servizio Fastly. Se non hai eseguito il preprovisioning del certificato o se hai aggiornato i tuoi domini, Adobe deve completare la convalida del dominio ed eseguire il provisioning del certificato, che può richiedere fino a 12 ore.
+  Se hai aggiunto i record di verifica ACME per i domini di produzione durante il processo di configurazione Fastly, Adobe carica automaticamente il certificato SSL/TLS nell’ambiente di produzione quando aggiorni la configurazione DNS per indirizzare il traffico al servizio Fastly. Se non hai eseguito il preprovisioning del certificato o se hai aggiornato i tuoi domini, Adobe deve completare la convalida del dominio ed eseguire il provisioning del certificato, che può richiedere fino a 12 ore.
 
 ### Per aggiornare la configurazione DNS per l&#39;avvio del sito:
 
@@ -105,7 +105,7 @@ Di seguito sono riportate le modifiche e i controlli consigliati:
 
 - [Test e-mail in uscita completato](../project/outgoing-emails.md)
 
-- [Configurazione sicura per le credenziali amministratore e URL amministratore di base](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Configurazione sicura per le credenziali amministratore e URL amministratore di base](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
 - [Ottimizza tutte le immagini per il web](../cdn/fastly-image-optimization.md)
 
@@ -137,13 +137,13 @@ Puoi eseguire il test anche utilizzando le seguenti opzioni di terze parti:
 
 - [Configurare l&#39;analisi della protezione](overview.md#set-up-the-security-scan-tool)
 
-- [Configurazione sicura per l&#39;utente amministratore](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Configurazione sicura per l&#39;utente amministratore](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
-- [Configurazione sicura per URL amministratore](https://docs.magento.com/user-guide/stores/store-urls-custom-admin.html)
+- [Configurazione sicura per l&#39;URL amministratore]https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
 
 - [Rimuovere gli utenti che non fanno più parte del progetto di infrastruttura cloud di Adobe Commerce](../project/user-access.md)
 
-- [Configura autenticazione a due fattori](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+- [Configura autenticazione a due fattori](https://developer.adobe.com/commerce/testing/functional-testing-framework/two-factor-authentication/)
 
 ## Monitoraggio delle prestazioni
 

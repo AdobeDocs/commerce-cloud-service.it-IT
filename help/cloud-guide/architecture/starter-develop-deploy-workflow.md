@@ -3,7 +3,7 @@ title: Flusso di lavoro progetto iniziale
 description: Scopri come utilizzare i flussi di lavoro di sviluppo e distribuzione Starter.
 feature: Cloud, Paas
 exl-id: f334047a-1e0d-45c7-bf96-5c2964741951
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '2103'
 ht-degree: 0%
@@ -105,9 +105,9 @@ Quando si è pronti a configurare l&#39;archivio, inviare tutto il codice all&#3
 Per informazioni sulle configurazioni, consulta la documentazione di Adobe Commerce e delle estensioni installate. Di seguito sono riportati alcuni collegamenti e idee utili per iniziare:
 
 - [Best practice per la configurazione dell&#39;archivio](../store/best-practices.md) per best practice specifiche nel cloud
-- [Configurazione di base](https://docs.magento.com/user-guide/configuration/configuration-basic.html) per accesso amministratore archivio, nome, lingue, valute, branding, siti, visualizzazioni archivio e altro ancora
-- [Tema](https://docs.magento.com/user-guide/design/design-theme.html) per il tuo aspetto del sito e dei negozi, inclusi CSS e layout
-- [Configurazione del sistema](https://docs.magento.com/user-guide/system/system.html) per ruoli, strumenti, notifiche e la chiave di crittografia per il database
+- [Configurazione di base](https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/store-details) per accesso amministratore archivio, nome, lingue, valute, branding, siti, visualizzazioni archivio e altro ancora
+- [Tema](https://experienceleague.adobe.com/en/docs/commerce-admin/content-design/content-menu#design-features) per il tuo aspetto del sito e dei negozi, inclusi CSS e layout
+- [Configurazione del sistema](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/guide-overview) per ruoli, strumenti, notifiche e la chiave di crittografia per il database
 - Impostazioni delle estensioni utilizzando la relativa documentazione
 
 Oltre alle impostazioni di solo archivio, puoi configurare ulteriormente più siti e archivi, servizi configurati e altro ancora. Consulta [Configurare l&#39;archivio](../store/overview.md).
@@ -127,7 +127,7 @@ Genera il file nell’ambiente di integrazione in cui hai configurato Adobe Comm
 
 **Note importanti** sulla gestione della configurazione:
 
-- Qualsiasi impostazione di configurazione inclusa nel file generato dal comando `app:config:dump` non può essere modificata o è di sola lettura nell&#39;ambiente distribuito. Questo è uno dei motivi per cui Adobe consiglia di utilizzare il comando `.vendor/bin/ece-tools config:dump`.
+- Qualsiasi impostazione di configurazione inclusa nel file generato dal comando `app:config:dump` non può essere modificata o è di sola lettura nell&#39;ambiente distribuito. Per questo motivo Adobe consiglia di utilizzare il comando `.vendor/bin/ece-tools config:dump`.
 
   Ad esempio, installi un modulo per Fastly nell’ambiente di sviluppo. Puoi configurare questo modulo solo nell’ambiente di staging e produzione. L&#39;utilizzo del comando `.vendor/bin/ece-tools config:dump` consente di mantenere i campi predefiniti modificabili quando si distribuiscono le modifiche di sviluppo nell&#39;ambiente di staging e produzione.
 
@@ -165,7 +165,7 @@ Per facilitare l’esportazione dei dati di produzione come dati di test da util
 
 - [Esegui i comandi CLI delle utilità di supporto](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) (scelta consigliata) durante l&#39;esportazione di un backup protetto dei dati del cliente e dell&#39;archivio utilizzando la chiave di crittografia Adobe Commerce
 
-- Strumento [Raccolta dati](https://docs.magento.com/user-guide/system/support-data-collector.html) per la generazione e l&#39;esportazione di dati
+- Strumento [Raccolta dati](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/support#data-collector) per la generazione e l&#39;esportazione di dati
 
 Per eseguire la migrazione di questi dati, vedere [Eseguire la migrazione e distribuire file e dati statici](../deploy/staging-production.md#migrate-static-files).
 
