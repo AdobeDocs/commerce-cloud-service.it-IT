@@ -3,7 +3,7 @@ title: Visualizzare e gestire i registri
 description: Comprendi i tipi di file di registro disponibili nell’infrastruttura cloud e dove trovarli.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -208,7 +208,7 @@ Per gli ambienti di staging e produzione Pro, i registri di distribuzione, post-
 
 ### File di registro archiviati
 
-I registri delle applicazioni vengono compressi e archiviati una volta al giorno e conservati per un anno. I registri compressi sono denominati utilizzando un ID univoco che corrisponde a `Number of Days Ago + 1`. Ad esempio, negli ambienti di produzione Pro viene memorizzato un registro di accesso PHP per 21 giorni nel passato, denominato come segue:
+I registri delle applicazioni vengono compressi e archiviati una volta al giorno e conservati per **30 giorni**. I registri compressi sono denominati utilizzando un ID univoco che corrisponde a `Number of Days Ago + 1`. Ad esempio, negli ambienti di produzione Pro viene memorizzato un registro di accesso PHP per 21 giorni nel passato, denominato come segue:
 
 ```
 /var/log/platform/<project-ID>/php.access.log.22.gz
