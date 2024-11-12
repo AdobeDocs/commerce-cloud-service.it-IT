@@ -2,9 +2,9 @@
 title: Servizio e-mail SendGrid
 description: Scopri il servizio e-mail SendGrid per Adobe Commerce sull’infrastruttura cloud e come verificare la configurazione DNS.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
+source-git-commit: d07447fa8390794c3d019d513f23321fe02e41a1
 workflow-type: tm+mt
-source-wordcount: '1273'
+source-wordcount: '1317'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Il proxy SMTP SendGrid non deve essere utilizzato come server e-mail generico pe
 
 >[!TIP]
 >
->Puoi trovare i dettagli di SendGrid per il tuo account nella [interfaccia utente di onboarding](https://cloud.magento.com) e selezionare la scheda **Dettagli progetto** > **Informazioni hosting**.
+>Assicurati di aver configurato gli indirizzi e-mail appropriati per lo store nell’Amministratore da Store > Configurazione > Generale per evitare problemi relativi al recapito messaggi e alla verifica del dominio. Deselezionare **[!UICONTROL Use Default]** e sostituire i valori predefiniti con un dominio di tua proprietà. I servizi e-mail del dominio pubblico/condiviso, come gmail.com e outlook.com, non devono essere configurati come indirizzo e-mail del mittente quando si inviano e-mail tramite Sendgrid.
 
 ## Abilitare o disabilitare l’e-mail
 
