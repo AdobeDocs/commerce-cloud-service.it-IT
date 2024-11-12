@@ -4,7 +4,7 @@ description: Scopri il servizio New Relic disponibile con il tuo progetto di inf
 feature: Cloud, Observability
 last-substantial-update: 2023-09-06T00:00:00Z
 exl-id: 613f0694-5338-4037-8ee4-ac5eca376159
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b53d5a8d06e0ed249bd44b6f38f837a257cbd315
 workflow-type: tm+mt
 source-wordcount: '369'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Le seguenti funzioni di New Relic sono disponibili per l’utilizzo con gli ambi
 
 - [New Relic APM](#new-relic-apm) (Pro e Starter)
 - [Infrastruttura New Relic](#new-relic-infrastructure) (solo Pro)
-- [Gestione registro New Relic](#new-relic-logs) (solo Pro)
+- [Gestione registro New Relic](#new-relic-log-management) (solo Pro)
 
 >[!INFO]
 >
