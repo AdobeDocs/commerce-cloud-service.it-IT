@@ -3,9 +3,9 @@ title: Architettura iniziale
 description: Scopri gli ambienti supportati dall’architettura Starter.
 feature: Cloud, Paas
 exl-id: 03365d32-4eb4-42d4-82a7-771df5e7b3da
-source-git-commit: e5cb79cab4e22d1c787859ab98e6bab6cd2dc2eb
+source-git-commit: 1fea819aec27002e0e043cddf635f10c4edd7c5b
 workflow-type: tm+mt
-source-wordcount: '942'
+source-wordcount: '956'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ L’ambiente di produzione fornisce il codice sorgente per implementare Adobe Co
 
 Poiché l&#39;ambiente `production` è di sola lettura, utilizzare l&#39;ambiente `integration` per apportare modifiche al codice, distribuire nell&#39;architettura da `integration` a `staging` e infine nell&#39;ambiente `production`. Consulta [Distribuire l&#39;archivio](../deploy/staging-production.md) e [Lancio sito](../launch/overview.md).
 
-L&#39;Adobe consiglia di eseguire test completi nel ramo `staging` prima di eseguire il push al ramo `master`, che viene distribuito nell&#39;ambiente `production`.
+Adobe consiglia di eseguire test completi nel ramo `staging` prima di eseguire il push al ramo `master`, che viene distribuito nell&#39;ambiente `production`.
 
 ## Ambiente di staging
 
@@ -40,7 +40,7 @@ Altre sezioni in questa guida forniscono istruzioni per le distribuzioni finali 
 
 >[!WARNING]
 >
->L’Adobe consiglia di testare ogni interazione di esercenti e clienti nell’ambiente di staging prima di implementarla nell’ambiente di produzione. Consulta [Distribuire l&#39;archivio](../deploy/staging-production.md) e [Testare la distribuzione](../test/staging-and-production.md).
+>Adobe consiglia di testare ogni interazione di esercenti e clienti nell’ambiente di staging prima di implementarla nell’ambiente di produzione. Consulta [Distribuire l&#39;archivio](../deploy/staging-production.md) e [Testare la distribuzione](../test/staging-and-production.md).
 
 ## Ambiente di integrazione
 
@@ -65,6 +65,11 @@ Gli ambienti di integrazione sono progettati per test e sviluppo limitati. Ad es
 Per ottenere le migliori prestazioni nell’ambiente di integrazione, segui queste best practice:
 
 - Limita la dimensione del catalogo: per riferimento, i dati di esempio contengono circa 2.048 prodotti. Prova a ridurre la dimensione del catalogo a circa 4.000-5.000 prodotti.
+Per verificare il numero di prodotti nel catalogo, eseguire la seguente query MySQL:
+
+  ```sql
+  select distinct count(entity_id) from catalog_product_entity;
+  ```
 
 - Riduci il numero di gruppi di clienti: troppi gruppi di clienti possono influire sulle prestazioni di indicizzazione e sulle prestazioni complessive.
 
