@@ -4,9 +4,9 @@ description: Scopri gli ambienti supportati dall’architettura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 66b1f86c8c674d0de4e2895e328a5a850eadf903
+source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -67,6 +67,11 @@ Gli ambienti di integrazione sono progettati per test e sviluppo limitati prima 
 Per ottenere le migliori prestazioni nell’ambiente di integrazione, segui queste best practice:
 
 - Limita la dimensione del catalogo: per riferimento, i dati di esempio contengono circa 2.048 prodotti. Prova a ridurre la dimensione del catalogo a circa 4.000-5.000 prodotti.
+Per verificare il numero di prodotti nel catalogo, eseguire la seguente query MySQL:
+
+  ```sql
+  select distinct count(entity_id) from catalog_product_entity;
+  ```
 
 - Riduci il numero di gruppi di clienti: troppi gruppi di clienti possono influire sulle prestazioni di indicizzazione e sulle prestazioni complessive.
 
@@ -155,7 +160,7 @@ La figura seguente mostra le tecnologie utilizzate nell’ambiente di produzione
 
 Anziché eseguire un&#39;installazione tradizionale di tipo attivo-passivo `master` o primario-secondario, Adobe Commerce su infrastruttura cloud esegue un&#39;architettura _ridondante_ in cui tutte e tre le istanze accettano operazioni di lettura e scrittura. Questa architettura non comporta tempi di inattività durante la scalabilità e garantisce l&#39;integrità delle transazioni.
 
-A causa dell&#39;hardware unico e ridondante, Adobe può fornire tre server gateway. La maggior parte dei servizi esterni consente di aggiungere più indirizzi IP a un inserisco nell&#39;elenco Consentiti di, pertanto la presenza di più indirizzi IP fissi non costituisce un problema. I tre gateway si associano ai tre server del cluster dell’ambiente di produzione e conservano gli indirizzi IP statici. È completamente ridondante e ad alta disponibilità a tutti i livelli:
+Grazie all&#39;hardware unico e ridondante, Adobe può fornire tre server gateway. La maggior parte dei servizi esterni consente di aggiungere più indirizzi IP a un inserisco nell&#39;elenco Consentiti di, pertanto la presenza di più indirizzi IP fissi non costituisce un problema. I tre gateway si associano ai tre server del cluster dell’ambiente di produzione e conservano gli indirizzi IP statici. È completamente ridondante e ad alta disponibilità a tutti i livelli:
 
 - DNS
 - Rete per la distribuzione dei contenuti (CDN)
@@ -174,7 +179,7 @@ Adobe Commerce sull’infrastruttura cloud utilizza un’architettura ad alta di
 
 {{pro-backups}}
 
-Puoi creare un **backup manuale** del database per gli ambienti di staging e produzione utilizzando i comandi CLI. Vedere [Backup del database](../storage/database-dump.md). Per gli ambienti `integration`, l&#39;Adobe consiglia di creare un backup come primo passo dopo aver effettuato l&#39;accesso al progetto Adobe Commerce on Cloud Infrastructure e prima di applicare modifiche importanti. Consulta [Gestione backup](../storage/snapshots.md).
+Puoi creare un **backup manuale** del database per gli ambienti di staging e produzione utilizzando i comandi CLI. Vedere [Backup del database](../storage/database-dump.md). Per gli ambienti `integration`, Adobe consiglia di creare un backup come primo passo dopo aver effettuato l&#39;accesso al progetto Adobe Commerce on Cloud Infrastructure e prima di applicare modifiche importanti. Consulta [Gestione backup](../storage/snapshots.md).
 
 ### Obiettivo punto di ripristino
 
@@ -182,7 +187,7 @@ L’RPO corrisponde a un tempo massimo di sei ore per l’ultimo backup (ad esem
 
 ### Criterio di conservazione
 
-L&#39;Adobe mantiene i backup automatici in base ai seguenti criteri di conservazione dei dati:
+Adobe mantiene i backup automatici in base ai seguenti criteri di conservazione dei dati:
 
 | Periodo | Criterio di conservazione dei backup |
 | ------------------ | ----------------------- |
@@ -204,8 +209,8 @@ RTO dipende dalle dimensioni dello storage. Il ripristino di volumi EBS di grand
 
 ## Scalabilità del cluster Pro
 
-Le configurazioni di ridimensionamento del cluster Pro e _calcolo_ variano a seconda delle dipendenze del provider cloud scelto (AWS, Azure), dell&#39;area geografica e del servizio. L&#39;infrastruttura cloud Adobe è in grado di scalare i cluster Pro per soddisfare le aspettative di traffico e i requisiti di servizio in base all&#39;evoluzione delle richieste.
+Le configurazioni di ridimensionamento del cluster Pro e _calcolo_ variano a seconda delle dipendenze del provider cloud scelto (AWS, Azure), dell&#39;area geografica e del servizio. L’infrastruttura cloud Adobe può scalare i cluster Pro per soddisfare le aspettative di traffico e i requisiti di servizio in base al cambiamento delle richieste.
 
-L&#39;architettura ridondante consente all&#39;infrastruttura cloud Adobe di eseguire l&#39;upscale senza tempi di inattività. Durante l&#39;upscaling, ciascuna delle tre istanze ruota per aggiornare la capacità senza influire sul funzionamento del sito. Ad esempio, puoi aggiungere altri server web a un cluster esistente se la restrizione si trova a livello PHP anziché a livello di database. In questo modo viene fornita la _scalabilità orizzontale_ per integrare la scalabilità verticale fornita dalle CPU aggiuntive a livello di database. Vedi [Architettura scalata](scaled-architecture.md).
+L’architettura ridondante consente all’infrastruttura cloud Adobe di eseguire l’upscale senza tempi di inattività. Durante l&#39;upscaling, ciascuna delle tre istanze ruota per aggiornare la capacità senza influire sul funzionamento del sito. Ad esempio, puoi aggiungere altri server web a un cluster esistente se la restrizione si trova a livello PHP anziché a livello di database. In questo modo viene fornita la _scalabilità orizzontale_ per integrare la scalabilità verticale fornita dalle CPU aggiuntive a livello di database. Vedi [Architettura scalata](scaled-architecture.md).
 
 Se prevedi un aumento significativo del traffico per un evento o per un altro motivo, puoi richiedere un aumento temporaneo della capacità. Vedi [Come richiedere un upsize temporaneo](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) nel _Centro assistenza Commerce_.
