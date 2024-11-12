@@ -2,20 +2,24 @@
 title: Configurare le e-mail in uscita
 description: Scopri come abilitare le e-mail in uscita per Adobe Commerce sull’infrastruttura cloud.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
+source-git-commit: 75318be63adcbe23bb8b6699b1c59b2b4a3c1a4d
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '384'
 ht-degree: 0%
 
 ---
 
 # Configurare le e-mail in uscita
 
-È possibile abilitare e disabilitare le e-mail in uscita per ogni ambiente da [!DNL Cloud Console] o dalla riga di comando. Abilita le e-mail in uscita per gli ambienti di integrazione (e staging solo per Starter) per inviare e-mail di autenticazione a due fattori o reimpostare le password per gli utenti del progetto Cloud.
+È possibile abilitare e disabilitare le e-mail in uscita per gli ambienti di integrazione (e gestione temporanea solo per Starter) da [!DNL Cloud Console] o dalla riga di comando. Abilita le e-mail in uscita per inviare messaggi di autenticazione a due fattori o reimpostare le e-mail con password per gli utenti del progetto Cloud.
 
 Per impostazione predefinita, le e-mail in uscita sono abilitate negli ambienti di produzione e staging (solo Pro). Tuttavia, l&#39;impostazione **[!UICONTROL Enable outgoing emails]** potrebbe apparire disabilitata nelle impostazioni dell&#39;ambiente indipendentemente dallo stato finché non si imposta la proprietà `enable_smtp` tramite la [riga di comando](#enable-emails-in-the-cli) o la [console cloud](outgoing-emails.md#enable-emails-in-the-cloud-console).
 
 L&#39;aggiornamento del valore della proprietà `enable_smtp` da [riga di comando](#enable-emails-in-the-cli) comporta anche la modifica del valore dell&#39;impostazione [!UICONTROL Enable outgoing emails] per questo ambiente nella console cloud.
+
+>[!NOTE]
+>
+>Se si abilita/disabilita l&#39;impostazione **[!UICONTROL Enable outgoing emails]**, le e-mail non verranno abilitate/disabilitate negli ambienti di staging o produzione di Pro.
 
 {{redeploy-warning}}
 
@@ -27,14 +31,14 @@ Se le e-mail in uscita devono essere disabilitate o riabilitate negli ambienti d
 
 >[!TIP]
 >
->Lo stato delle e-mail in uscita potrebbe non essere riportato per gli ambienti Pro nella console Cloud. Utilizza invece la [riga di comando](#enable-emails-in-the-cli) per abilitare e testare le e-mail in uscita.
+>Lo stato delle e-mail in uscita potrebbe non essere riportato per gli ambienti di staging o produzione Pro nella console cloud.
 
 **Per gestire il supporto e-mail da[!DNL Cloud Console]**:
 
 1. Accedi a [[!DNL Cloud Console]](https://console.adobecommerce.com).
 1. Selezionare un progetto dall&#39;elenco _Tutti i progetti_.
 1. Nel dashboard Progetto, fai clic sull’icona di configurazione in alto a destra.
-1. Fare clic su **[!UICONTROL Environments]** e selezionare un ambiente specifico dall&#39;elenco.
+1. Fare clic su **[!UICONTROL Environments]** e selezionare un ambiente specifico dall&#39;elenco (eccetto Gestione temporanea e produzione per Pro).
 1. Per abilitare o disabilitare le e-mail in uscita, attiva _Abilita e-mail in uscita_ **On** o **Off**.
 
    ![Abilita configurazione posta elettronica in uscita](../../assets/outgoing-emails.png)
