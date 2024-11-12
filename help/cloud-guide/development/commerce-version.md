@@ -3,9 +3,9 @@ title: Aggiorna versione Commerce
 description: Scopri come aggiornare la versione di Adobe Commerce nel progetto di infrastruttura cloud.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 8851db6ee962bf1a65b31d344e2bd71065e9340d
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
@@ -287,6 +287,19 @@ Prima di aggiornare l&#39;applicazione, esaminare le informazioni sulle [version
    composer update
    ```
 
+1. Esaminare le patch attualmente applicate:
+
+   - Se nella directory `m2-hotfixes` sono installate patch, [invia un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#support-case) e collabora con il supporto Adobe Commerce per verificare quali patch possono ancora essere applicate alla nuova versione. Rimuovere le patch non applicabili dalla directory `m2-hotfixes`.
+
+   - Se nel file `.magento.env.yaml` sono state applicate [patch di qualità], verificare se è ancora possibile applicarle alla nuova versione. Rimuovere le patch non applicabili dalla sezione `QUALITY_PATCHES` del file `.magento.env.yaml`.
+
+   **Metodo 1**: [Verificare le versioni applicabili nelle note sulla versione delle patch di qualità](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/quality-patches-tool/release-notes)
+
+   **Metodo 2**: [Visualizzare le patch e lo stato disponibili](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/develop/upgrade/apply-patches#view-available-patches-and-status)
+
+   **Metodo 3**: [Cerca patch](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html?lang=en)
+
+
 1. Aggiungi, conferma e invia modifiche al codice.
 
    ```bash
@@ -351,7 +364,7 @@ Come indicato in [Gestione configurazione](#configuration-management), dopo l&#3
 
 ### Aggiornare le estensioni
 
-Controlla le pagine delle estensioni e dei moduli di terze parti nel Marketplace o in altri siti aziendali e verifica il supporto per Adobe Commerce e Adobe Commerce sull’infrastruttura cloud. Se devi aggiornare estensioni e moduli di terze parti, l’Adobe consiglia di lavorare in un nuovo ramo di integrazione con le estensioni disabilitate.
+Controlla le pagine delle estensioni e dei moduli di terze parti nel Marketplace o in altri siti aziendali e verifica il supporto per Adobe Commerce e Adobe Commerce sull’infrastruttura cloud. Se devi aggiornare estensioni e moduli di terze parti, Adobe consiglia di lavorare in un nuovo ramo di integrazione con le estensioni disabilitate.
 
 **Per verificare e aggiornare le estensioni**:
 
@@ -371,7 +384,7 @@ Controlla le pagine delle estensioni e dei moduli di terze parti nel Marketplace
 
 1. Effettua il push all’ambiente di staging per il test in un ambiente di pre-produzione.
 
-L&#39;Adobe consiglia vivamente di aggiornare l&#39;ambiente di produzione _prima_ includendo le estensioni aggiornate nella procedura di avvio del sito.
+Adobe consiglia vivamente di aggiornare l&#39;ambiente di produzione _prima_, incluse le estensioni aggiornate nella procedura di avvio del sito.
 
 >[!NOTE]
 >
