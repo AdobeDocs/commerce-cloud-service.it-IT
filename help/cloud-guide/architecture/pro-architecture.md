@@ -4,7 +4,7 @@ description: Scopri gli ambienti supportati dall’architettura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
+source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -120,6 +120,8 @@ Vedi [Flusso di lavoro di distribuzione](pro-develop-deploy-workflow.md#deployme
 - Dopo aver avviato il sito di produzione, utilizza l’ambiente di staging principalmente per testare le patch per le correzioni di bug critici per la produzione.
 
 - Impossibile creare un ramo dal ramo `staging`. È invece possibile inviare le modifiche al codice dal ramo `integration` al ramo `staging`.
+
+{{second-staging}}
 
 ### Ambiente di produzione
 

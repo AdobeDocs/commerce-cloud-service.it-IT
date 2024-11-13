@@ -2,7 +2,7 @@
 title: Test di staging e produzione
 description: Scopri come eseguire il test in ambienti di staging e produzione.
 exl-id: 5b762d59-04c5-4e89-a637-719141759158
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 0%
@@ -12,6 +12,8 @@ ht-degree: 0%
 # Test di staging e produzione
 
 Dopo una migrazione corretta di codice, file e dati a Staging o Produzione, utilizza gli URL dell’ambiente per testare siti e archivi. Di seguito sono riportate informazioni sulla verifica dei registri, sui test delle configurazioni Fastly, sui test di accettazione da parte degli utenti (UAT) e altro ancora.
+
+{{second-staging}}
 
 ## File di registro
 

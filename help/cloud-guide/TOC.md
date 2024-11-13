@@ -3,9 +3,9 @@ user-guide-title: Guida di Commerce su infrastruttura Cloud
 user-guide-description: Scopri come gestire l’applicazione Adobe Commerce sull’infrastruttura cloud.
 product: magento
 feature: Cloud
-source-git-commit: ebd434e488b666d34df9562825a612b33495e44d
+source-git-commit: 54b9101d3cba535a0e2c83e482aaebe261e3bcce
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '356'
 ht-degree: 7%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 7%
       + [Xdebug](test/debug.md)
       + [Dati di esempio](test/sample-data.md)
       + [Staging e produzione](test/staging-and-production.md)
+      + [Secondo ambiente di staging](test/second-staging.md)
    + [Servizio PrivateLink](development/privatelink-service.md)
    + [Blocco protettivo](development/protective-block.md)
    + [Ripristina ambiente](development/restore-environment.md)
@@ -118,7 +119,7 @@ ht-degree: 7%
          + [Globale](environment/variables-global.md)
          + [Genera](environment/variables-build.md)
          + [Distribuisci](environment/variables-deploy.md)
-         + [Distribuzione Post](environment/variables-post-deploy.md)
+         + [Post-distribuzione](environment/variables-post-deploy.md)
       + Configura notifiche {#log}
          + [Notifiche](environment/set-up-notifications.md)
          + [Gestori di registro](environment/log-handlers.md)

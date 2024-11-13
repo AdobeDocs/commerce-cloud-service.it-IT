@@ -3,7 +3,7 @@ title: Flusso di lavoro di un progetto professionale
 description: Scopri come utilizzare i flussi di lavoro di sviluppo e distribuzione Pro.
 feature: Cloud, Iaas, Paas
 exl-id: 103e90d5-2ef2-4fef-845c-439344666b00
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Combina tutte le modifiche al codice verificate unendo il ramo di sviluppo attiv
 La gestione temporanea è un ambiente di preproduzione che fornisce tutti i servizi e le impostazioni il più vicino possibile all’ambiente di produzione. Effettua sempre il push delle modifiche al codice dall&#39;ambiente `integration` all&#39;ambiente `staging` in modo da poter eseguire test approfonditi con tutti i servizi. La prima volta che si utilizza l&#39;ambiente di gestione temporanea, è necessario configurare servizi quali [Fastly CDN](../cdn/fastly.md) e [New Relic](../monitor/new-relic-service.md). Configura gateway di pagamento, spedizione, notifiche e altri servizi vitali con sandbox o credenziali di test.
 
 È meglio testare accuratamente ogni servizio, verificare gli strumenti di test delle prestazioni ed eseguire test UAT come amministratore e come cliente, fino a quando non si ritiene che il negozio sia pronto per l’ambiente di produzione. Consulta [Distribuire il tuo archivio](../deploy/staging-production.md).
+
+{{second-staging}}
 
 ### Unisci a produzione
 

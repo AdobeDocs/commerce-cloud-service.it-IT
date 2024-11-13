@@ -1,7 +1,7 @@
 ---
-source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
+source-git-commit: 63b966c1562318dc43dd42641e6f607f5438137b
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '907'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ Impostare l&#39;opzione `_merge` su una delle opzioni seguenti:
 
 >[!NOTE]
 >
->L’Adobe consiglia vivamente di utilizzare un archivio privato per il progetto di infrastruttura Adobe Commerce on cloud per proteggere eventuali informazioni proprietarie o attività di sviluppo, come estensioni e configurazioni sensibili.
+>Adobe consiglia vivamente di utilizzare un archivio privato per il progetto di infrastruttura cloud di Adobe Commerce per proteggere informazioni proprietarie o attività di sviluppo, come estensioni e configurazioni sensibili.
 
 ## Avvertenza self-service Pro {#pro-self-service-warning}
 
 >[!WARNING]
 >
->Alcuni **progetti Pro** richiedono un ticket di supporto per aggiornare la configurazione della route nel file `routes.yaml` e la configurazione cron nel file `.magento.app.yaml`. L’Adobe consiglia di aggiornare e testare i file di configurazione YAML in un ambiente di integrazione, quindi di distribuire le modifiche nell’ambiente di staging. Se le modifiche non vengono applicate ai siti di gestione temporanea dopo la ridistribuzione e non sono presenti messaggi di errore correlati nel registro, è **NECESSARIO** [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) che descriva le modifiche di configurazione tentate. Includi nel ticket tutti i file di configurazione YAML aggiornati.
+>Alcuni **progetti Pro** richiedono un ticket di supporto per aggiornare la configurazione della route nel file `routes.yaml` e la configurazione cron nel file `.magento.app.yaml`. Adobe consiglia di aggiornare e testare i file di configurazione YAML in un ambiente di integrazione, quindi di distribuire le modifiche nell’ambiente di staging. Se le modifiche non vengono applicate ai siti di gestione temporanea dopo la ridistribuzione e non sono presenti messaggi di errore correlati nel registro, è **NECESSARIO** [Inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) che descriva le modifiche di configurazione tentate. Includi nel ticket tutti i file di configurazione YAML aggiornati.
 
 ## Supporto dei servizi Pro {#pro-update-service}
 
@@ -56,13 +56,13 @@ Impostare l&#39;opzione `_merge` su una delle opzioni seguenti:
 >
 >Negli ambienti Pro Staging e Production, è necessario [inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per recuperare un backup specifico che rilevi la data, l&#39;ora e il fuso orario nel ticket.
 >
->L&#39;Adobe **not** ripristina gli ambienti da un backup automatico. Per informazioni su come scegliere un metodo per ripristinare uno snapshot di staging o produzione, vedere [Ripristinare uno snapshot del database da staging o produzione](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production.html).
+>Adobe **non** ripristina alcun ambiente da un backup automatico. Per informazioni su come scegliere un metodo per ripristinare uno snapshot di staging o produzione, vedere [Ripristinare uno snapshot del database da staging o produzione](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production.html).
 
 ## Avviso di ridistribuzione {#redeploy-warning}
 
 >[!WARNING]
 >
->Il processo di distribuzione inizia quando si esegue un&#39;unione, un push o una sincronizzazione dell&#39;ambiente oppure quando si attiva una ridistribuzione manuale, durante la quale l&#39;applicazione [!DNL Commerce] è in modalità manutenzione. Per un ambiente di produzione, Adobe consiglia di completare questo lavoro nelle ore di minore utilizzo per evitare interruzioni del servizio.
+>Il processo di distribuzione inizia quando si esegue un&#39;unione, un push o una sincronizzazione dell&#39;ambiente oppure quando si attiva una ridistribuzione manuale, durante la quale l&#39;applicazione [!DNL Commerce] è in modalità manutenzione. Per un ambiente di produzione, Adobe consiglia di completare questo lavoro nelle ore non di punta per evitare interruzioni del servizio.
 
 ## Segnaposto percorso {#route-placeholder}
 
@@ -81,6 +81,12 @@ Impostare l&#39;opzione `_merge` su una delle opzioni seguenti:
 >[!NOTE]
 >
 >Con [!DNL ECE-Tools] 2002.1.0 e versioni successive, è possibile utilizzare la funzionalità di distribuzione basata su scenari per personalizzare i processi di compilazione, distribuzione e post-distribuzione per il progetto Adobe Commerce su infrastruttura cloud. Vedi [Distribuzione basata su scenari](/help/cloud-guide/deploy/scenario-based.md).
+
+## Seconda gestione temporanea {#second-staging}
+
+>[!NOTE]
+>
+>Alcuni progetti richiedono un flusso di lavoro di sviluppo più sofisticato. Per supportare questa esigenza, Adobe offre un [ambiente di staging aggiuntivo](/help/cloud-guide/test/second-staging.md) come opzione aggiuntiva all&#39;infrastruttura cloud.
 
 ## Istruzione di servizio {#service-instruction}
 
