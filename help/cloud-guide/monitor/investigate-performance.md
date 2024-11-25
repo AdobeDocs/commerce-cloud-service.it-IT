@@ -4,9 +4,9 @@ description: Scopri come accedere al dashboard di New Relic e analizzare i dati 
 feature: Cloud, Observability
 topic: Performance
 exl-id: 8d1e2ad6-14d0-4754-9703-960d93e135a9
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '844'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Tutti i dati raccolti descrivono il tempo impiegato per le azioni di trasmission
 
 ## Monitorare le prestazioni con avvisi gestiti
 
-L&#39;Adobe fornisce i criteri di avviso _Managed Alerts for Adobe Commerce_ per tenere traccia delle metriche delle prestazioni. La policy include una raccolta di avvisi che impostano soglie e attivano avvisi e notifiche critiche quando problemi di infrastruttura o applicazioni influiscono sulle prestazioni del sito. Il criterio tiene traccia delle metriche seguenti negli ambienti di produzione:
+Adobe fornisce i _criteri di avviso gestiti per Adobe Commerce_ per tenere traccia delle metriche delle prestazioni. La policy include una raccolta di avvisi che impostano soglie e attivano avvisi e notifiche critiche quando problemi di infrastruttura o applicazioni influiscono sulle prestazioni del sito. Il criterio tiene traccia delle metriche seguenti negli ambienti di produzione:
 
 | Metrica | Raccolta dati | Disponibilità |
 |:-------------------|:----------------|:----------------|
@@ -85,11 +85,11 @@ Quando l’infrastruttura del sito o le condizioni dell’applicazione attivano 
 
 Non modificare gli avvisi inclusi nel criterio Avvisi gestiti per Adobe Commerce. Adobe aggiorna e migliora nel tempo le condizioni di avviso in questo criterio, sovrascrivendo tutte le personalizzazioni aggiunte al criterio.
 
-Anziché modificare un avviso esistente, è possibile creare un criterio di avviso. Quindi, copia le condizioni di avviso nel nuovo criterio. Consulta [Aggiorna criteri o condizioni](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-policies/update-or-disable-policies-conditions/) nella documentazione di _New Relic_.
+Anziché modificare un avviso esistente, è possibile creare un criterio di avviso. Quindi, copia le condizioni di avviso nel nuovo criterio.
 
 >[!TIP]
 >
->Consulta [Introduzione agli avvisi](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/learn-alerts/alerts-concepts-workflow/) nella documentazione di _New Relic_ per informazioni più dettagliate su avvisi, criteri di avviso e flussi di lavoro.
+>Consulta [Introduzione agli avvisi](https://docs.newrelic.com/docs/alerts/overview/) nella documentazione di _New Relic_ per informazioni più dettagliate su avvisi, criteri di avviso e flussi di lavoro.
 
 ## Configurare un flusso di lavoro per le notifiche
 
@@ -125,4 +125,4 @@ Consulta la documentazione di New Relic sui [flussi di lavoro](https://docs.newr
 
 >[!WARNING]
 >
->Gli avvisi nel criterio Avvisi gestiti per Adobe Commerce dispongono di flussi di lavoro predefiniti configurati per inviare notifiche ai team di Adobi che supportano Adobe Commerce sui clienti dell’infrastruttura cloud. Non modificare la configurazione di questi canali predefiniti e non rimuovere i criteri di avviso ad essi assegnati.
+>Gli avvisi nel criterio Avvisi gestiti per Adobe Commerce dispongono di flussi di lavoro predefiniti configurati per la notifica ai team di Adobe che supportano Adobe Commerce sui clienti dell’infrastruttura cloud. Non modificare la configurazione di questi canali predefiniti e non rimuovere i criteri di avviso ad essi assegnati.

@@ -3,9 +3,9 @@ title: Configura servizio Elasticsearch
 description: Scopri come abilitare il servizio Elasticsearch per Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Search, Services
 exl-id: ac559cbb-342a-4756-ade5-49eba4827965
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Per Adobe Commerce versione 2.4.4 e successive, vedere [Configurazione del servi
 
 >[!TIP]
 >
->L’Adobe consiglia di impostare sempre Elasticsearch per il progetto di infrastruttura cloud di Adobe Commerce, anche se prevedi di configurare uno strumento di ricerca di terze parti per l’applicazione Adobe Commerce. L’Elasticsearch di configurazione fornisce un’opzione di fallback nel caso in cui lo strumento di ricerca di terze parti non riesca.
+>Adobe consiglia di configurare sempre Elasticsearch per il progetto di infrastruttura cloud di Adobe Commerce, anche se prevedi di configurare uno strumento di ricerca di terze parti per l’applicazione Adobe Commerce. L’Elasticsearch di configurazione fornisce un’opzione di fallback nel caso in cui lo strumento di ricerca di terze parti non riesca.
 
 {{service-instruction}}
 
@@ -266,6 +266,5 @@ La rimozione delle voci del plug-in da `elasticsearch:` in `.magento/services.ya
 Consulta i seguenti articoli di supporto Adobe Commerce per assistenza nella risoluzione dei problemi di Elasticsearch:
 
 - [L&#39;Elasticsearch 5 è configurato, ma la pagina di ricerca non viene caricata con l&#39;errore &quot;Fielddata is disabled...&quot;](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-5-is-configured-but-search-page-does-not-load-with-fielddata-is-disabled...-error.html)
-- [La paginazione del catalogo non funziona quando si utilizza Elasticsearch 6.x](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/known-issues-patches-attached/catalog-pagination-doesn-t-work-when-elasticsearch-6.x-is-used.html)
 - [Elasticsearch in Risoluzione dei problemi di Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-in-magento-troubleshooter.html)
 - [Lo stato dell&#39;indice Elasticsearch è `yellow` o `red`](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-index-status-is-yellow-or-red.html)
