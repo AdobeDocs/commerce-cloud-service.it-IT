@@ -2,9 +2,9 @@
 title: Commerce su infrastruttura cloud
 description: Scopri come creare, distribuire e gestire l’infrastruttura Commerce on Cloud.
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
+source-git-commit: 5f00b20e599b7ba26e483a238d05d99daf1dd1b8
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,26 @@ Visualizza lo [stack di tecnologia](architecture/tech-stack.md) in dettaglio o s
 <div id="recs-overview-body-4"></div>
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
+
+## Aree geografiche cloud
+
+Le sezioni seguenti forniscono dettagli sulle diverse aree di AWS e Azure disponibili per Adobe Commerce sull’infrastruttura cloud.
+
+## Aree geografiche di AWS
+
+![Diagramma che mostra le aree geografiche di AWS](../assets/aws-regions.svg){zoomable="yes"}
+
+>[!NOTE]
+>
+> Solo on-premise in Cina e in Russia.
+
+## Aree geografiche di Azure
+
+![Diagramma che mostra le aree geografiche di Azure](../assets/azure-regions.svg){zoomable="yes"}
+
+>[!NOTE]
+>
+> Solo on-premise in Cina e in Russia. Tutti i commercianti che richiedono ambienti di integrazione devono utilizzare aree geografiche degli Stati Uniti.
 
 ## Documentazione di Adobe Commerce
 
