@@ -1,12 +1,12 @@
 ---
 title: Provisioning di Commerce su Cloud
-description: Scopri come preparare un Adobe di consulente tecnico del cliente per il provisioning del progetto di infrastruttura cloud Adobe Commerce.
+description: Scopri come preparare un consulente tecnico per i clienti Adobe per il provisioning del progetto Adobe Commerce su infrastruttura cloud.
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: da1dec76b9389244f9d5a65428e09f1bc897fa5f
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Iniziamo e inizializziamo il tuo progetto Commerce sull’infrastruttura cloud.
 
-Adobe Prima di eseguire il provisioning del Commerce in ambienti di progetto cloud, è consigliabile prendere in considerazione le strategie seguenti e preparare le risposte per la prima consultazione con il team dell’account Adobe. Utilizza le sezioni seguenti come elenco di controllo per aiutarti a preparare la conversazione con un consulente tecnico del cliente per il provisioning di un progetto cloud:
+Adobe Prima di eseguire il provisioning del Commerce negli ambienti di progetto cloud, è consigliabile prendere in considerazione le strategie seguenti e preparare le risposte per la prima consultazione con il team dell’account Adobe. Utilizza le sezioni seguenti come elenco di controllo per aiutarti a preparare la conversazione con un consulente tecnico del cliente per il provisioning di un progetto cloud:
 
 ## Definizione del dominio
 
@@ -62,7 +62,7 @@ Consulta [Gestire lo spazio su disco](../cloud-guide/storage/manage-disk-space.m
 
 Scegli Amazon Web Services (AWS) o Microsoft Azure as your Infrastructure as a Service (IaaS) foundation per i progetti Adobe Commerce on Cloud Infrastructure Pro. Ogni provider di servizi opera in più aree geografiche e fornisce più aree di disponibilità. Seleziona un’area adatta alla tua posizione e riduci il potenziale di latenza e costi più elevati.
 
-Vedi [una mappa delle aree geografiche cloud di Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/infrastructure/cloud/regions.html) nella _playbook di implementazione_.
+Vedi [una mappa delle aree geografiche cloud di Adobe Commerce](../cloud-guide/overview.md).
 
 ## Servizio di connessione
 
@@ -76,7 +76,7 @@ Adobe Commerce su infrastruttura cloud supporta l’integrazione con il servizio
 
 **Domanda 6**: _Qual è la data di lancio prevista?_
 
-Il lancio di un sito richiede una configurazione e un test iterativi per garantire il successo del lancio. L’impostazione di una data di destinazione consente a te e al tuo Account Team Adobe di prepararti per le attività finali precedenti all’avvio, che includono una chiamata per coordinare i passaggi finali.
+Il lancio di un sito richiede una configurazione e un test iterativi per garantire il successo del lancio. L’impostazione di una data di destinazione consente a te e al tuo account team Adobe di prepararsi per le attività finali precedenti all’avvio, che includono una chiamata per coordinare i passaggi finali.
 
 Per esaminare l&#39;intero processo e scaricare una copia dell&#39;elenco di controllo di Launch, consulta la [panoramica del sito di Launch](../cloud-guide/launch/overview.md) nella guida _Commerce on Cloud Infrastructure_.
 

@@ -3,7 +3,7 @@ title: Best practice di implementazione
 description: Scopri le best practice per l’implementazione di Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Deploy, Best Practices
 exl-id: bac3ca83-0eee-4fda-9a5c-a84ab25a837a
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Questa fase esegue anche `composer install` per recuperare le dipendenze.
 Questa fase crea la base di codice ed esegue gli hook nella sezione `build` di `.magento.app.yaml`. L&#39;hook di compilazione predefinito è il comando `php ./vendor/bin/ece-tools` ed esegue le operazioni seguenti:
 
 - Applica patch in `vendor/magento/ece-patches` e patch facoltative specifiche per il progetto in `m2-hotfixes`
-- Rigenera il codice e la configurazione [dell&#39;iniezione di dipendenza](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) (ovvero la directory `generated/`, che include `generated/code` e `generated/metapackage`) utilizzando `bin/magento setup:di:compile`.
+- Rigenera il codice e la configurazione [dell&#39;iniezione di dipendenza](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) (ovvero la directory `generated/`, che include `generated/code` e `generated/metapackage`) utilizzando `bin/magento setup:di:compile`.
 - Verifica se il file [`app/etc/config.php`](../store/store-settings.md) esiste nel codebase. Adobe Commerce genera automaticamente questo file se non lo rileva durante la fase di build e include un elenco di moduli ed estensioni. Se esiste, la fase di build continua come di consueto, comprime i file statici utilizzando GZIP e distribuisce, riducendo i tempi di inattività nella fase di distribuzione. Per informazioni sulla personalizzazione o la disattivazione della compressione dei file, consultare [opzioni di compilazione](../environment/variables-build.md).
 
 >[!WARNING]
@@ -145,7 +145,7 @@ Lo slug include tutti i file e le cartelle **esclusi i seguenti** mount configur
 
 ### Fase 4: Distribuzione di segmenti e cluster
 
-Le applicazioni e tutti i servizi [backend](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) eseguono il provisioning come segue:
+Le applicazioni e tutti i servizi [backend](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) eseguono il provisioning come segue:
 
 - Monta ogni servizio in un contenitore, ad esempio server Web, OpenSearch, [!DNL RabbitMQ]
 - Monta il file system di lettura/scrittura (montato su una griglia di archiviazione distribuita ad alta disponibilità)
@@ -183,7 +183,7 @@ Sono disponibili due hook di distribuzione. L&#39;hook `pre-deploy.php` completa
 >
 >Lo script di distribuzione utilizza i valori definiti dai file di configurazione nella directory `.magento`, quindi elimina la directory e il relativo contenuto. Questo non influisce sull’ambiente di sviluppo locale.
 
-### Distribuzione Post: configurare l&#39;instradamento
+### Post-distribuzione: configurare il routing
 
 Durante l’esecuzione della distribuzione, il processo interrompe il traffico in ingresso nel punto di ingresso per 60 secondi e riconfigura il routing in modo che il traffico web arrivi al cluster appena creato.
 

@@ -3,7 +3,7 @@ title: Configura servizio RabbitMQ
 description: Scopri come abilitare il servizio RabbitMQ per gestire le code di messaggi per Adobe Commerce sull’infrastruttura cloud.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '398'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Configura il servizio [!DNL RabbitMQ]
 
-[MQF](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) è un sistema di Adobe Commerce che consente a un [modulo](https://experienceleague.adobe.com/en/docs/commerce-operations/operational-playbook/glossary#module) di pubblicare messaggi nelle code. Definisce inoltre i consumatori che ricevono i messaggi in modo asincrono.
+[MQF](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) è un sistema di Adobe Commerce che consente a un [modulo](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary#module) di pubblicare messaggi nelle code. Definisce inoltre i consumatori che ricevono i messaggi in modo asincrono.
 
 MQF utilizza [RabbitMQ](https://www.rabbitmq.com/) come broker di messaggistica, che fornisce una piattaforma scalabile per l&#39;invio e la ricezione di messaggi. Include inoltre un meccanismo per l’archiviazione dei messaggi non consegnati. [!DNL RabbitMQ] è basato sulla specifica AMQP 0.9.1.
 

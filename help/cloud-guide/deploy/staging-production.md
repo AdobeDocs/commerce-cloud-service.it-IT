@@ -3,7 +3,7 @@ title: Distribuzione a staging e produzione
 description: Scopri come implementare il codice dell’infrastruttura cloud Adobe Commerce negli ambienti di staging e produzione per ulteriori test.
 feature: Cloud, Console, Deploy, SCD, Storage
 exl-id: 4b82289f-ee04-4b14-a0ed-7a8a19fc6a6a
-source-git-commit: ae7eb6a0c3de773377c8e1efb5ce2e92c06506bd
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1310'
 ht-degree: 0%
@@ -18,13 +18,13 @@ Quando sei pronto per distribuire l’archivio, devi completare la distribuzione
 
 >[!TIP]
 >
->L&#39;Adobe consiglia di creare un [backup](../storage/snapshots.md) dell&#39;ambiente prima delle distribuzioni.
+>Adobe consiglia di creare un [backup](../storage/snapshots.md) dell&#39;ambiente prima delle distribuzioni.
 
 È inoltre possibile abilitare [Tracciare le distribuzioni con New Relic](../monitor/track-deployments.md) per monitorare gli eventi di distribuzione e analizzare le prestazioni tra le distribuzioni.
 
 ## Flusso di distribuzione iniziale
 
-L&#39;Adobe consiglia di creare un ramo `staging` dal ramo `master` per supportare al meglio lo sviluppo e la distribuzione del piano Starter. Sono quindi pronti due dei quattro ambienti attivi: `master` per la produzione e `staging` per la gestione temporanea.
+Adobe consiglia di creare un ramo `staging` dal ramo `master` per supportare al meglio lo sviluppo e la distribuzione del piano Starter. Sono quindi pronti due dei quattro ambienti attivi: `master` per la produzione e `staging` per la gestione temporanea.
 
 Per informazioni dettagliate sul processo, vedere [Avvia sviluppo e distribuzione del flusso di lavoro](../architecture/starter-develop-deploy-workflow.md).
 
@@ -140,7 +140,7 @@ Cloud CLI fornisce i comandi per distribuire il codice. Hai bisogno dell’acces
 
 ## Migrazione di file statici
 
-[I file statici](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) sono archiviati in `mounts`. Esistono due metodi per migrare i file da una posizione di montaggio di origine, ad esempio l&#39;ambiente locale, a una posizione di montaggio di destinazione. Entrambi i metodi utilizzano l&#39;utilità `rsync`, ma Adobe consiglia di utilizzare l&#39;interfaccia della riga di comando `magento-cloud` per spostare i file tra l&#39;ambiente locale e remoto. Adobe consiglia inoltre di utilizzare il metodo `rsync` per spostare i file da un&#39;origine remota a un&#39;altra posizione remota.
+[I file statici](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) sono archiviati in `mounts`. Esistono due metodi per migrare i file da una posizione di montaggio di origine, ad esempio l&#39;ambiente locale, a una posizione di montaggio di destinazione. Entrambi i metodi utilizzano l&#39;utilità `rsync`, ma Adobe consiglia di utilizzare l&#39;interfaccia della riga di comando `magento-cloud` per spostare i file tra l&#39;ambiente locale e remoto. Adobe consiglia inoltre di utilizzare il metodo `rsync` per spostare i file da un&#39;origine remota a un&#39;altra posizione remota.
 
 ### Eseguire la migrazione dei file tramite CLI
 
@@ -246,11 +246,11 @@ Consulta la Guida di [rsync](https://linux.die.net/man/1/rsync).
 >
 >Il database dell’ambiente di integrazione è destinato esclusivamente ai test di sviluppo e può includere dati di cui non desideri eseguire la migrazione nell’ambiente di staging e produzione.
 
-Per le distribuzioni di integrazione continue, l&#39;Adobe **sconsiglia** la migrazione dei dati dall&#39;integrazione all&#39;ambiente di staging e produzione. Puoi trasmettere dati di test o sovrascrivere dati importanti. Tutte le configurazioni vitali vengono passate utilizzando il [file di configurazione](../store/store-settings.md) e il comando `setup:upgrade` durante la compilazione e la distribuzione.
+Per le distribuzioni continue di integrazione, Adobe **sconsiglia** la migrazione dei dati dall&#39;integrazione all&#39;ambiente di staging e produzione. Puoi trasmettere dati di test o sovrascrivere dati importanti. Tutte le configurazioni vitali vengono passate utilizzando il [file di configurazione](../store/store-settings.md) e il comando `setup:upgrade` durante la compilazione e la distribuzione.
 
 >[!ENDSHADEBOX]
 
-L&#39;Adobe **consiglia** di migrare i dati dalla produzione alla gestione temporanea per testare completamente il sito e archiviarlo in un ambiente vicino alla produzione con tutti i servizi e le impostazioni.
+Adobe **consiglia** di migrare i dati dalla produzione alla gestione temporanea per testare completamente il sito e archiviare in un ambiente di produzione vicino a tutti i servizi e le impostazioni.
 
 >[!NOTE]
 >
