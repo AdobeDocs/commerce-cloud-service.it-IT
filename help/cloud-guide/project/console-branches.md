@@ -1,5 +1,5 @@
 ---
-title: "Gestire i rami con  [!DNL Cloud Console]"
+title: Gestisci rami con  [!DNL Cloud Console]
 description: Scopri come gestire i rami dell'ambiente per Adobe Commerce sull'infrastruttura cloud utilizzando  [!DNL Cloud Console].
 role: Developer
 feature: Cloud, Install
@@ -173,7 +173,7 @@ Se preferisci che il progetto acceda a più archivi, puoi allegare una chiave SS
 
 >[!INFO]
 >
->L’Adobe consiglia di aggiungere e unire questo codice agli archivi Git del progetto. Se non configuri la connessione, potrebbero verificarsi problemi di build.
+>Adobe consiglia di aggiungere e unire questo codice agli archivi Git del progetto. Se non configuri la connessione, potrebbero verificarsi problemi di build.
 
 **Per trovare la chiave pubblica SSH**:
 
@@ -272,4 +272,4 @@ In `composer.json`, utilizzare il formato `<user>@<host>:<.git</code>` o `ssh://
    0.0.0.0/0 deny
    ```
 
-1. Fare clic su **[!UICONTROL Save]**. In questo modo l’ambiente viene ridistribuito per aggiornare la sicurezza e le impostazioni. L’Adobe consiglia di eseguire un test dell’ambiente dopo aver completato le impostazioni di sicurezza.
+1. Fare clic su **[!UICONTROL Save]**. In questo modo l’ambiente viene ridistribuito per aggiornare la sicurezza e le impostazioni. Dopo aver completato le impostazioni di protezione, Adobe consiglia di eseguire un test dell’ambiente.

@@ -1,7 +1,7 @@
 ---
 name: New topic
 about: Create a request to add missing information
-title: 'Richiesta di un nuovo argomento'
+title: Richiesta di un nuovo argomento
 labels: New Topic
 assignees: ''
 source-git-commit: 4e12e99461ba5aaff38a3512165328a01306c08a

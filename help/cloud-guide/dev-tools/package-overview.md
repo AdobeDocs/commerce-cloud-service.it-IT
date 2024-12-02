@@ -1,5 +1,5 @@
 ---
-title: '[!DNL ECE-Tools] pacchetto'
+title: Pacchetto [!DNL ECE-Tools]
 description: Scopri il pacchetto  [!DNL ECE-Tools]  e come consente di gestire e distribuire Adobe Commerce.
 exl-id: 5583a685-29c5-4de5-8d2e-94cff5ff37ab
 source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
@@ -91,7 +91,7 @@ Ideal state is configured
 
 Consulta le [note sulla versione per gli strumenti ece](../release-notes/cloud-tools-suite.md).
 
-## patch di Adobe e patch personalizzate
+## Adobe e patch personalizzate
 
 Il pacchetto `ece-tools` include una dipendenza per il pacchetto [magento/magento-cloud-patches], che fornisce patch e hotfix di Adobe che migliorano l&#39;integrazione di tutte le versioni di Adobe Commerce con gli ambienti Cloud e supportano la distribuzione rapida di correzioni critiche. &quot;offre anche patch personalizzate da aggiungere al progetto di infrastruttura cloud di Adobe Commerce. Vedi [Applicare le patch](../development/apply-patches.md).
 
