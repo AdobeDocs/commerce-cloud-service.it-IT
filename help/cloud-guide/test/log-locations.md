@@ -3,9 +3,9 @@ title: Visualizzare e gestire i registri
 description: Comprendi i tipi di file di registro disponibili nell’infrastruttura cloud e dove trovarli.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
+source-git-commit: 564a569c37ab8ec53f8a12bc105106a621251b10
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,18 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Per gli ambienti di staging e produzione Pro, la rotazione, la compressione e la rimozione automatica del registro sono attivate per i file di registro con un nome di file fisso. Ogni tipo di file di registro ha un pattern e una durata di rotazione. Gli ambienti Starter non dispongono della rotazione del registro. I dettagli completi sulla rotazione dei registri dell&#39;ambiente e sulla durata dei registri compressi sono disponibili in: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`. La rotazione dei registri non può essere configurata negli ambienti di integrazione Pro. Per l&#39;integrazione Pro, devi implementare una soluzione o uno script personalizzato e [configurare il cron](../application/crons-property.md) per eseguire lo script in base alle esigenze.
+>Negli ambienti Pro Staging e Pro Production, la rotazione, la compressione e la rimozione automatica dei registri sono attivate per i file di registro con un nome di file fisso. Ogni tipo di file di registro ha un pattern e una durata di rotazione.
+>I dettagli completi sulla rotazione dei registri dell&#39;ambiente e sulla durata dei registri compressi sono disponibili in: `/etc/logrotate.conf` e `/etc/logrotate.d/<various>`.
+>Per gli ambienti Pro Staging e Pro Production, è necessario [inviare un ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) per richiedere modifiche alla configurazione della rotazione del registro.
+
+>[!TIP]
+>
+>La rotazione dei registri non può essere configurata negli ambienti di integrazione Pro.
+>Per l&#39;integrazione Pro, devi implementare una soluzione o uno script personalizzato e [configurare il cron](../application/crons-property.md) per eseguire lo script in base alle esigenze.
+
+>[!NOTE]
+>
+>Negli ambienti di progetto iniziali non è disponibile la rotazione del registro.
 
 ## Creare e distribuire i registri
 
