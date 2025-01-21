@@ -3,9 +3,9 @@ title: Firewall applicazione Web (WAF)
 description: Scopri in che modo il servizio Fastly WAF rileva, registra e blocca il traffico di richieste dannoso prima che possa danneggiare la rete o i siti Adobe Commerce.
 feature: Cloud, Configuration, Security
 exl-id: 40bfe983-7f32-4155-ae77-7cd18866f6e2
-source-git-commit: 48ac1759fc052175e01998703e7f4ee5eaac5224
+source-git-commit: fff4abf396b2c4a5b445c23c10608f54af059815
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '930'
 ht-degree: 0%
 
 ---
@@ -18,10 +18,10 @@ Il servizio WAF offre i seguenti vantaggi:
 
 - **Conformità PCI**: l&#39;abilitazione di WAF garantisce che gli storefront Adobe Commerce negli ambienti di produzione soddisfino i requisiti di sicurezza PCI DSS 6.6.
 - **Criterio predefinito di WAF**: il criterio predefinito di WAF, configurato e gestito da Fastly, fornisce una raccolta di regole di sicurezza personalizzate per proteggere le applicazioni Web Adobe Commerce da un&#39;ampia gamma di attacchi, tra cui attacchi di iniezione, input dannosi, vulnerabilità cross-site scripting, exfiltrazione dei dati, violazioni del protocollo HTTP e altre [minacce di sicurezza OWASP Top Ten](https://owasp.org/www-project-top-ten/).
-- **Onboarding e abilitazione di WAF**: Adobe distribuisce e abilita i criteri predefiniti di WAF nell&#39;ambiente di produzione entro 2-3 settimane dal completamento del provisioning.
+- **Onboarding e abilitazione di WAF**: Adobe implementa e abilita i criteri predefiniti di WAF nell&#39;ambiente di produzione entro 2-3 settimane dal completamento del provisioning.
 - **Supporto operazioni e manutenzione**—
-   - Adobe e Fastly imposta e gestisci registri, regole e avvisi per il servizio WAF.
-   - L’Adobe esegue il triage dei ticket di assistenza clienti relativi ai problemi del servizio WAF che bloccano il traffico legittimo come problemi con priorità 1.
+   - Adobe e Fastly configurano e gestiscono registri, regole e avvisi per il servizio WAF.
+   - Adobe di ticket di assistenza clienti relativi a problemi di servizio WAF che bloccano il traffico legittimo come problemi con priorità 1.
    - Gli aggiornamenti automatizzati alla versione del servizio WAF garantiscono una copertura immediata per gli exploit nuovi o in evoluzione. Consulta [Manutenzione e aggiornamenti di WAF](#waf-maintenance-and-updates).
 
 >[!TIP]
@@ -30,7 +30,7 @@ Il servizio WAF offre i seguenti vantaggi:
 
 ## Abilitazione di WAF
 
-Adobe abilita il servizio WAF sui nuovi account entro 2-3 settimane dopo il provisioning finale. WAF viene implementato tramite il servizio Fastly CDN. Non è necessario installare o gestire hardware o software.
+Adobe abilita il servizio WAF per i nuovi account entro 2-3 settimane dal completamento del provisioning. WAF viene implementato tramite il servizio Fastly CDN. Non è necessario installare o gestire hardware o software.
 
 >[!NOTE]
 >
@@ -51,6 +51,11 @@ Quando il servizio WAF è abilitato, analizza tutto il traffico web e di amminis
 Puoi personalizzare questa pagina di risposta all’errore dall’Amministratore. Consulta [Personalizzare la pagina di risposta di WAF](fastly-custom-response.md#customize-the-waf-error-page).
 
 Se la pagina di amministrazione o la vetrina di Adobe Commerce restituisce una pagina di errore `403 Forbidden` in risposta a una richiesta URL legittima, invia un [ticket di supporto Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). Copia l’ID di riferimento dalla pagina di risposta dell’errore e incollalo nella descrizione del ticket.
+
+Per identificare la risposta di WAF per una particolare richiesta utilizzando New Relic, consulta quanto segue:
+
+- `Agent_response` - Indica il codice di risposta di WAF (`200` indica che è valido e `406` indica che è bloccato)
+- `sigsci` tag: applica i tag della richiesta a un particolare tag delle scienze dei segnali in base alla natura della richiesta
 
 ## Manutenzione e aggiornamenti di WAF
 
