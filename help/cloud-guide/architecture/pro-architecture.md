@@ -4,9 +4,9 @@ description: Scopri gli ambienti supportati dall’architettura Pro.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
+source-git-commit: eb33d9867355a4ccfada99c7f5b0e4520dbe44f5
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1554'
 ht-degree: 0%
 
 ---
@@ -185,7 +185,7 @@ Puoi creare un **backup manuale** del database per gli ambienti di staging e pro
 
 ### Obiettivo punto di ripristino
 
-L’RPO corrisponde a un tempo massimo di sei ore per l’ultimo backup (ad esempio alle 06:00, quindi alle 12:00, quindi alle 18:00). La frequenza dei backup dipende dalla pianificazione del backup e dal volume di modifiche da scrivere nel servizio di storage.
+Contatta il tuo Customer Success Manager Adobe per informazioni dettagliate sul tempo dell’obiettivo del punto di ripristino per l’ultimo backup. La frequenza dei backup dipende dalla pianificazione del backup e dal volume di modifiche da scrivere nel servizio di storage.
 
 ### Criterio di conservazione
 
@@ -203,11 +203,7 @@ Questo criterio può variare a seconda del piano dell’infrastruttura cloud.
 
 ### Obiettivo del tempo di ripristino
 
-RTO dipende dalle dimensioni dello storage. Il ripristino di volumi EBS di grandi dimensioni richiede più tempo. I tempi di ripristino possono variare a seconda delle dimensioni del database:
-
-- Un database di grandi dimensioni (oltre 200 GB) può richiedere 5 ore
-- Un database di medie dimensioni (150 GB) può richiedere 2 ore e mezza
-- Un database di piccole dimensioni (60 GB) può richiedere 1 ora
+RTO dipende dalle dimensioni dello storage. Il ripristino di volumi EBS di grandi dimensioni richiede più tempo. I tempi di ripristino possono variare a seconda delle dimensioni del database. Per informazioni, contatta il tuo Customer Success Manager Adobe.
 
 ## Scalabilità del cluster Pro
 
